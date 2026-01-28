@@ -1,0 +1,73 @@
+module Amocrm
+  module Models
+    module Store
+      type store_order =
+        {
+          id: Integer,
+          complete: bool,
+          pet_id: Integer,
+          quantity: Integer,
+          ship_date: Time,
+          status: Amocrm::Models::Store::StoreOrder::status
+        }
+
+      class StoreOrder < Amocrm::Internal::Type::BaseModel
+        attr_reader id: Integer?
+
+        def id=: (Integer) -> Integer
+
+        attr_reader complete: bool?
+
+        def complete=: (bool) -> bool
+
+        attr_reader pet_id: Integer?
+
+        def pet_id=: (Integer) -> Integer
+
+        attr_reader quantity: Integer?
+
+        def quantity=: (Integer) -> Integer
+
+        attr_reader ship_date: Time?
+
+        def ship_date=: (Time) -> Time
+
+        attr_reader status: Amocrm::Models::Store::StoreOrder::status?
+
+        def status=: (
+          Amocrm::Models::Store::StoreOrder::status
+        ) -> Amocrm::Models::Store::StoreOrder::status
+
+        def initialize: (
+          ?id: Integer,
+          ?complete: bool,
+          ?pet_id: Integer,
+          ?quantity: Integer,
+          ?ship_date: Time,
+          ?status: Amocrm::Models::Store::StoreOrder::status
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          complete: bool,
+          pet_id: Integer,
+          quantity: Integer,
+          ship_date: Time,
+          status: Amocrm::Models::Store::StoreOrder::status
+        }
+
+        type status = :placed | :approved | :delivered
+
+        module Status
+          extend Amocrm::Internal::Type::Enum
+
+          PLACED: :placed
+          APPROVED: :approved
+          DELIVERED: :delivered
+
+          def self?.values: -> ::Array[Amocrm::Models::Store::StoreOrder::status]
+        end
+      end
+    end
+  end
+end

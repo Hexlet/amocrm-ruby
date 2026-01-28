@@ -1,0 +1,29 @@
+module Amocrm
+  module Resources
+    class Store
+      class Order
+        def create: (
+          ?id: Integer,
+          ?complete: bool,
+          ?pet_id: Integer,
+          ?quantity: Integer,
+          ?ship_date: Time,
+          ?status: Amocrm::Models::Store::StoreOrder::status,
+          ?request_options: Amocrm::request_opts
+        ) -> Amocrm::Store::StoreOrder
+
+        def retrieve: (
+          Integer order_id,
+          ?request_options: Amocrm::request_opts
+        ) -> Amocrm::Store::StoreOrder
+
+        def delete: (
+          Integer order_id,
+          ?request_options: Amocrm::request_opts
+        ) -> nil
+
+        def initialize: (client: Amocrm::Client) -> void
+      end
+    end
+  end
+end

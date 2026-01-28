@@ -1,0 +1,25 @@
+module Amocrm
+  module Models
+    type pet_find_by_tags_params =
+      { tags: ::Array[String] } & Amocrm::Internal::Type::request_parameters
+
+    class PetFindByTagsParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader tags: ::Array[String]?
+
+      def tags=: (::Array[String]) -> ::Array[String]
+
+      def initialize: (
+        ?tags: ::Array[String],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        tags: ::Array[String],
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

@@ -1,0 +1,7 @@
+module Amocrm
+  module Models
+    type store_list_inventory_response = ::Hash[Symbol, Integer]
+
+    StoreListInventoryResponse: Amocrm::Internal::Type::Converter
+  end
+end
