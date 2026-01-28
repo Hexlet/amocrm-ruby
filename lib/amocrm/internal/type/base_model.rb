@@ -436,14 +436,6 @@ module Amocrm
         # @param keys [Array<Symbol>, nil]
         #
         # @return [Hash{Symbol=>Object}]
-        #
-        # @example
-        #   # `pet_api` is a `Amocrm::PetAPI`
-        #   pet_api => {
-        #     name: name,
-        #     photo_urls: photo_urls,
-        #     id: id
-        #   }
         def deconstruct_keys(keys)
           (keys || self.class.known_fields.keys)
             .filter_map do |k|

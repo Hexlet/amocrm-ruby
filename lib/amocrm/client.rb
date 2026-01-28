@@ -18,21 +18,8 @@ module Amocrm
     # @return [String]
     attr_reader :api_key
 
-    # @return [Amocrm::Resources::Pet]
-    attr_reader :pet
-
-    # @return [Amocrm::Resources::Store]
-    attr_reader :store
-
-    # @return [Amocrm::Resources::User]
-    attr_reader :user
-
-    # @api private
-    #
-    # @return [Hash{String=>String}]
-    private def auth_headers
-      {"api_key" => @api_key}
-    end
+    # @return [Amocrm::Resources::V4]
+    attr_reader :v4
 
     # Creates and returns a new client for interacting with the API.
     #
@@ -56,7 +43,7 @@ module Amocrm
       initial_retry_delay: self.class::DEFAULT_INITIAL_RETRY_DELAY,
       max_retry_delay: self.class::DEFAULT_MAX_RETRY_DELAY
     )
-      base_url ||= "https://petstore3.swagger.io/api/v3"
+      base_url ||= "https://{subdomain}.amocrm.ru"
 
       if api_key.nil?
         raise ArgumentError.new("api_key is required, and can be set via environ: \"AMOCRM_API_KEY\"")
@@ -72,9 +59,7 @@ module Amocrm
         max_retry_delay: max_retry_delay
       )
 
-      @pet = Amocrm::Resources::Pet.new(client: self)
-      @store = Amocrm::Resources::Store.new(client: self)
-      @user = Amocrm::Resources::User.new(client: self)
+      @v4 = Amocrm::Resources::V4.new(client: self)
     end
   end
 end

@@ -1,6 +1,6 @@
 # Amocrm Ruby API library
 
-The Amocrm Ruby library provides convenient access to the Amocrm REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/Hexlet/amocrm#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
+The Amocrm Ruby library provides convenient access to the Amocrm REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/Hexlet/amocrm-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -26,13 +26,13 @@ gem "amocrm", "~> 0.0.1"
 require "bundler/setup"
 require "amocrm"
 
-amocrm = Amocrm::Client.new(
-  api_key: ENV["AMOCRM_API_KEY"] # This is the default and can be omitted
+amocrm = Amocrm::Client.new(api_key: "My API Key")
+
+response = amocrm.v4.leads.unsorted.create_forms(
+  body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
 )
 
-pet = amocrm.pet.update(name: "doggie", photo_urls: ["string"])
-
-puts(pet.id)
+puts(response)
 ```
 
 ### Handling errors
@@ -41,7 +41,9 @@ When the library is unable to connect to the API, or if the API returns a non-su
 
 ```ruby
 begin
-  pet = amocrm.pet.update(name: "doggie", photo_urls: ["string"])
+  unsorted = amocrm.v4.leads.unsorted.create_forms(
+    body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
+  )
 rescue Amocrm::Errors::APIConnectionError => e
   puts("The server could not be reached")
   puts(e.cause)  # an underlying Exception, likely raised within `net/http`
@@ -80,11 +82,15 @@ You can use the `max_retries` option to configure or disable this:
 ```ruby
 # Configure the default for all requests:
 amocrm = Amocrm::Client.new(
-  max_retries: 0 # default is 2
+  max_retries: 0, # default is 2
+  api_key: "My API Key"
 )
 
 # Or, configure per-request:
-amocrm.pet.update(name: "doggie", photo_urls: ["string"], request_options: {max_retries: 5})
+amocrm.v4.leads.unsorted.create_forms(
+  body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
+  request_options: {max_retries: 5}
+)
 ```
 
 ### Timeouts
@@ -94,11 +100,15 @@ By default, requests will time out after 60 seconds. You can use the timeout opt
 ```ruby
 # Configure the default for all requests:
 amocrm = Amocrm::Client.new(
-  timeout: nil # default is 60
+  timeout: nil, # default is 60
+  api_key: "My API Key"
 )
 
 # Or, configure per-request:
-amocrm.pet.update(name: "doggie", photo_urls: ["string"], request_options: {timeout: 5})
+amocrm.v4.leads.unsorted.create_forms(
+  body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
+  request_options: {timeout: 5}
+)
 ```
 
 On timeout, `Amocrm::Errors::APITimeoutError` is raised.
@@ -128,10 +138,9 @@ You can send undocumented parameters to any endpoint, and read undocumented resp
 Note: the `extra_` parameters of the same name overrides the documented parameters.
 
 ```ruby
-pet =
-  amocrm.pet.update(
-    name: "doggie",
-    photo_urls: ["string"],
+response =
+  amocrm.v4.leads.unsorted.create_forms(
+    body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
     request_options: {
       extra_query: {my_query_parameter: value},
       extra_body: {my_body_parameter: value},
@@ -139,7 +148,7 @@ pet =
     }
   )
 
-puts(pet[:my_undocumented_property])
+puts(response[:my_undocumented_property])
 ```
 
 #### Undocumented request params
@@ -177,46 +186,36 @@ This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitio
 You can provide typesafe request parameters like so:
 
 ```ruby
-amocrm.pet.update(name: "doggie", photo_urls: ["string"])
+amocrm.v4.leads.unsorted.create_forms(
+  body: [
+    Amocrm::V4::Leads::UnsortedCreateFormsParams::Body.new(
+      metadata: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Metadata.new,
+      source_name: "source_name",
+      source_uid: "source_uid"
+    )
+  ]
+)
 ```
 
 Or, equivalently:
 
 ```ruby
 # Hashes work, but are not typesafe:
-amocrm.pet.update(name: "doggie", photo_urls: ["string"])
+amocrm.v4.leads.unsorted.create_forms(
+  body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
+)
 
 # You can also splat a full Params class:
-params = Amocrm::PetUpdateParams.new(name: "doggie", photo_urls: ["string"])
-amocrm.pet.update(**params)
-```
-
-### Enums
-
-Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, we provide "tagged symbols" instead, which is always a primitive at runtime:
-
-```ruby
-# :available
-puts(Amocrm::PetAPI::Status::AVAILABLE)
-
-# Revealed type: `T.all(Amocrm::PetAPI::Status, Symbol)`
-T.reveal_type(Amocrm::PetAPI::Status::AVAILABLE)
-```
-
-Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
-
-```ruby
-# Using the enum constants preserves the tagged type information:
-amocrm.pet.create(
-  status: Amocrm::PetAPI::Status::AVAILABLE,
-  # …
+params = Amocrm::V4::Leads::UnsortedCreateFormsParams.new(
+  body: [
+    Amocrm::V4::Leads::UnsortedCreateFormsParams::Body.new(
+      metadata: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Metadata.new,
+      source_name: "source_name",
+      source_uid: "source_uid"
+    )
+  ]
 )
-
-# Literal values are also permissible:
-amocrm.pet.create(
-  status: :available,
-  # …
-)
+amocrm.v4.leads.unsorted.create_forms(**params)
 ```
 
 ## Versioning
@@ -231,4 +230,4 @@ Ruby 3.2.0 or higher.
 
 ## Contributing
 
-See [the contributing documentation](https://github.com/Hexlet/amocrm/tree/main/CONTRIBUTING.md).
+See [the contributing documentation](https://github.com/Hexlet/amocrm-ruby/tree/main/CONTRIBUTING.md).
