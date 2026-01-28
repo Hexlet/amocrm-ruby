@@ -43,13 +43,13 @@ If you’d like to use the repository from source, you can either install from g
 To install via git in your `Gemfile`:
 
 ```ruby
-gem "amocrm", git: "https://www.github.com/stainless-sdks/amocrm-ruby"
+gem "amocrm", git: "https://www.github.com/Hexlet/amocrm"
 ```
 
 Alternatively, reference local copy of the repo:
 
 ```bash
-$ git clone -- 'https://www.github.com/stainless-sdks/amocrm-ruby' '<path-to-repo>'
+$ git clone -- 'https://www.github.com/Hexlet/amocrm' '<path-to-repo>'
 ```
 
 ```ruby
