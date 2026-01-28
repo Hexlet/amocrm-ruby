@@ -1,0 +1,9 @@
+module Amocrm
+  module Internal
+    extend Amocrm::Internal::Util::SorbetRuntimeSupport
+
+    type file_input = Pathname | StringIO | IO | String | Amocrm::FilePart
+
+    OMIT: Object
+  end
+end

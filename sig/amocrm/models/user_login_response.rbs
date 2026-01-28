@@ -1,0 +1,5 @@
+module Amocrm
+  module Models
+    class UserLoginResponse = String
+  end
+end

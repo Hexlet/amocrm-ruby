@@ -1,0 +1,79 @@
+module Amocrm
+  module Internal
+    module Type
+      module Converter
+        extend Amocrm::Internal::Util::SorbetRuntimeSupport
+
+        type input = Amocrm::Internal::Type::Converter | Class
+
+        type coerce_state =
+          {
+            translate_names: bool,
+            strictness: bool,
+            exactness: { yes: Integer, no: Integer, maybe: Integer },
+            error: Class,
+            branched: Integer
+          }
+
+        type dump_state = { can_retry: bool }
+
+        def coerce: (
+          top value,
+          state: Amocrm::Internal::Type::Converter::coerce_state
+        ) -> top
+
+        def dump: (
+          top value,
+          state: Amocrm::Internal::Type::Converter::dump_state
+        ) -> top
+
+        def inspect: (?depth: Integer) -> String
+
+        def self.type_info: (
+          {
+            const: (nil | bool | Integer | Float | Symbol)?,
+            enum: ^-> Amocrm::Internal::Type::Converter::input?,
+            union: ^-> Amocrm::Internal::Type::Converter::input?
+          }
+          | ^-> Amocrm::Internal::Type::Converter::input
+          | Amocrm::Internal::Type::Converter::input spec
+        ) -> (^-> top)
+
+        def self.meta_info: (
+          {
+            const: (nil | bool | Integer | Float | Symbol)?,
+            enum: ^-> Amocrm::Internal::Type::Converter::input?,
+            union: ^-> Amocrm::Internal::Type::Converter::input?
+          }
+          | ^-> Amocrm::Internal::Type::Converter::input
+          | Amocrm::Internal::Type::Converter::input type_info,
+          {
+            const: (nil | bool | Integer | Float | Symbol)?,
+            enum: ^-> Amocrm::Internal::Type::Converter::input?,
+            union: ^-> Amocrm::Internal::Type::Converter::input?
+          }
+          | ^-> Amocrm::Internal::Type::Converter::input
+          | Amocrm::Internal::Type::Converter::input spec
+        ) -> ::Hash[Symbol, top]
+
+        def self.new_coerce_state: (
+          ?translate_names: bool
+        ) -> Amocrm::Internal::Type::Converter::coerce_state
+
+        def self.coerce: (
+          Amocrm::Internal::Type::Converter::input target,
+          top value,
+          ?state: Amocrm::Internal::Type::Converter::coerce_state
+        ) -> top
+
+        def self.dump: (
+          Amocrm::Internal::Type::Converter::input target,
+          top value,
+          ?state: Amocrm::Internal::Type::Converter::dump_state
+        ) -> top
+
+        def self.inspect: (top target, depth: Integer) -> String
+      end
+    end
+  end
+end

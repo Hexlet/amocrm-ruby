@@ -1,0 +1,26 @@
+module Amocrm
+  module Models
+    type user_create_with_list_params =
+      { body: ::Array[Amocrm::UserAPI] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class UserCreateWithListParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader body: ::Array[Amocrm::UserAPI]?
+
+      def body=: (::Array[Amocrm::UserAPI]) -> ::Array[Amocrm::UserAPI]
+
+      def initialize: (
+        ?body: ::Array[Amocrm::UserAPI],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::UserAPI],
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

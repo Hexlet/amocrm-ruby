@@ -1,0 +1,7 @@
+module Amocrm
+  module Models
+    type pet_find_by_status_response = ::Array[Amocrm::PetAPI]
+
+    PetFindByStatusResponse: Amocrm::Internal::Type::Converter
+  end
+end

@@ -1,0 +1,3 @@
+module Amocrm
+  VERSION: String
+end

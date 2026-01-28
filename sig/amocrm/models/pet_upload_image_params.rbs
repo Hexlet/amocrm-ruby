@@ -1,0 +1,30 @@
+module Amocrm
+  module Models
+    type pet_upload_image_params =
+      { body: Amocrm::Internal::file_input, additional_metadata: String }
+      & Amocrm::Internal::Type::request_parameters
+
+    class PetUploadImageParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: Amocrm::Internal::file_input
+
+      attr_reader additional_metadata: String?
+
+      def additional_metadata=: (String) -> String
+
+      def initialize: (
+        body: Amocrm::Internal::file_input,
+        ?additional_metadata: String,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: Amocrm::Internal::file_input,
+        additional_metadata: String,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end
