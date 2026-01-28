@@ -13,19 +13,8 @@ module Amocrm
     sig { returns(String) }
     attr_reader :api_key
 
-    sig { returns(Amocrm::Resources::Pet) }
-    attr_reader :pet
-
-    sig { returns(Amocrm::Resources::Store) }
-    attr_reader :store
-
-    sig { returns(Amocrm::Resources::User) }
-    attr_reader :user
-
-    # @api private
-    sig { override.returns(T::Hash[String, String]) }
-    private def auth_headers
-    end
+    sig { returns(Amocrm::Resources::V4) }
+    attr_reader :v4
 
     # Creates and returns a new client for interacting with the API.
     sig do

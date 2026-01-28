@@ -1,0 +1,29 @@
+module Amocrm
+  module Resources
+    class V4
+      class Leads
+        class Unsorted
+          def accept: (
+            String uid,
+            ?status_id: Integer,
+            ?user_id: Integer,
+            ?request_options: Amocrm::request_opts
+          ) -> Amocrm::Models::V4::Leads::unsorted_accept_response
+
+          def create_forms: (
+            body: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body],
+            ?request_options: Amocrm::request_opts
+          ) -> Amocrm::Models::V4::Leads::unsorted_create_forms_response
+
+          def decline: (
+            String uid,
+            ?user_id: Integer,
+            ?request_options: Amocrm::request_opts
+          ) -> Amocrm::Models::V4::Leads::unsorted_decline_response
+
+          def initialize: (client: Amocrm::Client) -> void
+        end
+      end
+    end
+  end
+end

@@ -10,13 +10,7 @@ module Amocrm
 
     attr_reader api_key: String
 
-    attr_reader pet: Amocrm::Resources::Pet
-
-    attr_reader store: Amocrm::Resources::Store
-
-    attr_reader user: Amocrm::Resources::User
-
-    private def auth_headers: -> ::Hash[String, String]
+    attr_reader v4: Amocrm::Resources::V4
 
     def initialize: (
       ?api_key: String?,

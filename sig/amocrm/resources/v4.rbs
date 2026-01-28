@@ -1,0 +1,9 @@
+module Amocrm
+  module Resources
+    class V4
+      attr_reader leads: Amocrm::Resources::V4::Leads
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

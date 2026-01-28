@@ -4,6 +4,17 @@ module Amocrm
   module Internal
     module Type
       # @api private
+      #
+      # @example
+      #   # `unsorted_accept_response` is a `Amocrm::Models::V4::Leads::UnsortedAcceptResponse`
+      #   case unsorted_accept_response
+      #   when Amocrm::Models::V4::Leads::UnsortedAcceptResponse::UnsortedAcceptResponse
+      #     puts(unsorted_accept_response._embedded)
+      #   when Amocrm::Models::V4::Leads::UnsortedAcceptResponse::Problem
+      #     puts(unsorted_accept_response.detail)
+      #   else
+      #     puts(unsorted_accept_response)
+      #   end
       module Union
         include Amocrm::Internal::Type::Converter
         include Amocrm::Internal::Util::SorbetRuntimeSupport
