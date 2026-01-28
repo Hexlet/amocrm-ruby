@@ -11,7 +11,7 @@ GIT
 PATH
   remote: .
   specs:
-    amocrm (0.0.2)
+    amocrm (0.0.1)
       cgi
       connection_pool
 
