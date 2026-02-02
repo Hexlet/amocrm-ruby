@@ -1,4 +1,4 @@
-configured_endpoints: 19
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/hexlet%2Famocrm-0375e998392e2c875ece3edf69a1578f9729fa1346eb787151f4c6d3cb5e60fa.yml
-openapi_spec_hash: 39d95f424df6b89c8d7861e3726d0788
-config_hash: 98358bea77c97b668abee972930172c0
+configured_endpoints: 3
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/hexlet%2Famocrm-259151150f55da97dac4aa0df44f6299d2b0c4f610c346934b752f53fd23f598.yml
+openapi_spec_hash: 6e1baef5165a728622de8d2dd0903f36
+config_hash: e01761a134b02efe7127582e0ad9cc0d

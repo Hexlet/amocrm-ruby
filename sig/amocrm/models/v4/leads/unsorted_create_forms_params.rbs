@@ -1,0 +1,484 @@
+module Amocrm
+  module Models
+    module V4
+      module Leads
+        type unsorted_create_forms_params =
+          { body: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body] }
+          & Amocrm::Internal::Type::request_parameters
+
+        class UnsortedCreateFormsParams < Amocrm::Internal::Type::BaseModel
+          extend Amocrm::Internal::Type::RequestParameters::Converter
+          include Amocrm::Internal::Type::RequestParameters
+
+          attr_accessor body: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body]
+
+          def initialize: (
+            body: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body],
+            ?request_options: Amocrm::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            body: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body],
+            request_options: Amocrm::RequestOptions
+          }
+
+          type body =
+            {
+              metadata: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Metadata,
+              source_name: String,
+              source_uid: String,
+              _embedded: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded,
+              created_at: Integer,
+              pipeline_id: Integer,
+              request_id: String
+            }
+
+          class Body < Amocrm::Internal::Type::BaseModel
+            attr_accessor metadata: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Metadata
+
+            attr_accessor source_name: String
+
+            attr_accessor source_uid: String
+
+            attr_reader _embedded: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded?
+
+            def _embedded=: (
+              Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded
+            ) -> Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded
+
+            attr_reader created_at: Integer?
+
+            def created_at=: (Integer) -> Integer
+
+            attr_reader pipeline_id: Integer?
+
+            def pipeline_id=: (Integer) -> Integer
+
+            attr_reader request_id: String?
+
+            def request_id=: (String) -> String
+
+            def initialize: (
+              metadata: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Metadata,
+              source_name: String,
+              source_uid: String,
+              ?_embedded: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded,
+              ?created_at: Integer,
+              ?pipeline_id: Integer,
+              ?request_id: String
+            ) -> void
+
+            def to_hash: -> {
+              metadata: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Metadata,
+              source_name: String,
+              source_uid: String,
+              _embedded: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded,
+              created_at: Integer,
+              pipeline_id: Integer,
+              request_id: String
+            }
+
+            type metadata =
+              {
+                form_id: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Metadata::form_id,
+                form_name: String,
+                form_page: String,
+                form_sent_at: Integer,
+                form_type: Integer,
+                ip: String,
+                referer: String,
+                visitor_uid: String
+              }
+
+            class Metadata < Amocrm::Internal::Type::BaseModel
+              attr_reader form_id: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Metadata::form_id?
+
+              def form_id=: (
+                Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Metadata::form_id
+              ) -> Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Metadata::form_id
+
+              attr_reader form_name: String?
+
+              def form_name=: (String) -> String
+
+              attr_reader form_page: String?
+
+              def form_page=: (String) -> String
+
+              attr_reader form_sent_at: Integer?
+
+              def form_sent_at=: (Integer) -> Integer
+
+              attr_reader form_type: Integer?
+
+              def form_type=: (Integer) -> Integer
+
+              attr_reader ip: String?
+
+              def ip=: (String) -> String
+
+              attr_reader referer: String?
+
+              def referer=: (String) -> String
+
+              attr_reader visitor_uid: String?
+
+              def visitor_uid=: (String) -> String
+
+              def initialize: (
+                ?form_id: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Metadata::form_id,
+                ?form_name: String,
+                ?form_page: String,
+                ?form_sent_at: Integer,
+                ?form_type: Integer,
+                ?ip: String,
+                ?referer: String,
+                ?visitor_uid: String
+              ) -> void
+
+              def to_hash: -> {
+                form_id: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Metadata::form_id,
+                form_name: String,
+                form_page: String,
+                form_sent_at: Integer,
+                form_type: Integer,
+                ip: String,
+                referer: String,
+                visitor_uid: String
+              }
+
+              type form_id = String | Integer
+
+              module FormID
+                extend Amocrm::Internal::Type::Union
+
+                def self?.variants: -> ::Array[Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Metadata::form_id]
+              end
+            end
+
+            type embedded =
+              {
+                companies: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Company],
+                contacts: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact],
+                leads: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead]
+              }
+
+            class Embedded < Amocrm::Internal::Type::BaseModel
+              attr_reader companies: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Company]?
+
+              def companies=: (
+                ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Company]
+              ) -> ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Company]
+
+              attr_reader contacts: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact]?
+
+              def contacts=: (
+                ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact]
+              ) -> ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact]
+
+              attr_reader leads: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead]?
+
+              def leads=: (
+                ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead]
+              ) -> ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead]
+
+              def initialize: (
+                ?companies: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Company],
+                ?contacts: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact],
+                ?leads: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead]
+              ) -> void
+
+              def to_hash: -> {
+                companies: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Company],
+                contacts: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact],
+                leads: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead]
+              }
+
+              type company = { name: String }
+
+              class Company < Amocrm::Internal::Type::BaseModel
+                attr_reader name: String?
+
+                def name=: (String) -> String
+
+                def initialize: (?name: String) -> void
+
+                def to_hash: -> { name: String }
+              end
+
+              type contact =
+                {
+                  custom_fields_values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue],
+                  first_name: String,
+                  last_name: String,
+                  name: String
+                }
+
+              class Contact < Amocrm::Internal::Type::BaseModel
+                attr_reader custom_fields_values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue]?
+
+                def custom_fields_values=: (
+                  ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue]
+                ) -> ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue]
+
+                attr_reader first_name: String?
+
+                def first_name=: (String) -> String
+
+                attr_reader last_name: String?
+
+                def last_name=: (String) -> String
+
+                attr_reader name: String?
+
+                def name=: (String) -> String
+
+                def initialize: (
+                  ?custom_fields_values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue],
+                  ?first_name: String,
+                  ?last_name: String,
+                  ?name: String
+                ) -> void
+
+                def to_hash: -> {
+                  custom_fields_values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue],
+                  first_name: String,
+                  last_name: String,
+                  name: String
+                }
+
+                type custom_fields_value =
+                  {
+                    values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue::Value],
+                    field_code: String,
+                    field_id: Integer
+                  }
+
+                class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+                  attr_accessor values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue::Value]
+
+                  attr_reader field_code: String?
+
+                  def field_code=: (String) -> String
+
+                  attr_reader field_id: Integer?
+
+                  def field_id=: (Integer) -> Integer
+
+                  def initialize: (
+                    values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue::Value],
+                    ?field_code: String,
+                    ?field_id: Integer
+                  ) -> void
+
+                  def to_hash: -> {
+                    values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue::Value],
+                    field_code: String,
+                    field_id: Integer
+                  }
+
+                  type value =
+                    {
+                      value: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue::Value::value,
+                      enum_code: String,
+                      enum_id: Integer
+                    }
+
+                  class Value < Amocrm::Internal::Type::BaseModel
+                    attr_accessor value: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue::Value::value
+
+                    attr_reader enum_code: String?
+
+                    def enum_code=: (String) -> String
+
+                    attr_reader enum_id: Integer?
+
+                    def enum_id=: (Integer) -> Integer
+
+                    def initialize: (
+                      value: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue::Value::value,
+                      ?enum_code: String,
+                      ?enum_id: Integer
+                    ) -> void
+
+                    def to_hash: -> {
+                      value: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue::Value::value,
+                      enum_code: String,
+                      enum_id: Integer
+                    }
+
+                    type value = String | Integer | bool
+
+                    module Value
+                      extend Amocrm::Internal::Type::Union
+
+                      def self?.variants: -> ::Array[Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Contact::CustomFieldsValue::Value::value]
+                    end
+                  end
+                end
+              end
+
+              type lead =
+                {
+                  _embedded: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded,
+                  custom_fields_values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue],
+                  name: String,
+                  price: Integer,
+                  visitor_uid: String
+                }
+
+              class Lead < Amocrm::Internal::Type::BaseModel
+                attr_reader _embedded: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded?
+
+                def _embedded=: (
+                  Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded
+                ) -> Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded
+
+                attr_reader custom_fields_values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue]?
+
+                def custom_fields_values=: (
+                  ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue]
+                ) -> ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue]
+
+                attr_reader name: String?
+
+                def name=: (String) -> String
+
+                attr_reader price: Integer?
+
+                def price=: (Integer) -> Integer
+
+                attr_reader visitor_uid: String?
+
+                def visitor_uid=: (String) -> String
+
+                def initialize: (
+                  ?_embedded: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded,
+                  ?custom_fields_values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue],
+                  ?name: String,
+                  ?price: Integer,
+                  ?visitor_uid: String
+                ) -> void
+
+                def to_hash: -> {
+                  _embedded: Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded,
+                  custom_fields_values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue],
+                  name: String,
+                  price: Integer,
+                  visitor_uid: String
+                }
+
+                type embedded =
+                  {
+                    tags: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded::Tag]
+                  }
+
+                class Embedded < Amocrm::Internal::Type::BaseModel
+                  attr_reader tags: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded::Tag]?
+
+                  def tags=: (
+                    ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded::Tag]
+                  ) -> ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded::Tag]
+
+                  def initialize: (
+                    ?tags: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded::Tag]
+                  ) -> void
+
+                  def to_hash: -> {
+                    tags: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::Embedded::Tag]
+                  }
+
+                  type tag = { id: Integer, name: String }
+
+                  class Tag < Amocrm::Internal::Type::BaseModel
+                    attr_reader id: Integer?
+
+                    def id=: (Integer) -> Integer
+
+                    attr_reader name: String?
+
+                    def name=: (String) -> String
+
+                    def initialize: (?id: Integer, ?name: String) -> void
+
+                    def to_hash: -> { id: Integer, name: String }
+                  end
+                end
+
+                type custom_fields_value =
+                  {
+                    values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue::Value],
+                    field_code: String,
+                    field_id: Integer
+                  }
+
+                class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+                  attr_accessor values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue::Value]
+
+                  attr_reader field_code: String?
+
+                  def field_code=: (String) -> String
+
+                  attr_reader field_id: Integer?
+
+                  def field_id=: (Integer) -> Integer
+
+                  def initialize: (
+                    values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue::Value],
+                    ?field_code: String,
+                    ?field_id: Integer
+                  ) -> void
+
+                  def to_hash: -> {
+                    values: ::Array[Amocrm::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue::Value],
+                    field_code: String,
+                    field_id: Integer
+                  }
+
+                  type value =
+                    {
+                      value: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue::Value::value,
+                      enum_code: String,
+                      enum_id: Integer
+                    }
+
+                  class Value < Amocrm::Internal::Type::BaseModel
+                    attr_accessor value: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue::Value::value
+
+                    attr_reader enum_code: String?
+
+                    def enum_code=: (String) -> String
+
+                    attr_reader enum_id: Integer?
+
+                    def enum_id=: (Integer) -> Integer
+
+                    def initialize: (
+                      value: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue::Value::value,
+                      ?enum_code: String,
+                      ?enum_id: Integer
+                    ) -> void
+
+                    def to_hash: -> {
+                      value: Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue::Value::value,
+                      enum_code: String,
+                      enum_id: Integer
+                    }
+
+                    type value = String | Integer | bool
+
+                    module Value
+                      extend Amocrm::Internal::Type::Union
+
+                      def self?.variants: -> ::Array[Amocrm::Models::V4::Leads::UnsortedCreateFormsParams::Body::Embedded::Lead::CustomFieldsValue::Value::value]
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

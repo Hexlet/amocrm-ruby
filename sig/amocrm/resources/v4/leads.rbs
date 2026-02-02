@@ -1,0 +1,11 @@
+module Amocrm
+  module Resources
+    class V4
+      class Leads
+        attr_reader unsorted: Amocrm::Resources::V4::Leads::Unsorted
+
+        def initialize: (client: Amocrm::Client) -> void
+      end
+    end
+  end
+end
