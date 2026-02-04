@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 (2026-02-03)
+
+Full Changelog: [v0.1.0...v0.1.1](https://github.com/Hexlet/amocrm-ruby/compare/v0.1.0...v0.1.1)
+
+### Bug Fixes
+
+* **client:** always add content-length to post body, even when empty ([5230ae8](https://github.com/Hexlet/amocrm-ruby/commit/5230ae8272f94ff91ea7ea29915a05b7ed29769b))
+
 ## 0.1.0 (2026-02-02)
 
 Full Changelog: [v0.0.2...v0.1.0](https://github.com/Hexlet/amocrm-ruby/compare/v0.0.2...v0.1.0)
