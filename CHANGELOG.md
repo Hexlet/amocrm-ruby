@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.2 (2026-02-04)
+
+Full Changelog: [v0.1.1...v0.1.2](https://github.com/Hexlet/amocrm-ruby/compare/v0.1.1...v0.1.2)
+
+### Chores
+
+* **docs:** remove www prefix ([6183004](https://github.com/Hexlet/amocrm-ruby/commit/618300402064e68065600cfa9cf7cbd1e7c2265c))
+
 ## 0.1.1 (2026-02-03)
 
 Full Changelog: [v0.1.0...v0.1.1](https://github.com/Hexlet/amocrm-ruby/compare/v0.1.0...v0.1.1)
