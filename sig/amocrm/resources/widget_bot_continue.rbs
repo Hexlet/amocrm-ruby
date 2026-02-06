@@ -1,0 +1,16 @@
+module Amocrm
+  module Resources
+    class WidgetBotContinue
+      def continue: (
+        Integer continue_id,
+        bot_type: Amocrm::Models::WidgetBotContinueContinueParams::bot_type,
+        bot_id: Integer,
+        ?data: top,
+        ?execute_handlers: ::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::widget_bot_continue_continue_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

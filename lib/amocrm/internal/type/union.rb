@@ -6,14 +6,14 @@ module Amocrm
       # @api private
       #
       # @example
-      #   # `v2_salesbot_run_response` is a `Amocrm::Models::V2SalesbotRunResponse`
-      #   case v2_salesbot_run_response
-      #   when Amocrm::Models::V2SalesbotRunResponse::SalesbotRunResponse
-      #     puts(v2_salesbot_run_response._links)
-      #   when Amocrm::Models::V2SalesbotRunResponse::Problem
-      #     puts(v2_salesbot_run_response.detail)
+      #   # `account_get_response` is a `Amocrm::Models::AccountGetResponse`
+      #   case account_get_response
+      #   when Amocrm::Models::AccountGetResponse::AccountInfo
+      #     puts(account_get_response.id)
+      #   when Amocrm::Models::AccountGetResponse::Problem
+      #     puts(account_get_response.detail)
       #   else
-      #     puts(v2_salesbot_run_response)
+      #     puts(account_get_response)
       #   end
       module Union
         include Amocrm::Internal::Type::Converter

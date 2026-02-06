@@ -1,0 +1,46 @@
+module Amocrm
+  module Models
+    type entity_note_get_by_id_params =
+      {
+        entity_type: Amocrm::Models::EntityNoteGetByIDParams::entity_type,
+        with: String
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class EntityNoteGetByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor entity_type: Amocrm::Models::EntityNoteGetByIDParams::entity_type
+
+      attr_reader with: String?
+
+      def with=: (String) -> String
+
+      def initialize: (
+        entity_type: Amocrm::Models::EntityNoteGetByIDParams::entity_type,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        entity_type: Amocrm::Models::EntityNoteGetByIDParams::entity_type,
+        with: String,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type entity_type = :leads | :contacts | :companies | :customers
+
+      module EntityType
+        extend Amocrm::Internal::Type::Enum
+
+        LEADS: :leads
+        CONTACTS: :contacts
+        COMPANIES: :companies
+        CUSTOMERS: :customers
+
+        def self?.values: -> ::Array[Amocrm::Models::EntityNoteGetByIDParams::entity_type]
+      end
+    end
+  end
+end

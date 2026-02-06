@@ -1,0 +1,74 @@
+module Amocrm
+  module Models
+    type widget_bot_continue_continue_params =
+      {
+        bot_type: Amocrm::Models::WidgetBotContinueContinueParams::bot_type,
+        bot_id: Integer,
+        data: top,
+        execute_handlers: ::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler]
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class WidgetBotContinueContinueParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor bot_type: Amocrm::Models::WidgetBotContinueContinueParams::bot_type
+
+      attr_accessor bot_id: Integer
+
+      attr_reader data: top?
+
+      def data=: (top) -> top
+
+      attr_reader execute_handlers: ::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler]?
+
+      def execute_handlers=: (
+        ::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler]
+      ) -> ::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler]
+
+      def initialize: (
+        bot_type: Amocrm::Models::WidgetBotContinueContinueParams::bot_type,
+        bot_id: Integer,
+        ?data: top,
+        ?execute_handlers: ::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        bot_type: Amocrm::Models::WidgetBotContinueContinueParams::bot_type,
+        bot_id: Integer,
+        data: top,
+        execute_handlers: ::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type bot_type = :salesbot | :marketingbot
+
+      module BotType
+        extend Amocrm::Internal::Type::Enum
+
+        SALESBOT: :salesbot
+        MARKETINGBOT: :marketingbot
+
+        def self?.values: -> ::Array[Amocrm::Models::WidgetBotContinueContinueParams::bot_type]
+      end
+
+      type execute_handler = { handler: String, params: top }
+
+      class ExecuteHandler < Amocrm::Internal::Type::BaseModel
+        attr_reader handler: String?
+
+        def handler=: (String) -> String
+
+        attr_reader params: top?
+
+        def params=: (top) -> top
+
+        def initialize: (?handler: String, ?params: top) -> void
+
+        def to_hash: -> { handler: String, params: top }
+      end
+    end
+  end
+end

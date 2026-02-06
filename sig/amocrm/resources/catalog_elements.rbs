@@ -1,0 +1,44 @@
+module Amocrm
+  module Resources
+    class CatalogElements
+      def create: (
+        Integer catalog_id,
+        body: ::Array[Amocrm::CatalogElementCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::catalog_element_create_response
+
+      def update: (
+        Integer catalog_id,
+        body: ::Array[Amocrm::CatalogElementUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::catalog_element_update_response
+
+      def list: (
+        Integer catalog_id,
+        ?filter: top,
+        ?limit: Integer,
+        ?page: Integer,
+        ?query: Amocrm::Models::CatalogElementListParams::query,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::catalog_element_list_response
+
+      def get_by_id: (
+        Integer id,
+        catalog_id: Integer,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::catalog_element_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        catalog_id: Integer,
+        ?custom_fields_values: ::Array[Amocrm::CatalogElementUpdateByIDParams::CustomFieldsValue],
+        ?name: String,
+        ?request_id: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::catalog_element_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

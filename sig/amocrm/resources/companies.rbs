@@ -1,0 +1,48 @@
+module Amocrm
+  module Resources
+    class Companies
+      def create: (
+        body: ::Array[Amocrm::CompanyCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::company_create_response
+
+      def update: (
+        body: ::Array[Amocrm::CompanyUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::company_update_response
+
+      def list: (
+        ?filter: top,
+        ?limit: Integer,
+        ?order: top,
+        ?page: Integer,
+        ?query: Amocrm::Models::CompanyListParams::query,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::company_list_response
+
+      def get_by_id: (
+        Integer id,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::company_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        ?_embedded: Amocrm::CompanyUpdateByIDParams::Embedded,
+        ?created_at: Integer,
+        ?created_by: Integer,
+        ?custom_fields_values: ::Array[Amocrm::CompanyUpdateByIDParams::CustomFieldsValue],
+        ?name: String,
+        ?responsible_user_id: Integer,
+        ?tags_to_add: ::Array[Amocrm::CompanyUpdateByIDParams::TagsToAdd],
+        ?tags_to_delete: ::Array[Amocrm::CompanyUpdateByIDParams::TagsToDelete],
+        ?updated_at: Integer,
+        ?updated_by: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::company_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

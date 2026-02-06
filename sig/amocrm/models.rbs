@@ -1,281 +1,281 @@
 module Amocrm
-  class V2SalesbotRunParams = Amocrm::Models::V2SalesbotRunParams
+  class AccountGetParams = Amocrm::Models::AccountGetParams
 
-  class V4AccountGetParams = Amocrm::Models::V4AccountGetParams
+  class CallCreateParams = Amocrm::Models::CallCreateParams
 
-  class V4CallsCreateParams = Amocrm::Models::V4CallsCreateParams
+  class CatalogCreateParams = Amocrm::Models::CatalogCreateParams
 
-  class V4CatalogElementsCreateParams = Amocrm::Models::V4CatalogElementsCreateParams
+  class CatalogElementCreateParams = Amocrm::Models::CatalogElementCreateParams
 
-  class V4CatalogElementsGetByIDParams = Amocrm::Models::V4CatalogElementsGetByIDParams
+  class CatalogElementGetByIDParams = Amocrm::Models::CatalogElementGetByIDParams
 
-  class V4CatalogElementsListParams = Amocrm::Models::V4CatalogElementsListParams
+  class CatalogElementListParams = Amocrm::Models::CatalogElementListParams
 
-  class V4CatalogElementsUpdateByIDParams = Amocrm::Models::V4CatalogElementsUpdateByIDParams
+  class CatalogElementUpdateByIDParams = Amocrm::Models::CatalogElementUpdateByIDParams
 
-  class V4CatalogElementsUpdateParams = Amocrm::Models::V4CatalogElementsUpdateParams
+  class CatalogElementUpdateParams = Amocrm::Models::CatalogElementUpdateParams
 
-  class V4CatalogsCreateParams = Amocrm::Models::V4CatalogsCreateParams
+  class CatalogGetByIDParams = Amocrm::Models::CatalogGetByIDParams
 
-  class V4CatalogsGetByIDParams = Amocrm::Models::V4CatalogsGetByIDParams
+  class CatalogListParams = Amocrm::Models::CatalogListParams
 
-  class V4CatalogsListParams = Amocrm::Models::V4CatalogsListParams
+  class CatalogUpdateByIDParams = Amocrm::Models::CatalogUpdateByIDParams
 
-  class V4CatalogsUpdateByIDParams = Amocrm::Models::V4CatalogsUpdateByIDParams
+  class CatalogUpdateParams = Amocrm::Models::CatalogUpdateParams
 
-  class V4CatalogsUpdateParams = Amocrm::Models::V4CatalogsUpdateParams
+  class CompanyCreateParams = Amocrm::Models::CompanyCreateParams
 
-  class V4CompaniesCreateParams = Amocrm::Models::V4CompaniesCreateParams
+  class CompanyGetByIDParams = Amocrm::Models::CompanyGetByIDParams
 
-  class V4CompaniesGetByIDParams = Amocrm::Models::V4CompaniesGetByIDParams
+  class CompanyListParams = Amocrm::Models::CompanyListParams
 
-  class V4CompaniesListParams = Amocrm::Models::V4CompaniesListParams
+  class CompanyUpdateByIDParams = Amocrm::Models::CompanyUpdateByIDParams
 
-  class V4CompaniesUpdateByIDParams = Amocrm::Models::V4CompaniesUpdateByIDParams
+  class CompanyUpdateParams = Amocrm::Models::CompanyUpdateParams
 
-  class V4CompaniesUpdateParams = Amocrm::Models::V4CompaniesUpdateParams
+  class ContactChatLinkParams = Amocrm::Models::ContactChatLinkParams
 
-  class V4ContactChatsLinkParams = Amocrm::Models::V4ContactChatsLinkParams
+  class ContactChatListParams = Amocrm::Models::ContactChatListParams
 
-  class V4ContactChatsListParams = Amocrm::Models::V4ContactChatsListParams
+  class ContactCreateParams = Amocrm::Models::ContactCreateParams
 
-  class V4ContactsCreateParams = Amocrm::Models::V4ContactsCreateParams
+  class ContactGetByIDParams = Amocrm::Models::ContactGetByIDParams
 
-  class V4ContactsGetByIDParams = Amocrm::Models::V4ContactsGetByIDParams
+  class ContactListParams = Amocrm::Models::ContactListParams
 
-  class V4ContactsListParams = Amocrm::Models::V4ContactsListParams
+  class ContactUpdateByIDParams = Amocrm::Models::ContactUpdateByIDParams
 
-  class V4ContactsUpdateByIDParams = Amocrm::Models::V4ContactsUpdateByIDParams
+  class ContactUpdateParams = Amocrm::Models::ContactUpdateParams
 
-  class V4ContactsUpdateParams = Amocrm::Models::V4ContactsUpdateParams
+  class CustomerBonusPointChangeParams = Amocrm::Models::CustomerBonusPointChangeParams
 
-  class V4CustomerBonusPointsChangeParams = Amocrm::Models::V4CustomerBonusPointsChangeParams
+  class CustomerCreateParams = Amocrm::Models::CustomerCreateParams
 
-  class V4CustomersCreateParams = Amocrm::Models::V4CustomersCreateParams
+  class CustomerGetByIDParams = Amocrm::Models::CustomerGetByIDParams
 
-  class V4CustomerSegmentsCreateParams = Amocrm::Models::V4CustomerSegmentsCreateParams
+  class CustomerListParams = Amocrm::Models::CustomerListParams
 
-  class V4CustomerSegmentsDeleteByIDParams = Amocrm::Models::V4CustomerSegmentsDeleteByIDParams
+  class CustomerSegmentCreateParams = Amocrm::Models::CustomerSegmentCreateParams
 
-  class V4CustomerSegmentsGetByIDParams = Amocrm::Models::V4CustomerSegmentsGetByIDParams
+  class CustomerSegmentDeleteByIDParams = Amocrm::Models::CustomerSegmentDeleteByIDParams
 
-  class V4CustomerSegmentsListParams = Amocrm::Models::V4CustomerSegmentsListParams
+  class CustomerSegmentGetByIDParams = Amocrm::Models::CustomerSegmentGetByIDParams
 
-  class V4CustomerSegmentsUpdateByIDParams = Amocrm::Models::V4CustomerSegmentsUpdateByIDParams
+  class CustomerSegmentListParams = Amocrm::Models::CustomerSegmentListParams
 
-  class V4CustomersGetByIDParams = Amocrm::Models::V4CustomersGetByIDParams
+  class CustomerSegmentUpdateByIDParams = Amocrm::Models::CustomerSegmentUpdateByIDParams
 
-  class V4CustomersListParams = Amocrm::Models::V4CustomersListParams
+  class CustomersModeSetModeParams = Amocrm::Models::CustomersModeSetModeParams
 
-  class V4CustomersModeSetModeParams = Amocrm::Models::V4CustomersModeSetModeParams
+  class CustomerStatusCreateParams = Amocrm::Models::CustomerStatusCreateParams
 
-  class V4CustomerStatusesCreateParams = Amocrm::Models::V4CustomerStatusesCreateParams
+  class CustomerStatusDeleteByIDParams = Amocrm::Models::CustomerStatusDeleteByIDParams
 
-  class V4CustomerStatusesDeleteByIDParams = Amocrm::Models::V4CustomerStatusesDeleteByIDParams
+  class CustomerStatusGetByIDParams = Amocrm::Models::CustomerStatusGetByIDParams
 
-  class V4CustomerStatusesGetByIDParams = Amocrm::Models::V4CustomerStatusesGetByIDParams
+  class CustomerStatusListParams = Amocrm::Models::CustomerStatusListParams
 
-  class V4CustomerStatusesListParams = Amocrm::Models::V4CustomerStatusesListParams
+  class CustomerStatusUpdateByIDParams = Amocrm::Models::CustomerStatusUpdateByIDParams
 
-  class V4CustomerStatusesUpdateByIDParams = Amocrm::Models::V4CustomerStatusesUpdateByIDParams
+  class CustomerTransactionCreateParams = Amocrm::Models::CustomerTransactionCreateParams
 
-  class V4CustomersUpdateByIDParams = Amocrm::Models::V4CustomersUpdateByIDParams
+  class CustomerTransactionDeleteByIDParams = Amocrm::Models::CustomerTransactionDeleteByIDParams
 
-  class V4CustomersUpdateParams = Amocrm::Models::V4CustomersUpdateParams
+  class CustomerTransactionListByCustomerParams = Amocrm::Models::CustomerTransactionListByCustomerParams
 
-  class V4CustomerTransactionsCreateParams = Amocrm::Models::V4CustomerTransactionsCreateParams
+  class CustomerTransactionListParams = Amocrm::Models::CustomerTransactionListParams
 
-  class V4CustomerTransactionsDeleteByIDParams = Amocrm::Models::V4CustomerTransactionsDeleteByIDParams
+  class CustomerUpdateByIDParams = Amocrm::Models::CustomerUpdateByIDParams
 
-  class V4CustomerTransactionsListByCustomerParams = Amocrm::Models::V4CustomerTransactionsListByCustomerParams
+  class CustomerUpdateParams = Amocrm::Models::CustomerUpdateParams
 
-  class V4CustomerTransactionsListParams = Amocrm::Models::V4CustomerTransactionsListParams
+  class CustomFieldCreateParams = Amocrm::Models::CustomFieldCreateParams
 
-  class V4CustomFieldGroupsCreateParams = Amocrm::Models::V4CustomFieldGroupsCreateParams
+  class CustomFieldDeleteByIDParams = Amocrm::Models::CustomFieldDeleteByIDParams
 
-  class V4CustomFieldGroupsDeleteByIDParams = Amocrm::Models::V4CustomFieldGroupsDeleteByIDParams
+  class CustomFieldGetByIDParams = Amocrm::Models::CustomFieldGetByIDParams
 
-  class V4CustomFieldGroupsGetByIDParams = Amocrm::Models::V4CustomFieldGroupsGetByIDParams
+  class CustomFieldGroupCreateParams = Amocrm::Models::CustomFieldGroupCreateParams
 
-  class V4CustomFieldGroupsListParams = Amocrm::Models::V4CustomFieldGroupsListParams
+  class CustomFieldGroupDeleteByIDParams = Amocrm::Models::CustomFieldGroupDeleteByIDParams
 
-  class V4CustomFieldGroupsUpdateByIDParams = Amocrm::Models::V4CustomFieldGroupsUpdateByIDParams
+  class CustomFieldGroupGetByIDParams = Amocrm::Models::CustomFieldGroupGetByIDParams
 
-  class V4CustomFieldsCreateParams = Amocrm::Models::V4CustomFieldsCreateParams
+  class CustomFieldGroupListParams = Amocrm::Models::CustomFieldGroupListParams
 
-  class V4CustomFieldsDeleteByIDParams = Amocrm::Models::V4CustomFieldsDeleteByIDParams
+  class CustomFieldGroupUpdateByIDParams = Amocrm::Models::CustomFieldGroupUpdateByIDParams
 
-  class V4CustomFieldsGetByIDParams = Amocrm::Models::V4CustomFieldsGetByIDParams
+  class CustomFieldListParams = Amocrm::Models::CustomFieldListParams
 
-  class V4CustomFieldsListParams = Amocrm::Models::V4CustomFieldsListParams
+  class CustomFieldUpdateByIDParams = Amocrm::Models::CustomFieldUpdateByIDParams
 
-  class V4CustomFieldsUpdateByIDParams = Amocrm::Models::V4CustomFieldsUpdateByIDParams
+  class CustomFieldUpdateParams = Amocrm::Models::CustomFieldUpdateParams
 
-  class V4CustomFieldsUpdateParams = Amocrm::Models::V4CustomFieldsUpdateParams
+  class EntityFollowerAddParams = Amocrm::Models::EntityFollowerAddParams
 
-  class V4EntityFollowersAddParams = Amocrm::Models::V4EntityFollowersAddParams
+  class EntityFollowerListParams = Amocrm::Models::EntityFollowerListParams
 
-  class V4EntityFollowersListParams = Amocrm::Models::V4EntityFollowersListParams
+  class EntityFollowerRemoveParams = Amocrm::Models::EntityFollowerRemoveParams
 
-  class V4EntityFollowersRemoveParams = Amocrm::Models::V4EntityFollowersRemoveParams
+  class EntityLinkLinkByEntityParams = Amocrm::Models::EntityLinkLinkByEntityParams
 
-  class V4EntityLinksLinkByEntityParams = Amocrm::Models::V4EntityLinksLinkByEntityParams
+  class EntityLinkLinkParams = Amocrm::Models::EntityLinkLinkParams
 
-  class V4EntityLinksLinkParams = Amocrm::Models::V4EntityLinksLinkParams
+  class EntityLinkListByEntityParams = Amocrm::Models::EntityLinkListByEntityParams
 
-  class V4EntityLinksListByEntityParams = Amocrm::Models::V4EntityLinksListByEntityParams
+  class EntityLinkListParams = Amocrm::Models::EntityLinkListParams
 
-  class V4EntityLinksListParams = Amocrm::Models::V4EntityLinksListParams
+  class EntityLinkUnlinkByEntityParams = Amocrm::Models::EntityLinkUnlinkByEntityParams
 
-  class V4EntityLinksUnlinkByEntityParams = Amocrm::Models::V4EntityLinksUnlinkByEntityParams
+  class EntityLinkUnlinkParams = Amocrm::Models::EntityLinkUnlinkParams
 
-  class V4EntityLinksUnlinkParams = Amocrm::Models::V4EntityLinksUnlinkParams
+  class EntityNoteCreateParams = Amocrm::Models::EntityNoteCreateParams
 
-  class V4EntityNotesByParentCreateByParentParams = Amocrm::Models::V4EntityNotesByParentCreateByParentParams
+  class EntityNoteGetByIDParams = Amocrm::Models::EntityNoteGetByIDParams
 
-  class V4EntityNotesByParentGetByParentIDParams = Amocrm::Models::V4EntityNotesByParentGetByParentIDParams
+  class EntityNoteListParams = Amocrm::Models::EntityNoteListParams
 
-  class V4EntityNotesByParentListByParentParams = Amocrm::Models::V4EntityNotesByParentListByParentParams
+  class EntityNotePinParams = Amocrm::Models::EntityNotePinParams
 
-  class V4EntityNotesByParentUpdateByParentIDParams = Amocrm::Models::V4EntityNotesByParentUpdateByParentIDParams
+  class EntityNotesByParentCreateByParentParams = Amocrm::Models::EntityNotesByParentCreateByParentParams
 
-  class V4EntityNotesByParentUpdateByParentParams = Amocrm::Models::V4EntityNotesByParentUpdateByParentParams
+  class EntityNotesByParentGetByParentIDParams = Amocrm::Models::EntityNotesByParentGetByParentIDParams
 
-  class V4EntityNotesCreateParams = Amocrm::Models::V4EntityNotesCreateParams
+  class EntityNotesByParentListByParentParams = Amocrm::Models::EntityNotesByParentListByParentParams
 
-  class V4EntityNotesGetByIDParams = Amocrm::Models::V4EntityNotesGetByIDParams
+  class EntityNotesByParentUpdateByParentIDParams = Amocrm::Models::EntityNotesByParentUpdateByParentIDParams
 
-  class V4EntityNotesListParams = Amocrm::Models::V4EntityNotesListParams
+  class EntityNotesByParentUpdateByParentParams = Amocrm::Models::EntityNotesByParentUpdateByParentParams
 
-  class V4EntityNotesPinParams = Amocrm::Models::V4EntityNotesPinParams
+  class EntityNoteUnpinParams = Amocrm::Models::EntityNoteUnpinParams
 
-  class V4EntityNotesUnpinParams = Amocrm::Models::V4EntityNotesUnpinParams
+  class EntityNoteUpdateByIDParams = Amocrm::Models::EntityNoteUpdateByIDParams
 
-  class V4EntityNotesUpdateByIDParams = Amocrm::Models::V4EntityNotesUpdateByIDParams
+  class EntityNoteUpdateParams = Amocrm::Models::EntityNoteUpdateParams
 
-  class V4EntityNotesUpdateParams = Amocrm::Models::V4EntityNotesUpdateParams
+  class EventGetByIDParams = Amocrm::Models::EventGetByIDParams
 
-  class V4EventsGetByIDParams = Amocrm::Models::V4EventsGetByIDParams
+  class EventListParams = Amocrm::Models::EventListParams
 
-  class V4EventsListParams = Amocrm::Models::V4EventsListParams
+  class EventListTypesParams = Amocrm::Models::EventListTypesParams
 
-  class V4EventsListTypesParams = Amocrm::Models::V4EventsListTypesParams
+  class LeadCreateComplexParams = Amocrm::Models::LeadCreateComplexParams
 
-  class V4LeadsCreateComplexParams = Amocrm::Models::V4LeadsCreateComplexParams
+  class LeadCreateParams = Amocrm::Models::LeadCreateParams
 
-  class V4LeadsCreateParams = Amocrm::Models::V4LeadsCreateParams
+  class LeadGetByIDParams = Amocrm::Models::LeadGetByIDParams
 
-  class V4LeadsGetByIDParams = Amocrm::Models::V4LeadsGetByIDParams
+  class LeadListParams = Amocrm::Models::LeadListParams
 
-  class V4LeadsListParams = Amocrm::Models::V4LeadsListParams
+  class LeadUpdateByIDParams = Amocrm::Models::LeadUpdateByIDParams
 
-  class V4LeadsUpdateByIDParams = Amocrm::Models::V4LeadsUpdateByIDParams
+  class LeadUpdateParams = Amocrm::Models::LeadUpdateParams
 
-  class V4LeadsUpdateParams = Amocrm::Models::V4LeadsUpdateParams
+  class PipelineCreateParams = Amocrm::Models::PipelineCreateParams
 
-  class V4PipelinesCreateParams = Amocrm::Models::V4PipelinesCreateParams
+  class PipelineDeleteByIDParams = Amocrm::Models::PipelineDeleteByIDParams
 
-  class V4PipelinesDeleteByIDParams = Amocrm::Models::V4PipelinesDeleteByIDParams
+  class PipelineGetByIDParams = Amocrm::Models::PipelineGetByIDParams
 
-  class V4PipelinesGetByIDParams = Amocrm::Models::V4PipelinesGetByIDParams
+  class PipelineListParams = Amocrm::Models::PipelineListParams
 
-  class V4PipelinesListParams = Amocrm::Models::V4PipelinesListParams
+  class PipelineStatusCreateParams = Amocrm::Models::PipelineStatusCreateParams
 
-  class V4PipelineStatusesCreateParams = Amocrm::Models::V4PipelineStatusesCreateParams
+  class PipelineStatusDeleteByIDParams = Amocrm::Models::PipelineStatusDeleteByIDParams
 
-  class V4PipelineStatusesDeleteByIDParams = Amocrm::Models::V4PipelineStatusesDeleteByIDParams
+  class PipelineStatusGetByIDParams = Amocrm::Models::PipelineStatusGetByIDParams
 
-  class V4PipelineStatusesGetByIDParams = Amocrm::Models::V4PipelineStatusesGetByIDParams
+  class PipelineStatusListParams = Amocrm::Models::PipelineStatusListParams
 
-  class V4PipelineStatusesListParams = Amocrm::Models::V4PipelineStatusesListParams
+  class PipelineStatusUpdateByIDParams = Amocrm::Models::PipelineStatusUpdateByIDParams
 
-  class V4PipelineStatusesUpdateByIDParams = Amocrm::Models::V4PipelineStatusesUpdateByIDParams
+  class PipelineStatusUpdateParams = Amocrm::Models::PipelineStatusUpdateParams
 
-  class V4PipelineStatusesUpdateParams = Amocrm::Models::V4PipelineStatusesUpdateParams
+  class PipelineUpdateByIDParams = Amocrm::Models::PipelineUpdateByIDParams
 
-  class V4PipelinesUpdateByIDParams = Amocrm::Models::V4PipelinesUpdateByIDParams
+  class PipelineUpdateParams = Amocrm::Models::PipelineUpdateParams
 
-  class V4PipelinesUpdateParams = Amocrm::Models::V4PipelinesUpdateParams
+  class RoleCreateParams = Amocrm::Models::RoleCreateParams
 
-  class V4RolesCreateParams = Amocrm::Models::V4RolesCreateParams
+  class RoleDeleteByIDParams = Amocrm::Models::RoleDeleteByIDParams
 
-  class V4RolesDeleteByIDParams = Amocrm::Models::V4RolesDeleteByIDParams
+  class RoleGetByIDParams = Amocrm::Models::RoleGetByIDParams
 
-  class V4RolesGetByIDParams = Amocrm::Models::V4RolesGetByIDParams
+  class RoleListParams = Amocrm::Models::RoleListParams
 
-  class V4RolesListParams = Amocrm::Models::V4RolesListParams
+  class RoleUpdateByIDParams = Amocrm::Models::RoleUpdateByIDParams
 
-  class V4RolesUpdateByIDParams = Amocrm::Models::V4RolesUpdateByIDParams
+  class SalesbotRunParams = Amocrm::Models::SalesbotRunParams
 
-  class V4ShortLinksCreateParams = Amocrm::Models::V4ShortLinksCreateParams
+  class ShortLinkCreateParams = Amocrm::Models::ShortLinkCreateParams
 
-  class V4SourcesCreateParams = Amocrm::Models::V4SourcesCreateParams
+  class SourceCreateParams = Amocrm::Models::SourceCreateParams
 
-  class V4SourcesDeleteByIDParams = Amocrm::Models::V4SourcesDeleteByIDParams
+  class SourceDeleteByIDParams = Amocrm::Models::SourceDeleteByIDParams
 
-  class V4SourcesDeleteParams = Amocrm::Models::V4SourcesDeleteParams
+  class SourceDeleteParams = Amocrm::Models::SourceDeleteParams
 
-  class V4SourcesGetByIDParams = Amocrm::Models::V4SourcesGetByIDParams
+  class SourceGetByIDParams = Amocrm::Models::SourceGetByIDParams
 
-  class V4SourcesListParams = Amocrm::Models::V4SourcesListParams
+  class SourceListParams = Amocrm::Models::SourceListParams
 
-  class V4SourcesUpdateByIDParams = Amocrm::Models::V4SourcesUpdateByIDParams
+  class SourceUpdateByIDParams = Amocrm::Models::SourceUpdateByIDParams
 
-  class V4SourcesUpdateParams = Amocrm::Models::V4SourcesUpdateParams
+  class SourceUpdateParams = Amocrm::Models::SourceUpdateParams
 
-  class V4TagsCreateParams = Amocrm::Models::V4TagsCreateParams
+  class TagCreateParams = Amocrm::Models::TagCreateParams
 
-  class V4TagsListParams = Amocrm::Models::V4TagsListParams
+  class TagListParams = Amocrm::Models::TagListParams
 
-  class V4TalksCloseParams = Amocrm::Models::V4TalksCloseParams
+  class TalkCloseParams = Amocrm::Models::TalkCloseParams
 
-  class V4TalksGetByIDParams = Amocrm::Models::V4TalksGetByIDParams
+  class TalkGetByIDParams = Amocrm::Models::TalkGetByIDParams
 
-  class V4TasksCreateParams = Amocrm::Models::V4TasksCreateParams
+  class TaskCreateParams = Amocrm::Models::TaskCreateParams
 
-  class V4TasksGetByIDParams = Amocrm::Models::V4TasksGetByIDParams
+  class TaskGetByIDParams = Amocrm::Models::TaskGetByIDParams
 
-  class V4TasksListParams = Amocrm::Models::V4TasksListParams
+  class TaskListParams = Amocrm::Models::TaskListParams
 
-  class V4TasksUpdateByIDParams = Amocrm::Models::V4TasksUpdateByIDParams
+  class TaskUpdateByIDParams = Amocrm::Models::TaskUpdateByIDParams
 
-  class V4TasksUpdateParams = Amocrm::Models::V4TasksUpdateParams
+  class TaskUpdateParams = Amocrm::Models::TaskUpdateParams
 
-  class V4UnsortedLeadsAcceptParams = Amocrm::Models::V4UnsortedLeadsAcceptParams
+  class UnsortedLeadAcceptParams = Amocrm::Models::UnsortedLeadAcceptParams
 
-  class V4UnsortedLeadsCreateFormsParams = Amocrm::Models::V4UnsortedLeadsCreateFormsParams
+  class UnsortedLeadCreateFormsParams = Amocrm::Models::UnsortedLeadCreateFormsParams
 
-  class V4UnsortedLeadsDeclineParams = Amocrm::Models::V4UnsortedLeadsDeclineParams
+  class UnsortedLeadDeclineParams = Amocrm::Models::UnsortedLeadDeclineParams
 
-  class V4UsersCreateParams = Amocrm::Models::V4UsersCreateParams
+  class UserCreateParams = Amocrm::Models::UserCreateParams
 
-  class V4UsersGetByIDParams = Amocrm::Models::V4UsersGetByIDParams
+  class UserGetByIDParams = Amocrm::Models::UserGetByIDParams
 
-  class V4UsersListParams = Amocrm::Models::V4UsersListParams
+  class UserListParams = Amocrm::Models::UserListParams
 
-  class V4WebhooksListParams = Amocrm::Models::V4WebhooksListParams
+  class WebhookListParams = Amocrm::Models::WebhookListParams
 
-  class V4WebhooksSubscribeParams = Amocrm::Models::V4WebhooksSubscribeParams
+  class WebhookSubscribeParams = Amocrm::Models::WebhookSubscribeParams
 
-  class V4WebhooksUnsubscribeParams = Amocrm::Models::V4WebhooksUnsubscribeParams
+  class WebhookUnsubscribeParams = Amocrm::Models::WebhookUnsubscribeParams
 
-  class V4WebsiteButtonsConnectOnlineChatParams = Amocrm::Models::V4WebsiteButtonsConnectOnlineChatParams
+  class WebsiteButtonConnectOnlineChatParams = Amocrm::Models::WebsiteButtonConnectOnlineChatParams
 
-  class V4WebsiteButtonsCreateParams = Amocrm::Models::V4WebsiteButtonsCreateParams
+  class WebsiteButtonCreateParams = Amocrm::Models::WebsiteButtonCreateParams
 
-  class V4WebsiteButtonsGetBySourceIDParams = Amocrm::Models::V4WebsiteButtonsGetBySourceIDParams
+  class WebsiteButtonGetBySourceIDParams = Amocrm::Models::WebsiteButtonGetBySourceIDParams
 
-  class V4WebsiteButtonsListParams = Amocrm::Models::V4WebsiteButtonsListParams
+  class WebsiteButtonListParams = Amocrm::Models::WebsiteButtonListParams
 
-  class V4WebsiteButtonsUpdateParams = Amocrm::Models::V4WebsiteButtonsUpdateParams
+  class WebsiteButtonUpdateParams = Amocrm::Models::WebsiteButtonUpdateParams
 
-  class V4WidgetBotContinueContinueParams = Amocrm::Models::V4WidgetBotContinueContinueParams
+  class WidgetBotContinueContinueParams = Amocrm::Models::WidgetBotContinueContinueParams
 
-  class V4WidgetsGetByCodeParams = Amocrm::Models::V4WidgetsGetByCodeParams
+  class WidgetGetByCodeParams = Amocrm::Models::WidgetGetByCodeParams
 
-  class V4WidgetsInstallParams = Amocrm::Models::V4WidgetsInstallParams
+  class WidgetInstallParams = Amocrm::Models::WidgetInstallParams
 
-  class V4WidgetsListParams = Amocrm::Models::V4WidgetsListParams
+  class WidgetListParams = Amocrm::Models::WidgetListParams
 
-  class V4WidgetsUninstallParams = Amocrm::Models::V4WidgetsUninstallParams
+  class WidgetUninstallParams = Amocrm::Models::WidgetUninstallParams
 end

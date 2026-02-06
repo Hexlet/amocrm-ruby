@@ -1,0 +1,29 @@
+module Amocrm
+  module Resources
+    class Widgets
+      def list: (
+        ?limit: Integer,
+        ?page: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::widget_list_response
+
+      def get_by_code: (
+        String widget_code,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::widget_get_by_code_response
+
+      def install: (
+        String widget_code,
+        body: top,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::widget_install_response
+
+      def uninstall: (
+        String widget_code,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::widget_uninstall_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,49 @@
+module Amocrm
+  module Resources
+    class EntityNotesByParent
+      def create_by_parent: (
+        Integer entity_id,
+        entity_type: Amocrm::Models::EntityNotesByParentCreateByParentParams::entity_type,
+        body: ::Array[Amocrm::EntityNotesByParentCreateByParentParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_notes_by_parent_create_by_parent_response
+
+      def get_by_parent_id: (
+        Integer note_id,
+        entity_type: Amocrm::Models::EntityNotesByParentGetByParentIDParams::entity_type,
+        entity_id: Integer,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_notes_by_parent_get_by_parent_id_response
+
+      def list_by_parent: (
+        Integer entity_id,
+        entity_type: Amocrm::Models::EntityNotesByParentListByParentParams::entity_type,
+        ?filter: top,
+        ?limit: Integer,
+        ?page: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_notes_by_parent_list_by_parent_response
+
+      def update_by_parent: (
+        Integer entity_id,
+        entity_type: Amocrm::Models::EntityNotesByParentUpdateByParentParams::entity_type,
+        body: ::Array[Amocrm::EntityNotesByParentUpdateByParentParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_notes_by_parent_update_by_parent_response
+
+      def update_by_parent_id: (
+        Integer note_id,
+        entity_type: Amocrm::Models::EntityNotesByParentUpdateByParentIDParams::entity_type,
+        ?body_entity_id: Integer,
+        ?note_type: String,
+        ?params: top,
+        ?updated_at: Integer,
+        ?updated_by: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_notes_by_parent_update_by_parent_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

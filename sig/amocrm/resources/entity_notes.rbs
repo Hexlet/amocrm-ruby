@@ -1,0 +1,57 @@
+module Amocrm
+  module Resources
+    class EntityNotes
+      def create: (
+        Amocrm::Models::EntityNoteCreateParams::entity_type entity_type,
+        body: ::Array[Amocrm::EntityNoteCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_note_create_response
+
+      def update: (
+        Amocrm::Models::EntityNoteUpdateParams::entity_type entity_type,
+        body: ::Array[Amocrm::EntityNoteUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_note_update_response
+
+      def list: (
+        Amocrm::Models::EntityNoteListParams::entity_type entity_type,
+        ?filter: top,
+        ?limit: Integer,
+        ?page: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_note_list_response
+
+      def get_by_id: (
+        Integer id,
+        entity_type: Amocrm::Models::EntityNoteGetByIDParams::entity_type,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_note_get_by_id_response
+
+      def pin: (
+        Integer id,
+        entity_type: Amocrm::Models::EntityNotePinParams::entity_type,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_note_pin_response
+
+      def unpin: (
+        Integer id,
+        entity_type: Amocrm::Models::EntityNoteUnpinParams::entity_type,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_note_unpin_response
+
+      def update_by_id: (
+        Integer id,
+        entity_type: Amocrm::Models::EntityNoteUpdateByIDParams::entity_type,
+        ?entity_id: Integer,
+        ?note_type: String,
+        ?params: top,
+        ?updated_at: Integer,
+        ?updated_by: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_note_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

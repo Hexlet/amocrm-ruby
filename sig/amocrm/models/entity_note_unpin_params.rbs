@@ -1,0 +1,37 @@
+module Amocrm
+  module Models
+    type entity_note_unpin_params =
+      { entity_type: Amocrm::Models::EntityNoteUnpinParams::entity_type }
+      & Amocrm::Internal::Type::request_parameters
+
+    class EntityNoteUnpinParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor entity_type: Amocrm::Models::EntityNoteUnpinParams::entity_type
+
+      def initialize: (
+        entity_type: Amocrm::Models::EntityNoteUnpinParams::entity_type,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        entity_type: Amocrm::Models::EntityNoteUnpinParams::entity_type,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type entity_type = :leads | :contacts | :companies | :customers
+
+      module EntityType
+        extend Amocrm::Internal::Type::Enum
+
+        LEADS: :leads
+        CONTACTS: :contacts
+        COMPANIES: :companies
+        CUSTOMERS: :customers
+
+        def self?.values: -> ::Array[Amocrm::Models::EntityNoteUnpinParams::entity_type]
+      end
+    end
+  end
+end

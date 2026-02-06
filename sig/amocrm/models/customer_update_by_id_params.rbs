@@ -1,0 +1,288 @@
+module Amocrm
+  module Models
+    type customer_update_by_id_params =
+      {
+        _embedded: Amocrm::CustomerUpdateByIDParams::Embedded,
+        custom_fields_values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue],
+        main_user_id: Integer,
+        name: String,
+        next_date: Integer,
+        next_price: Integer,
+        periodicity: Integer,
+        responsible_user_id: Integer,
+        status_id: Integer,
+        tags_to_add: ::Array[Amocrm::CustomerUpdateByIDParams::TagsToAdd],
+        tags_to_delete: ::Array[Amocrm::CustomerUpdateByIDParams::TagsToDelete],
+        updated_at: Integer,
+        updated_by: Integer
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class CustomerUpdateByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader _embedded: Amocrm::CustomerUpdateByIDParams::Embedded?
+
+      def _embedded=: (
+        Amocrm::CustomerUpdateByIDParams::Embedded
+      ) -> Amocrm::CustomerUpdateByIDParams::Embedded
+
+      attr_reader custom_fields_values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue]?
+
+      def custom_fields_values=: (
+        ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue]
+      ) -> ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue]
+
+      attr_reader main_user_id: Integer?
+
+      def main_user_id=: (Integer) -> Integer
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader next_date: Integer?
+
+      def next_date=: (Integer) -> Integer
+
+      attr_reader next_price: Integer?
+
+      def next_price=: (Integer) -> Integer
+
+      attr_reader periodicity: Integer?
+
+      def periodicity=: (Integer) -> Integer
+
+      attr_reader responsible_user_id: Integer?
+
+      def responsible_user_id=: (Integer) -> Integer
+
+      attr_reader status_id: Integer?
+
+      def status_id=: (Integer) -> Integer
+
+      attr_reader tags_to_add: ::Array[Amocrm::CustomerUpdateByIDParams::TagsToAdd]?
+
+      def tags_to_add=: (
+        ::Array[Amocrm::CustomerUpdateByIDParams::TagsToAdd]
+      ) -> ::Array[Amocrm::CustomerUpdateByIDParams::TagsToAdd]
+
+      attr_reader tags_to_delete: ::Array[Amocrm::CustomerUpdateByIDParams::TagsToDelete]?
+
+      def tags_to_delete=: (
+        ::Array[Amocrm::CustomerUpdateByIDParams::TagsToDelete]
+      ) -> ::Array[Amocrm::CustomerUpdateByIDParams::TagsToDelete]
+
+      attr_reader updated_at: Integer?
+
+      def updated_at=: (Integer) -> Integer
+
+      attr_reader updated_by: Integer?
+
+      def updated_by=: (Integer) -> Integer
+
+      def initialize: (
+        ?_embedded: Amocrm::CustomerUpdateByIDParams::Embedded,
+        ?custom_fields_values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue],
+        ?main_user_id: Integer,
+        ?name: String,
+        ?next_date: Integer,
+        ?next_price: Integer,
+        ?periodicity: Integer,
+        ?responsible_user_id: Integer,
+        ?status_id: Integer,
+        ?tags_to_add: ::Array[Amocrm::CustomerUpdateByIDParams::TagsToAdd],
+        ?tags_to_delete: ::Array[Amocrm::CustomerUpdateByIDParams::TagsToDelete],
+        ?updated_at: Integer,
+        ?updated_by: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        _embedded: Amocrm::CustomerUpdateByIDParams::Embedded,
+        custom_fields_values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue],
+        main_user_id: Integer,
+        name: String,
+        next_date: Integer,
+        next_price: Integer,
+        periodicity: Integer,
+        responsible_user_id: Integer,
+        status_id: Integer,
+        tags_to_add: ::Array[Amocrm::CustomerUpdateByIDParams::TagsToAdd],
+        tags_to_delete: ::Array[Amocrm::CustomerUpdateByIDParams::TagsToDelete],
+        updated_at: Integer,
+        updated_by: Integer,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type embedded =
+        {
+          segments: ::Array[Amocrm::CustomerUpdateByIDParams::Embedded::Segment]?,
+          tags: ::Array[Amocrm::CustomerUpdateByIDParams::Embedded::Tag]?
+        }
+
+      class Embedded < Amocrm::Internal::Type::BaseModel
+        attr_accessor segments: ::Array[Amocrm::CustomerUpdateByIDParams::Embedded::Segment]?
+
+        attr_accessor tags: ::Array[Amocrm::CustomerUpdateByIDParams::Embedded::Tag]?
+
+        def initialize: (
+          ?segments: ::Array[Amocrm::CustomerUpdateByIDParams::Embedded::Segment]?,
+          ?tags: ::Array[Amocrm::CustomerUpdateByIDParams::Embedded::Tag]?
+        ) -> void
+
+        def to_hash: -> {
+          segments: ::Array[Amocrm::CustomerUpdateByIDParams::Embedded::Segment]?,
+          tags: ::Array[Amocrm::CustomerUpdateByIDParams::Embedded::Tag]?
+        }
+
+        type segment = { id: Integer, _links: top }
+
+        class Segment < Amocrm::Internal::Type::BaseModel
+          attr_reader id: Integer?
+
+          def id=: (Integer) -> Integer
+
+          attr_reader _links: top?
+
+          def _links=: (top) -> top
+
+          def initialize: (?id: Integer, ?_links: top) -> void
+
+          def to_hash: -> { id: Integer, _links: top }
+        end
+
+        type tag = { id: Integer, color: String, name: String }
+
+        class Tag < Amocrm::Internal::Type::BaseModel
+          attr_reader id: Integer?
+
+          def id=: (Integer) -> Integer
+
+          attr_reader color: String?
+
+          def color=: (String) -> String
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (?id: Integer, ?color: String, ?name: String) -> void
+
+          def to_hash: -> { id: Integer, color: String, name: String }
+        end
+      end
+
+      type custom_fields_value =
+        {
+          values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue::Value],
+          field_code: String,
+          field_id: Integer
+        }
+
+      class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+        attr_accessor values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue::Value]
+
+        attr_reader field_code: String?
+
+        def field_code=: (String) -> String
+
+        attr_reader field_id: Integer?
+
+        def field_id=: (Integer) -> Integer
+
+        def initialize: (
+          values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue::Value],
+          ?field_code: String,
+          ?field_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue::Value],
+          field_code: String,
+          field_id: Integer
+        }
+
+        type value =
+          {
+            value: Amocrm::Models::CustomerUpdateByIDParams::CustomFieldsValue::Value::value,
+            enum_code: String,
+            enum_id: Integer
+          }
+
+        class Value < Amocrm::Internal::Type::BaseModel
+          attr_accessor value: Amocrm::Models::CustomerUpdateByIDParams::CustomFieldsValue::Value::value
+
+          attr_reader enum_code: String?
+
+          def enum_code=: (String) -> String
+
+          attr_reader enum_id: Integer?
+
+          def enum_id=: (Integer) -> Integer
+
+          def initialize: (
+            value: Amocrm::Models::CustomerUpdateByIDParams::CustomFieldsValue::Value::value,
+            ?enum_code: String,
+            ?enum_id: Integer
+          ) -> void
+
+          def to_hash: -> {
+            value: Amocrm::Models::CustomerUpdateByIDParams::CustomFieldsValue::Value::value,
+            enum_code: String,
+            enum_id: Integer
+          }
+
+          type value = String | Integer | bool
+
+          module Value
+            extend Amocrm::Internal::Type::Union
+
+            def self?.variants: -> ::Array[Amocrm::Models::CustomerUpdateByIDParams::CustomFieldsValue::Value::value]
+          end
+        end
+      end
+
+      type tags_to_add = { id: Integer, color: String, name: String }
+
+      class TagsToAdd < Amocrm::Internal::Type::BaseModel
+        attr_reader id: Integer?
+
+        def id=: (Integer) -> Integer
+
+        attr_reader color: String?
+
+        def color=: (String) -> String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        def initialize: (?id: Integer, ?color: String, ?name: String) -> void
+
+        def to_hash: -> { id: Integer, color: String, name: String }
+      end
+
+      type tags_to_delete = { id: Integer, color: String, name: String }
+
+      class TagsToDelete < Amocrm::Internal::Type::BaseModel
+        attr_reader id: Integer?
+
+        def id=: (Integer) -> Integer
+
+        attr_reader color: String?
+
+        def color=: (String) -> String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        def initialize: (?id: Integer, ?color: String, ?name: String) -> void
+
+        def to_hash: -> { id: Integer, color: String, name: String }
+      end
+    end
+  end
+end

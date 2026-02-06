@@ -1,0 +1,12 @@
+module Amocrm
+  module Resources
+    class Account
+      def get: (
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::account_get_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

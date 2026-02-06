@@ -1,0 +1,55 @@
+module Amocrm
+  module Resources
+    class CustomFields
+      def create: (
+        String entity_type,
+        body: ::Array[Amocrm::CustomFieldCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::custom_field_create_response
+
+      def update: (
+        String entity_type,
+        body: ::Array[Amocrm::CustomFieldUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::custom_field_update_response
+
+      def list: (
+        String entity_type,
+        ?limit: Integer,
+        ?page: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::custom_field_list_response
+
+      def delete_by_id: (
+        Integer id,
+        entity_type: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::custom_field_delete_by_id_response
+
+      def get_by_id: (
+        Integer id,
+        entity_type: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::custom_field_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        entity_type: String,
+        ?code: String,
+        ?enums: ::Array[top],
+        ?group_id: Integer,
+        ?is_deletable: bool,
+        ?is_multiple: bool,
+        ?is_required: bool,
+        ?is_visible: bool,
+        ?name: String,
+        ?settings: top,
+        ?sort: Integer,
+        ?type: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::custom_field_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

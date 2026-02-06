@@ -1,0 +1,35 @@
+module Amocrm
+  module Resources
+    class CustomerTransactions
+      def create: (
+        Integer customer_id,
+        body: ::Array[Amocrm::CustomerTransactionCreateParams::Body],
+        ?accrue_bonus: bool,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_transaction_create_response
+
+      def list: (
+        ?filter: top,
+        ?limit: Integer,
+        ?page: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_transaction_list_response
+
+      def delete_by_id: (
+        Integer transaction_id,
+        customer_id: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_transaction_delete_by_id_response
+
+      def list_by_customer: (
+        Integer customer_id,
+        ?filter: top,
+        ?limit: Integer,
+        ?page: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_transaction_list_by_customer_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

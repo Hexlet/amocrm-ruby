@@ -1,0 +1,59 @@
+module Amocrm
+  module Models
+    type catalog_element_list_params =
+      {
+        filter: top,
+        limit: Integer,
+        page: Integer,
+        query: Amocrm::Models::CatalogElementListParams::query
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class CatalogElementListParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader filter: top?
+
+      def filter=: (top) -> top
+
+      attr_reader limit: Integer?
+
+      def limit=: (Integer) -> Integer
+
+      attr_reader page: Integer?
+
+      def page=: (Integer) -> Integer
+
+      attr_reader query: Amocrm::Models::CatalogElementListParams::query?
+
+      def query=: (
+        Amocrm::Models::CatalogElementListParams::query
+      ) -> Amocrm::Models::CatalogElementListParams::query
+
+      def initialize: (
+        ?filter: top,
+        ?limit: Integer,
+        ?page: Integer,
+        ?query: Amocrm::Models::CatalogElementListParams::query,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        filter: top,
+        limit: Integer,
+        page: Integer,
+        query: Amocrm::Models::CatalogElementListParams::query,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type query = String | Integer
+
+      module Query
+        extend Amocrm::Internal::Type::Union
+
+        def self?.variants: -> ::Array[Amocrm::Models::CatalogElementListParams::query]
+      end
+    end
+  end
+end

@@ -1,0 +1,26 @@
+module Amocrm
+  module Resources
+    class Events
+      def list: (
+        ?filter: top,
+        ?limit: Integer,
+        ?page: Integer,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::event_list_response
+
+      def get_by_id: (
+        Integer id,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::event_get_by_id_response
+
+      def list_types: (
+        ?language_code: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::event_list_types_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

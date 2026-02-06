@@ -1,0 +1,64 @@
+module Amocrm
+  module Models
+    type source_delete_response =
+      Amocrm::Models::SourceDeleteResponse::EmptyResponse
+      | Amocrm::Models::SourceDeleteResponse::Problem
+
+    module SourceDeleteResponse
+      extend Amocrm::Internal::Type::Union
+
+      type empty_response = { _embedded: top, _links: top }
+
+      class EmptyResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: top?
+
+        def _embedded=: (top) -> top
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        def initialize: (?_embedded: top, ?_links: top) -> void
+
+        def to_hash: -> { _embedded: top, _links: top }
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::source_delete_response]
+    end
+  end
+end

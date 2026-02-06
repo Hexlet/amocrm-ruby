@@ -1,0 +1,45 @@
+module Amocrm
+  module Resources
+    class EntityLinks
+      def list: (
+        Amocrm::Models::EntityLinkListParams::entity_type entity_type,
+        ?filter: top,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_link_list_response
+
+      def link: (
+        Amocrm::Models::EntityLinkLinkParams::entity_type entity_type,
+        body: ::Array[Amocrm::EntityLinkLinkParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_link_link_response
+
+      def link_by_entity: (
+        Integer entity_id,
+        entity_type: Amocrm::Models::EntityLinkLinkByEntityParams::entity_type,
+        body: ::Array[Amocrm::EntityLinkLinkByEntityParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_link_link_by_entity_response
+
+      def list_by_entity: (
+        Integer entity_id,
+        entity_type: Amocrm::Models::EntityLinkListByEntityParams::entity_type,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_link_list_by_entity_response
+
+      def unlink: (
+        Amocrm::Models::EntityLinkUnlinkParams::entity_type entity_type,
+        body: ::Array[Amocrm::EntityLinkUnlinkParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_link_unlink_response
+
+      def unlink_by_entity: (
+        Integer entity_id,
+        entity_type: Amocrm::Models::EntityLinkUnlinkByEntityParams::entity_type,
+        body: ::Array[Amocrm::EntityLinkUnlinkByEntityParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_link_unlink_by_entity_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,144 @@
+module Amocrm
+  module Models
+    type customer_status_list_response =
+      Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse
+      | Amocrm::Models::CustomerStatusListResponse::Problem
+
+    module CustomerStatusListResponse
+      extend Amocrm::Internal::Type::Union
+
+      type customer_status_list_response =
+        {
+          _embedded: Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded,
+          _links: top
+        }
+
+      class CustomerStatusListResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded
+        ) -> Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded,
+          ?_links: top
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded,
+          _links: top
+        }
+
+        type embedded =
+          {
+            statuses: ::Array[Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded::Status]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader statuses: ::Array[Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded::Status]?
+
+          def statuses=: (
+            ::Array[Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded::Status]
+          ) -> ::Array[Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded::Status]
+
+          def initialize: (
+            ?statuses: ::Array[Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded::Status]
+          ) -> void
+
+          def to_hash: -> {
+            statuses: ::Array[Amocrm::Models::CustomerStatusListResponse::CustomerStatusListResponse::Embedded::Status]
+          }
+
+          type status =
+            {
+              id: Integer,
+              color: String,
+              name: String,
+              sort: Integer,
+              type: String
+            }
+
+          class Status < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader color: String?
+
+            def color=: (String) -> String
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader sort: Integer?
+
+            def sort=: (Integer) -> Integer
+
+            attr_reader type: String?
+
+            def type=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?color: String,
+              ?name: String,
+              ?sort: Integer,
+              ?type: String
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              color: String,
+              name: String,
+              sort: Integer,
+              type: String
+            }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::customer_status_list_response]
+    end
+  end
+end

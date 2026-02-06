@@ -1,0 +1,90 @@
+module Amocrm
+  module Models
+    type catalog_create_params =
+      { body: ::Array[Amocrm::CatalogCreateParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class CatalogCreateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::CatalogCreateParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::CatalogCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::CatalogCreateParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body =
+        {
+          name: String,
+          can_add_elements: bool,
+          can_link_multiple: bool,
+          request_id: String,
+          sort: Integer,
+          type: Amocrm::Models::CatalogCreateParams::Body::type_
+        }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_reader can_add_elements: bool?
+
+        def can_add_elements=: (bool) -> bool
+
+        attr_reader can_link_multiple: bool?
+
+        def can_link_multiple=: (bool) -> bool
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        attr_reader sort: Integer?
+
+        def sort=: (Integer) -> Integer
+
+        attr_reader type: Amocrm::Models::CatalogCreateParams::Body::type_?
+
+        def type=: (
+          Amocrm::Models::CatalogCreateParams::Body::type_
+        ) -> Amocrm::Models::CatalogCreateParams::Body::type_
+
+        def initialize: (
+          name: String,
+          ?can_add_elements: bool,
+          ?can_link_multiple: bool,
+          ?request_id: String,
+          ?sort: Integer,
+          ?type: Amocrm::Models::CatalogCreateParams::Body::type_
+        ) -> void
+
+        def to_hash: -> {
+          name: String,
+          can_add_elements: bool,
+          can_link_multiple: bool,
+          request_id: String,
+          sort: Integer,
+          type: Amocrm::Models::CatalogCreateParams::Body::type_
+        }
+
+        type type_ = :regular | :invoices | :products | String
+
+        module Type
+          extend Amocrm::Internal::Type::Union
+
+          def self?.variants: -> ::Array[Amocrm::Models::CatalogCreateParams::Body::type_]
+
+          REGULAR: :regular
+          INVOICES: :invoices
+          PRODUCTS: :products
+        end
+      end
+    end
+  end
+end

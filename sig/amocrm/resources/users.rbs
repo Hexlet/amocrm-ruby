@@ -1,0 +1,25 @@
+module Amocrm
+  module Resources
+    class Users
+      def create: (
+        body: ::Array[Amocrm::UserCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::user_create_response
+
+      def list: (
+        ?limit: Integer,
+        ?page: Integer,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::user_list_response
+
+      def get_by_id: (
+        Integer id,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::user_get_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,38 @@
+module Amocrm
+  module Resources
+    class WebsiteButtons
+      def create: (
+        pipeline_id: Integer,
+        ?is_used_in_app: bool,
+        ?trusted_websites: ::Array[String],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::website_button_create_response
+
+      def update: (
+        Integer source_id,
+        trusted_websites: Amocrm::WebsiteButtonUpdateParams::TrustedWebsites,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::website_button_update_response
+
+      def list: (
+        ?limit: Integer,
+        ?page: Integer,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::website_button_list_response
+
+      def connect_online_chat: (
+        Integer source_id,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::website_button_connect_online_chat_response
+
+      def get_by_source_id: (
+        Integer source_id,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::website_button_get_by_source_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end
