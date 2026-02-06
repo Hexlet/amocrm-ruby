@@ -171,6 +171,7 @@ class Amocrm::Test::RegexMatchTest < Minitest::Test
     cases = {
       "application/json" => true,
       "application/jsonl" => false,
+      "application/hal+json" => true,
       "application/vnd.github.v3+json" => true,
       "application/vnd.api+json" => true
     }
