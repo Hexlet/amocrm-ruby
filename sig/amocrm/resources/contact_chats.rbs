@@ -1,0 +1,17 @@
+module Amocrm
+  module Resources
+    class ContactChats
+      def list: (
+        ?filter: top,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::contact_chat_list_response
+
+      def link: (
+        body: ::Array[Amocrm::ContactChatLinkParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::contact_chat_link_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

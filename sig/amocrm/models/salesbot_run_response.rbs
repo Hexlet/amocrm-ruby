@@ -1,0 +1,113 @@
+module Amocrm
+  module Models
+    type salesbot_run_response =
+      Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse
+      | Amocrm::Models::SalesbotRunResponse::Problem
+
+    module SalesbotRunResponse
+      extend Amocrm::Internal::Type::Union
+
+      type salesbot_run_response =
+        {
+          _links: Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links,
+          success: bool
+        }
+
+      class SalesbotRunResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _links: Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links?
+
+        def _links=: (
+          Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links
+        ) -> Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links
+
+        attr_reader success: bool?
+
+        def success=: (bool) -> bool
+
+        def initialize: (
+          ?_links: Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links,
+          ?success: bool
+        ) -> void
+
+        def to_hash: -> {
+          _links: Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links,
+          success: bool
+        }
+
+        type links =
+          {
+            self_: Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links::Self
+          }
+
+        class Links < Amocrm::Internal::Type::BaseModel
+          attr_reader self_: Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links::Self?
+
+          def self_=: (
+            Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links::Self
+          ) -> Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links::Self
+
+          def initialize: (
+            ?self_: Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links::Self
+          ) -> void
+
+          def to_hash: -> {
+            self_: Amocrm::Models::SalesbotRunResponse::SalesbotRunResponse::Links::Self
+          }
+
+          type self_ = { href: String, method_: String }
+
+          class Self < Amocrm::Internal::Type::BaseModel
+            attr_reader href: String?
+
+            def href=: (String) -> String
+
+            attr_reader method_: String?
+
+            def method_=: (String) -> String
+
+            def initialize: (?href: String, ?method_: String) -> void
+
+            def to_hash: -> { href: String, method_: String }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::salesbot_run_response]
+    end
+  end
+end

@@ -1,0 +1,42 @@
+module Amocrm
+  module Models
+    type customers_mode_set_mode_params =
+      {
+        is_enabled: bool,
+        mode: Amocrm::Models::CustomersModeSetModeParams::mode
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class CustomersModeSetModeParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor is_enabled: bool
+
+      attr_accessor mode: Amocrm::Models::CustomersModeSetModeParams::mode
+
+      def initialize: (
+        is_enabled: bool,
+        mode: Amocrm::Models::CustomersModeSetModeParams::mode,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        is_enabled: bool,
+        mode: Amocrm::Models::CustomersModeSetModeParams::mode,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type mode = :segments | :periodicity
+
+      module Mode
+        extend Amocrm::Internal::Type::Enum
+
+        SEGMENTS: :segments
+        PERIODICITY: :periodicity
+
+        def self?.values: -> ::Array[Amocrm::Models::CustomersModeSetModeParams::mode]
+      end
+    end
+  end
+end

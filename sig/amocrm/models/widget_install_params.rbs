@@ -1,0 +1,20 @@
+module Amocrm
+  module Models
+    type widget_install_params =
+      { body: top } & Amocrm::Internal::Type::request_parameters
+
+    class WidgetInstallParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: top
+
+      def initialize: (
+        body: top,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> { body: top, request_options: Amocrm::RequestOptions }
+    end
+  end
+end

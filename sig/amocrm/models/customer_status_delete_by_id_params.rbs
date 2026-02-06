@@ -1,0 +1,15 @@
+module Amocrm
+  module Models
+    type customer_status_delete_by_id_params =
+      {  } & Amocrm::Internal::Type::request_parameters
+
+    class CustomerStatusDeleteByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: Amocrm::request_opts) -> void
+
+      def to_hash: -> { request_options: Amocrm::RequestOptions }
+    end
+  end
+end

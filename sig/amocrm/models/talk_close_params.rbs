@@ -1,0 +1,25 @@
+module Amocrm
+  module Models
+    type talk_close_params =
+      { force_close: bool } & Amocrm::Internal::Type::request_parameters
+
+    class TalkCloseParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader force_close: bool?
+
+      def force_close=: (bool) -> bool
+
+      def initialize: (
+        ?force_close: bool,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        force_close: bool,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

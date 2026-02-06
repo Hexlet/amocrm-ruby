@@ -1,0 +1,22 @@
+module Amocrm
+  module Resources
+    class Tags
+      def create: (
+        Amocrm::Models::TagCreateParams::entity_type entity_type,
+        body: ::Array[Amocrm::TagCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::tag_create_response
+
+      def list: (
+        Amocrm::Models::TagListParams::entity_type entity_type,
+        ?filter: top,
+        ?limit: Integer,
+        ?page: Integer,
+        ?query: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::tag_list_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

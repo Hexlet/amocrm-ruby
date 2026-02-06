@@ -1,0 +1,50 @@
+module Amocrm
+  module Resources
+    class Contacts
+      def create: (
+        body: ::Array[Amocrm::ContactCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::contact_create_response
+
+      def update: (
+        body: ::Array[Amocrm::ContactUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::contact_update_response
+
+      def list: (
+        ?filter: top,
+        ?limit: Integer,
+        ?order: top,
+        ?page: Integer,
+        ?query: Amocrm::Models::ContactListParams::query,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::contact_list_response
+
+      def get_by_id: (
+        Integer id,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::contact_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        ?_embedded: Amocrm::ContactUpdateByIDParams::Embedded,
+        ?created_at: Integer,
+        ?created_by: Integer,
+        ?custom_fields_values: ::Array[Amocrm::ContactUpdateByIDParams::CustomFieldsValue],
+        ?first_name: String,
+        ?last_name: String,
+        ?name: String,
+        ?responsible_user_id: Integer,
+        ?tags_to_add: ::Array[Amocrm::ContactUpdateByIDParams::TagsToAdd],
+        ?tags_to_delete: ::Array[Amocrm::ContactUpdateByIDParams::TagsToDelete],
+        ?updated_at: Integer,
+        ?updated_by: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::contact_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

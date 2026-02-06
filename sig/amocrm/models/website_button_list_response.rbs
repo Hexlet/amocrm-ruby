@@ -1,0 +1,168 @@
+module Amocrm
+  module Models
+    type website_button_list_response =
+      Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse
+      | Amocrm::Models::WebsiteButtonListResponse::Problem
+
+    module WebsiteButtonListResponse
+      extend Amocrm::Internal::Type::Union
+
+      type website_button_list_response =
+        {
+          _embedded: Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded,
+          _links: top,
+          _page: Integer
+        }
+
+      class WebsiteButtonListResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded
+        ) -> Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        attr_reader _page: Integer?
+
+        def _page=: (Integer) -> Integer
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded,
+          ?_links: top,
+          ?_page: Integer
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded,
+          _links: top,
+          _page: Integer
+        }
+
+        type embedded =
+          {
+            website_buttons: ::Array[Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded::WebsiteButton]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader website_buttons: ::Array[Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded::WebsiteButton]?
+
+          def website_buttons=: (
+            ::Array[Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded::WebsiteButton]
+          ) -> ::Array[Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded::WebsiteButton]
+
+          def initialize: (
+            ?website_buttons: ::Array[Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded::WebsiteButton]
+          ) -> void
+
+          def to_hash: -> {
+            website_buttons: ::Array[Amocrm::Models::WebsiteButtonListResponse::WebsiteButtonListResponse::Embedded::WebsiteButton]
+          }
+
+          type website_button =
+            {
+              account_id: Integer,
+              button_id: Integer,
+              creation_status: String,
+              is_duplication_control_enabled: bool,
+              name: String,
+              pipeline_id: Integer?,
+              script: String?,
+              source_id: Integer
+            }
+
+          class WebsiteButton < Amocrm::Internal::Type::BaseModel
+            attr_reader account_id: Integer?
+
+            def account_id=: (Integer) -> Integer
+
+            attr_reader button_id: Integer?
+
+            def button_id=: (Integer) -> Integer
+
+            attr_reader creation_status: String?
+
+            def creation_status=: (String) -> String
+
+            attr_reader is_duplication_control_enabled: bool?
+
+            def is_duplication_control_enabled=: (bool) -> bool
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_accessor pipeline_id: Integer?
+
+            attr_accessor script: String?
+
+            attr_reader source_id: Integer?
+
+            def source_id=: (Integer) -> Integer
+
+            def initialize: (
+              ?account_id: Integer,
+              ?button_id: Integer,
+              ?creation_status: String,
+              ?is_duplication_control_enabled: bool,
+              ?name: String,
+              ?pipeline_id: Integer?,
+              ?script: String?,
+              ?source_id: Integer
+            ) -> void
+
+            def to_hash: -> {
+              account_id: Integer,
+              button_id: Integer,
+              creation_status: String,
+              is_duplication_control_enabled: bool,
+              name: String,
+              pipeline_id: Integer?,
+              script: String?,
+              source_id: Integer
+            }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::website_button_list_response]
+    end
+  end
+end

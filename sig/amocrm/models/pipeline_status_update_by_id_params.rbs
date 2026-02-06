@@ -1,0 +1,87 @@
+module Amocrm
+  module Models
+    type pipeline_status_update_by_id_params =
+      {
+        pipeline_id: Integer,
+        color: String,
+        descriptions: ::Array[Amocrm::PipelineStatusUpdateByIDParams::Description],
+        name: String,
+        request_id: String,
+        sort: Integer
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class PipelineStatusUpdateByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor pipeline_id: Integer
+
+      attr_reader color: String?
+
+      def color=: (String) -> String
+
+      attr_reader descriptions: ::Array[Amocrm::PipelineStatusUpdateByIDParams::Description]?
+
+      def descriptions=: (
+        ::Array[Amocrm::PipelineStatusUpdateByIDParams::Description]
+      ) -> ::Array[Amocrm::PipelineStatusUpdateByIDParams::Description]
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader request_id: String?
+
+      def request_id=: (String) -> String
+
+      attr_reader sort: Integer?
+
+      def sort=: (Integer) -> Integer
+
+      def initialize: (
+        pipeline_id: Integer,
+        ?color: String,
+        ?descriptions: ::Array[Amocrm::PipelineStatusUpdateByIDParams::Description],
+        ?name: String,
+        ?request_id: String,
+        ?sort: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        pipeline_id: Integer,
+        color: String,
+        descriptions: ::Array[Amocrm::PipelineStatusUpdateByIDParams::Description],
+        name: String,
+        request_id: String,
+        sort: Integer,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type description = { id: Integer, description: String, level: String }
+
+      class Description < Amocrm::Internal::Type::BaseModel
+        attr_reader id: Integer?
+
+        def id=: (Integer) -> Integer
+
+        attr_reader description: String?
+
+        def description=: (String) -> String
+
+        attr_reader level: String?
+
+        def level=: (String) -> String
+
+        def initialize: (
+          ?id: Integer,
+          ?description: String,
+          ?level: String
+        ) -> void
+
+        def to_hash: -> { id: Integer, description: String, level: String }
+      end
+    end
+  end
+end

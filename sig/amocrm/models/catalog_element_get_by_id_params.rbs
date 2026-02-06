@@ -1,0 +1,30 @@
+module Amocrm
+  module Models
+    type catalog_element_get_by_id_params =
+      { catalog_id: Integer, with: String }
+      & Amocrm::Internal::Type::request_parameters
+
+    class CatalogElementGetByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor catalog_id: Integer
+
+      attr_reader with: String?
+
+      def with=: (String) -> String
+
+      def initialize: (
+        catalog_id: Integer,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        catalog_id: Integer,
+        with: String,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

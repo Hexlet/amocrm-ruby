@@ -1,0 +1,22 @@
+module Amocrm
+  module Models
+    type contact_chat_list_params =
+      { filter: top } & Amocrm::Internal::Type::request_parameters
+
+    class ContactChatListParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader filter: top?
+
+      def filter=: (top) -> top
+
+      def initialize: (
+        ?filter: top,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> { filter: top, request_options: Amocrm::RequestOptions }
+    end
+  end
+end

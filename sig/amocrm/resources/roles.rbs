@@ -1,0 +1,38 @@
+module Amocrm
+  module Resources
+    class Roles
+      def create: (
+        body: ::Array[Amocrm::RoleCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::role_create_response
+
+      def list: (
+        ?limit: Integer,
+        ?page: Integer,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::role_list_response
+
+      def delete_by_id: (
+        Integer id,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::role_delete_by_id_response
+
+      def get_by_id: (
+        Integer id,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::role_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        ?name: String,
+        ?request_id: String,
+        ?rights: Amocrm::RoleUpdateByIDParams::Rights?,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::role_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

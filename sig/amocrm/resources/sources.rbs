@@ -1,0 +1,49 @@
+module Amocrm
+  module Resources
+    class Sources
+      def create: (
+        body: ::Array[Amocrm::SourceCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::source_create_response
+
+      def update: (
+        body: ::Array[Amocrm::SourceUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::source_update_response
+
+      def list: (
+        ?filter: Amocrm::SourceListParams::Filter,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::source_list_response
+
+      def delete: (
+        body: ::Array[Amocrm::SourceDeleteParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::source_delete_response
+
+      def delete_by_id: (
+        Integer id,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::source_delete_by_id_response
+
+      def get_by_id: (
+        Integer id,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::source_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        ?default: bool,
+        ?external_id: String,
+        ?name: String,
+        ?origin_code: String?,
+        ?pipeline_id: Integer?,
+        ?request_id: String,
+        ?services: Amocrm::Models::SourceUpdateByIDParams::services,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::source_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

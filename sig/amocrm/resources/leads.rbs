@@ -1,0 +1,56 @@
+module Amocrm
+  module Resources
+    class Leads
+      def create: (
+        body: ::Array[Amocrm::LeadCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::lead_create_response
+
+      def update: (
+        body: ::Array[Amocrm::LeadUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::lead_update_response
+
+      def list: (
+        ?filter: top,
+        ?limit: Integer,
+        ?order: top,
+        ?page: Integer,
+        ?query: Amocrm::Models::LeadListParams::query,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::lead_list_response
+
+      def create_complex: (
+        body: ::Array[Amocrm::LeadCreateComplexParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::lead_create_complex_response
+
+      def get_by_id: (
+        Integer id,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::lead_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        ?_embedded: Amocrm::LeadUpdateByIDParams::Embedded,
+        ?closed_at: Integer,
+        ?custom_fields_values: ::Array[Amocrm::LeadUpdateByIDParams::CustomFieldsValue],
+        ?group_id: Integer,
+        ?loss_reason_id: Integer,
+        ?name: String,
+        ?pipeline_id: Integer,
+        ?price: Integer,
+        ?responsible_user_id: Integer,
+        ?status_id: Integer,
+        ?tags_to_add: ::Array[Amocrm::LeadUpdateByIDParams::TagsToAdd],
+        ?tags_to_delete: ::Array[Amocrm::LeadUpdateByIDParams::TagsToDelete],
+        ?updated_at: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::lead_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

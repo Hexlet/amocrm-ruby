@@ -1,0 +1,38 @@
+module Amocrm
+  module Resources
+    class Catalogs
+      def create: (
+        body: ::Array[Amocrm::CatalogCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::catalog_create_response
+
+      def update: (
+        body: ::Array[Amocrm::CatalogUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::catalog_update_response
+
+      def list: (
+        ?limit: Integer,
+        ?page: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::catalog_list_response
+
+      def get_by_id: (
+        Integer id,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::catalog_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        ?can_add_elements: bool,
+        ?can_link_multiple: bool,
+        ?name: String,
+        ?request_id: String,
+        ?sort: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::catalog_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

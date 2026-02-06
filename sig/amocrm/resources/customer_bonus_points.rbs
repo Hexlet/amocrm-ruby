@@ -1,0 +1,14 @@
+module Amocrm
+  module Resources
+    class CustomerBonusPoints
+      def change: (
+        Integer customer_id,
+        earn: Integer,
+        redeem: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_bonus_point_change_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

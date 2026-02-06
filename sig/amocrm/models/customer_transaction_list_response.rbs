@@ -1,0 +1,165 @@
+module Amocrm
+  module Models
+    type customer_transaction_list_response =
+      Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse
+      | Amocrm::Models::CustomerTransactionListResponse::Problem
+
+    module CustomerTransactionListResponse
+      extend Amocrm::Internal::Type::Union
+
+      type customer_transaction_list_response =
+        {
+          _embedded: Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded,
+          _links: top,
+          _page: Integer
+        }
+
+      class CustomerTransactionListResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded
+        ) -> Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        attr_reader _page: Integer?
+
+        def _page=: (Integer) -> Integer
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded,
+          ?_links: top,
+          ?_page: Integer
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded,
+          _links: top,
+          _page: Integer
+        }
+
+        type embedded =
+          {
+            transactions: ::Array[Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded::Transaction]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader transactions: ::Array[Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded::Transaction]?
+
+          def transactions=: (
+            ::Array[Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded::Transaction]
+          ) -> ::Array[Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded::Transaction]
+
+          def initialize: (
+            ?transactions: ::Array[Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded::Transaction]
+          ) -> void
+
+          def to_hash: -> {
+            transactions: ::Array[Amocrm::Models::CustomerTransactionListResponse::CustomerTransactionListResponse::Embedded::Transaction]
+          }
+
+          type transaction =
+            {
+              id: Integer,
+              _links: top,
+              comment: String,
+              created_at: Integer,
+              created_by: Integer,
+              customer_id: Integer,
+              price: Integer
+            }
+
+          class Transaction < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader _links: top?
+
+            def _links=: (top) -> top
+
+            attr_reader comment: String?
+
+            def comment=: (String) -> String
+
+            attr_reader created_at: Integer?
+
+            def created_at=: (Integer) -> Integer
+
+            attr_reader created_by: Integer?
+
+            def created_by=: (Integer) -> Integer
+
+            attr_reader customer_id: Integer?
+
+            def customer_id=: (Integer) -> Integer
+
+            attr_reader price: Integer?
+
+            def price=: (Integer) -> Integer
+
+            def initialize: (
+              ?id: Integer,
+              ?_links: top,
+              ?comment: String,
+              ?created_at: Integer,
+              ?created_by: Integer,
+              ?customer_id: Integer,
+              ?price: Integer
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              _links: top,
+              comment: String,
+              created_at: Integer,
+              created_by: Integer,
+              customer_id: Integer,
+              price: Integer
+            }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::customer_transaction_list_response]
+    end
+  end
+end

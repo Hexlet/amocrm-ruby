@@ -1,0 +1,12 @@
+module Amocrm
+  module Resources
+    class Salesbot
+      def run: (
+        body: ::Array[Amocrm::SalesbotRunParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::salesbot_run_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

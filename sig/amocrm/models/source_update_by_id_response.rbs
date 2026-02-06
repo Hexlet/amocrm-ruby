@@ -1,0 +1,199 @@
+module Amocrm
+  module Models
+    type source_update_by_id_response =
+      Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse
+      | Amocrm::Models::SourceUpdateByIDResponse::Problem
+
+    module SourceUpdateByIDResponse
+      extend Amocrm::Internal::Type::Union
+
+      type source_update_response =
+        {
+          _embedded: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded,
+          _links: top,
+          _total_items: Integer
+        }
+
+      class SourceUpdateResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded
+        ) -> Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        attr_reader _total_items: Integer?
+
+        def _total_items=: (Integer) -> Integer
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded,
+          ?_links: top,
+          ?_total_items: Integer
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded,
+          _links: top,
+          _total_items: Integer
+        }
+
+        type embedded =
+          {
+            sources: ::Array[Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader sources: ::Array[Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source]?
+
+          def sources=: (
+            ::Array[Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source]
+          ) -> ::Array[Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source]
+
+          def initialize: (
+            ?sources: ::Array[Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source]
+          ) -> void
+
+          def to_hash: -> {
+            sources: ::Array[Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source]
+          }
+
+          type source =
+            {
+              id: Integer,
+              _links: top,
+              default: bool,
+              external_id: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::external_id,
+              name: String,
+              origin_code: String?,
+              pipeline_id: Integer?,
+              request_id: String,
+              services: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::services
+            }
+
+          class Source < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader _links: top?
+
+            def _links=: (top) -> top
+
+            attr_reader default: bool?
+
+            def default=: (bool) -> bool
+
+            attr_reader external_id: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::external_id?
+
+            def external_id=: (
+              Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::external_id
+            ) -> Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::external_id
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_accessor origin_code: String?
+
+            attr_accessor pipeline_id: Integer?
+
+            attr_reader request_id: String?
+
+            def request_id=: (String) -> String
+
+            attr_reader services: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::services?
+
+            def services=: (
+              Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::services
+            ) -> Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::services
+
+            def initialize: (
+              ?id: Integer,
+              ?_links: top,
+              ?default: bool,
+              ?external_id: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::external_id,
+              ?name: String,
+              ?origin_code: String?,
+              ?pipeline_id: Integer?,
+              ?request_id: String,
+              ?services: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::services
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              _links: top,
+              default: bool,
+              external_id: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::external_id,
+              name: String,
+              origin_code: String?,
+              pipeline_id: Integer?,
+              request_id: String,
+              services: Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::services
+            }
+
+            type external_id = String | Integer | bool
+
+            module ExternalID
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::external_id]
+            end
+
+            type services = ::Array[top] | ::Array[String]
+
+            module Services
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::SourceUpdateByIDResponse::SourceUpdateResponse::Embedded::Source::services]
+
+              UnionMember0Array: Amocrm::Internal::Type::Converter
+
+              StringArray: Amocrm::Internal::Type::Converter
+            end
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::source_update_by_id_response]
+    end
+  end
+end

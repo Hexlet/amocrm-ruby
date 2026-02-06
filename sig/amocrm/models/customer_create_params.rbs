@@ -1,0 +1,300 @@
+module Amocrm
+  module Models
+    type customer_create_params =
+      { body: ::Array[Amocrm::CustomerCreateParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class CustomerCreateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::CustomerCreateParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::CustomerCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::CustomerCreateParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body =
+        {
+          _embedded: Amocrm::CustomerCreateParams::Body::Embedded,
+          created_at: Integer,
+          created_by: Integer,
+          custom_fields_values: ::Array[Amocrm::CustomerCreateParams::Body::CustomFieldsValue],
+          main_user_id: Integer,
+          name: String,
+          next_date: Integer,
+          next_price: Integer,
+          periodicity: Integer,
+          request_id: String,
+          responsible_user_id: Integer,
+          status_id: Integer,
+          tags_to_add: ::Array[Amocrm::CustomerCreateParams::Body::TagsToAdd],
+          updated_by: Integer
+        }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::CustomerCreateParams::Body::Embedded?
+
+        def _embedded=: (
+          Amocrm::CustomerCreateParams::Body::Embedded
+        ) -> Amocrm::CustomerCreateParams::Body::Embedded
+
+        attr_reader created_at: Integer?
+
+        def created_at=: (Integer) -> Integer
+
+        attr_reader created_by: Integer?
+
+        def created_by=: (Integer) -> Integer
+
+        attr_reader custom_fields_values: ::Array[Amocrm::CustomerCreateParams::Body::CustomFieldsValue]?
+
+        def custom_fields_values=: (
+          ::Array[Amocrm::CustomerCreateParams::Body::CustomFieldsValue]
+        ) -> ::Array[Amocrm::CustomerCreateParams::Body::CustomFieldsValue]
+
+        attr_reader main_user_id: Integer?
+
+        def main_user_id=: (Integer) -> Integer
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader next_date: Integer?
+
+        def next_date=: (Integer) -> Integer
+
+        attr_reader next_price: Integer?
+
+        def next_price=: (Integer) -> Integer
+
+        attr_reader periodicity: Integer?
+
+        def periodicity=: (Integer) -> Integer
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        attr_reader responsible_user_id: Integer?
+
+        def responsible_user_id=: (Integer) -> Integer
+
+        attr_reader status_id: Integer?
+
+        def status_id=: (Integer) -> Integer
+
+        attr_reader tags_to_add: ::Array[Amocrm::CustomerCreateParams::Body::TagsToAdd]?
+
+        def tags_to_add=: (
+          ::Array[Amocrm::CustomerCreateParams::Body::TagsToAdd]
+        ) -> ::Array[Amocrm::CustomerCreateParams::Body::TagsToAdd]
+
+        attr_reader updated_by: Integer?
+
+        def updated_by=: (Integer) -> Integer
+
+        def initialize: (
+          ?_embedded: Amocrm::CustomerCreateParams::Body::Embedded,
+          ?created_at: Integer,
+          ?created_by: Integer,
+          ?custom_fields_values: ::Array[Amocrm::CustomerCreateParams::Body::CustomFieldsValue],
+          ?main_user_id: Integer,
+          ?name: String,
+          ?next_date: Integer,
+          ?next_price: Integer,
+          ?periodicity: Integer,
+          ?request_id: String,
+          ?responsible_user_id: Integer,
+          ?status_id: Integer,
+          ?tags_to_add: ::Array[Amocrm::CustomerCreateParams::Body::TagsToAdd],
+          ?updated_by: Integer
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::CustomerCreateParams::Body::Embedded,
+          created_at: Integer,
+          created_by: Integer,
+          custom_fields_values: ::Array[Amocrm::CustomerCreateParams::Body::CustomFieldsValue],
+          main_user_id: Integer,
+          name: String,
+          next_date: Integer,
+          next_price: Integer,
+          periodicity: Integer,
+          request_id: String,
+          responsible_user_id: Integer,
+          status_id: Integer,
+          tags_to_add: ::Array[Amocrm::CustomerCreateParams::Body::TagsToAdd],
+          updated_by: Integer
+        }
+
+        type embedded =
+          {
+            segments: ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Segment],
+            tags: ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Tag]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader segments: ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Segment]?
+
+          def segments=: (
+            ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Segment]
+          ) -> ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Segment]
+
+          attr_reader tags: ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Tag]?
+
+          def tags=: (
+            ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Tag]
+          ) -> ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Tag]
+
+          def initialize: (
+            ?segments: ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Segment],
+            ?tags: ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Tag]
+          ) -> void
+
+          def to_hash: -> {
+            segments: ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Segment],
+            tags: ::Array[Amocrm::CustomerCreateParams::Body::Embedded::Tag]
+          }
+
+          type segment = { id: Integer, _links: top }
+
+          class Segment < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader _links: top?
+
+            def _links=: (top) -> top
+
+            def initialize: (?id: Integer, ?_links: top) -> void
+
+            def to_hash: -> { id: Integer, _links: top }
+          end
+
+          type tag = { id: Integer, color: String, name: String }
+
+          class Tag < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader color: String?
+
+            def color=: (String) -> String
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?color: String,
+              ?name: String
+            ) -> void
+
+            def to_hash: -> { id: Integer, color: String, name: String }
+          end
+        end
+
+        type custom_fields_value =
+          {
+            values: ::Array[Amocrm::CustomerCreateParams::Body::CustomFieldsValue::Value],
+            field_code: String,
+            field_id: Integer
+          }
+
+        class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+          attr_accessor values: ::Array[Amocrm::CustomerCreateParams::Body::CustomFieldsValue::Value]
+
+          attr_reader field_code: String?
+
+          def field_code=: (String) -> String
+
+          attr_reader field_id: Integer?
+
+          def field_id=: (Integer) -> Integer
+
+          def initialize: (
+            values: ::Array[Amocrm::CustomerCreateParams::Body::CustomFieldsValue::Value],
+            ?field_code: String,
+            ?field_id: Integer
+          ) -> void
+
+          def to_hash: -> {
+            values: ::Array[Amocrm::CustomerCreateParams::Body::CustomFieldsValue::Value],
+            field_code: String,
+            field_id: Integer
+          }
+
+          type value =
+            {
+              value: Amocrm::Models::CustomerCreateParams::Body::CustomFieldsValue::Value::value,
+              enum_code: String,
+              enum_id: Integer
+            }
+
+          class Value < Amocrm::Internal::Type::BaseModel
+            attr_accessor value: Amocrm::Models::CustomerCreateParams::Body::CustomFieldsValue::Value::value
+
+            attr_reader enum_code: String?
+
+            def enum_code=: (String) -> String
+
+            attr_reader enum_id: Integer?
+
+            def enum_id=: (Integer) -> Integer
+
+            def initialize: (
+              value: Amocrm::Models::CustomerCreateParams::Body::CustomFieldsValue::Value::value,
+              ?enum_code: String,
+              ?enum_id: Integer
+            ) -> void
+
+            def to_hash: -> {
+              value: Amocrm::Models::CustomerCreateParams::Body::CustomFieldsValue::Value::value,
+              enum_code: String,
+              enum_id: Integer
+            }
+
+            type value = String | Integer | bool
+
+            module Value
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::CustomerCreateParams::Body::CustomFieldsValue::Value::value]
+            end
+          end
+        end
+
+        type tags_to_add = { id: Integer, color: String, name: String }
+
+        class TagsToAdd < Amocrm::Internal::Type::BaseModel
+          attr_reader id: Integer?
+
+          def id=: (Integer) -> Integer
+
+          attr_reader color: String?
+
+          def color=: (String) -> String
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (?id: Integer, ?color: String, ?name: String) -> void
+
+          def to_hash: -> { id: Integer, color: String, name: String }
+        end
+      end
+    end
+  end
+end

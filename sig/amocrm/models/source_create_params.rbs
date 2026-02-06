@@ -1,0 +1,91 @@
+module Amocrm
+  module Models
+    type source_create_params =
+      { body: ::Array[Amocrm::SourceCreateParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class SourceCreateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::SourceCreateParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::SourceCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::SourceCreateParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body =
+        {
+          external_id: String,
+          name: String,
+          default: bool,
+          origin_code: String?,
+          pipeline_id: Integer?,
+          request_id: String,
+          services: Amocrm::Models::SourceCreateParams::Body::services
+        }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor external_id: String
+
+        attr_accessor name: String
+
+        attr_reader default: bool?
+
+        def default=: (bool) -> bool
+
+        attr_accessor origin_code: String?
+
+        attr_accessor pipeline_id: Integer?
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        attr_reader services: Amocrm::Models::SourceCreateParams::Body::services?
+
+        def services=: (
+          Amocrm::Models::SourceCreateParams::Body::services
+        ) -> Amocrm::Models::SourceCreateParams::Body::services
+
+        def initialize: (
+          external_id: String,
+          name: String,
+          ?default: bool,
+          ?origin_code: String?,
+          ?pipeline_id: Integer?,
+          ?request_id: String,
+          ?services: Amocrm::Models::SourceCreateParams::Body::services
+        ) -> void
+
+        def to_hash: -> {
+          external_id: String,
+          name: String,
+          default: bool,
+          origin_code: String?,
+          pipeline_id: Integer?,
+          request_id: String,
+          services: Amocrm::Models::SourceCreateParams::Body::services
+        }
+
+        type services = ::Array[top] | ::Array[String]
+
+        module Services
+          extend Amocrm::Internal::Type::Union
+
+          def self?.variants: -> ::Array[Amocrm::Models::SourceCreateParams::Body::services]
+
+          UnionMember0Array: Amocrm::Internal::Type::Converter
+
+          StringArray: Amocrm::Internal::Type::Converter
+        end
+      end
+    end
+  end
+end

@@ -31,7 +31,7 @@ amocrm = Amocrm::Client.new(
   subdomain: "My-Subdomain"
 )
 
-response = amocrm.api.unsorted_leads_create_forms(
+response = amocrm.unsorted_leads.create_forms(
   body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
 )
 
@@ -44,7 +44,7 @@ When the library is unable to connect to the API, or if the API returns a non-su
 
 ```ruby
 begin
-  api = amocrm.api.unsorted_leads_create_forms(
+  unsorted_lead = amocrm.unsorted_leads.create_forms(
     body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
   )
 rescue Amocrm::Errors::APIConnectionError => e
@@ -90,7 +90,7 @@ amocrm = Amocrm::Client.new(
 )
 
 # Or, configure per-request:
-amocrm.api.unsorted_leads_create_forms(
+amocrm.unsorted_leads.create_forms(
   body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
   request_options: {max_retries: 5}
 )
@@ -108,7 +108,7 @@ amocrm = Amocrm::Client.new(
 )
 
 # Or, configure per-request:
-amocrm.api.unsorted_leads_create_forms(
+amocrm.unsorted_leads.create_forms(
   body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
   request_options: {timeout: 5}
 )
@@ -142,7 +142,7 @@ Note: the `extra_` parameters of the same name overrides the documented paramete
 
 ```ruby
 response =
-  amocrm.api.unsorted_leads_create_forms(
+  amocrm.unsorted_leads.create_forms(
     body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
     request_options: {
       extra_query: {my_query_parameter: value},
@@ -189,10 +189,10 @@ This library provides comprehensive [RBI](https://sorbet.org/docs/rbi) definitio
 You can provide typesafe request parameters like so:
 
 ```ruby
-amocrm.api.unsorted_leads_create_forms(
+amocrm.unsorted_leads.create_forms(
   body: [
-    Amocrm::APIUnsortedLeadsCreateFormsParams::Body.new(
-      metadata: Amocrm::APIUnsortedLeadsCreateFormsParams::Body::Metadata.new,
+    Amocrm::UnsortedLeadCreateFormsParams::Body.new(
+      metadata: Amocrm::UnsortedLeadCreateFormsParams::Body::Metadata.new,
       source_name: "source_name",
       source_uid: "source_uid"
     )
@@ -204,21 +204,21 @@ Or, equivalently:
 
 ```ruby
 # Hashes work, but are not typesafe:
-amocrm.api.unsorted_leads_create_forms(
+amocrm.unsorted_leads.create_forms(
   body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
 )
 
 # You can also splat a full Params class:
-params = Amocrm::APIUnsortedLeadsCreateFormsParams.new(
+params = Amocrm::UnsortedLeadCreateFormsParams.new(
   body: [
-    Amocrm::APIUnsortedLeadsCreateFormsParams::Body.new(
-      metadata: Amocrm::APIUnsortedLeadsCreateFormsParams::Body::Metadata.new,
+    Amocrm::UnsortedLeadCreateFormsParams::Body.new(
+      metadata: Amocrm::UnsortedLeadCreateFormsParams::Body::Metadata.new,
       source_name: "source_name",
       source_uid: "source_uid"
     )
   ]
 )
-amocrm.api.unsorted_leads_create_forms(**params)
+amocrm.unsorted_leads.create_forms(**params)
 ```
 
 ### Enums
@@ -227,23 +227,23 @@ Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::E
 
 ```ruby
 # :segments
-puts(Amocrm::APICustomersModeSetModeParams::Mode::SEGMENTS)
+puts(Amocrm::CustomersModeSetModeParams::Mode::SEGMENTS)
 
-# Revealed type: `T.all(Amocrm::APICustomersModeSetModeParams::Mode, Symbol)`
-T.reveal_type(Amocrm::APICustomersModeSetModeParams::Mode::SEGMENTS)
+# Revealed type: `T.all(Amocrm::CustomersModeSetModeParams::Mode, Symbol)`
+T.reveal_type(Amocrm::CustomersModeSetModeParams::Mode::SEGMENTS)
 ```
 
 Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
 
 ```ruby
 # Using the enum constants preserves the tagged type information:
-amocrm.api.customers_mode_set_mode(
-  mode: Amocrm::APICustomersModeSetModeParams::Mode::SEGMENTS,
+amocrm.customers_mode.set_mode(
+  mode: Amocrm::CustomersModeSetModeParams::Mode::SEGMENTS,
   # …
 )
 
 # Literal values are also permissible:
-amocrm.api.customers_mode_set_mode(
+amocrm.customers_mode.set_mode(
   mode: :segments,
   # …
 )
