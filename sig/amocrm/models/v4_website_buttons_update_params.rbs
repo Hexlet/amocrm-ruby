@@ -1,0 +1,36 @@
+module Amocrm
+  module Models
+    type v4_website_buttons_update_params =
+      {
+        trusted_websites: Amocrm::V4WebsiteButtonsUpdateParams::TrustedWebsites
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class V4WebsiteButtonsUpdateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor trusted_websites: Amocrm::V4WebsiteButtonsUpdateParams::TrustedWebsites
+
+      def initialize: (
+        trusted_websites: Amocrm::V4WebsiteButtonsUpdateParams::TrustedWebsites,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        trusted_websites: Amocrm::V4WebsiteButtonsUpdateParams::TrustedWebsites,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type trusted_websites = { add: ::Array[String] }
+
+      class TrustedWebsites < Amocrm::Internal::Type::BaseModel
+        attr_accessor add: ::Array[String]
+
+        def initialize: (add: ::Array[String]) -> void
+
+        def to_hash: -> { add: ::Array[String] }
+      end
+    end
+  end
+end

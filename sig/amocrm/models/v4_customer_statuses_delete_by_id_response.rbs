@@ -1,0 +1,47 @@
+module Amocrm
+  module Models
+    type v4_customer_statuses_delete_by_id_response =
+      top | Amocrm::Models::V4CustomerStatusesDeleteByIDResponse::Problem
+
+    module V4CustomerStatusesDeleteByIDResponse
+      extend Amocrm::Internal::Type::Union
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::v4_customer_statuses_delete_by_id_response]
+    end
+  end
+end
