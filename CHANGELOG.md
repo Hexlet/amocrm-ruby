@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2026-02-06)
+
+Full Changelog: [v0.1.2...v0.2.0](https://github.com/Hexlet/amocrm-ruby/compare/v0.1.2...v0.2.0)
+
+### Features
+
+* **api:** api update ([c47313c](https://github.com/Hexlet/amocrm-ruby/commit/c47313c8d4d72d7fa64f8ae3492f1474287132e6))
+
 ## 0.1.2 (2026-02-04)
 
 Full Changelog: [v0.1.1...v0.1.2](https://github.com/Hexlet/amocrm-ruby/compare/v0.1.1...v0.1.2)
