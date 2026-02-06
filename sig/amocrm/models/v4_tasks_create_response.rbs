@@ -1,0 +1,121 @@
+module Amocrm
+  module Models
+    type v4_tasks_create_response =
+      Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse
+      | Amocrm::Models::V4TasksCreateResponse::Problem
+
+    module V4TasksCreateResponse
+      extend Amocrm::Internal::Type::Union
+
+      type task_create_response =
+        {
+          _embedded: Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded,
+          _links: top
+        }
+
+      class TaskCreateResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded
+        ) -> Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded,
+          ?_links: top
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded,
+          _links: top
+        }
+
+        type embedded =
+          {
+            tasks: ::Array[Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded::Task]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader tasks: ::Array[Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded::Task]?
+
+          def tasks=: (
+            ::Array[Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded::Task]
+          ) -> ::Array[Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded::Task]
+
+          def initialize: (
+            ?tasks: ::Array[Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded::Task]
+          ) -> void
+
+          def to_hash: -> {
+            tasks: ::Array[Amocrm::Models::V4TasksCreateResponse::TaskCreateResponse::Embedded::Task]
+          }
+
+          type task = { id: Integer, _links: top, request_id: String }
+
+          class Task < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader _links: top?
+
+            def _links=: (top) -> top
+
+            attr_reader request_id: String?
+
+            def request_id=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?_links: top,
+              ?request_id: String
+            ) -> void
+
+            def to_hash: -> { id: Integer, _links: top, request_id: String }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::v4_tasks_create_response]
+    end
+  end
+end

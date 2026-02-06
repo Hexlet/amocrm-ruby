@@ -1,0 +1,96 @@
+module Amocrm
+  module Models
+    type v4_entity_notes_by_parent_update_by_parent_params =
+      {
+        entity_type: Amocrm::Models::V4EntityNotesByParentUpdateByParentParams::entity_type,
+        body: ::Array[Amocrm::V4EntityNotesByParentUpdateByParentParams::Body]
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class V4EntityNotesByParentUpdateByParentParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor entity_type: Amocrm::Models::V4EntityNotesByParentUpdateByParentParams::entity_type
+
+      attr_accessor body: ::Array[Amocrm::V4EntityNotesByParentUpdateByParentParams::Body]
+
+      def initialize: (
+        entity_type: Amocrm::Models::V4EntityNotesByParentUpdateByParentParams::entity_type,
+        body: ::Array[Amocrm::V4EntityNotesByParentUpdateByParentParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        entity_type: Amocrm::Models::V4EntityNotesByParentUpdateByParentParams::entity_type,
+        body: ::Array[Amocrm::V4EntityNotesByParentUpdateByParentParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type entity_type = :leads | :contacts | :companies | :customers
+
+      module EntityType
+        extend Amocrm::Internal::Type::Enum
+
+        LEADS: :leads
+        CONTACTS: :contacts
+        COMPANIES: :companies
+        CUSTOMERS: :customers
+
+        def self?.values: -> ::Array[Amocrm::Models::V4EntityNotesByParentUpdateByParentParams::entity_type]
+      end
+
+      type body =
+        {
+          id: Integer,
+          entity_id: Integer,
+          note_type: String,
+          params: top,
+          updated_at: Integer,
+          updated_by: Integer
+        }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor id: Integer
+
+        attr_reader entity_id: Integer?
+
+        def entity_id=: (Integer) -> Integer
+
+        attr_reader note_type: String?
+
+        def note_type=: (String) -> String
+
+        attr_reader params: top?
+
+        def params=: (top) -> top
+
+        attr_reader updated_at: Integer?
+
+        def updated_at=: (Integer) -> Integer
+
+        attr_reader updated_by: Integer?
+
+        def updated_by=: (Integer) -> Integer
+
+        def initialize: (
+          id: Integer,
+          ?entity_id: Integer,
+          ?note_type: String,
+          ?params: top,
+          ?updated_at: Integer,
+          ?updated_by: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          entity_id: Integer,
+          note_type: String,
+          params: top,
+          updated_at: Integer,
+          updated_by: Integer
+        }
+      end
+    end
+  end
+end

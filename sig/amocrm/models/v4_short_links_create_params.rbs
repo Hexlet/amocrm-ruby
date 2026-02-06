@@ -1,0 +1,20 @@
+module Amocrm
+  module Models
+    type v4_short_links_create_params =
+      { url: String } & Amocrm::Internal::Type::request_parameters
+
+    class V4ShortLinksCreateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor url: String
+
+      def initialize: (
+        url: String,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> { url: String, request_options: Amocrm::RequestOptions }
+    end
+  end
+end

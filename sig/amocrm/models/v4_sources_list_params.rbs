@@ -1,0 +1,71 @@
+module Amocrm
+  module Models
+    type v4_sources_list_params =
+      { filter: Amocrm::V4SourcesListParams::Filter }
+      & Amocrm::Internal::Type::request_parameters
+
+    class V4SourcesListParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader filter: Amocrm::V4SourcesListParams::Filter?
+
+      def filter=: (
+        Amocrm::V4SourcesListParams::Filter
+      ) -> Amocrm::V4SourcesListParams::Filter
+
+      def initialize: (
+        ?filter: Amocrm::V4SourcesListParams::Filter,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        filter: Amocrm::V4SourcesListParams::Filter,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type filter =
+        {
+          external_id: Amocrm::Models::V4SourcesListParams::Filter::external_id
+        }
+
+      class Filter < Amocrm::Internal::Type::BaseModel
+        attr_reader external_id: Amocrm::Models::V4SourcesListParams::Filter::external_id?
+
+        def external_id=: (
+          Amocrm::Models::V4SourcesListParams::Filter::external_id
+        ) -> Amocrm::Models::V4SourcesListParams::Filter::external_id
+
+        def initialize: (
+          ?external_id: Amocrm::Models::V4SourcesListParams::Filter::external_id
+        ) -> void
+
+        def to_hash: -> {
+          external_id: Amocrm::Models::V4SourcesListParams::Filter::external_id
+        }
+
+        type external_id =
+          String
+          | Integer
+          | bool
+          | ::Array[Amocrm::Models::V4SourcesListParams::Filter::ExternalID::union_member3]
+
+        module ExternalID
+          extend Amocrm::Internal::Type::Union
+
+          type union_member3 = String | Integer | bool
+
+          module UnionMember3
+            extend Amocrm::Internal::Type::Union
+
+            def self?.variants: -> ::Array[Amocrm::Models::V4SourcesListParams::Filter::ExternalID::union_member3]
+          end
+
+          def self?.variants: -> ::Array[Amocrm::Models::V4SourcesListParams::Filter::external_id]
+
+          UnionMember3Array: Amocrm::Internal::Type::Converter
+        end
+      end
+    end
+  end
+end

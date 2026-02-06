@@ -1,0 +1,121 @@
+module Amocrm
+  module Models
+    type v4_custom_fields_create_response =
+      Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse
+      | Amocrm::Models::V4CustomFieldsCreateResponse::Problem
+
+    module V4CustomFieldsCreateResponse
+      extend Amocrm::Internal::Type::Union
+
+      type custom_field_create_response =
+        {
+          _embedded: Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded,
+          _links: top
+        }
+
+      class CustomFieldCreateResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded
+        ) -> Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded,
+          ?_links: top
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded,
+          _links: top
+        }
+
+        type embedded =
+          {
+            custom_fields: ::Array[Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded::CustomField]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader custom_fields: ::Array[Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded::CustomField]?
+
+          def custom_fields=: (
+            ::Array[Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded::CustomField]
+          ) -> ::Array[Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded::CustomField]
+
+          def initialize: (
+            ?custom_fields: ::Array[Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded::CustomField]
+          ) -> void
+
+          def to_hash: -> {
+            custom_fields: ::Array[Amocrm::Models::V4CustomFieldsCreateResponse::CustomFieldCreateResponse::Embedded::CustomField]
+          }
+
+          type custom_field = { id: Integer, name: String, request_id: String }
+
+          class CustomField < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader request_id: String?
+
+            def request_id=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?name: String,
+              ?request_id: String
+            ) -> void
+
+            def to_hash: -> { id: Integer, name: String, request_id: String }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::v4_custom_fields_create_response]
+    end
+  end
+end

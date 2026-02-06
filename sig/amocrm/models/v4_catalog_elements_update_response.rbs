@@ -1,0 +1,303 @@
+module Amocrm
+  module Models
+    type v4_catalog_elements_update_response =
+      Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse
+      | Amocrm::Models::V4CatalogElementsUpdateResponse::Problem
+
+    module V4CatalogElementsUpdateResponse
+      extend Amocrm::Internal::Type::Union
+
+      type catalog_element_update_response =
+        {
+          _embedded: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded,
+          _links: top
+        }
+
+      class CatalogElementUpdateResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded
+        ) -> Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded,
+          ?_links: top
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded,
+          _links: top
+        }
+
+        type embedded =
+          {
+            elements: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader elements: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element]?
+
+          def elements=: (
+            ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element]
+          ) -> ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element]
+
+          def initialize: (
+            ?elements: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element]
+          ) -> void
+
+          def to_hash: -> {
+            elements: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element]
+          }
+
+          type element =
+            {
+              id: Integer,
+              _embedded: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::Embedded,
+              _links: top,
+              account_id: Integer,
+              catalog_id: Integer,
+              created_at: Integer,
+              created_by: Integer,
+              custom_fields_values: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::CustomFieldsValue]?,
+              invoice_link: String?,
+              is_deleted: bool,
+              name: String,
+              request_id: String,
+              updated_at: Integer,
+              updated_by: Integer
+            }
+
+          class Element < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader _embedded: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::Embedded?
+
+            def _embedded=: (
+              Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::Embedded
+            ) -> Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::Embedded
+
+            attr_reader _links: top?
+
+            def _links=: (top) -> top
+
+            attr_reader account_id: Integer?
+
+            def account_id=: (Integer) -> Integer
+
+            attr_reader catalog_id: Integer?
+
+            def catalog_id=: (Integer) -> Integer
+
+            attr_reader created_at: Integer?
+
+            def created_at=: (Integer) -> Integer
+
+            attr_reader created_by: Integer?
+
+            def created_by=: (Integer) -> Integer
+
+            attr_accessor custom_fields_values: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::CustomFieldsValue]?
+
+            attr_accessor invoice_link: String?
+
+            attr_reader is_deleted: bool?
+
+            def is_deleted=: (bool) -> bool
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader request_id: String?
+
+            def request_id=: (String) -> String
+
+            attr_reader updated_at: Integer?
+
+            def updated_at=: (Integer) -> Integer
+
+            attr_reader updated_by: Integer?
+
+            def updated_by=: (Integer) -> Integer
+
+            def initialize: (
+              ?id: Integer,
+              ?_embedded: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::Embedded,
+              ?_links: top,
+              ?account_id: Integer,
+              ?catalog_id: Integer,
+              ?created_at: Integer,
+              ?created_by: Integer,
+              ?custom_fields_values: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::CustomFieldsValue]?,
+              ?invoice_link: String?,
+              ?is_deleted: bool,
+              ?name: String,
+              ?request_id: String,
+              ?updated_at: Integer,
+              ?updated_by: Integer
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              _embedded: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::Embedded,
+              _links: top,
+              account_id: Integer,
+              catalog_id: Integer,
+              created_at: Integer,
+              created_by: Integer,
+              custom_fields_values: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::CustomFieldsValue]?,
+              invoice_link: String?,
+              is_deleted: bool,
+              name: String,
+              request_id: String,
+              updated_at: Integer,
+              updated_by: Integer
+            }
+
+            type embedded =
+              {
+                warning: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::Embedded::Warning?
+              }
+
+            class Embedded < Amocrm::Internal::Type::BaseModel
+              attr_accessor warning: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::Embedded::Warning?
+
+              def initialize: (
+                ?warning: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::Embedded::Warning?
+              ) -> void
+
+              def to_hash: -> {
+                warning: Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::Embedded::Warning?
+              }
+
+              type warning = { message: String? }
+
+              class Warning < Amocrm::Internal::Type::BaseModel
+                attr_accessor message: String?
+
+                def initialize: (?message: String?) -> void
+
+                def to_hash: -> { message: String? }
+              end
+            end
+
+            type custom_fields_value =
+              {
+                values: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::CustomFieldsValue::Value],
+                field_code: String,
+                field_id: Integer,
+                field_name: String,
+                field_type: String
+              }
+
+            class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+              attr_accessor values: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::CustomFieldsValue::Value]
+
+              attr_reader field_code: String?
+
+              def field_code=: (String) -> String
+
+              attr_reader field_id: Integer?
+
+              def field_id=: (Integer) -> Integer
+
+              attr_reader field_name: String?
+
+              def field_name=: (String) -> String
+
+              attr_reader field_type: String?
+
+              def field_type=: (String) -> String
+
+              def initialize: (
+                values: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::CustomFieldsValue::Value],
+                ?field_code: String,
+                ?field_id: Integer,
+                ?field_name: String,
+                ?field_type: String
+              ) -> void
+
+              def to_hash: -> {
+                values: ::Array[Amocrm::Models::V4CatalogElementsUpdateResponse::CatalogElementUpdateResponse::Embedded::Element::CustomFieldsValue::Value],
+                field_code: String,
+                field_id: Integer,
+                field_name: String,
+                field_type: String
+              }
+
+              type value = { value: top, enum_code: String, enum_id: Integer }
+
+              class Value < Amocrm::Internal::Type::BaseModel
+                attr_accessor value: top
+
+                attr_reader enum_code: String?
+
+                def enum_code=: (String) -> String
+
+                attr_reader enum_id: Integer?
+
+                def enum_id=: (Integer) -> Integer
+
+                def initialize: (
+                  value: top,
+                  ?enum_code: String,
+                  ?enum_id: Integer
+                ) -> void
+
+                def to_hash: -> {
+                  value: top,
+                  enum_code: String,
+                  enum_id: Integer
+                }
+              end
+            end
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::v4_catalog_elements_update_response]
+    end
+  end
+end

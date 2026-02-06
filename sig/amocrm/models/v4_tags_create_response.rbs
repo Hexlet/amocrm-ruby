@@ -1,0 +1,132 @@
+module Amocrm
+  module Models
+    type v4_tags_create_response =
+      Amocrm::Models::V4TagsCreateResponse::TagCreateResponse
+      | Amocrm::Models::V4TagsCreateResponse::Problem
+
+    module V4TagsCreateResponse
+      extend Amocrm::Internal::Type::Union
+
+      type tag_create_response =
+        {
+          _embedded: Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded,
+          _links: top
+        }
+
+      class TagCreateResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded
+        ) -> Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded,
+          ?_links: top
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded,
+          _links: top
+        }
+
+        type embedded =
+          {
+            tags: ::Array[Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded::Tag]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader tags: ::Array[Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded::Tag]?
+
+          def tags=: (
+            ::Array[Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded::Tag]
+          ) -> ::Array[Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded::Tag]
+
+          def initialize: (
+            ?tags: ::Array[Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded::Tag]
+          ) -> void
+
+          def to_hash: -> {
+            tags: ::Array[Amocrm::Models::V4TagsCreateResponse::TagCreateResponse::Embedded::Tag]
+          }
+
+          type tag =
+            { id: Integer, color: String, name: String, request_id: String }
+
+          class Tag < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader color: String?
+
+            def color=: (String) -> String
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader request_id: String?
+
+            def request_id=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?color: String,
+              ?name: String,
+              ?request_id: String
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              color: String,
+              name: String,
+              request_id: String
+            }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::v4_tags_create_response]
+    end
+  end
+end

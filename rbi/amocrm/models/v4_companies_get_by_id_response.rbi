@@ -1,0 +1,743 @@
+# typed: strong
+
+module Amocrm
+  module Models
+    module V4CompaniesGetByIDResponse
+      extend Amocrm::Internal::Type::Union
+
+      Variants =
+        T.type_alias do
+          T.any(
+            Amocrm::Models::V4CompaniesGetByIDResponse::Company,
+            Amocrm::Models::V4CompaniesGetByIDResponse::Problem
+          )
+        end
+
+      class Company < Amocrm::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias do
+            T.any(
+              Amocrm::Models::V4CompaniesGetByIDResponse::Company,
+              Amocrm::Internal::AnyHash
+            )
+          end
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :id
+
+        sig { params(id: Integer).void }
+        attr_writer :id
+
+        sig do
+          returns(
+            T.nilable(
+              Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded
+            )
+          )
+        end
+        attr_reader :_embedded
+
+        sig do
+          params(
+            _embedded:
+              Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::OrHash
+          ).void
+        end
+        attr_writer :_embedded
+
+        sig { returns(T.nilable(T.anything)) }
+        attr_reader :_links
+
+        sig { params(_links: T.anything).void }
+        attr_writer :_links
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :account_id
+
+        sig { params(account_id: Integer).void }
+        attr_writer :account_id
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :closest_task_at
+
+        sig { params(closest_task_at: Integer).void }
+        attr_writer :closest_task_at
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :created_at
+
+        sig { params(created_at: Integer).void }
+        attr_writer :created_at
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :created_by
+
+        sig { params(created_by: Integer).void }
+        attr_writer :created_by
+
+        sig do
+          returns(
+            T.nilable(
+              T::Array[
+                Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue
+              ]
+            )
+          )
+        end
+        attr_accessor :custom_fields_values
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :group_id
+
+        sig { params(group_id: Integer).void }
+        attr_writer :group_id
+
+        sig { returns(T.nilable(String)) }
+        attr_reader :name
+
+        sig { params(name: String).void }
+        attr_writer :name
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :responsible_user_id
+
+        sig { params(responsible_user_id: Integer).void }
+        attr_writer :responsible_user_id
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :updated_at
+
+        sig { params(updated_at: Integer).void }
+        attr_writer :updated_at
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :updated_by
+
+        sig { params(updated_by: Integer).void }
+        attr_writer :updated_by
+
+        sig do
+          params(
+            id: Integer,
+            _embedded:
+              Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::OrHash,
+            _links: T.anything,
+            account_id: Integer,
+            closest_task_at: Integer,
+            created_at: Integer,
+            created_by: Integer,
+            custom_fields_values:
+              T.nilable(
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue::OrHash
+                ]
+              ),
+            group_id: Integer,
+            name: String,
+            responsible_user_id: Integer,
+            updated_at: Integer,
+            updated_by: Integer
+          ).returns(T.attached_class)
+        end
+        def self.new(
+          id: nil,
+          _embedded: nil,
+          _links: nil,
+          account_id: nil,
+          closest_task_at: nil,
+          created_at: nil,
+          created_by: nil,
+          custom_fields_values: nil,
+          group_id: nil,
+          name: nil,
+          responsible_user_id: nil,
+          updated_at: nil,
+          updated_by: nil
+        )
+        end
+
+        sig do
+          override.returns(
+            {
+              id: Integer,
+              _embedded:
+                Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded,
+              _links: T.anything,
+              account_id: Integer,
+              closest_task_at: Integer,
+              created_at: Integer,
+              created_by: Integer,
+              custom_fields_values:
+                T.nilable(
+                  T::Array[
+                    Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue
+                  ]
+                ),
+              group_id: Integer,
+              name: String,
+              responsible_user_id: Integer,
+              updated_at: Integer,
+              updated_by: Integer
+            }
+          )
+        end
+        def to_hash
+        end
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(
+                Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded,
+                Amocrm::Internal::AnyHash
+              )
+            end
+
+          sig do
+            returns(
+              T.nilable(
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::CatalogElement
+                ]
+              )
+            )
+          end
+          attr_reader :catalog_elements
+
+          sig do
+            params(
+              catalog_elements:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::CatalogElement::OrHash
+                ]
+            ).void
+          end
+          attr_writer :catalog_elements
+
+          sig do
+            returns(
+              T.nilable(
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Contact
+                ]
+              )
+            )
+          end
+          attr_reader :contacts
+
+          sig do
+            params(
+              contacts:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Contact::OrHash
+                ]
+            ).void
+          end
+          attr_writer :contacts
+
+          sig do
+            returns(
+              T.nilable(
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Customer
+                ]
+              )
+            )
+          end
+          attr_reader :customers
+
+          sig do
+            params(
+              customers:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Customer::OrHash
+                ]
+            ).void
+          end
+          attr_writer :customers
+
+          sig do
+            returns(
+              T.nilable(
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Lead
+                ]
+              )
+            )
+          end
+          attr_reader :leads
+
+          sig do
+            params(
+              leads:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Lead::OrHash
+                ]
+            ).void
+          end
+          attr_writer :leads
+
+          sig do
+            returns(
+              T.nilable(
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Tag
+                ]
+              )
+            )
+          end
+          attr_reader :tags
+
+          sig do
+            params(
+              tags:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Tag::OrHash
+                ]
+            ).void
+          end
+          attr_writer :tags
+
+          sig do
+            params(
+              catalog_elements:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::CatalogElement::OrHash
+                ],
+              contacts:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Contact::OrHash
+                ],
+              customers:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Customer::OrHash
+                ],
+              leads:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Lead::OrHash
+                ],
+              tags:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Tag::OrHash
+                ]
+            ).returns(T.attached_class)
+          end
+          def self.new(
+            catalog_elements: nil,
+            contacts: nil,
+            customers: nil,
+            leads: nil,
+            tags: nil
+          )
+          end
+
+          sig do
+            override.returns(
+              {
+                catalog_elements:
+                  T::Array[
+                    Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::CatalogElement
+                  ],
+                contacts:
+                  T::Array[
+                    Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Contact
+                  ],
+                customers:
+                  T::Array[
+                    Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Customer
+                  ],
+                leads:
+                  T::Array[
+                    Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Lead
+                  ],
+                tags:
+                  T::Array[
+                    Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Tag
+                  ]
+              }
+            )
+          end
+          def to_hash
+          end
+
+          class CatalogElement < Amocrm::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::CatalogElement,
+                  Amocrm::Internal::AnyHash
+                )
+              end
+
+            sig { returns(T.nilable(Integer)) }
+            attr_reader :id
+
+            sig { params(id: Integer).void }
+            attr_writer :id
+
+            sig { returns(T.nilable(T.anything)) }
+            attr_reader :_links
+
+            sig { params(_links: T.anything).void }
+            attr_writer :_links
+
+            sig do
+              params(id: Integer, _links: T.anything).returns(T.attached_class)
+            end
+            def self.new(id: nil, _links: nil)
+            end
+
+            sig { override.returns({ id: Integer, _links: T.anything }) }
+            def to_hash
+            end
+          end
+
+          class Contact < Amocrm::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Contact,
+                  Amocrm::Internal::AnyHash
+                )
+              end
+
+            sig { returns(T.nilable(Integer)) }
+            attr_reader :id
+
+            sig { params(id: Integer).void }
+            attr_writer :id
+
+            sig { returns(T.nilable(T.anything)) }
+            attr_reader :_links
+
+            sig { params(_links: T.anything).void }
+            attr_writer :_links
+
+            sig do
+              params(id: Integer, _links: T.anything).returns(T.attached_class)
+            end
+            def self.new(id: nil, _links: nil)
+            end
+
+            sig { override.returns({ id: Integer, _links: T.anything }) }
+            def to_hash
+            end
+          end
+
+          class Customer < Amocrm::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Customer,
+                  Amocrm::Internal::AnyHash
+                )
+              end
+
+            sig { returns(T.nilable(Integer)) }
+            attr_reader :id
+
+            sig { params(id: Integer).void }
+            attr_writer :id
+
+            sig { returns(T.nilable(T.anything)) }
+            attr_reader :_links
+
+            sig { params(_links: T.anything).void }
+            attr_writer :_links
+
+            sig do
+              params(id: Integer, _links: T.anything).returns(T.attached_class)
+            end
+            def self.new(id: nil, _links: nil)
+            end
+
+            sig { override.returns({ id: Integer, _links: T.anything }) }
+            def to_hash
+            end
+          end
+
+          class Lead < Amocrm::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Lead,
+                  Amocrm::Internal::AnyHash
+                )
+              end
+
+            sig { returns(T.nilable(Integer)) }
+            attr_reader :id
+
+            sig { params(id: Integer).void }
+            attr_writer :id
+
+            sig { returns(T.nilable(T.anything)) }
+            attr_reader :_links
+
+            sig { params(_links: T.anything).void }
+            attr_writer :_links
+
+            sig do
+              params(id: Integer, _links: T.anything).returns(T.attached_class)
+            end
+            def self.new(id: nil, _links: nil)
+            end
+
+            sig { override.returns({ id: Integer, _links: T.anything }) }
+            def to_hash
+            end
+          end
+
+          class Tag < Amocrm::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::Embedded::Tag,
+                  Amocrm::Internal::AnyHash
+                )
+              end
+
+            sig { returns(T.nilable(Integer)) }
+            attr_reader :id
+
+            sig { params(id: Integer).void }
+            attr_writer :id
+
+            sig { returns(T.nilable(String)) }
+            attr_reader :color
+
+            sig { params(color: String).void }
+            attr_writer :color
+
+            sig { returns(T.nilable(String)) }
+            attr_reader :name
+
+            sig { params(name: String).void }
+            attr_writer :name
+
+            sig do
+              params(id: Integer, color: String, name: String).returns(
+                T.attached_class
+              )
+            end
+            def self.new(id: nil, color: nil, name: nil)
+            end
+
+            sig do
+              override.returns({ id: Integer, color: String, name: String })
+            end
+            def to_hash
+            end
+          end
+        end
+
+        class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+          OrHash =
+            T.type_alias do
+              T.any(
+                Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue,
+                Amocrm::Internal::AnyHash
+              )
+            end
+
+          # Values for the field (multiple values allowed)
+          sig do
+            returns(
+              T::Array[
+                Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue::Value
+              ]
+            )
+          end
+          attr_accessor :values
+
+          # Field code (e.g. PHONE/EMAIL)
+          sig { returns(T.nilable(String)) }
+          attr_reader :field_code
+
+          sig { params(field_code: String).void }
+          attr_writer :field_code
+
+          # Use either field_id or field_code (e.g. PHONE/EMAIL)
+          sig { returns(T.nilable(Integer)) }
+          attr_reader :field_id
+
+          sig { params(field_id: Integer).void }
+          attr_writer :field_id
+
+          sig do
+            params(
+              values:
+                T::Array[
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue::Value::OrHash
+                ],
+              field_code: String,
+              field_id: Integer
+            ).returns(T.attached_class)
+          end
+          def self.new(
+            # Values for the field (multiple values allowed)
+            values:,
+            # Field code (e.g. PHONE/EMAIL)
+            field_code: nil,
+            # Use either field_id or field_code (e.g. PHONE/EMAIL)
+            field_id: nil
+          )
+          end
+
+          sig do
+            override.returns(
+              {
+                values:
+                  T::Array[
+                    Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue::Value
+                  ],
+                field_code: String,
+                field_id: Integer
+              }
+            )
+          end
+          def to_hash
+          end
+
+          class Value < Amocrm::Internal::Type::BaseModel
+            OrHash =
+              T.type_alias do
+                T.any(
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue::Value,
+                  Amocrm::Internal::AnyHash
+                )
+              end
+
+            sig do
+              returns(
+                Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue::Value::Value::Variants
+              )
+            end
+            attr_accessor :value
+
+            # Option code for list/select custom fields (if you use code instead of id)
+            sig { returns(T.nilable(String)) }
+            attr_reader :enum_code
+
+            sig { params(enum_code: String).void }
+            attr_writer :enum_code
+
+            # Option id for list/select custom fields (one of predefined options)
+            sig { returns(T.nilable(Integer)) }
+            attr_reader :enum_id
+
+            sig { params(enum_id: Integer).void }
+            attr_writer :enum_id
+
+            sig do
+              params(
+                value:
+                  Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue::Value::Value::Variants,
+                enum_code: String,
+                enum_id: Integer
+              ).returns(T.attached_class)
+            end
+            def self.new(
+              value:,
+              # Option code for list/select custom fields (if you use code instead of id)
+              enum_code: nil,
+              # Option id for list/select custom fields (one of predefined options)
+              enum_id: nil
+            )
+            end
+
+            sig do
+              override.returns(
+                {
+                  value:
+                    Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue::Value::Value::Variants,
+                  enum_code: String,
+                  enum_id: Integer
+                }
+              )
+            end
+            def to_hash
+            end
+
+            module Value
+              extend Amocrm::Internal::Type::Union
+
+              Variants = T.type_alias { T.any(String, Integer, T::Boolean) }
+
+              sig do
+                override.returns(
+                  T::Array[
+                    Amocrm::Models::V4CompaniesGetByIDResponse::Company::CustomFieldsValue::Value::Value::Variants
+                  ]
+                )
+              end
+              def self.variants
+              end
+            end
+          end
+        end
+      end
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        OrHash =
+          T.type_alias do
+            T.any(
+              Amocrm::Models::V4CompaniesGetByIDResponse::Problem,
+              Amocrm::Internal::AnyHash
+            )
+          end
+
+        sig { returns(T.nilable(String)) }
+        attr_reader :detail
+
+        sig { params(detail: String).void }
+        attr_writer :detail
+
+        sig { returns(T.nilable(Integer)) }
+        attr_reader :status
+
+        sig { params(status: Integer).void }
+        attr_writer :status
+
+        sig { returns(T.nilable(String)) }
+        attr_reader :title
+
+        sig { params(title: String).void }
+        attr_writer :title
+
+        sig { returns(T.nilable(String)) }
+        attr_reader :type
+
+        sig { params(type: String).void }
+        attr_writer :type
+
+        sig do
+          params(
+            detail: String,
+            status: Integer,
+            title: String,
+            type: String
+          ).returns(T.attached_class)
+        end
+        def self.new(detail: nil, status: nil, title: nil, type: nil)
+        end
+
+        sig do
+          override.returns(
+            { detail: String, status: Integer, title: String, type: String }
+          )
+        end
+        def to_hash
+        end
+      end
+
+      sig do
+        override.returns(
+          T::Array[Amocrm::Models::V4CompaniesGetByIDResponse::Variants]
+        )
+      end
+      def self.variants
+      end
+    end
+  end
+end

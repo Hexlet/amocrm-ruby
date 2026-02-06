@@ -1,0 +1,121 @@
+module Amocrm
+  module Models
+    type v4_customer_transactions_create_response =
+      Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse
+      | Amocrm::Models::V4CustomerTransactionsCreateResponse::Problem
+
+    module V4CustomerTransactionsCreateResponse
+      extend Amocrm::Internal::Type::Union
+
+      type customer_transaction_create_response =
+        {
+          _embedded: Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded,
+          _links: top
+        }
+
+      class CustomerTransactionCreateResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded
+        ) -> Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded,
+          ?_links: top
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded,
+          _links: top
+        }
+
+        type embedded =
+          {
+            transactions: ::Array[Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded::Transaction]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader transactions: ::Array[Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded::Transaction]?
+
+          def transactions=: (
+            ::Array[Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded::Transaction]
+          ) -> ::Array[Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded::Transaction]
+
+          def initialize: (
+            ?transactions: ::Array[Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded::Transaction]
+          ) -> void
+
+          def to_hash: -> {
+            transactions: ::Array[Amocrm::Models::V4CustomerTransactionsCreateResponse::CustomerTransactionCreateResponse::Embedded::Transaction]
+          }
+
+          type transaction = { id: Integer, _links: top, request_id: String }
+
+          class Transaction < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader _links: top?
+
+            def _links=: (top) -> top
+
+            attr_reader request_id: String?
+
+            def request_id=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?_links: top,
+              ?request_id: String
+            ) -> void
+
+            def to_hash: -> { id: Integer, _links: top, request_id: String }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::v4_customer_transactions_create_response]
+    end
+  end
+end

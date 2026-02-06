@@ -1,0 +1,176 @@
+module Amocrm
+  module Models
+    type v4_entity_links_list_by_entity_response =
+      Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse
+      | Amocrm::Models::V4EntityLinksListByEntityResponse::Problem
+
+    module V4EntityLinksListByEntityResponse
+      extend Amocrm::Internal::Type::Union
+
+      type entity_links_response =
+        {
+          _embedded: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded,
+          _links: top
+        }
+
+      class EntityLinksResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded
+        ) -> Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded,
+          ?_links: top
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded,
+          _links: top
+        }
+
+        type embedded =
+          {
+            links: ::Array[Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader links: ::Array[Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link]?
+
+          def links=: (
+            ::Array[Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link]
+          ) -> ::Array[Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link]
+
+          def initialize: (
+            ?links: ::Array[Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link]
+          ) -> void
+
+          def to_hash: -> {
+            links: ::Array[Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link]
+          }
+
+          type link =
+            {
+              entity_id: Integer,
+              entity_type: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::entity_type,
+              metadata: top,
+              to_entity_id: Integer,
+              to_entity_type: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::to_entity_type
+            }
+
+          class Link < Amocrm::Internal::Type::BaseModel
+            attr_reader entity_id: Integer?
+
+            def entity_id=: (Integer) -> Integer
+
+            attr_reader entity_type: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::entity_type?
+
+            def entity_type=: (
+              Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::entity_type
+            ) -> Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::entity_type
+
+            attr_reader metadata: top?
+
+            def metadata=: (top) -> top
+
+            attr_reader to_entity_id: Integer?
+
+            def to_entity_id=: (Integer) -> Integer
+
+            attr_reader to_entity_type: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::to_entity_type?
+
+            def to_entity_type=: (
+              Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::to_entity_type
+            ) -> Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::to_entity_type
+
+            def initialize: (
+              ?entity_id: Integer,
+              ?entity_type: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::entity_type,
+              ?metadata: top,
+              ?to_entity_id: Integer,
+              ?to_entity_type: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::to_entity_type
+            ) -> void
+
+            def to_hash: -> {
+              entity_id: Integer,
+              entity_type: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::entity_type,
+              metadata: top,
+              to_entity_id: Integer,
+              to_entity_type: Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::to_entity_type
+            }
+
+            type entity_type =
+              :leads | :contacts | :companies | :customers | String
+
+            module EntityType
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::entity_type]
+
+              LEADS: :leads
+              CONTACTS: :contacts
+              COMPANIES: :companies
+              CUSTOMERS: :customers
+            end
+
+            type to_entity_type =
+              :leads | :contacts | :companies | :customers | String
+
+            module ToEntityType
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::V4EntityLinksListByEntityResponse::EntityLinksResponse::Embedded::Link::to_entity_type]
+
+              LEADS: :leads
+              CONTACTS: :contacts
+              COMPANIES: :companies
+              CUSTOMERS: :customers
+            end
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::v4_entity_links_list_by_entity_response]
+    end
+  end
+end
