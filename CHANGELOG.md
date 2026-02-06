@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1 (2026-02-06)
+
+Full Changelog: [v0.5.0...v0.5.1](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.0...v0.5.1)
+
 ## 0.5.0 (2026-02-06)
 
 Full Changelog: [v0.4.0...v0.5.0](https://github.com/Hexlet/amocrm-ruby/compare/v0.4.0...v0.5.0)
