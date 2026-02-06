@@ -1,0 +1,261 @@
+module Amocrm
+  module Models
+    type api_contacts_create_params =
+      { body: ::Array[Amocrm::APIContactsCreateParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APIContactsCreateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::APIContactsCreateParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::APIContactsCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::APIContactsCreateParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body =
+        {
+          _embedded: Amocrm::APIContactsCreateParams::Body::Embedded,
+          created_at: Integer,
+          created_by: Integer,
+          custom_fields_values: ::Array[Amocrm::APIContactsCreateParams::Body::CustomFieldsValue],
+          first_name: String,
+          last_name: String,
+          name: String,
+          request_id: String,
+          responsible_user_id: Integer,
+          tags_to_add: ::Array[Amocrm::APIContactsCreateParams::Body::TagsToAdd],
+          updated_at: Integer,
+          updated_by: Integer
+        }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::APIContactsCreateParams::Body::Embedded?
+
+        def _embedded=: (
+          Amocrm::APIContactsCreateParams::Body::Embedded
+        ) -> Amocrm::APIContactsCreateParams::Body::Embedded
+
+        attr_reader created_at: Integer?
+
+        def created_at=: (Integer) -> Integer
+
+        attr_reader created_by: Integer?
+
+        def created_by=: (Integer) -> Integer
+
+        attr_reader custom_fields_values: ::Array[Amocrm::APIContactsCreateParams::Body::CustomFieldsValue]?
+
+        def custom_fields_values=: (
+          ::Array[Amocrm::APIContactsCreateParams::Body::CustomFieldsValue]
+        ) -> ::Array[Amocrm::APIContactsCreateParams::Body::CustomFieldsValue]
+
+        attr_reader first_name: String?
+
+        def first_name=: (String) -> String
+
+        attr_reader last_name: String?
+
+        def last_name=: (String) -> String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        attr_reader responsible_user_id: Integer?
+
+        def responsible_user_id=: (Integer) -> Integer
+
+        attr_reader tags_to_add: ::Array[Amocrm::APIContactsCreateParams::Body::TagsToAdd]?
+
+        def tags_to_add=: (
+          ::Array[Amocrm::APIContactsCreateParams::Body::TagsToAdd]
+        ) -> ::Array[Amocrm::APIContactsCreateParams::Body::TagsToAdd]
+
+        attr_reader updated_at: Integer?
+
+        def updated_at=: (Integer) -> Integer
+
+        attr_reader updated_by: Integer?
+
+        def updated_by=: (Integer) -> Integer
+
+        def initialize: (
+          ?_embedded: Amocrm::APIContactsCreateParams::Body::Embedded,
+          ?created_at: Integer,
+          ?created_by: Integer,
+          ?custom_fields_values: ::Array[Amocrm::APIContactsCreateParams::Body::CustomFieldsValue],
+          ?first_name: String,
+          ?last_name: String,
+          ?name: String,
+          ?request_id: String,
+          ?responsible_user_id: Integer,
+          ?tags_to_add: ::Array[Amocrm::APIContactsCreateParams::Body::TagsToAdd],
+          ?updated_at: Integer,
+          ?updated_by: Integer
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::APIContactsCreateParams::Body::Embedded,
+          created_at: Integer,
+          created_by: Integer,
+          custom_fields_values: ::Array[Amocrm::APIContactsCreateParams::Body::CustomFieldsValue],
+          first_name: String,
+          last_name: String,
+          name: String,
+          request_id: String,
+          responsible_user_id: Integer,
+          tags_to_add: ::Array[Amocrm::APIContactsCreateParams::Body::TagsToAdd],
+          updated_at: Integer,
+          updated_by: Integer
+        }
+
+        type embedded =
+          {
+            tags: ::Array[Amocrm::APIContactsCreateParams::Body::Embedded::Tag]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader tags: ::Array[Amocrm::APIContactsCreateParams::Body::Embedded::Tag]?
+
+          def tags=: (
+            ::Array[Amocrm::APIContactsCreateParams::Body::Embedded::Tag]
+          ) -> ::Array[Amocrm::APIContactsCreateParams::Body::Embedded::Tag]
+
+          def initialize: (
+            ?tags: ::Array[Amocrm::APIContactsCreateParams::Body::Embedded::Tag]
+          ) -> void
+
+          def to_hash: -> {
+            tags: ::Array[Amocrm::APIContactsCreateParams::Body::Embedded::Tag]
+          }
+
+          type tag = { id: Integer, color: String, name: String }
+
+          class Tag < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader color: String?
+
+            def color=: (String) -> String
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?color: String,
+              ?name: String
+            ) -> void
+
+            def to_hash: -> { id: Integer, color: String, name: String }
+          end
+        end
+
+        type custom_fields_value =
+          {
+            values: ::Array[Amocrm::APIContactsCreateParams::Body::CustomFieldsValue::Value],
+            field_code: String,
+            field_id: Integer
+          }
+
+        class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+          attr_accessor values: ::Array[Amocrm::APIContactsCreateParams::Body::CustomFieldsValue::Value]
+
+          attr_reader field_code: String?
+
+          def field_code=: (String) -> String
+
+          attr_reader field_id: Integer?
+
+          def field_id=: (Integer) -> Integer
+
+          def initialize: (
+            values: ::Array[Amocrm::APIContactsCreateParams::Body::CustomFieldsValue::Value],
+            ?field_code: String,
+            ?field_id: Integer
+          ) -> void
+
+          def to_hash: -> {
+            values: ::Array[Amocrm::APIContactsCreateParams::Body::CustomFieldsValue::Value],
+            field_code: String,
+            field_id: Integer
+          }
+
+          type value =
+            {
+              value: Amocrm::Models::APIContactsCreateParams::Body::CustomFieldsValue::Value::value,
+              enum_code: String,
+              enum_id: Integer
+            }
+
+          class Value < Amocrm::Internal::Type::BaseModel
+            attr_accessor value: Amocrm::Models::APIContactsCreateParams::Body::CustomFieldsValue::Value::value
+
+            attr_reader enum_code: String?
+
+            def enum_code=: (String) -> String
+
+            attr_reader enum_id: Integer?
+
+            def enum_id=: (Integer) -> Integer
+
+            def initialize: (
+              value: Amocrm::Models::APIContactsCreateParams::Body::CustomFieldsValue::Value::value,
+              ?enum_code: String,
+              ?enum_id: Integer
+            ) -> void
+
+            def to_hash: -> {
+              value: Amocrm::Models::APIContactsCreateParams::Body::CustomFieldsValue::Value::value,
+              enum_code: String,
+              enum_id: Integer
+            }
+
+            type value = String | Integer | bool
+
+            module Value
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::APIContactsCreateParams::Body::CustomFieldsValue::Value::value]
+            end
+          end
+        end
+
+        type tags_to_add = { id: Integer, color: String, name: String }
+
+        class TagsToAdd < Amocrm::Internal::Type::BaseModel
+          attr_reader id: Integer?
+
+          def id=: (Integer) -> Integer
+
+          attr_reader color: String?
+
+          def color=: (String) -> String
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (?id: Integer, ?color: String, ?name: String) -> void
+
+          def to_hash: -> { id: Integer, color: String, name: String }
+        end
+      end
+    end
+  end
+end

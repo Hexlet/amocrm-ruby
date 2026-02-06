@@ -1,0 +1,80 @@
+module Amocrm
+  module Models
+    type api_sources_update_by_id_params =
+      {
+        default: bool,
+        external_id: String,
+        name: String,
+        origin_code: String?,
+        pipeline_id: Integer?,
+        request_id: String,
+        services: Amocrm::Models::APISourcesUpdateByIDParams::services
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APISourcesUpdateByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader default: bool?
+
+      def default=: (bool) -> bool
+
+      attr_reader external_id: String?
+
+      def external_id=: (String) -> String
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_accessor origin_code: String?
+
+      attr_accessor pipeline_id: Integer?
+
+      attr_reader request_id: String?
+
+      def request_id=: (String) -> String
+
+      attr_reader services: Amocrm::Models::APISourcesUpdateByIDParams::services?
+
+      def services=: (
+        Amocrm::Models::APISourcesUpdateByIDParams::services
+      ) -> Amocrm::Models::APISourcesUpdateByIDParams::services
+
+      def initialize: (
+        ?default: bool,
+        ?external_id: String,
+        ?name: String,
+        ?origin_code: String?,
+        ?pipeline_id: Integer?,
+        ?request_id: String,
+        ?services: Amocrm::Models::APISourcesUpdateByIDParams::services,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        default: bool,
+        external_id: String,
+        name: String,
+        origin_code: String?,
+        pipeline_id: Integer?,
+        request_id: String,
+        services: Amocrm::Models::APISourcesUpdateByIDParams::services,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type services = ::Array[top] | ::Array[String]
+
+      module Services
+        extend Amocrm::Internal::Type::Union
+
+        def self?.variants: -> ::Array[Amocrm::Models::APISourcesUpdateByIDParams::services]
+
+        UnionMember0Array: Amocrm::Internal::Type::Converter
+
+        StringArray: Amocrm::Internal::Type::Converter
+      end
+    end
+  end
+end

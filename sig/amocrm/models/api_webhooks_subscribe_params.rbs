@@ -1,0 +1,34 @@
+module Amocrm
+  module Models
+    type api_webhooks_subscribe_params =
+      { destination: String, settings: ::Array[String], sort: Integer }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APIWebhooksSubscribeParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor destination: String
+
+      attr_accessor settings: ::Array[String]
+
+      attr_reader sort: Integer?
+
+      def sort=: (Integer) -> Integer
+
+      def initialize: (
+        destination: String,
+        settings: ::Array[String],
+        ?sort: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        destination: String,
+        settings: ::Array[String],
+        sort: Integer,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

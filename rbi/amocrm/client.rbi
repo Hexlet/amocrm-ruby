@@ -16,11 +16,8 @@ module Amocrm
     sig { returns(String) }
     attr_reader :subdomain
 
-    sig { returns(Amocrm::Resources::V2) }
-    attr_reader :v2
-
-    sig { returns(Amocrm::Resources::V4) }
-    attr_reader :v4
+    sig { returns(Amocrm::Resources::API) }
+    attr_reader :api
 
     # @api private
     sig { override.returns(T::Hash[String, String]) }

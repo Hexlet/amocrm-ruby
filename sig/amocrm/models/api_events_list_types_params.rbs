@@ -1,0 +1,25 @@
+module Amocrm
+  module Models
+    type api_events_list_types_params =
+      { language_code: String } & Amocrm::Internal::Type::request_parameters
+
+    class APIEventsListTypesParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader language_code: String?
+
+      def language_code=: (String) -> String
+
+      def initialize: (
+        ?language_code: String,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        language_code: String,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

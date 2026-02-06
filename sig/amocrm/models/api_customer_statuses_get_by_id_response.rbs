@@ -1,0 +1,95 @@
+module Amocrm
+  module Models
+    type api_customer_statuses_get_by_id_response =
+      Amocrm::Models::APICustomerStatusesGetByIDResponse::CustomerStatus
+      | Amocrm::Models::APICustomerStatusesGetByIDResponse::Problem
+
+    module APICustomerStatusesGetByIDResponse
+      extend Amocrm::Internal::Type::Union
+
+      type customer_status =
+        {
+          id: Integer,
+          color: String,
+          name: String,
+          sort: Integer,
+          type: String
+        }
+
+      class CustomerStatus < Amocrm::Internal::Type::BaseModel
+        attr_reader id: Integer?
+
+        def id=: (Integer) -> Integer
+
+        attr_reader color: String?
+
+        def color=: (String) -> String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader sort: Integer?
+
+        def sort=: (Integer) -> Integer
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?id: Integer,
+          ?color: String,
+          ?name: String,
+          ?sort: Integer,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          color: String,
+          name: String,
+          sort: Integer,
+          type: String
+        }
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::api_customer_statuses_get_by_id_response]
+    end
+  end
+end

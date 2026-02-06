@@ -1,0 +1,527 @@
+module Amocrm
+  module Models
+    type api_users_get_by_id_response =
+      Amocrm::Models::APIUsersGetByIDResponse::User
+      | Amocrm::Models::APIUsersGetByIDResponse::Problem
+
+    module APIUsersGetByIDResponse
+      extend Amocrm::Internal::Type::Union
+
+      type user =
+        {
+          id: Integer,
+          _embedded: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded,
+          _links: top,
+          amojo_id: String?,
+          email: String,
+          lang: String,
+          name: String,
+          phone_number: String?,
+          rights: Amocrm::Models::APIUsersGetByIDResponse::User::Rights,
+          user_rank: String?,
+          uuid: String?
+        }
+
+      class User < Amocrm::Internal::Type::BaseModel
+        attr_reader id: Integer?
+
+        def id=: (Integer) -> Integer
+
+        attr_reader _embedded: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::APIUsersGetByIDResponse::User::Embedded
+        ) -> Amocrm::Models::APIUsersGetByIDResponse::User::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        attr_accessor amojo_id: String?
+
+        attr_reader email: String?
+
+        def email=: (String) -> String
+
+        attr_reader lang: String?
+
+        def lang=: (String) -> String
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_accessor phone_number: String?
+
+        attr_reader rights: Amocrm::Models::APIUsersGetByIDResponse::User::Rights?
+
+        def rights=: (
+          Amocrm::Models::APIUsersGetByIDResponse::User::Rights
+        ) -> Amocrm::Models::APIUsersGetByIDResponse::User::Rights
+
+        attr_accessor user_rank: String?
+
+        attr_accessor uuid: String?
+
+        def initialize: (
+          ?id: Integer,
+          ?_embedded: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded,
+          ?_links: top,
+          ?amojo_id: String?,
+          ?email: String,
+          ?lang: String,
+          ?name: String,
+          ?phone_number: String?,
+          ?rights: Amocrm::Models::APIUsersGetByIDResponse::User::Rights,
+          ?user_rank: String?,
+          ?uuid: String?
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          _embedded: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded,
+          _links: top,
+          amojo_id: String?,
+          email: String,
+          lang: String,
+          name: String,
+          phone_number: String?,
+          rights: Amocrm::Models::APIUsersGetByIDResponse::User::Rights,
+          user_rank: String?,
+          uuid: String?
+        }
+
+        type embedded =
+          {
+            groups: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Group],
+            roles: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader groups: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Group]?
+
+          def groups=: (
+            ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Group]
+          ) -> ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Group]
+
+          attr_reader roles: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role]?
+
+          def roles=: (
+            ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role]
+          ) -> ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role]
+
+          def initialize: (
+            ?groups: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Group],
+            ?roles: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role]
+          ) -> void
+
+          def to_hash: -> {
+            groups: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Group],
+            roles: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role]
+          }
+
+          type group = { id: Integer, name: String, uuid: String }
+
+          class Group < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader uuid: String?
+
+            def uuid=: (String) -> String
+
+            def initialize: (?id: Integer, ?name: String, ?uuid: String) -> void
+
+            def to_hash: -> { id: Integer, name: String, uuid: String }
+          end
+
+          type role =
+            {
+              id: Integer,
+              _embedded: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded,
+              _links: top,
+              name: String,
+              rights: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Rights
+            }
+
+          class Role < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader _embedded: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded?
+
+            def _embedded=: (
+              Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded
+            ) -> Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded
+
+            attr_reader _links: top?
+
+            def _links=: (top) -> top
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader rights: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Rights?
+
+            def rights=: (
+              Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Rights
+            ) -> Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Rights
+
+            def initialize: (
+              ?id: Integer,
+              ?_embedded: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded,
+              ?_links: top,
+              ?name: String,
+              ?rights: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Rights
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              _embedded: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded,
+              _links: top,
+              name: String,
+              rights: Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Rights
+            }
+
+            type embedded =
+              {
+                users: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded::User]
+              }
+
+            class Embedded < Amocrm::Internal::Type::BaseModel
+              attr_reader users: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded::User]?
+
+              def users=: (
+                ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded::User]
+              ) -> ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded::User]
+
+              def initialize: (
+                ?users: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded::User]
+              ) -> void
+
+              def to_hash: -> {
+                users: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Embedded::User]
+              }
+
+              type user = { id: Integer }
+
+              class User < Amocrm::Internal::Type::BaseModel
+                attr_reader id: Integer?
+
+                def id=: (Integer) -> Integer
+
+                def initialize: (?id: Integer) -> void
+
+                def to_hash: -> { id: Integer }
+              end
+            end
+
+            type rights =
+              {
+                catalog_access: bool,
+                companies: top,
+                contacts: top,
+                group_id: Integer?,
+                is_active: bool,
+                is_admin: bool,
+                is_free: bool,
+                leads: top,
+                mail_access: bool,
+                role_id: Integer?,
+                status_rights: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Rights::StatusRight]?,
+                tasks: top
+              }
+
+            class Rights < Amocrm::Internal::Type::BaseModel
+              attr_reader catalog_access: bool?
+
+              def catalog_access=: (bool) -> bool
+
+              attr_reader companies: top?
+
+              def companies=: (top) -> top
+
+              attr_reader contacts: top?
+
+              def contacts=: (top) -> top
+
+              attr_accessor group_id: Integer?
+
+              attr_reader is_active: bool?
+
+              def is_active=: (bool) -> bool
+
+              attr_reader is_admin: bool?
+
+              def is_admin=: (bool) -> bool
+
+              attr_reader is_free: bool?
+
+              def is_free=: (bool) -> bool
+
+              attr_reader leads: top?
+
+              def leads=: (top) -> top
+
+              attr_reader mail_access: bool?
+
+              def mail_access=: (bool) -> bool
+
+              attr_accessor role_id: Integer?
+
+              attr_accessor status_rights: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Rights::StatusRight]?
+
+              attr_reader tasks: top?
+
+              def tasks=: (top) -> top
+
+              def initialize: (
+                ?catalog_access: bool,
+                ?companies: top,
+                ?contacts: top,
+                ?group_id: Integer?,
+                ?is_active: bool,
+                ?is_admin: bool,
+                ?is_free: bool,
+                ?leads: top,
+                ?mail_access: bool,
+                ?role_id: Integer?,
+                ?status_rights: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Rights::StatusRight]?,
+                ?tasks: top
+              ) -> void
+
+              def to_hash: -> {
+                catalog_access: bool,
+                companies: top,
+                contacts: top,
+                group_id: Integer?,
+                is_active: bool,
+                is_admin: bool,
+                is_free: bool,
+                leads: top,
+                mail_access: bool,
+                role_id: Integer?,
+                status_rights: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Embedded::Role::Rights::StatusRight]?,
+                tasks: top
+              }
+
+              type status_right =
+                {
+                  entity_type: String,
+                  pipeline_id: Integer,
+                  rights: top,
+                  status_id: Integer
+                }
+
+              class StatusRight < Amocrm::Internal::Type::BaseModel
+                attr_reader entity_type: String?
+
+                def entity_type=: (String) -> String
+
+                attr_reader pipeline_id: Integer?
+
+                def pipeline_id=: (Integer) -> Integer
+
+                attr_reader rights: top?
+
+                def rights=: (top) -> top
+
+                attr_reader status_id: Integer?
+
+                def status_id=: (Integer) -> Integer
+
+                def initialize: (
+                  ?entity_type: String,
+                  ?pipeline_id: Integer,
+                  ?rights: top,
+                  ?status_id: Integer
+                ) -> void
+
+                def to_hash: -> {
+                  entity_type: String,
+                  pipeline_id: Integer,
+                  rights: top,
+                  status_id: Integer
+                }
+              end
+            end
+          end
+        end
+
+        type rights =
+          {
+            catalog_access: bool,
+            companies: top,
+            contacts: top,
+            group_id: Integer?,
+            is_active: bool,
+            is_admin: bool,
+            is_free: bool,
+            leads: top,
+            mail_access: bool,
+            role_id: Integer?,
+            status_rights: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Rights::StatusRight]?,
+            tasks: top
+          }
+
+        class Rights < Amocrm::Internal::Type::BaseModel
+          attr_reader catalog_access: bool?
+
+          def catalog_access=: (bool) -> bool
+
+          attr_reader companies: top?
+
+          def companies=: (top) -> top
+
+          attr_reader contacts: top?
+
+          def contacts=: (top) -> top
+
+          attr_accessor group_id: Integer?
+
+          attr_reader is_active: bool?
+
+          def is_active=: (bool) -> bool
+
+          attr_reader is_admin: bool?
+
+          def is_admin=: (bool) -> bool
+
+          attr_reader is_free: bool?
+
+          def is_free=: (bool) -> bool
+
+          attr_reader leads: top?
+
+          def leads=: (top) -> top
+
+          attr_reader mail_access: bool?
+
+          def mail_access=: (bool) -> bool
+
+          attr_accessor role_id: Integer?
+
+          attr_accessor status_rights: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Rights::StatusRight]?
+
+          attr_reader tasks: top?
+
+          def tasks=: (top) -> top
+
+          def initialize: (
+            ?catalog_access: bool,
+            ?companies: top,
+            ?contacts: top,
+            ?group_id: Integer?,
+            ?is_active: bool,
+            ?is_admin: bool,
+            ?is_free: bool,
+            ?leads: top,
+            ?mail_access: bool,
+            ?role_id: Integer?,
+            ?status_rights: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Rights::StatusRight]?,
+            ?tasks: top
+          ) -> void
+
+          def to_hash: -> {
+            catalog_access: bool,
+            companies: top,
+            contacts: top,
+            group_id: Integer?,
+            is_active: bool,
+            is_admin: bool,
+            is_free: bool,
+            leads: top,
+            mail_access: bool,
+            role_id: Integer?,
+            status_rights: ::Array[Amocrm::Models::APIUsersGetByIDResponse::User::Rights::StatusRight]?,
+            tasks: top
+          }
+
+          type status_right =
+            {
+              entity_type: String,
+              pipeline_id: Integer,
+              rights: top,
+              status_id: Integer
+            }
+
+          class StatusRight < Amocrm::Internal::Type::BaseModel
+            attr_reader entity_type: String?
+
+            def entity_type=: (String) -> String
+
+            attr_reader pipeline_id: Integer?
+
+            def pipeline_id=: (Integer) -> Integer
+
+            attr_reader rights: top?
+
+            def rights=: (top) -> top
+
+            attr_reader status_id: Integer?
+
+            def status_id=: (Integer) -> Integer
+
+            def initialize: (
+              ?entity_type: String,
+              ?pipeline_id: Integer,
+              ?rights: top,
+              ?status_id: Integer
+            ) -> void
+
+            def to_hash: -> {
+              entity_type: String,
+              pipeline_id: Integer,
+              rights: top,
+              status_id: Integer
+            }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::api_users_get_by_id_response]
+    end
+  end
+end

@@ -1,0 +1,73 @@
+module Amocrm
+  module Models
+    type api_companies_list_params =
+      {
+        filter: top,
+        limit: Integer,
+        order: top,
+        page: Integer,
+        query: Amocrm::Models::APICompaniesListParams::query,
+        with: String
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APICompaniesListParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader filter: top?
+
+      def filter=: (top) -> top
+
+      attr_reader limit: Integer?
+
+      def limit=: (Integer) -> Integer
+
+      attr_reader order: top?
+
+      def order=: (top) -> top
+
+      attr_reader page: Integer?
+
+      def page=: (Integer) -> Integer
+
+      attr_reader query: Amocrm::Models::APICompaniesListParams::query?
+
+      def query=: (
+        Amocrm::Models::APICompaniesListParams::query
+      ) -> Amocrm::Models::APICompaniesListParams::query
+
+      attr_reader with: String?
+
+      def with=: (String) -> String
+
+      def initialize: (
+        ?filter: top,
+        ?limit: Integer,
+        ?order: top,
+        ?page: Integer,
+        ?query: Amocrm::Models::APICompaniesListParams::query,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        filter: top,
+        limit: Integer,
+        order: top,
+        page: Integer,
+        query: Amocrm::Models::APICompaniesListParams::query,
+        with: String,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type query = String | Integer
+
+      module Query
+        extend Amocrm::Internal::Type::Union
+
+        def self?.variants: -> ::Array[Amocrm::Models::APICompaniesListParams::query]
+      end
+    end
+  end
+end

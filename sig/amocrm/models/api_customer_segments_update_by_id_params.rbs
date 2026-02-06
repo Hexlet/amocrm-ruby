@@ -1,0 +1,114 @@
+module Amocrm
+  module Models
+    type api_customer_segments_update_by_id_params =
+      {
+        color: String,
+        custom_fields_values: ::Array[Amocrm::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue],
+        name: String
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APICustomerSegmentsUpdateByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader color: String?
+
+      def color=: (String) -> String
+
+      attr_reader custom_fields_values: ::Array[Amocrm::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue]?
+
+      def custom_fields_values=: (
+        ::Array[Amocrm::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue]
+      ) -> ::Array[Amocrm::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue]
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      def initialize: (
+        ?color: String,
+        ?custom_fields_values: ::Array[Amocrm::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue],
+        ?name: String,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        color: String,
+        custom_fields_values: ::Array[Amocrm::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue],
+        name: String,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type custom_fields_value =
+        {
+          values: ::Array[Amocrm::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue::Value],
+          field_code: String,
+          field_id: Integer
+        }
+
+      class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+        attr_accessor values: ::Array[Amocrm::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue::Value]
+
+        attr_reader field_code: String?
+
+        def field_code=: (String) -> String
+
+        attr_reader field_id: Integer?
+
+        def field_id=: (Integer) -> Integer
+
+        def initialize: (
+          values: ::Array[Amocrm::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue::Value],
+          ?field_code: String,
+          ?field_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          values: ::Array[Amocrm::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue::Value],
+          field_code: String,
+          field_id: Integer
+        }
+
+        type value =
+          {
+            value: Amocrm::Models::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue::Value::value,
+            enum_code: String,
+            enum_id: Integer
+          }
+
+        class Value < Amocrm::Internal::Type::BaseModel
+          attr_accessor value: Amocrm::Models::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue::Value::value
+
+          attr_reader enum_code: String?
+
+          def enum_code=: (String) -> String
+
+          attr_reader enum_id: Integer?
+
+          def enum_id=: (Integer) -> Integer
+
+          def initialize: (
+            value: Amocrm::Models::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue::Value::value,
+            ?enum_code: String,
+            ?enum_id: Integer
+          ) -> void
+
+          def to_hash: -> {
+            value: Amocrm::Models::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue::Value::value,
+            enum_code: String,
+            enum_id: Integer
+          }
+
+          type value = String | Integer | bool
+
+          module Value
+            extend Amocrm::Internal::Type::Union
+
+            def self?.variants: -> ::Array[Amocrm::Models::APICustomerSegmentsUpdateByIDParams::CustomFieldsValue::Value::value]
+          end
+        end
+      end
+    end
+  end
+end

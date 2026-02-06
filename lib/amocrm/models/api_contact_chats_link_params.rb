@@ -1,0 +1,42 @@
+# frozen_string_literal: true
+
+module Amocrm
+  module Models
+    # @see Amocrm::Resources::API#contact_chats_link
+    class APIContactChatsLinkParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      # @!attribute body
+      #
+      #   @return [Array<Amocrm::Models::APIContactChatsLinkParams::Body>]
+      required :body, -> { Amocrm::Internal::Type::ArrayOf[Amocrm::APIContactChatsLinkParams::Body] }
+
+      # @!method initialize(body:, request_options: {})
+      #   @param body [Array<Amocrm::Models::APIContactChatsLinkParams::Body>]
+      #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        # @!attribute chat_id
+        #
+        #   @return [String]
+        required :chat_id, String
+
+        # @!attribute contact_id
+        #
+        #   @return [Integer]
+        required :contact_id, Integer
+
+        # @!attribute request_id
+        #
+        #   @return [String, nil]
+        optional :request_id, String
+
+        # @!method initialize(chat_id:, contact_id:, request_id: nil)
+        #   @param chat_id [String]
+        #   @param contact_id [Integer]
+        #   @param request_id [String]
+      end
+    end
+  end
+end

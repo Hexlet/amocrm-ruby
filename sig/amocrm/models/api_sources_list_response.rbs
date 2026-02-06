@@ -1,0 +1,192 @@
+module Amocrm
+  module Models
+    type api_sources_list_response =
+      Amocrm::Models::APISourcesListResponse::SourceListResponse
+      | Amocrm::Models::APISourcesListResponse::Problem
+
+    module APISourcesListResponse
+      extend Amocrm::Internal::Type::Union
+
+      type source_list_response =
+        {
+          _embedded: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded,
+          _links: top,
+          _total_items: Integer
+        }
+
+      class SourceListResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded
+        ) -> Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        attr_reader _total_items: Integer?
+
+        def _total_items=: (Integer) -> Integer
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded,
+          ?_links: top,
+          ?_total_items: Integer
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded,
+          _links: top,
+          _total_items: Integer
+        }
+
+        type embedded =
+          {
+            sources: ::Array[Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader sources: ::Array[Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source]?
+
+          def sources=: (
+            ::Array[Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source]
+          ) -> ::Array[Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source]
+
+          def initialize: (
+            ?sources: ::Array[Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source]
+          ) -> void
+
+          def to_hash: -> {
+            sources: ::Array[Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source]
+          }
+
+          type source =
+            {
+              id: Integer,
+              _links: top,
+              default: bool,
+              external_id: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::external_id,
+              name: String,
+              origin_code: String?,
+              pipeline_id: Integer?,
+              services: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::services
+            }
+
+          class Source < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader _links: top?
+
+            def _links=: (top) -> top
+
+            attr_reader default: bool?
+
+            def default=: (bool) -> bool
+
+            attr_reader external_id: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::external_id?
+
+            def external_id=: (
+              Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::external_id
+            ) -> Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::external_id
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_accessor origin_code: String?
+
+            attr_accessor pipeline_id: Integer?
+
+            attr_reader services: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::services?
+
+            def services=: (
+              Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::services
+            ) -> Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::services
+
+            def initialize: (
+              ?id: Integer,
+              ?_links: top,
+              ?default: bool,
+              ?external_id: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::external_id,
+              ?name: String,
+              ?origin_code: String?,
+              ?pipeline_id: Integer?,
+              ?services: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::services
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              _links: top,
+              default: bool,
+              external_id: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::external_id,
+              name: String,
+              origin_code: String?,
+              pipeline_id: Integer?,
+              services: Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::services
+            }
+
+            type external_id = String | Integer | bool
+
+            module ExternalID
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::external_id]
+            end
+
+            type services = ::Array[top] | ::Array[String]
+
+            module Services
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::APISourcesListResponse::SourceListResponse::Embedded::Source::services]
+
+              UnionMember0Array: Amocrm::Internal::Type::Converter
+
+              StringArray: Amocrm::Internal::Type::Converter
+            end
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::api_sources_list_response]
+    end
+  end
+end

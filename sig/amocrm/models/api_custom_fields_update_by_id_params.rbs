@@ -1,0 +1,103 @@
+module Amocrm
+  module Models
+    type api_custom_fields_update_by_id_params =
+      {
+        entity_type: String,
+        code: String,
+        enums: ::Array[top],
+        group_id: Integer,
+        is_deletable: bool,
+        is_multiple: bool,
+        is_required: bool,
+        is_visible: bool,
+        name: String,
+        settings: top,
+        sort: Integer,
+        type: String
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APICustomFieldsUpdateByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor entity_type: String
+
+      attr_reader code: String?
+
+      def code=: (String) -> String
+
+      attr_reader enums: ::Array[top]?
+
+      def enums=: (::Array[top]) -> ::Array[top]
+
+      attr_reader group_id: Integer?
+
+      def group_id=: (Integer) -> Integer
+
+      attr_reader is_deletable: bool?
+
+      def is_deletable=: (bool) -> bool
+
+      attr_reader is_multiple: bool?
+
+      def is_multiple=: (bool) -> bool
+
+      attr_reader is_required: bool?
+
+      def is_required=: (bool) -> bool
+
+      attr_reader is_visible: bool?
+
+      def is_visible=: (bool) -> bool
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader settings: top?
+
+      def settings=: (top) -> top
+
+      attr_reader sort: Integer?
+
+      def sort=: (Integer) -> Integer
+
+      attr_reader type: String?
+
+      def type=: (String) -> String
+
+      def initialize: (
+        entity_type: String,
+        ?code: String,
+        ?enums: ::Array[top],
+        ?group_id: Integer,
+        ?is_deletable: bool,
+        ?is_multiple: bool,
+        ?is_required: bool,
+        ?is_visible: bool,
+        ?name: String,
+        ?settings: top,
+        ?sort: Integer,
+        ?type: String,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        entity_type: String,
+        code: String,
+        enums: ::Array[top],
+        group_id: Integer,
+        is_deletable: bool,
+        is_multiple: bool,
+        is_required: bool,
+        is_visible: bool,
+        name: String,
+        settings: top,
+        sort: Integer,
+        type: String,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

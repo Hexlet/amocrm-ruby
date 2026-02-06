@@ -1,0 +1,422 @@
+module Amocrm
+  module Models
+    type api_companies_list_response =
+      Amocrm::Models::APICompaniesListResponse::CompanyListResponse
+      | Amocrm::Models::APICompaniesListResponse::Problem
+
+    module APICompaniesListResponse
+      extend Amocrm::Internal::Type::Union
+
+      type company_list_response =
+        {
+          _embedded: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded,
+          _links: top,
+          _page: Integer
+        }
+
+      class CompanyListResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded
+        ) -> Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        attr_reader _page: Integer?
+
+        def _page=: (Integer) -> Integer
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded,
+          ?_links: top,
+          ?_page: Integer
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded,
+          _links: top,
+          _page: Integer
+        }
+
+        type embedded =
+          {
+            companies: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader companies: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company]?
+
+          def companies=: (
+            ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company]
+          ) -> ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company]
+
+          def initialize: (
+            ?companies: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company]
+          ) -> void
+
+          def to_hash: -> {
+            companies: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company]
+          }
+
+          type company =
+            {
+              id: Integer,
+              _embedded: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded,
+              _links: top,
+              account_id: Integer,
+              closest_task_at: Integer,
+              created_at: Integer,
+              created_by: Integer,
+              custom_fields_values: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue]?,
+              group_id: Integer,
+              name: String,
+              responsible_user_id: Integer,
+              updated_at: Integer,
+              updated_by: Integer
+            }
+
+          class Company < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader _embedded: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded?
+
+            def _embedded=: (
+              Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded
+            ) -> Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded
+
+            attr_reader _links: top?
+
+            def _links=: (top) -> top
+
+            attr_reader account_id: Integer?
+
+            def account_id=: (Integer) -> Integer
+
+            attr_reader closest_task_at: Integer?
+
+            def closest_task_at=: (Integer) -> Integer
+
+            attr_reader created_at: Integer?
+
+            def created_at=: (Integer) -> Integer
+
+            attr_reader created_by: Integer?
+
+            def created_by=: (Integer) -> Integer
+
+            attr_accessor custom_fields_values: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue]?
+
+            attr_reader group_id: Integer?
+
+            def group_id=: (Integer) -> Integer
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader responsible_user_id: Integer?
+
+            def responsible_user_id=: (Integer) -> Integer
+
+            attr_reader updated_at: Integer?
+
+            def updated_at=: (Integer) -> Integer
+
+            attr_reader updated_by: Integer?
+
+            def updated_by=: (Integer) -> Integer
+
+            def initialize: (
+              ?id: Integer,
+              ?_embedded: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded,
+              ?_links: top,
+              ?account_id: Integer,
+              ?closest_task_at: Integer,
+              ?created_at: Integer,
+              ?created_by: Integer,
+              ?custom_fields_values: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue]?,
+              ?group_id: Integer,
+              ?name: String,
+              ?responsible_user_id: Integer,
+              ?updated_at: Integer,
+              ?updated_by: Integer
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              _embedded: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded,
+              _links: top,
+              account_id: Integer,
+              closest_task_at: Integer,
+              created_at: Integer,
+              created_by: Integer,
+              custom_fields_values: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue]?,
+              group_id: Integer,
+              name: String,
+              responsible_user_id: Integer,
+              updated_at: Integer,
+              updated_by: Integer
+            }
+
+            type embedded =
+              {
+                catalog_elements: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::CatalogElement],
+                contacts: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Contact],
+                customers: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Customer],
+                leads: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Lead],
+                tags: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Tag]
+              }
+
+            class Embedded < Amocrm::Internal::Type::BaseModel
+              attr_reader catalog_elements: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::CatalogElement]?
+
+              def catalog_elements=: (
+                ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::CatalogElement]
+              ) -> ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::CatalogElement]
+
+              attr_reader contacts: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Contact]?
+
+              def contacts=: (
+                ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Contact]
+              ) -> ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Contact]
+
+              attr_reader customers: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Customer]?
+
+              def customers=: (
+                ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Customer]
+              ) -> ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Customer]
+
+              attr_reader leads: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Lead]?
+
+              def leads=: (
+                ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Lead]
+              ) -> ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Lead]
+
+              attr_reader tags: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Tag]?
+
+              def tags=: (
+                ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Tag]
+              ) -> ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Tag]
+
+              def initialize: (
+                ?catalog_elements: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::CatalogElement],
+                ?contacts: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Contact],
+                ?customers: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Customer],
+                ?leads: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Lead],
+                ?tags: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Tag]
+              ) -> void
+
+              def to_hash: -> {
+                catalog_elements: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::CatalogElement],
+                contacts: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Contact],
+                customers: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Customer],
+                leads: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Lead],
+                tags: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::Embedded::Tag]
+              }
+
+              type catalog_element = { id: Integer, _links: top }
+
+              class CatalogElement < Amocrm::Internal::Type::BaseModel
+                attr_reader id: Integer?
+
+                def id=: (Integer) -> Integer
+
+                attr_reader _links: top?
+
+                def _links=: (top) -> top
+
+                def initialize: (?id: Integer, ?_links: top) -> void
+
+                def to_hash: -> { id: Integer, _links: top }
+              end
+
+              type contact = { id: Integer, _links: top }
+
+              class Contact < Amocrm::Internal::Type::BaseModel
+                attr_reader id: Integer?
+
+                def id=: (Integer) -> Integer
+
+                attr_reader _links: top?
+
+                def _links=: (top) -> top
+
+                def initialize: (?id: Integer, ?_links: top) -> void
+
+                def to_hash: -> { id: Integer, _links: top }
+              end
+
+              type customer = { id: Integer, _links: top }
+
+              class Customer < Amocrm::Internal::Type::BaseModel
+                attr_reader id: Integer?
+
+                def id=: (Integer) -> Integer
+
+                attr_reader _links: top?
+
+                def _links=: (top) -> top
+
+                def initialize: (?id: Integer, ?_links: top) -> void
+
+                def to_hash: -> { id: Integer, _links: top }
+              end
+
+              type lead = { id: Integer, _links: top }
+
+              class Lead < Amocrm::Internal::Type::BaseModel
+                attr_reader id: Integer?
+
+                def id=: (Integer) -> Integer
+
+                attr_reader _links: top?
+
+                def _links=: (top) -> top
+
+                def initialize: (?id: Integer, ?_links: top) -> void
+
+                def to_hash: -> { id: Integer, _links: top }
+              end
+
+              type tag = { id: Integer, color: String, name: String }
+
+              class Tag < Amocrm::Internal::Type::BaseModel
+                attr_reader id: Integer?
+
+                def id=: (Integer) -> Integer
+
+                attr_reader color: String?
+
+                def color=: (String) -> String
+
+                attr_reader name: String?
+
+                def name=: (String) -> String
+
+                def initialize: (
+                  ?id: Integer,
+                  ?color: String,
+                  ?name: String
+                ) -> void
+
+                def to_hash: -> { id: Integer, color: String, name: String }
+              end
+            end
+
+            type custom_fields_value =
+              {
+                values: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue::Value],
+                field_code: String,
+                field_id: Integer
+              }
+
+            class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+              attr_accessor values: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue::Value]
+
+              attr_reader field_code: String?
+
+              def field_code=: (String) -> String
+
+              attr_reader field_id: Integer?
+
+              def field_id=: (Integer) -> Integer
+
+              def initialize: (
+                values: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue::Value],
+                ?field_code: String,
+                ?field_id: Integer
+              ) -> void
+
+              def to_hash: -> {
+                values: ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue::Value],
+                field_code: String,
+                field_id: Integer
+              }
+
+              type value =
+                {
+                  value: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue::Value::value,
+                  enum_code: String,
+                  enum_id: Integer
+                }
+
+              class Value < Amocrm::Internal::Type::BaseModel
+                attr_accessor value: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue::Value::value
+
+                attr_reader enum_code: String?
+
+                def enum_code=: (String) -> String
+
+                attr_reader enum_id: Integer?
+
+                def enum_id=: (Integer) -> Integer
+
+                def initialize: (
+                  value: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue::Value::value,
+                  ?enum_code: String,
+                  ?enum_id: Integer
+                ) -> void
+
+                def to_hash: -> {
+                  value: Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue::Value::value,
+                  enum_code: String,
+                  enum_id: Integer
+                }
+
+                type value = String | Integer | bool
+
+                module Value
+                  extend Amocrm::Internal::Type::Union
+
+                  def self?.variants: -> ::Array[Amocrm::Models::APICompaniesListResponse::CompanyListResponse::Embedded::Company::CustomFieldsValue::Value::value]
+                end
+              end
+            end
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::api_companies_list_response]
+    end
+  end
+end

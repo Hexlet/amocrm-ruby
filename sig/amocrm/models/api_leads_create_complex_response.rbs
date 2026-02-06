@@ -1,0 +1,144 @@
+module Amocrm
+  module Models
+    type api_leads_create_complex_response =
+      Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse
+      | Amocrm::Models::APILeadsCreateComplexResponse::Problem
+
+    module APILeadsCreateComplexResponse
+      extend Amocrm::Internal::Type::Union
+
+      type lead_complex_create_response =
+        {
+          _embedded: Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded,
+          _links: top
+        }
+
+      class LeadComplexCreateResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded
+        ) -> Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded,
+          ?_links: top
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded,
+          _links: top
+        }
+
+        type embedded =
+          {
+            leads: ::Array[Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded::Lead]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader leads: ::Array[Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded::Lead]?
+
+          def leads=: (
+            ::Array[Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded::Lead]
+          ) -> ::Array[Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded::Lead]
+
+          def initialize: (
+            ?leads: ::Array[Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded::Lead]
+          ) -> void
+
+          def to_hash: -> {
+            leads: ::Array[Amocrm::Models::APILeadsCreateComplexResponse::LeadComplexCreateResponse::Embedded::Lead]
+          }
+
+          type lead =
+            {
+              id: Integer,
+              company_id: Integer,
+              contact_id: Integer,
+              merged: bool,
+              request_id: String
+            }
+
+          class Lead < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader company_id: Integer?
+
+            def company_id=: (Integer) -> Integer
+
+            attr_reader contact_id: Integer?
+
+            def contact_id=: (Integer) -> Integer
+
+            attr_reader merged: bool?
+
+            def merged=: (bool) -> bool
+
+            attr_reader request_id: String?
+
+            def request_id=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?company_id: Integer,
+              ?contact_id: Integer,
+              ?merged: bool,
+              ?request_id: String
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              company_id: Integer,
+              contact_id: Integer,
+              merged: bool,
+              request_id: String
+            }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::api_leads_create_complex_response]
+    end
+  end
+end

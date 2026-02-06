@@ -1,0 +1,22 @@
+module Amocrm
+  module Models
+    type api_events_get_by_id_params =
+      { with: String } & Amocrm::Internal::Type::request_parameters
+
+    class APIEventsGetByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader with: String?
+
+      def with=: (String) -> String
+
+      def initialize: (
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> { with: String, request_options: Amocrm::RequestOptions }
+    end
+  end
+end
