@@ -16,14 +16,19 @@ module Amocrm
     DEFAULT_MAX_RETRY_DELAY = 8.0
 
     # @return [String]
-    attr_reader :api_key
+    attr_reader :token
+
+    # @return [String]
+    attr_reader :subdomain
 
     # @return [Amocrm::Resources::V4]
     attr_reader :v4
 
     # Creates and returns a new client for interacting with the API.
     #
-    # @param api_key [String, nil] Defaults to `ENV["AMOCRM_API_KEY"]`
+    # @param token [String, nil] Defaults to `ENV["AMOCRM_AUTH_TOKEN"]`
+    #
+    # @param subdomain [String, nil] Defaults to `ENV["AMOCRM_SUBDOMAIN"]`
     #
     # @param base_url [String, nil] Override the default base URL for the API, e.g.,
     # `"https://api.example.com/v2/"`. Defaults to `ENV["AMOCRM_BASE_URL"]`
@@ -36,20 +41,25 @@ module Amocrm
     #
     # @param max_retry_delay [Float]
     def initialize(
-      api_key: ENV["AMOCRM_API_KEY"],
+      token: ENV["AMOCRM_AUTH_TOKEN"],
+      subdomain: ENV["AMOCRM_SUBDOMAIN"],
       base_url: ENV["AMOCRM_BASE_URL"],
       max_retries: self.class::DEFAULT_MAX_RETRIES,
       timeout: self.class::DEFAULT_TIMEOUT_IN_SECONDS,
       initial_retry_delay: self.class::DEFAULT_INITIAL_RETRY_DELAY,
       max_retry_delay: self.class::DEFAULT_MAX_RETRY_DELAY
     )
-      base_url ||= "https://{subdomain}.amocrm.ru"
+      base_url ||= "https://#{subdomain}.amocrm.ru"
 
-      if api_key.nil?
-        raise ArgumentError.new("api_key is required, and can be set via environ: \"AMOCRM_API_KEY\"")
+      if token.nil?
+        raise ArgumentError.new("token is required, and can be set via environ: \"AMOCRM_AUTH_TOKEN\"")
+      end
+      if subdomain.nil?
+        raise ArgumentError.new("subdomain is required, and can be set via environ: \"AMOCRM_SUBDOMAIN\"")
       end
 
-      @api_key = api_key.to_s
+      @token = token.to_s
+      @subdomain = subdomain.to_s
 
       super(
         base_url: base_url,
