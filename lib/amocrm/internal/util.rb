@@ -272,7 +272,9 @@ module Amocrm
         #
         # @return [Hash{String=>Array<String>}]
         def decode_query(query)
-          CGI.parse(query.to_s)
+          URI.decode_www_form(query.to_s).each_with_object(Hash.new { _1[_2] = [] }) do |(key, value), acc|
+            acc[key] << value
+          end
         end
 
         # @api private
