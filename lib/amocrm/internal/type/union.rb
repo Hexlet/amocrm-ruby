@@ -6,14 +6,14 @@ module Amocrm
       # @api private
       #
       # @example
-      #   # `api_account_get_response` is a `Amocrm::Models::APIAccountGetResponse`
-      #   case api_account_get_response
-      #   when Amocrm::Models::APIAccountGetResponse::AccountInfo
-      #     puts(api_account_get_response.id)
-      #   when Amocrm::Models::APIAccountGetResponse::Problem
-      #     puts(api_account_get_response.detail)
+      #   # `account_get_response` is a `Amocrm::Models::AccountGetResponse`
+      #   case account_get_response
+      #   when Amocrm::Models::AccountGetResponse::AccountInfo
+      #     puts(account_get_response.id)
+      #   when Amocrm::Models::AccountGetResponse::Problem
+      #     puts(account_get_response.detail)
       #   else
-      #     puts(api_account_get_response)
+      #     puts(account_get_response)
       #   end
       module Union
         include Amocrm::Internal::Type::Converter

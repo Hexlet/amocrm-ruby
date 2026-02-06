@@ -1,0 +1,24 @@
+module Amocrm
+  module Resources
+    class Webhooks
+      def list: (
+        ?filter: Amocrm::WebhookListParams::Filter,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::webhook_list_response
+
+      def subscribe: (
+        destination: String,
+        settings: ::Array[String],
+        ?sort: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::webhook_subscribe_response
+
+      def unsubscribe: (
+        destination: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::webhook_unsubscribe_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

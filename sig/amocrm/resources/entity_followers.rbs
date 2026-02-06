@@ -1,0 +1,29 @@
+module Amocrm
+  module Resources
+    class EntityFollowers
+      def list: (
+        Integer entity_id,
+        entity_type: Amocrm::Models::EntityFollowerListParams::entity_type,
+        ?limit: Integer,
+        ?page: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_follower_list_response
+
+      def add: (
+        Integer entity_id,
+        entity_type: Amocrm::Models::EntityFollowerAddParams::entity_type,
+        body: ::Array[Amocrm::EntityFollowerAddParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_follower_add_response
+
+      def remove: (
+        Integer entity_id,
+        entity_type: Amocrm::Models::EntityFollowerRemoveParams::entity_type,
+        body: ::Array[Amocrm::EntityFollowerRemoveParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::entity_follower_remove_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

@@ -1,0 +1,49 @@
+module Amocrm
+  module Resources
+    class PipelineStatuses
+      def create: (
+        Integer pipeline_id,
+        body: ::Array[Amocrm::PipelineStatusCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::pipeline_status_create_response
+
+      def update: (
+        Integer pipeline_id,
+        body: ::Array[Amocrm::PipelineStatusUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::pipeline_status_update_response
+
+      def list: (
+        Integer pipeline_id,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::pipeline_status_list_response
+
+      def delete_by_id: (
+        Integer id,
+        pipeline_id: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::pipeline_status_delete_by_id_response
+
+      def get_by_id: (
+        Integer id,
+        pipeline_id: Integer,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::pipeline_status_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        pipeline_id: Integer,
+        ?color: String,
+        ?descriptions: ::Array[Amocrm::PipelineStatusUpdateByIDParams::Description],
+        ?name: String,
+        ?request_id: String,
+        ?sort: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::pipeline_status_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

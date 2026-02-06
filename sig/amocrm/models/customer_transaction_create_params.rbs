@@ -1,0 +1,78 @@
+module Amocrm
+  module Models
+    type customer_transaction_create_params =
+      {
+        body: ::Array[Amocrm::CustomerTransactionCreateParams::Body],
+        accrue_bonus: bool
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class CustomerTransactionCreateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::CustomerTransactionCreateParams::Body]
+
+      attr_reader accrue_bonus: bool?
+
+      def accrue_bonus=: (bool) -> bool
+
+      def initialize: (
+        body: ::Array[Amocrm::CustomerTransactionCreateParams::Body],
+        ?accrue_bonus: bool,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::CustomerTransactionCreateParams::Body],
+        accrue_bonus: bool,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body =
+        {
+          price: Integer,
+          comment: String,
+          created_at: Integer,
+          created_by: Integer,
+          request_id: String
+        }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor price: Integer
+
+        attr_reader comment: String?
+
+        def comment=: (String) -> String
+
+        attr_reader created_at: Integer?
+
+        def created_at=: (Integer) -> Integer
+
+        attr_reader created_by: Integer?
+
+        def created_by=: (Integer) -> Integer
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        def initialize: (
+          price: Integer,
+          ?comment: String,
+          ?created_at: Integer,
+          ?created_by: Integer,
+          ?request_id: String
+        ) -> void
+
+        def to_hash: -> {
+          price: Integer,
+          comment: String,
+          created_at: Integer,
+          created_by: Integer,
+          request_id: String
+        }
+      end
+    end
+  end
+end

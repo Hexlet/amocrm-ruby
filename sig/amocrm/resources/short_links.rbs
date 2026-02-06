@@ -1,0 +1,12 @@
+module Amocrm
+  module Resources
+    class ShortLinks
+      def create: (
+        url: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::short_link_create_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

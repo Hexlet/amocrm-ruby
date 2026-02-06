@@ -1,281 +1,281 @@
 module Amocrm
-  class APIAccountGetParams = Amocrm::Models::APIAccountGetParams
+  class AccountGetParams = Amocrm::Models::AccountGetParams
 
-  class APICallsCreateParams = Amocrm::Models::APICallsCreateParams
+  class CallCreateParams = Amocrm::Models::CallCreateParams
 
-  class APICatalogElementsCreateParams = Amocrm::Models::APICatalogElementsCreateParams
+  class CatalogCreateParams = Amocrm::Models::CatalogCreateParams
 
-  class APICatalogElementsGetByIDParams = Amocrm::Models::APICatalogElementsGetByIDParams
+  class CatalogElementCreateParams = Amocrm::Models::CatalogElementCreateParams
 
-  class APICatalogElementsListParams = Amocrm::Models::APICatalogElementsListParams
+  class CatalogElementGetByIDParams = Amocrm::Models::CatalogElementGetByIDParams
 
-  class APICatalogElementsUpdateByIDParams = Amocrm::Models::APICatalogElementsUpdateByIDParams
+  class CatalogElementListParams = Amocrm::Models::CatalogElementListParams
 
-  class APICatalogElementsUpdateParams = Amocrm::Models::APICatalogElementsUpdateParams
+  class CatalogElementUpdateByIDParams = Amocrm::Models::CatalogElementUpdateByIDParams
 
-  class APICatalogsCreateParams = Amocrm::Models::APICatalogsCreateParams
+  class CatalogElementUpdateParams = Amocrm::Models::CatalogElementUpdateParams
 
-  class APICatalogsGetByIDParams = Amocrm::Models::APICatalogsGetByIDParams
+  class CatalogGetByIDParams = Amocrm::Models::CatalogGetByIDParams
 
-  class APICatalogsListParams = Amocrm::Models::APICatalogsListParams
+  class CatalogListParams = Amocrm::Models::CatalogListParams
 
-  class APICatalogsUpdateByIDParams = Amocrm::Models::APICatalogsUpdateByIDParams
+  class CatalogUpdateByIDParams = Amocrm::Models::CatalogUpdateByIDParams
 
-  class APICatalogsUpdateParams = Amocrm::Models::APICatalogsUpdateParams
+  class CatalogUpdateParams = Amocrm::Models::CatalogUpdateParams
 
-  class APICompaniesCreateParams = Amocrm::Models::APICompaniesCreateParams
+  class CompanyCreateParams = Amocrm::Models::CompanyCreateParams
 
-  class APICompaniesGetByIDParams = Amocrm::Models::APICompaniesGetByIDParams
+  class CompanyGetByIDParams = Amocrm::Models::CompanyGetByIDParams
 
-  class APICompaniesListParams = Amocrm::Models::APICompaniesListParams
+  class CompanyListParams = Amocrm::Models::CompanyListParams
 
-  class APICompaniesUpdateByIDParams = Amocrm::Models::APICompaniesUpdateByIDParams
+  class CompanyUpdateByIDParams = Amocrm::Models::CompanyUpdateByIDParams
 
-  class APICompaniesUpdateParams = Amocrm::Models::APICompaniesUpdateParams
+  class CompanyUpdateParams = Amocrm::Models::CompanyUpdateParams
 
-  class APIContactChatsLinkParams = Amocrm::Models::APIContactChatsLinkParams
+  class ContactChatLinkParams = Amocrm::Models::ContactChatLinkParams
 
-  class APIContactChatsListParams = Amocrm::Models::APIContactChatsListParams
+  class ContactChatListParams = Amocrm::Models::ContactChatListParams
 
-  class APIContactsCreateParams = Amocrm::Models::APIContactsCreateParams
+  class ContactCreateParams = Amocrm::Models::ContactCreateParams
 
-  class APIContactsGetByIDParams = Amocrm::Models::APIContactsGetByIDParams
+  class ContactGetByIDParams = Amocrm::Models::ContactGetByIDParams
 
-  class APIContactsListParams = Amocrm::Models::APIContactsListParams
+  class ContactListParams = Amocrm::Models::ContactListParams
 
-  class APIContactsUpdateByIDParams = Amocrm::Models::APIContactsUpdateByIDParams
+  class ContactUpdateByIDParams = Amocrm::Models::ContactUpdateByIDParams
 
-  class APIContactsUpdateParams = Amocrm::Models::APIContactsUpdateParams
+  class ContactUpdateParams = Amocrm::Models::ContactUpdateParams
 
-  class APICustomerBonusPointsChangeParams = Amocrm::Models::APICustomerBonusPointsChangeParams
+  class CustomerBonusPointChangeParams = Amocrm::Models::CustomerBonusPointChangeParams
 
-  class APICustomersCreateParams = Amocrm::Models::APICustomersCreateParams
+  class CustomerCreateParams = Amocrm::Models::CustomerCreateParams
 
-  class APICustomerSegmentsCreateParams = Amocrm::Models::APICustomerSegmentsCreateParams
+  class CustomerGetByIDParams = Amocrm::Models::CustomerGetByIDParams
 
-  class APICustomerSegmentsDeleteByIDParams = Amocrm::Models::APICustomerSegmentsDeleteByIDParams
+  class CustomerListParams = Amocrm::Models::CustomerListParams
 
-  class APICustomerSegmentsGetByIDParams = Amocrm::Models::APICustomerSegmentsGetByIDParams
+  class CustomerSegmentCreateParams = Amocrm::Models::CustomerSegmentCreateParams
 
-  class APICustomerSegmentsListParams = Amocrm::Models::APICustomerSegmentsListParams
+  class CustomerSegmentDeleteByIDParams = Amocrm::Models::CustomerSegmentDeleteByIDParams
 
-  class APICustomerSegmentsUpdateByIDParams = Amocrm::Models::APICustomerSegmentsUpdateByIDParams
+  class CustomerSegmentGetByIDParams = Amocrm::Models::CustomerSegmentGetByIDParams
 
-  class APICustomersGetByIDParams = Amocrm::Models::APICustomersGetByIDParams
+  class CustomerSegmentListParams = Amocrm::Models::CustomerSegmentListParams
 
-  class APICustomersListParams = Amocrm::Models::APICustomersListParams
+  class CustomerSegmentUpdateByIDParams = Amocrm::Models::CustomerSegmentUpdateByIDParams
 
-  class APICustomersModeSetModeParams = Amocrm::Models::APICustomersModeSetModeParams
+  class CustomersModeSetModeParams = Amocrm::Models::CustomersModeSetModeParams
 
-  class APICustomerStatusesCreateParams = Amocrm::Models::APICustomerStatusesCreateParams
+  class CustomerStatusCreateParams = Amocrm::Models::CustomerStatusCreateParams
 
-  class APICustomerStatusesDeleteByIDParams = Amocrm::Models::APICustomerStatusesDeleteByIDParams
+  class CustomerStatusDeleteByIDParams = Amocrm::Models::CustomerStatusDeleteByIDParams
 
-  class APICustomerStatusesGetByIDParams = Amocrm::Models::APICustomerStatusesGetByIDParams
+  class CustomerStatusGetByIDParams = Amocrm::Models::CustomerStatusGetByIDParams
 
-  class APICustomerStatusesListParams = Amocrm::Models::APICustomerStatusesListParams
+  class CustomerStatusListParams = Amocrm::Models::CustomerStatusListParams
 
-  class APICustomerStatusesUpdateByIDParams = Amocrm::Models::APICustomerStatusesUpdateByIDParams
+  class CustomerStatusUpdateByIDParams = Amocrm::Models::CustomerStatusUpdateByIDParams
 
-  class APICustomersUpdateByIDParams = Amocrm::Models::APICustomersUpdateByIDParams
+  class CustomerTransactionCreateParams = Amocrm::Models::CustomerTransactionCreateParams
 
-  class APICustomersUpdateParams = Amocrm::Models::APICustomersUpdateParams
+  class CustomerTransactionDeleteByIDParams = Amocrm::Models::CustomerTransactionDeleteByIDParams
 
-  class APICustomerTransactionsCreateParams = Amocrm::Models::APICustomerTransactionsCreateParams
+  class CustomerTransactionListByCustomerParams = Amocrm::Models::CustomerTransactionListByCustomerParams
 
-  class APICustomerTransactionsDeleteByIDParams = Amocrm::Models::APICustomerTransactionsDeleteByIDParams
+  class CustomerTransactionListParams = Amocrm::Models::CustomerTransactionListParams
 
-  class APICustomerTransactionsListByCustomerParams = Amocrm::Models::APICustomerTransactionsListByCustomerParams
+  class CustomerUpdateByIDParams = Amocrm::Models::CustomerUpdateByIDParams
 
-  class APICustomerTransactionsListParams = Amocrm::Models::APICustomerTransactionsListParams
+  class CustomerUpdateParams = Amocrm::Models::CustomerUpdateParams
 
-  class APICustomFieldGroupsCreateParams = Amocrm::Models::APICustomFieldGroupsCreateParams
+  class CustomFieldCreateParams = Amocrm::Models::CustomFieldCreateParams
 
-  class APICustomFieldGroupsDeleteByIDParams = Amocrm::Models::APICustomFieldGroupsDeleteByIDParams
+  class CustomFieldDeleteByIDParams = Amocrm::Models::CustomFieldDeleteByIDParams
 
-  class APICustomFieldGroupsGetByIDParams = Amocrm::Models::APICustomFieldGroupsGetByIDParams
+  class CustomFieldGetByIDParams = Amocrm::Models::CustomFieldGetByIDParams
 
-  class APICustomFieldGroupsListParams = Amocrm::Models::APICustomFieldGroupsListParams
+  class CustomFieldGroupCreateParams = Amocrm::Models::CustomFieldGroupCreateParams
 
-  class APICustomFieldGroupsUpdateByIDParams = Amocrm::Models::APICustomFieldGroupsUpdateByIDParams
+  class CustomFieldGroupDeleteByIDParams = Amocrm::Models::CustomFieldGroupDeleteByIDParams
 
-  class APICustomFieldsCreateParams = Amocrm::Models::APICustomFieldsCreateParams
+  class CustomFieldGroupGetByIDParams = Amocrm::Models::CustomFieldGroupGetByIDParams
 
-  class APICustomFieldsDeleteByIDParams = Amocrm::Models::APICustomFieldsDeleteByIDParams
+  class CustomFieldGroupListParams = Amocrm::Models::CustomFieldGroupListParams
 
-  class APICustomFieldsGetByIDParams = Amocrm::Models::APICustomFieldsGetByIDParams
+  class CustomFieldGroupUpdateByIDParams = Amocrm::Models::CustomFieldGroupUpdateByIDParams
 
-  class APICustomFieldsListParams = Amocrm::Models::APICustomFieldsListParams
+  class CustomFieldListParams = Amocrm::Models::CustomFieldListParams
 
-  class APICustomFieldsUpdateByIDParams = Amocrm::Models::APICustomFieldsUpdateByIDParams
+  class CustomFieldUpdateByIDParams = Amocrm::Models::CustomFieldUpdateByIDParams
 
-  class APICustomFieldsUpdateParams = Amocrm::Models::APICustomFieldsUpdateParams
+  class CustomFieldUpdateParams = Amocrm::Models::CustomFieldUpdateParams
 
-  class APIEntityFollowersAddParams = Amocrm::Models::APIEntityFollowersAddParams
+  class EntityFollowerAddParams = Amocrm::Models::EntityFollowerAddParams
 
-  class APIEntityFollowersListParams = Amocrm::Models::APIEntityFollowersListParams
+  class EntityFollowerListParams = Amocrm::Models::EntityFollowerListParams
 
-  class APIEntityFollowersRemoveParams = Amocrm::Models::APIEntityFollowersRemoveParams
+  class EntityFollowerRemoveParams = Amocrm::Models::EntityFollowerRemoveParams
 
-  class APIEntityLinksLinkByEntityParams = Amocrm::Models::APIEntityLinksLinkByEntityParams
+  class EntityLinkLinkByEntityParams = Amocrm::Models::EntityLinkLinkByEntityParams
 
-  class APIEntityLinksLinkParams = Amocrm::Models::APIEntityLinksLinkParams
+  class EntityLinkLinkParams = Amocrm::Models::EntityLinkLinkParams
 
-  class APIEntityLinksListByEntityParams = Amocrm::Models::APIEntityLinksListByEntityParams
+  class EntityLinkListByEntityParams = Amocrm::Models::EntityLinkListByEntityParams
 
-  class APIEntityLinksListParams = Amocrm::Models::APIEntityLinksListParams
+  class EntityLinkListParams = Amocrm::Models::EntityLinkListParams
 
-  class APIEntityLinksUnlinkByEntityParams = Amocrm::Models::APIEntityLinksUnlinkByEntityParams
+  class EntityLinkUnlinkByEntityParams = Amocrm::Models::EntityLinkUnlinkByEntityParams
 
-  class APIEntityLinksUnlinkParams = Amocrm::Models::APIEntityLinksUnlinkParams
+  class EntityLinkUnlinkParams = Amocrm::Models::EntityLinkUnlinkParams
 
-  class APIEntityNotesByParentCreateByParentParams = Amocrm::Models::APIEntityNotesByParentCreateByParentParams
+  class EntityNoteCreateParams = Amocrm::Models::EntityNoteCreateParams
 
-  class APIEntityNotesByParentGetByParentIDParams = Amocrm::Models::APIEntityNotesByParentGetByParentIDParams
+  class EntityNoteGetByIDParams = Amocrm::Models::EntityNoteGetByIDParams
 
-  class APIEntityNotesByParentListByParentParams = Amocrm::Models::APIEntityNotesByParentListByParentParams
+  class EntityNoteListParams = Amocrm::Models::EntityNoteListParams
 
-  class APIEntityNotesByParentUpdateByParentIDParams = Amocrm::Models::APIEntityNotesByParentUpdateByParentIDParams
+  class EntityNotePinParams = Amocrm::Models::EntityNotePinParams
 
-  class APIEntityNotesByParentUpdateByParentParams = Amocrm::Models::APIEntityNotesByParentUpdateByParentParams
+  class EntityNotesByParentCreateByParentParams = Amocrm::Models::EntityNotesByParentCreateByParentParams
 
-  class APIEntityNotesCreateParams = Amocrm::Models::APIEntityNotesCreateParams
+  class EntityNotesByParentGetByParentIDParams = Amocrm::Models::EntityNotesByParentGetByParentIDParams
 
-  class APIEntityNotesGetByIDParams = Amocrm::Models::APIEntityNotesGetByIDParams
+  class EntityNotesByParentListByParentParams = Amocrm::Models::EntityNotesByParentListByParentParams
 
-  class APIEntityNotesListParams = Amocrm::Models::APIEntityNotesListParams
+  class EntityNotesByParentUpdateByParentIDParams = Amocrm::Models::EntityNotesByParentUpdateByParentIDParams
 
-  class APIEntityNotesPinParams = Amocrm::Models::APIEntityNotesPinParams
+  class EntityNotesByParentUpdateByParentParams = Amocrm::Models::EntityNotesByParentUpdateByParentParams
 
-  class APIEntityNotesUnpinParams = Amocrm::Models::APIEntityNotesUnpinParams
+  class EntityNoteUnpinParams = Amocrm::Models::EntityNoteUnpinParams
 
-  class APIEntityNotesUpdateByIDParams = Amocrm::Models::APIEntityNotesUpdateByIDParams
+  class EntityNoteUpdateByIDParams = Amocrm::Models::EntityNoteUpdateByIDParams
 
-  class APIEntityNotesUpdateParams = Amocrm::Models::APIEntityNotesUpdateParams
+  class EntityNoteUpdateParams = Amocrm::Models::EntityNoteUpdateParams
 
-  class APIEventsGetByIDParams = Amocrm::Models::APIEventsGetByIDParams
+  class EventGetByIDParams = Amocrm::Models::EventGetByIDParams
 
-  class APIEventsListParams = Amocrm::Models::APIEventsListParams
+  class EventListParams = Amocrm::Models::EventListParams
 
-  class APIEventsListTypesParams = Amocrm::Models::APIEventsListTypesParams
+  class EventListTypesParams = Amocrm::Models::EventListTypesParams
 
-  class APILeadsCreateComplexParams = Amocrm::Models::APILeadsCreateComplexParams
+  class LeadCreateComplexParams = Amocrm::Models::LeadCreateComplexParams
 
-  class APILeadsCreateParams = Amocrm::Models::APILeadsCreateParams
+  class LeadCreateParams = Amocrm::Models::LeadCreateParams
 
-  class APILeadsGetByIDParams = Amocrm::Models::APILeadsGetByIDParams
+  class LeadGetByIDParams = Amocrm::Models::LeadGetByIDParams
 
-  class APILeadsListParams = Amocrm::Models::APILeadsListParams
+  class LeadListParams = Amocrm::Models::LeadListParams
 
-  class APILeadsUpdateByIDParams = Amocrm::Models::APILeadsUpdateByIDParams
+  class LeadUpdateByIDParams = Amocrm::Models::LeadUpdateByIDParams
 
-  class APILeadsUpdateParams = Amocrm::Models::APILeadsUpdateParams
+  class LeadUpdateParams = Amocrm::Models::LeadUpdateParams
 
-  class APIPipelinesCreateParams = Amocrm::Models::APIPipelinesCreateParams
+  class PipelineCreateParams = Amocrm::Models::PipelineCreateParams
 
-  class APIPipelinesDeleteByIDParams = Amocrm::Models::APIPipelinesDeleteByIDParams
+  class PipelineDeleteByIDParams = Amocrm::Models::PipelineDeleteByIDParams
 
-  class APIPipelinesGetByIDParams = Amocrm::Models::APIPipelinesGetByIDParams
+  class PipelineGetByIDParams = Amocrm::Models::PipelineGetByIDParams
 
-  class APIPipelinesListParams = Amocrm::Models::APIPipelinesListParams
+  class PipelineListParams = Amocrm::Models::PipelineListParams
 
-  class APIPipelineStatusesCreateParams = Amocrm::Models::APIPipelineStatusesCreateParams
+  class PipelineStatusCreateParams = Amocrm::Models::PipelineStatusCreateParams
 
-  class APIPipelineStatusesDeleteByIDParams = Amocrm::Models::APIPipelineStatusesDeleteByIDParams
+  class PipelineStatusDeleteByIDParams = Amocrm::Models::PipelineStatusDeleteByIDParams
 
-  class APIPipelineStatusesGetByIDParams = Amocrm::Models::APIPipelineStatusesGetByIDParams
+  class PipelineStatusGetByIDParams = Amocrm::Models::PipelineStatusGetByIDParams
 
-  class APIPipelineStatusesListParams = Amocrm::Models::APIPipelineStatusesListParams
+  class PipelineStatusListParams = Amocrm::Models::PipelineStatusListParams
 
-  class APIPipelineStatusesUpdateByIDParams = Amocrm::Models::APIPipelineStatusesUpdateByIDParams
+  class PipelineStatusUpdateByIDParams = Amocrm::Models::PipelineStatusUpdateByIDParams
 
-  class APIPipelineStatusesUpdateParams = Amocrm::Models::APIPipelineStatusesUpdateParams
+  class PipelineStatusUpdateParams = Amocrm::Models::PipelineStatusUpdateParams
 
-  class APIPipelinesUpdateByIDParams = Amocrm::Models::APIPipelinesUpdateByIDParams
+  class PipelineUpdateByIDParams = Amocrm::Models::PipelineUpdateByIDParams
 
-  class APIPipelinesUpdateParams = Amocrm::Models::APIPipelinesUpdateParams
+  class PipelineUpdateParams = Amocrm::Models::PipelineUpdateParams
 
-  class APIRolesCreateParams = Amocrm::Models::APIRolesCreateParams
+  class RoleCreateParams = Amocrm::Models::RoleCreateParams
 
-  class APIRolesDeleteByIDParams = Amocrm::Models::APIRolesDeleteByIDParams
+  class RoleDeleteByIDParams = Amocrm::Models::RoleDeleteByIDParams
 
-  class APIRolesGetByIDParams = Amocrm::Models::APIRolesGetByIDParams
+  class RoleGetByIDParams = Amocrm::Models::RoleGetByIDParams
 
-  class APIRolesListParams = Amocrm::Models::APIRolesListParams
+  class RoleListParams = Amocrm::Models::RoleListParams
 
-  class APIRolesUpdateByIDParams = Amocrm::Models::APIRolesUpdateByIDParams
+  class RoleUpdateByIDParams = Amocrm::Models::RoleUpdateByIDParams
 
-  class APISalesbotRunParams = Amocrm::Models::APISalesbotRunParams
+  class SalesbotRunParams = Amocrm::Models::SalesbotRunParams
 
-  class APIShortLinksCreateParams = Amocrm::Models::APIShortLinksCreateParams
+  class ShortLinkCreateParams = Amocrm::Models::ShortLinkCreateParams
 
-  class APISourcesCreateParams = Amocrm::Models::APISourcesCreateParams
+  class SourceCreateParams = Amocrm::Models::SourceCreateParams
 
-  class APISourcesDeleteByIDParams = Amocrm::Models::APISourcesDeleteByIDParams
+  class SourceDeleteByIDParams = Amocrm::Models::SourceDeleteByIDParams
 
-  class APISourcesDeleteParams = Amocrm::Models::APISourcesDeleteParams
+  class SourceDeleteParams = Amocrm::Models::SourceDeleteParams
 
-  class APISourcesGetByIDParams = Amocrm::Models::APISourcesGetByIDParams
+  class SourceGetByIDParams = Amocrm::Models::SourceGetByIDParams
 
-  class APISourcesListParams = Amocrm::Models::APISourcesListParams
+  class SourceListParams = Amocrm::Models::SourceListParams
 
-  class APISourcesUpdateByIDParams = Amocrm::Models::APISourcesUpdateByIDParams
+  class SourceUpdateByIDParams = Amocrm::Models::SourceUpdateByIDParams
 
-  class APISourcesUpdateParams = Amocrm::Models::APISourcesUpdateParams
+  class SourceUpdateParams = Amocrm::Models::SourceUpdateParams
 
-  class APITagsCreateParams = Amocrm::Models::APITagsCreateParams
+  class TagCreateParams = Amocrm::Models::TagCreateParams
 
-  class APITagsListParams = Amocrm::Models::APITagsListParams
+  class TagListParams = Amocrm::Models::TagListParams
 
-  class APITalksCloseParams = Amocrm::Models::APITalksCloseParams
+  class TalkCloseParams = Amocrm::Models::TalkCloseParams
 
-  class APITalksGetByIDParams = Amocrm::Models::APITalksGetByIDParams
+  class TalkGetByIDParams = Amocrm::Models::TalkGetByIDParams
 
-  class APITasksCreateParams = Amocrm::Models::APITasksCreateParams
+  class TaskCreateParams = Amocrm::Models::TaskCreateParams
 
-  class APITasksGetByIDParams = Amocrm::Models::APITasksGetByIDParams
+  class TaskGetByIDParams = Amocrm::Models::TaskGetByIDParams
 
-  class APITasksListParams = Amocrm::Models::APITasksListParams
+  class TaskListParams = Amocrm::Models::TaskListParams
 
-  class APITasksUpdateByIDParams = Amocrm::Models::APITasksUpdateByIDParams
+  class TaskUpdateByIDParams = Amocrm::Models::TaskUpdateByIDParams
 
-  class APITasksUpdateParams = Amocrm::Models::APITasksUpdateParams
+  class TaskUpdateParams = Amocrm::Models::TaskUpdateParams
 
-  class APIUnsortedLeadsAcceptParams = Amocrm::Models::APIUnsortedLeadsAcceptParams
+  class UnsortedLeadAcceptParams = Amocrm::Models::UnsortedLeadAcceptParams
 
-  class APIUnsortedLeadsCreateFormsParams = Amocrm::Models::APIUnsortedLeadsCreateFormsParams
+  class UnsortedLeadCreateFormsParams = Amocrm::Models::UnsortedLeadCreateFormsParams
 
-  class APIUnsortedLeadsDeclineParams = Amocrm::Models::APIUnsortedLeadsDeclineParams
+  class UnsortedLeadDeclineParams = Amocrm::Models::UnsortedLeadDeclineParams
 
-  class APIUsersCreateParams = Amocrm::Models::APIUsersCreateParams
+  class UserCreateParams = Amocrm::Models::UserCreateParams
 
-  class APIUsersGetByIDParams = Amocrm::Models::APIUsersGetByIDParams
+  class UserGetByIDParams = Amocrm::Models::UserGetByIDParams
 
-  class APIUsersListParams = Amocrm::Models::APIUsersListParams
+  class UserListParams = Amocrm::Models::UserListParams
 
-  class APIWebhooksListParams = Amocrm::Models::APIWebhooksListParams
+  class WebhookListParams = Amocrm::Models::WebhookListParams
 
-  class APIWebhooksSubscribeParams = Amocrm::Models::APIWebhooksSubscribeParams
+  class WebhookSubscribeParams = Amocrm::Models::WebhookSubscribeParams
 
-  class APIWebhooksUnsubscribeParams = Amocrm::Models::APIWebhooksUnsubscribeParams
+  class WebhookUnsubscribeParams = Amocrm::Models::WebhookUnsubscribeParams
 
-  class APIWebsiteButtonsConnectOnlineChatParams = Amocrm::Models::APIWebsiteButtonsConnectOnlineChatParams
+  class WebsiteButtonConnectOnlineChatParams = Amocrm::Models::WebsiteButtonConnectOnlineChatParams
 
-  class APIWebsiteButtonsCreateParams = Amocrm::Models::APIWebsiteButtonsCreateParams
+  class WebsiteButtonCreateParams = Amocrm::Models::WebsiteButtonCreateParams
 
-  class APIWebsiteButtonsGetBySourceIDParams = Amocrm::Models::APIWebsiteButtonsGetBySourceIDParams
+  class WebsiteButtonGetBySourceIDParams = Amocrm::Models::WebsiteButtonGetBySourceIDParams
 
-  class APIWebsiteButtonsListParams = Amocrm::Models::APIWebsiteButtonsListParams
+  class WebsiteButtonListParams = Amocrm::Models::WebsiteButtonListParams
 
-  class APIWebsiteButtonsUpdateParams = Amocrm::Models::APIWebsiteButtonsUpdateParams
+  class WebsiteButtonUpdateParams = Amocrm::Models::WebsiteButtonUpdateParams
 
-  class APIWidgetBotContinueContinueParams = Amocrm::Models::APIWidgetBotContinueContinueParams
+  class WidgetBotContinueContinueParams = Amocrm::Models::WidgetBotContinueContinueParams
 
-  class APIWidgetsGetByCodeParams = Amocrm::Models::APIWidgetsGetByCodeParams
+  class WidgetGetByCodeParams = Amocrm::Models::WidgetGetByCodeParams
 
-  class APIWidgetsInstallParams = Amocrm::Models::APIWidgetsInstallParams
+  class WidgetInstallParams = Amocrm::Models::WidgetInstallParams
 
-  class APIWidgetsListParams = Amocrm::Models::APIWidgetsListParams
+  class WidgetListParams = Amocrm::Models::WidgetListParams
 
-  class APIWidgetsUninstallParams = Amocrm::Models::APIWidgetsUninstallParams
+  class WidgetUninstallParams = Amocrm::Models::WidgetUninstallParams
 end

@@ -1,0 +1,44 @@
+module Amocrm
+  module Resources
+    class Tasks
+      def create: (
+        body: ::Array[Amocrm::TaskCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::task_create_response
+
+      def update: (
+        body: ::Array[Amocrm::TaskUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::task_update_response
+
+      def list: (
+        ?filter: top,
+        ?limit: Integer,
+        ?order: top,
+        ?page: Integer,
+        ?query: Amocrm::Models::TaskListParams::query,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::task_list_response
+
+      def get_by_id: (
+        Integer id,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::task_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        ?complete_till: Integer,
+        ?entity_id: Integer,
+        ?entity_type: String,
+        ?is_completed: bool,
+        ?responsible_user_id: Integer,
+        ?result: Amocrm::TaskUpdateByIDParams::Result,
+        ?task_type_id: Integer,
+        ?text: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::task_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

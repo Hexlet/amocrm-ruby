@@ -1,0 +1,123 @@
+module Amocrm
+  module Models
+    type webhook_subscribe_response =
+      Amocrm::Models::WebhookSubscribeResponse::Webhook
+      | Amocrm::Models::WebhookSubscribeResponse::Problem
+
+    module WebhookSubscribeResponse
+      extend Amocrm::Internal::Type::Union
+
+      type webhook =
+        {
+          id: Integer,
+          account_id: Integer,
+          created_at: Integer,
+          created_by: Integer,
+          destination: String,
+          disabled: bool,
+          settings: ::Array[String],
+          sort: Integer,
+          updated_at: Integer
+        }
+
+      class Webhook < Amocrm::Internal::Type::BaseModel
+        attr_reader id: Integer?
+
+        def id=: (Integer) -> Integer
+
+        attr_reader account_id: Integer?
+
+        def account_id=: (Integer) -> Integer
+
+        attr_reader created_at: Integer?
+
+        def created_at=: (Integer) -> Integer
+
+        attr_reader created_by: Integer?
+
+        def created_by=: (Integer) -> Integer
+
+        attr_reader destination: String?
+
+        def destination=: (String) -> String
+
+        attr_reader disabled: bool?
+
+        def disabled=: (bool) -> bool
+
+        attr_reader settings: ::Array[String]?
+
+        def settings=: (::Array[String]) -> ::Array[String]
+
+        attr_reader sort: Integer?
+
+        def sort=: (Integer) -> Integer
+
+        attr_reader updated_at: Integer?
+
+        def updated_at=: (Integer) -> Integer
+
+        def initialize: (
+          ?id: Integer,
+          ?account_id: Integer,
+          ?created_at: Integer,
+          ?created_by: Integer,
+          ?destination: String,
+          ?disabled: bool,
+          ?settings: ::Array[String],
+          ?sort: Integer,
+          ?updated_at: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          account_id: Integer,
+          created_at: Integer,
+          created_by: Integer,
+          destination: String,
+          disabled: bool,
+          settings: ::Array[String],
+          sort: Integer,
+          updated_at: Integer
+        }
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::webhook_subscribe_response]
+    end
+  end
+end

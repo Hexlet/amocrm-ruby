@@ -1,0 +1,34 @@
+module Amocrm
+  module Resources
+    class CustomerStatuses
+      def create: (
+        body: ::Array[Amocrm::CustomerStatusCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_status_create_response
+
+      def list: (
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_status_list_response
+
+      def delete_by_id: (
+        Integer id,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_status_delete_by_id_response
+
+      def get_by_id: (
+        Integer id,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_status_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        ?color: String,
+        ?name: String,
+        ?sort: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_status_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

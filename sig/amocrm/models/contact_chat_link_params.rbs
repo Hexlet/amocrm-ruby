@@ -1,0 +1,48 @@
+module Amocrm
+  module Models
+    type contact_chat_link_params =
+      { body: ::Array[Amocrm::ContactChatLinkParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class ContactChatLinkParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::ContactChatLinkParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::ContactChatLinkParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::ContactChatLinkParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body = { chat_id: String, contact_id: Integer, request_id: String }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor chat_id: String
+
+        attr_accessor contact_id: Integer
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        def initialize: (
+          chat_id: String,
+          contact_id: Integer,
+          ?request_id: String
+        ) -> void
+
+        def to_hash: -> {
+          chat_id: String,
+          contact_id: Integer,
+          request_id: String
+        }
+      end
+    end
+  end
+end

@@ -1,0 +1,40 @@
+module Amocrm
+  module Models
+    type website_button_create_params =
+      {
+        pipeline_id: Integer,
+        is_used_in_app: bool,
+        trusted_websites: ::Array[String]
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class WebsiteButtonCreateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor pipeline_id: Integer
+
+      attr_reader is_used_in_app: bool?
+
+      def is_used_in_app=: (bool) -> bool
+
+      attr_reader trusted_websites: ::Array[String]?
+
+      def trusted_websites=: (::Array[String]) -> ::Array[String]
+
+      def initialize: (
+        pipeline_id: Integer,
+        ?is_used_in_app: bool,
+        ?trusted_websites: ::Array[String],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        pipeline_id: Integer,
+        is_used_in_app: bool,
+        trusted_websites: ::Array[String],
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

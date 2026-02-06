@@ -1,0 +1,51 @@
+module Amocrm
+  module Resources
+    class Customers
+      def create: (
+        body: ::Array[Amocrm::CustomerCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_create_response
+
+      def update: (
+        body: ::Array[Amocrm::CustomerUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_update_response
+
+      def list: (
+        ?filter: top,
+        ?limit: Integer,
+        ?order: top,
+        ?page: Integer,
+        ?query: Amocrm::Models::CustomerListParams::query,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_list_response
+
+      def get_by_id: (
+        Integer id,
+        ?with: String,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_get_by_id_response
+
+      def update_by_id: (
+        Integer id,
+        ?_embedded: Amocrm::CustomerUpdateByIDParams::Embedded,
+        ?custom_fields_values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue],
+        ?main_user_id: Integer,
+        ?name: String,
+        ?next_date: Integer,
+        ?next_price: Integer,
+        ?periodicity: Integer,
+        ?responsible_user_id: Integer,
+        ?status_id: Integer,
+        ?tags_to_add: ::Array[Amocrm::CustomerUpdateByIDParams::TagsToAdd],
+        ?tags_to_delete: ::Array[Amocrm::CustomerUpdateByIDParams::TagsToDelete],
+        ?updated_at: Integer,
+        ?updated_by: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customer_update_by_id_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

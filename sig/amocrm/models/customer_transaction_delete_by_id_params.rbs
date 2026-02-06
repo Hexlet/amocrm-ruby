@@ -1,0 +1,23 @@
+module Amocrm
+  module Models
+    type customer_transaction_delete_by_id_params =
+      { customer_id: Integer } & Amocrm::Internal::Type::request_parameters
+
+    class CustomerTransactionDeleteByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor customer_id: Integer
+
+      def initialize: (
+        customer_id: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        customer_id: Integer,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

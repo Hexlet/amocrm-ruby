@@ -1,0 +1,83 @@
+module Amocrm
+  module Models
+    type pipeline_update_params =
+      { body: ::Array[Amocrm::PipelineUpdateParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class PipelineUpdateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::PipelineUpdateParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::PipelineUpdateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::PipelineUpdateParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body =
+        {
+          id: Integer,
+          is_archive: bool,
+          is_main: bool,
+          is_unsorted_on: bool,
+          name: String,
+          request_id: String,
+          sort: Integer
+        }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor id: Integer
+
+        attr_reader is_archive: bool?
+
+        def is_archive=: (bool) -> bool
+
+        attr_reader is_main: bool?
+
+        def is_main=: (bool) -> bool
+
+        attr_reader is_unsorted_on: bool?
+
+        def is_unsorted_on=: (bool) -> bool
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        attr_reader sort: Integer?
+
+        def sort=: (Integer) -> Integer
+
+        def initialize: (
+          id: Integer,
+          ?is_archive: bool,
+          ?is_main: bool,
+          ?is_unsorted_on: bool,
+          ?name: String,
+          ?request_id: String,
+          ?sort: Integer
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          is_archive: bool,
+          is_main: bool,
+          is_unsorted_on: bool,
+          name: String,
+          request_id: String,
+          sort: Integer
+        }
+      end
+    end
+  end
+end

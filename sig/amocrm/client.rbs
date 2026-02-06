@@ -12,7 +12,77 @@ module Amocrm
 
     attr_reader subdomain: String
 
-    attr_reader api: Amocrm::Resources::API
+    attr_reader account: Amocrm::Resources::Account
+
+    attr_reader calls: Amocrm::Resources::Calls
+
+    attr_reader catalog_elements: Amocrm::Resources::CatalogElements
+
+    attr_reader catalogs: Amocrm::Resources::Catalogs
+
+    attr_reader companies: Amocrm::Resources::Companies
+
+    attr_reader contact_chats: Amocrm::Resources::ContactChats
+
+    attr_reader contacts: Amocrm::Resources::Contacts
+
+    attr_reader custom_field_groups: Amocrm::Resources::CustomFieldGroups
+
+    attr_reader custom_fields: Amocrm::Resources::CustomFields
+
+    attr_reader customer_bonus_points: Amocrm::Resources::CustomerBonusPoints
+
+    attr_reader customer_segments: Amocrm::Resources::CustomerSegments
+
+    attr_reader customer_statuses: Amocrm::Resources::CustomerStatuses
+
+    attr_reader customer_transactions: Amocrm::Resources::CustomerTransactions
+
+    attr_reader customers: Amocrm::Resources::Customers
+
+    attr_reader customers_mode: Amocrm::Resources::CustomersMode
+
+    attr_reader entity_followers: Amocrm::Resources::EntityFollowers
+
+    attr_reader entity_links: Amocrm::Resources::EntityLinks
+
+    attr_reader entity_notes: Amocrm::Resources::EntityNotes
+
+    attr_reader entity_notes_by_parent: Amocrm::Resources::EntityNotesByParent
+
+    attr_reader events: Amocrm::Resources::Events
+
+    attr_reader leads: Amocrm::Resources::Leads
+
+    attr_reader pipeline_statuses: Amocrm::Resources::PipelineStatuses
+
+    attr_reader pipelines: Amocrm::Resources::Pipelines
+
+    attr_reader roles: Amocrm::Resources::Roles
+
+    attr_reader salesbot: Amocrm::Resources::Salesbot
+
+    attr_reader short_links: Amocrm::Resources::ShortLinks
+
+    attr_reader sources: Amocrm::Resources::Sources
+
+    attr_reader tags: Amocrm::Resources::Tags
+
+    attr_reader talks: Amocrm::Resources::Talks
+
+    attr_reader tasks: Amocrm::Resources::Tasks
+
+    attr_reader unsorted_leads: Amocrm::Resources::UnsortedLeads
+
+    attr_reader users: Amocrm::Resources::Users
+
+    attr_reader webhooks: Amocrm::Resources::Webhooks
+
+    attr_reader website_buttons: Amocrm::Resources::WebsiteButtons
+
+    attr_reader widget_bot_continue: Amocrm::Resources::WidgetBotContinue
+
+    attr_reader widgets: Amocrm::Resources::Widgets
 
     private def auth_headers: -> ::Hash[String, String]
 

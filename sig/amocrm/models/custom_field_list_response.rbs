@@ -1,0 +1,207 @@
+module Amocrm
+  module Models
+    type custom_field_list_response =
+      Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse
+      | Amocrm::Models::CustomFieldListResponse::Problem
+
+    module CustomFieldListResponse
+      extend Amocrm::Internal::Type::Union
+
+      type custom_field_list_response =
+        {
+          _embedded: Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded,
+          _links: top,
+          _page: Integer
+        }
+
+      class CustomFieldListResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded
+        ) -> Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        attr_reader _page: Integer?
+
+        def _page=: (Integer) -> Integer
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded,
+          ?_links: top,
+          ?_page: Integer
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded,
+          _links: top,
+          _page: Integer
+        }
+
+        type embedded =
+          {
+            custom_fields: ::Array[Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded::CustomField]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader custom_fields: ::Array[Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded::CustomField]?
+
+          def custom_fields=: (
+            ::Array[Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded::CustomField]
+          ) -> ::Array[Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded::CustomField]
+
+          def initialize: (
+            ?custom_fields: ::Array[Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded::CustomField]
+          ) -> void
+
+          def to_hash: -> {
+            custom_fields: ::Array[Amocrm::Models::CustomFieldListResponse::CustomFieldListResponse::Embedded::CustomField]
+          }
+
+          type custom_field =
+            {
+              id: Integer,
+              code: String,
+              entity_type: String,
+              enums: ::Array[top],
+              group_id: Integer,
+              is_deletable: bool,
+              is_multiple: bool,
+              is_required: bool,
+              is_visible: bool,
+              name: String,
+              settings: top,
+              sort: Integer,
+              type: String
+            }
+
+          class CustomField < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader code: String?
+
+            def code=: (String) -> String
+
+            attr_reader entity_type: String?
+
+            def entity_type=: (String) -> String
+
+            attr_reader enums: ::Array[top]?
+
+            def enums=: (::Array[top]) -> ::Array[top]
+
+            attr_reader group_id: Integer?
+
+            def group_id=: (Integer) -> Integer
+
+            attr_reader is_deletable: bool?
+
+            def is_deletable=: (bool) -> bool
+
+            attr_reader is_multiple: bool?
+
+            def is_multiple=: (bool) -> bool
+
+            attr_reader is_required: bool?
+
+            def is_required=: (bool) -> bool
+
+            attr_reader is_visible: bool?
+
+            def is_visible=: (bool) -> bool
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader settings: top?
+
+            def settings=: (top) -> top
+
+            attr_reader sort: Integer?
+
+            def sort=: (Integer) -> Integer
+
+            attr_reader type: String?
+
+            def type=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?code: String,
+              ?entity_type: String,
+              ?enums: ::Array[top],
+              ?group_id: Integer,
+              ?is_deletable: bool,
+              ?is_multiple: bool,
+              ?is_required: bool,
+              ?is_visible: bool,
+              ?name: String,
+              ?settings: top,
+              ?sort: Integer,
+              ?type: String
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              code: String,
+              entity_type: String,
+              enums: ::Array[top],
+              group_id: Integer,
+              is_deletable: bool,
+              is_multiple: bool,
+              is_required: bool,
+              is_visible: bool,
+              name: String,
+              settings: top,
+              sort: Integer,
+              type: String
+            }
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::custom_field_list_response]
+    end
+  end
+end

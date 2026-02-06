@@ -1,0 +1,13 @@
+module Amocrm
+  module Resources
+    class CustomersMode
+      def set_mode: (
+        is_enabled: bool,
+        mode: Amocrm::Models::CustomersModeSetModeParams::mode,
+        ?request_options: Amocrm::request_opts
+      ) -> Amocrm::Models::customers_mode_set_mode_response
+
+      def initialize: (client: Amocrm::Client) -> void
+    end
+  end
+end

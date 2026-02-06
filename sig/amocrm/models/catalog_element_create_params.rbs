@@ -1,0 +1,124 @@
+module Amocrm
+  module Models
+    type catalog_element_create_params =
+      { body: ::Array[Amocrm::CatalogElementCreateParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class CatalogElementCreateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::CatalogElementCreateParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::CatalogElementCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::CatalogElementCreateParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body =
+        {
+          name: String,
+          custom_fields_values: ::Array[Amocrm::CatalogElementCreateParams::Body::CustomFieldsValue],
+          request_id: String
+        }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_reader custom_fields_values: ::Array[Amocrm::CatalogElementCreateParams::Body::CustomFieldsValue]?
+
+        def custom_fields_values=: (
+          ::Array[Amocrm::CatalogElementCreateParams::Body::CustomFieldsValue]
+        ) -> ::Array[Amocrm::CatalogElementCreateParams::Body::CustomFieldsValue]
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        def initialize: (
+          name: String,
+          ?custom_fields_values: ::Array[Amocrm::CatalogElementCreateParams::Body::CustomFieldsValue],
+          ?request_id: String
+        ) -> void
+
+        def to_hash: -> {
+          name: String,
+          custom_fields_values: ::Array[Amocrm::CatalogElementCreateParams::Body::CustomFieldsValue],
+          request_id: String
+        }
+
+        type custom_fields_value =
+          {
+            values: ::Array[Amocrm::CatalogElementCreateParams::Body::CustomFieldsValue::Value],
+            field_code: String,
+            field_id: Integer,
+            field_name: String,
+            field_type: String
+          }
+
+        class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+          attr_accessor values: ::Array[Amocrm::CatalogElementCreateParams::Body::CustomFieldsValue::Value]
+
+          attr_reader field_code: String?
+
+          def field_code=: (String) -> String
+
+          attr_reader field_id: Integer?
+
+          def field_id=: (Integer) -> Integer
+
+          attr_reader field_name: String?
+
+          def field_name=: (String) -> String
+
+          attr_reader field_type: String?
+
+          def field_type=: (String) -> String
+
+          def initialize: (
+            values: ::Array[Amocrm::CatalogElementCreateParams::Body::CustomFieldsValue::Value],
+            ?field_code: String,
+            ?field_id: Integer,
+            ?field_name: String,
+            ?field_type: String
+          ) -> void
+
+          def to_hash: -> {
+            values: ::Array[Amocrm::CatalogElementCreateParams::Body::CustomFieldsValue::Value],
+            field_code: String,
+            field_id: Integer,
+            field_name: String,
+            field_type: String
+          }
+
+          type value = { value: top, enum_code: String, enum_id: Integer }
+
+          class Value < Amocrm::Internal::Type::BaseModel
+            attr_accessor value: top
+
+            attr_reader enum_code: String?
+
+            def enum_code=: (String) -> String
+
+            attr_reader enum_id: Integer?
+
+            def enum_id=: (Integer) -> Integer
+
+            def initialize: (
+              value: top,
+              ?enum_code: String,
+              ?enum_id: Integer
+            ) -> void
+
+            def to_hash: -> { value: top, enum_code: String, enum_id: Integer }
+          end
+        end
+      end
+    end
+  end
+end
