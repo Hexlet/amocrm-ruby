@@ -19,6 +19,11 @@ module Amocrm
     sig { returns(Amocrm::Resources::V4) }
     attr_reader :v4
 
+    # @api private
+    sig { override.returns(T::Hash[String, String]) }
+    private def auth_headers
+    end
+
     # Creates and returns a new client for interacting with the API.
     sig do
       params(

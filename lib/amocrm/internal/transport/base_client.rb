@@ -217,6 +217,11 @@ module Amocrm
 
         # @api private
         #
+        # @return [Hash{String=>String}]
+        private def auth_headers = {}
+
+        # @api private
+        #
         # @return [String]
         private def user_agent = "#{self.class.name}/Ruby #{Amocrm::VERSION}"
 
@@ -271,6 +276,7 @@ module Amocrm
 
           headers = Amocrm::Internal::Util.normalized_headers(
             @headers,
+            auth_headers,
             req[:headers].to_h,
             opts[:extra_headers].to_h
           )

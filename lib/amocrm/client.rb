@@ -24,6 +24,15 @@ module Amocrm
     # @return [Amocrm::Resources::V4]
     attr_reader :v4
 
+    # @api private
+    #
+    # @return [Hash{String=>String}]
+    private def auth_headers
+      return {} if @token.nil?
+
+      {"authorization" => "Bearer #{@token}"}
+    end
+
     # Creates and returns a new client for interacting with the API.
     #
     # @param token [String, nil] Defaults to `ENV["AMOCRM_AUTH_TOKEN"]`

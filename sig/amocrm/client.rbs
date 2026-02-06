@@ -14,6 +14,8 @@ module Amocrm
 
     attr_reader v4: Amocrm::Resources::V4
 
+    private def auth_headers: -> ::Hash[String, String]
+
     def initialize: (
       ?token: String?,
       ?subdomain: String?,
