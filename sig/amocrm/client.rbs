@@ -8,12 +8,15 @@ module Amocrm
 
     DEFAULT_MAX_RETRY_DELAY: Float
 
-    attr_reader api_key: String
+    attr_reader token: String
+
+    attr_reader subdomain: String
 
     attr_reader v4: Amocrm::Resources::V4
 
     def initialize: (
-      ?api_key: String?,
+      ?token: String?,
+      ?subdomain: String?,
       ?base_url: String?,
       ?max_retries: Integer,
       ?timeout: Float,

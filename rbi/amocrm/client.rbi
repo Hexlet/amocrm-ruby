@@ -11,7 +11,10 @@ module Amocrm
     DEFAULT_MAX_RETRY_DELAY = T.let(8.0, Float)
 
     sig { returns(String) }
-    attr_reader :api_key
+    attr_reader :token
+
+    sig { returns(String) }
+    attr_reader :subdomain
 
     sig { returns(Amocrm::Resources::V4) }
     attr_reader :v4
@@ -19,7 +22,8 @@ module Amocrm
     # Creates and returns a new client for interacting with the API.
     sig do
       params(
-        api_key: T.nilable(String),
+        token: T.nilable(String),
+        subdomain: T.nilable(String),
         base_url: T.nilable(String),
         max_retries: Integer,
         timeout: Float,
@@ -28,8 +32,10 @@ module Amocrm
       ).returns(T.attached_class)
     end
     def self.new(
-      # Defaults to `ENV["AMOCRM_API_KEY"]`
-      api_key: ENV["AMOCRM_API_KEY"],
+      # Defaults to `ENV["AMOCRM_AUTH_TOKEN"]`
+      token: ENV["AMOCRM_AUTH_TOKEN"],
+      # Defaults to `ENV["AMOCRM_SUBDOMAIN"]`
+      subdomain: ENV["AMOCRM_SUBDOMAIN"],
       # Override the default base URL for the API, e.g.,
       # `"https://api.example.com/v2/"`. Defaults to `ENV["AMOCRM_BASE_URL"]`
       base_url: ENV["AMOCRM_BASE_URL"],
