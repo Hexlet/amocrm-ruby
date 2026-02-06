@@ -1,0 +1,28 @@
+module Amocrm
+  module Models
+    type api_customer_bonus_points_change_params =
+      { earn: Integer, redeem: Integer }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APICustomerBonusPointsChangeParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor earn: Integer
+
+      attr_accessor redeem: Integer
+
+      def initialize: (
+        earn: Integer,
+        redeem: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        earn: Integer,
+        redeem: Integer,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

@@ -1,0 +1,23 @@
+module Amocrm
+  module Models
+    type api_webhooks_unsubscribe_params =
+      { destination: String } & Amocrm::Internal::Type::request_parameters
+
+    class APIWebhooksUnsubscribeParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor destination: String
+
+      def initialize: (
+        destination: String,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        destination: String,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

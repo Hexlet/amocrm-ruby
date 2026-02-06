@@ -1,0 +1,23 @@
+module Amocrm
+  module Models
+    type api_pipeline_statuses_delete_by_id_params =
+      { pipeline_id: Integer } & Amocrm::Internal::Type::request_parameters
+
+    class APIPipelineStatusesDeleteByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor pipeline_id: Integer
+
+      def initialize: (
+        pipeline_id: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        pipeline_id: Integer,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

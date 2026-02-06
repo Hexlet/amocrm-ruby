@@ -1,0 +1,53 @@
+module Amocrm
+  module Models
+    type api_entity_followers_list_params =
+      {
+        entity_type: Amocrm::Models::APIEntityFollowersListParams::entity_type,
+        limit: Integer,
+        page: Integer
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APIEntityFollowersListParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor entity_type: Amocrm::Models::APIEntityFollowersListParams::entity_type
+
+      attr_reader limit: Integer?
+
+      def limit=: (Integer) -> Integer
+
+      attr_reader page: Integer?
+
+      def page=: (Integer) -> Integer
+
+      def initialize: (
+        entity_type: Amocrm::Models::APIEntityFollowersListParams::entity_type,
+        ?limit: Integer,
+        ?page: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        entity_type: Amocrm::Models::APIEntityFollowersListParams::entity_type,
+        limit: Integer,
+        page: Integer,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type entity_type = :leads | :contacts | :companies | :customers
+
+      module EntityType
+        extend Amocrm::Internal::Type::Enum
+
+        LEADS: :leads
+        CONTACTS: :contacts
+        COMPANIES: :companies
+        CUSTOMERS: :customers
+
+        def self?.values: -> ::Array[Amocrm::Models::APIEntityFollowersListParams::entity_type]
+      end
+    end
+  end
+end

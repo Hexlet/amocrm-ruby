@@ -1,0 +1,603 @@
+module Amocrm
+  module Models
+    type api_leads_create_complex_params =
+      { body: ::Array[Amocrm::APILeadsCreateComplexParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APILeadsCreateComplexParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::APILeadsCreateComplexParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::APILeadsCreateComplexParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::APILeadsCreateComplexParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body =
+        {
+          _embedded: Amocrm::APILeadsCreateComplexParams::Body::Embedded,
+          closed_at: Integer,
+          created_at: Integer,
+          created_by: Integer,
+          custom_fields_values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::CustomFieldsValue],
+          group_id: Integer,
+          loss_reason_id: Integer,
+          name: String,
+          pipeline_id: Integer,
+          price: Integer,
+          request_id: String,
+          responsible_user_id: Integer,
+          status_id: Integer,
+          tags_to_add: ::Array[Amocrm::APILeadsCreateComplexParams::Body::TagsToAdd],
+          updated_at: Integer,
+          updated_by: Integer,
+          visitor_uid: String
+        }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::APILeadsCreateComplexParams::Body::Embedded?
+
+        def _embedded=: (
+          Amocrm::APILeadsCreateComplexParams::Body::Embedded
+        ) -> Amocrm::APILeadsCreateComplexParams::Body::Embedded
+
+        attr_reader closed_at: Integer?
+
+        def closed_at=: (Integer) -> Integer
+
+        attr_reader created_at: Integer?
+
+        def created_at=: (Integer) -> Integer
+
+        attr_reader created_by: Integer?
+
+        def created_by=: (Integer) -> Integer
+
+        attr_reader custom_fields_values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::CustomFieldsValue]?
+
+        def custom_fields_values=: (
+          ::Array[Amocrm::APILeadsCreateComplexParams::Body::CustomFieldsValue]
+        ) -> ::Array[Amocrm::APILeadsCreateComplexParams::Body::CustomFieldsValue]
+
+        attr_reader group_id: Integer?
+
+        def group_id=: (Integer) -> Integer
+
+        attr_reader loss_reason_id: Integer?
+
+        def loss_reason_id=: (Integer) -> Integer
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_reader pipeline_id: Integer?
+
+        def pipeline_id=: (Integer) -> Integer
+
+        attr_reader price: Integer?
+
+        def price=: (Integer) -> Integer
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        attr_reader responsible_user_id: Integer?
+
+        def responsible_user_id=: (Integer) -> Integer
+
+        attr_reader status_id: Integer?
+
+        def status_id=: (Integer) -> Integer
+
+        attr_reader tags_to_add: ::Array[Amocrm::APILeadsCreateComplexParams::Body::TagsToAdd]?
+
+        def tags_to_add=: (
+          ::Array[Amocrm::APILeadsCreateComplexParams::Body::TagsToAdd]
+        ) -> ::Array[Amocrm::APILeadsCreateComplexParams::Body::TagsToAdd]
+
+        attr_reader updated_at: Integer?
+
+        def updated_at=: (Integer) -> Integer
+
+        attr_reader updated_by: Integer?
+
+        def updated_by=: (Integer) -> Integer
+
+        attr_reader visitor_uid: String?
+
+        def visitor_uid=: (String) -> String
+
+        def initialize: (
+          ?_embedded: Amocrm::APILeadsCreateComplexParams::Body::Embedded,
+          ?closed_at: Integer,
+          ?created_at: Integer,
+          ?created_by: Integer,
+          ?custom_fields_values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::CustomFieldsValue],
+          ?group_id: Integer,
+          ?loss_reason_id: Integer,
+          ?name: String,
+          ?pipeline_id: Integer,
+          ?price: Integer,
+          ?request_id: String,
+          ?responsible_user_id: Integer,
+          ?status_id: Integer,
+          ?tags_to_add: ::Array[Amocrm::APILeadsCreateComplexParams::Body::TagsToAdd],
+          ?updated_at: Integer,
+          ?updated_by: Integer,
+          ?visitor_uid: String
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::APILeadsCreateComplexParams::Body::Embedded,
+          closed_at: Integer,
+          created_at: Integer,
+          created_by: Integer,
+          custom_fields_values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::CustomFieldsValue],
+          group_id: Integer,
+          loss_reason_id: Integer,
+          name: String,
+          pipeline_id: Integer,
+          price: Integer,
+          request_id: String,
+          responsible_user_id: Integer,
+          status_id: Integer,
+          tags_to_add: ::Array[Amocrm::APILeadsCreateComplexParams::Body::TagsToAdd],
+          updated_at: Integer,
+          updated_by: Integer,
+          visitor_uid: String
+        }
+
+        type embedded =
+          {
+            companies: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Company],
+            contacts: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact],
+            metadata: Amocrm::APILeadsCreateComplexParams::Body::Embedded::Metadata,
+            source: Amocrm::APILeadsCreateComplexParams::Body::Embedded::Source,
+            tags: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Tag]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader companies: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Company]?
+
+          def companies=: (
+            ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Company]
+          ) -> ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Company]
+
+          attr_reader contacts: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact]?
+
+          def contacts=: (
+            ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact]
+          ) -> ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact]
+
+          attr_reader metadata: Amocrm::APILeadsCreateComplexParams::Body::Embedded::Metadata?
+
+          def metadata=: (
+            Amocrm::APILeadsCreateComplexParams::Body::Embedded::Metadata
+          ) -> Amocrm::APILeadsCreateComplexParams::Body::Embedded::Metadata
+
+          attr_reader source: Amocrm::APILeadsCreateComplexParams::Body::Embedded::Source?
+
+          def source=: (
+            Amocrm::APILeadsCreateComplexParams::Body::Embedded::Source
+          ) -> Amocrm::APILeadsCreateComplexParams::Body::Embedded::Source
+
+          attr_reader tags: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Tag]?
+
+          def tags=: (
+            ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Tag]
+          ) -> ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Tag]
+
+          def initialize: (
+            ?companies: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Company],
+            ?contacts: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact],
+            ?metadata: Amocrm::APILeadsCreateComplexParams::Body::Embedded::Metadata,
+            ?source: Amocrm::APILeadsCreateComplexParams::Body::Embedded::Source,
+            ?tags: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Tag]
+          ) -> void
+
+          def to_hash: -> {
+            companies: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Company],
+            contacts: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact],
+            metadata: Amocrm::APILeadsCreateComplexParams::Body::Embedded::Metadata,
+            source: Amocrm::APILeadsCreateComplexParams::Body::Embedded::Source,
+            tags: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Tag]
+          }
+
+          type company = { id: Integer, name: String }
+
+          class Company < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            def initialize: (?id: Integer, ?name: String) -> void
+
+            def to_hash: -> { id: Integer, name: String }
+          end
+
+          type contact =
+            {
+              id: Integer,
+              custom_fields_values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue],
+              first_name: String,
+              last_name: String,
+              name: String
+            }
+
+          class Contact < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader custom_fields_values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue]?
+
+            def custom_fields_values=: (
+              ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue]
+            ) -> ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue]
+
+            attr_reader first_name: String?
+
+            def first_name=: (String) -> String
+
+            attr_reader last_name: String?
+
+            def last_name=: (String) -> String
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?custom_fields_values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue],
+              ?first_name: String,
+              ?last_name: String,
+              ?name: String
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              custom_fields_values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue],
+              first_name: String,
+              last_name: String,
+              name: String
+            }
+
+            type custom_fields_value =
+              {
+                values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue::Value],
+                field_code: String,
+                field_id: Integer
+              }
+
+            class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+              attr_accessor values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue::Value]
+
+              attr_reader field_code: String?
+
+              def field_code=: (String) -> String
+
+              attr_reader field_id: Integer?
+
+              def field_id=: (Integer) -> Integer
+
+              def initialize: (
+                values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue::Value],
+                ?field_code: String,
+                ?field_id: Integer
+              ) -> void
+
+              def to_hash: -> {
+                values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue::Value],
+                field_code: String,
+                field_id: Integer
+              }
+
+              type value =
+                {
+                  value: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue::Value::value,
+                  enum_code: String,
+                  enum_id: Integer
+                }
+
+              class Value < Amocrm::Internal::Type::BaseModel
+                attr_accessor value: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue::Value::value
+
+                attr_reader enum_code: String?
+
+                def enum_code=: (String) -> String
+
+                attr_reader enum_id: Integer?
+
+                def enum_id=: (Integer) -> Integer
+
+                def initialize: (
+                  value: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue::Value::value,
+                  ?enum_code: String,
+                  ?enum_id: Integer
+                ) -> void
+
+                def to_hash: -> {
+                  value: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue::Value::value,
+                  enum_code: String,
+                  enum_id: Integer
+                }
+
+                type value = String | Integer | bool
+
+                module Value
+                  extend Amocrm::Internal::Type::Union
+
+                  def self?.variants: -> ::Array[Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Contact::CustomFieldsValue::Value::value]
+                end
+              end
+            end
+          end
+
+          type metadata =
+            {
+              category: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::category,
+              form_id: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::form_id,
+              form_name: String,
+              form_page: String,
+              form_sent_at: Integer,
+              form_type: Integer,
+              ip: String,
+              referer: String,
+              visitor_uid: String
+            }
+
+          class Metadata < Amocrm::Internal::Type::BaseModel
+            attr_reader category: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::category?
+
+            def category=: (
+              Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::category
+            ) -> Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::category
+
+            attr_reader form_id: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::form_id?
+
+            def form_id=: (
+              Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::form_id
+            ) -> Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::form_id
+
+            attr_reader form_name: String?
+
+            def form_name=: (String) -> String
+
+            attr_reader form_page: String?
+
+            def form_page=: (String) -> String
+
+            attr_reader form_sent_at: Integer?
+
+            def form_sent_at=: (Integer) -> Integer
+
+            attr_reader form_type: Integer?
+
+            def form_type=: (Integer) -> Integer
+
+            attr_reader ip: String?
+
+            def ip=: (String) -> String
+
+            attr_reader referer: String?
+
+            def referer=: (String) -> String
+
+            attr_reader visitor_uid: String?
+
+            def visitor_uid=: (String) -> String
+
+            def initialize: (
+              ?category: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::category,
+              ?form_id: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::form_id,
+              ?form_name: String,
+              ?form_page: String,
+              ?form_sent_at: Integer,
+              ?form_type: Integer,
+              ?ip: String,
+              ?referer: String,
+              ?visitor_uid: String
+            ) -> void
+
+            def to_hash: -> {
+              category: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::category,
+              form_id: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::form_id,
+              form_name: String,
+              form_page: String,
+              form_sent_at: Integer,
+              form_type: Integer,
+              ip: String,
+              referer: String,
+              visitor_uid: String
+            }
+
+            type category = :sip | :forms | :chats | :mail
+
+            module Category
+              extend Amocrm::Internal::Type::Enum
+
+              SIP: :sip
+              FORMS: :forms
+              CHATS: :chats
+              MAIL: :mail
+
+              def self?.values: -> ::Array[Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::category]
+            end
+
+            type form_id = String | Integer
+
+            module FormID
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Metadata::form_id]
+            end
+          end
+
+          type source =
+            {
+              external_id: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Source::external_id,
+              type: String
+            }
+
+          class Source < Amocrm::Internal::Type::BaseModel
+            attr_reader external_id: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Source::external_id?
+
+            def external_id=: (
+              Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Source::external_id
+            ) -> Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Source::external_id
+
+            attr_reader type: String?
+
+            def type=: (String) -> String
+
+            def initialize: (
+              ?external_id: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Source::external_id,
+              ?type: String
+            ) -> void
+
+            def to_hash: -> {
+              external_id: Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Source::external_id,
+              type: String
+            }
+
+            type external_id = String | Integer | bool
+
+            module ExternalID
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::APILeadsCreateComplexParams::Body::Embedded::Source::external_id]
+            end
+          end
+
+          type tag = { id: Integer, color: String, name: String }
+
+          class Tag < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader color: String?
+
+            def color=: (String) -> String
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            def initialize: (
+              ?id: Integer,
+              ?color: String,
+              ?name: String
+            ) -> void
+
+            def to_hash: -> { id: Integer, color: String, name: String }
+          end
+        end
+
+        type custom_fields_value =
+          {
+            values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::CustomFieldsValue::Value],
+            field_code: String,
+            field_id: Integer
+          }
+
+        class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+          attr_accessor values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::CustomFieldsValue::Value]
+
+          attr_reader field_code: String?
+
+          def field_code=: (String) -> String
+
+          attr_reader field_id: Integer?
+
+          def field_id=: (Integer) -> Integer
+
+          def initialize: (
+            values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::CustomFieldsValue::Value],
+            ?field_code: String,
+            ?field_id: Integer
+          ) -> void
+
+          def to_hash: -> {
+            values: ::Array[Amocrm::APILeadsCreateComplexParams::Body::CustomFieldsValue::Value],
+            field_code: String,
+            field_id: Integer
+          }
+
+          type value =
+            {
+              value: Amocrm::Models::APILeadsCreateComplexParams::Body::CustomFieldsValue::Value::value,
+              enum_code: String,
+              enum_id: Integer
+            }
+
+          class Value < Amocrm::Internal::Type::BaseModel
+            attr_accessor value: Amocrm::Models::APILeadsCreateComplexParams::Body::CustomFieldsValue::Value::value
+
+            attr_reader enum_code: String?
+
+            def enum_code=: (String) -> String
+
+            attr_reader enum_id: Integer?
+
+            def enum_id=: (Integer) -> Integer
+
+            def initialize: (
+              value: Amocrm::Models::APILeadsCreateComplexParams::Body::CustomFieldsValue::Value::value,
+              ?enum_code: String,
+              ?enum_id: Integer
+            ) -> void
+
+            def to_hash: -> {
+              value: Amocrm::Models::APILeadsCreateComplexParams::Body::CustomFieldsValue::Value::value,
+              enum_code: String,
+              enum_id: Integer
+            }
+
+            type value = String | Integer | bool
+
+            module Value
+              extend Amocrm::Internal::Type::Union
+
+              def self?.variants: -> ::Array[Amocrm::Models::APILeadsCreateComplexParams::Body::CustomFieldsValue::Value::value]
+            end
+          end
+        end
+
+        type tags_to_add = { id: Integer, color: String, name: String }
+
+        class TagsToAdd < Amocrm::Internal::Type::BaseModel
+          attr_reader id: Integer?
+
+          def id=: (Integer) -> Integer
+
+          attr_reader color: String?
+
+          def color=: (String) -> String
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          def initialize: (?id: Integer, ?color: String, ?name: String) -> void
+
+          def to_hash: -> { id: Integer, color: String, name: String }
+        end
+      end
+    end
+  end
+end

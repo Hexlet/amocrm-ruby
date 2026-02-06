@@ -1,0 +1,32 @@
+module Amocrm
+  module Models
+    type api_catalogs_list_params =
+      { limit: Integer, page: Integer }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APICatalogsListParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader limit: Integer?
+
+      def limit=: (Integer) -> Integer
+
+      attr_reader page: Integer?
+
+      def page=: (Integer) -> Integer
+
+      def initialize: (
+        ?limit: Integer,
+        ?page: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        limit: Integer,
+        page: Integer,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

@@ -1,0 +1,112 @@
+module Amocrm
+  module Models
+    type api_website_buttons_update_response =
+      Amocrm::Models::APIWebsiteButtonsUpdateResponse::WebsiteButton
+      | Amocrm::Models::APIWebsiteButtonsUpdateResponse::Problem
+
+    module APIWebsiteButtonsUpdateResponse
+      extend Amocrm::Internal::Type::Union
+
+      type website_button =
+        {
+          account_id: Integer,
+          button_id: Integer,
+          creation_status: String,
+          is_duplication_control_enabled: bool,
+          name: String,
+          pipeline_id: Integer?,
+          script: String?,
+          source_id: Integer
+        }
+
+      class WebsiteButton < Amocrm::Internal::Type::BaseModel
+        attr_reader account_id: Integer?
+
+        def account_id=: (Integer) -> Integer
+
+        attr_reader button_id: Integer?
+
+        def button_id=: (Integer) -> Integer
+
+        attr_reader creation_status: String?
+
+        def creation_status=: (String) -> String
+
+        attr_reader is_duplication_control_enabled: bool?
+
+        def is_duplication_control_enabled=: (bool) -> bool
+
+        attr_reader name: String?
+
+        def name=: (String) -> String
+
+        attr_accessor pipeline_id: Integer?
+
+        attr_accessor script: String?
+
+        attr_reader source_id: Integer?
+
+        def source_id=: (Integer) -> Integer
+
+        def initialize: (
+          ?account_id: Integer,
+          ?button_id: Integer,
+          ?creation_status: String,
+          ?is_duplication_control_enabled: bool,
+          ?name: String,
+          ?pipeline_id: Integer?,
+          ?script: String?,
+          ?source_id: Integer
+        ) -> void
+
+        def to_hash: -> {
+          account_id: Integer,
+          button_id: Integer,
+          creation_status: String,
+          is_duplication_control_enabled: bool,
+          name: String,
+          pipeline_id: Integer?,
+          script: String?,
+          source_id: Integer
+        }
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::api_website_buttons_update_response]
+    end
+  end
+end

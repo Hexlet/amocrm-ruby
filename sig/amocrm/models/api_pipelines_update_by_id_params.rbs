@@ -1,0 +1,63 @@
+module Amocrm
+  module Models
+    type api_pipelines_update_by_id_params =
+      {
+        is_archive: bool,
+        is_main: bool,
+        is_unsorted_on: bool,
+        name: String,
+        request_id: String,
+        sort: Integer
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APIPipelinesUpdateByIDParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader is_archive: bool?
+
+      def is_archive=: (bool) -> bool
+
+      attr_reader is_main: bool?
+
+      def is_main=: (bool) -> bool
+
+      attr_reader is_unsorted_on: bool?
+
+      def is_unsorted_on=: (bool) -> bool
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader request_id: String?
+
+      def request_id=: (String) -> String
+
+      attr_reader sort: Integer?
+
+      def sort=: (Integer) -> Integer
+
+      def initialize: (
+        ?is_archive: bool,
+        ?is_main: bool,
+        ?is_unsorted_on: bool,
+        ?name: String,
+        ?request_id: String,
+        ?sort: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        is_archive: bool,
+        is_main: bool,
+        is_unsorted_on: bool,
+        name: String,
+        request_id: String,
+        sort: Integer,
+        request_options: Amocrm::RequestOptions
+      }
+    end
+  end
+end

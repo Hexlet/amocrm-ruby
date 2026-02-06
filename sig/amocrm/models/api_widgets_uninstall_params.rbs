@@ -1,0 +1,15 @@
+module Amocrm
+  module Models
+    type api_widgets_uninstall_params =
+      {  } & Amocrm::Internal::Type::request_parameters
+
+    class APIWidgetsUninstallParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      def initialize: (?request_options: Amocrm::request_opts) -> void
+
+      def to_hash: -> { request_options: Amocrm::RequestOptions }
+    end
+  end
+end

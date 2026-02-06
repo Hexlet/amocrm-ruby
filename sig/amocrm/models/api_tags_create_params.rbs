@@ -1,0 +1,59 @@
+module Amocrm
+  module Models
+    type api_tags_create_params =
+      { body: ::Array[Amocrm::APITagsCreateParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APITagsCreateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::APITagsCreateParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::APITagsCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::APITagsCreateParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type entity_type = :leads | :contacts | :companies | :customers
+
+      module EntityType
+        extend Amocrm::Internal::Type::Enum
+
+        LEADS: :leads
+        CONTACTS: :contacts
+        COMPANIES: :companies
+        CUSTOMERS: :customers
+
+        def self?.values: -> ::Array[Amocrm::Models::APITagsCreateParams::entity_type]
+      end
+
+      type body = { name: String, color: String, request_id: String }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_reader color: String?
+
+        def color=: (String) -> String
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        def initialize: (
+          name: String,
+          ?color: String,
+          ?request_id: String
+        ) -> void
+
+        def to_hash: -> { name: String, color: String, request_id: String }
+      end
+    end
+  end
+end

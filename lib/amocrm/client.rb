@@ -21,11 +21,8 @@ module Amocrm
     # @return [String]
     attr_reader :subdomain
 
-    # @return [Amocrm::Resources::V2]
-    attr_reader :v2
-
-    # @return [Amocrm::Resources::V4]
-    attr_reader :v4
+    # @return [Amocrm::Resources::API]
+    attr_reader :api
 
     # @api private
     #
@@ -81,8 +78,7 @@ module Amocrm
         max_retry_delay: max_retry_delay
       )
 
-      @v2 = Amocrm::Resources::V2.new(client: self)
-      @v4 = Amocrm::Resources::V4.new(client: self)
+      @api = Amocrm::Resources::API.new(client: self)
     end
   end
 end

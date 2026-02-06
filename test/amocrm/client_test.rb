@@ -40,7 +40,7 @@ class AmocrmTest < Minitest::Test
     amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::InternalServerError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
       )
     end
@@ -60,7 +60,7 @@ class AmocrmTest < Minitest::Test
       )
 
     assert_raises(Amocrm::Errors::InternalServerError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
       )
     end
@@ -74,7 +74,7 @@ class AmocrmTest < Minitest::Test
     amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::InternalServerError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
         request_options: {max_retries: 3}
       )
@@ -95,7 +95,7 @@ class AmocrmTest < Minitest::Test
       )
 
     assert_raises(Amocrm::Errors::InternalServerError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
         request_options: {max_retries: 4}
       )
@@ -120,7 +120,7 @@ class AmocrmTest < Minitest::Test
       )
 
     assert_raises(Amocrm::Errors::InternalServerError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
       )
     end
@@ -146,7 +146,7 @@ class AmocrmTest < Minitest::Test
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       Thread.current.thread_variable_set(:time_now, Time.now)
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
       )
       Thread.current.thread_variable_set(:time_now, nil)
@@ -172,7 +172,7 @@ class AmocrmTest < Minitest::Test
       )
 
     assert_raises(Amocrm::Errors::InternalServerError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
       )
     end
@@ -187,7 +187,7 @@ class AmocrmTest < Minitest::Test
     amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::InternalServerError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
       )
     end
@@ -203,7 +203,7 @@ class AmocrmTest < Minitest::Test
     amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::InternalServerError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
         request_options: {extra_headers: {"x-stainless-retry-count" => nil}}
       )
@@ -220,7 +220,7 @@ class AmocrmTest < Minitest::Test
     amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::InternalServerError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
         request_options: {extra_headers: {"x-stainless-retry-count" => "42"}}
       )
@@ -243,7 +243,7 @@ class AmocrmTest < Minitest::Test
     amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::APIConnectionError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
         request_options: {extra_headers: {}}
       )
@@ -275,7 +275,7 @@ class AmocrmTest < Minitest::Test
     amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::APIConnectionError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
         request_options: {extra_headers: {}}
       )
@@ -302,7 +302,7 @@ class AmocrmTest < Minitest::Test
     amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::APIConnectionError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
         request_options: {extra_headers: {"authorization" => "Bearer xyz"}}
       )
@@ -332,7 +332,7 @@ class AmocrmTest < Minitest::Test
     amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::APIConnectionError) do
-      amocrm.v4.unsorted_leads_create_forms(
+      amocrm.api.unsorted_leads_create_forms(
         body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}],
         request_options: {extra_headers: {"authorization" => "Bearer xyz"}}
       )
@@ -349,7 +349,7 @@ class AmocrmTest < Minitest::Test
 
     amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
-    amocrm.v4.unsorted_leads_create_forms(
+    amocrm.api.unsorted_leads_create_forms(
       body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
     )
 

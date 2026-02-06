@@ -12,9 +12,7 @@ module Amocrm
 
     attr_reader subdomain: String
 
-    attr_reader v2: Amocrm::Resources::V2
-
-    attr_reader v4: Amocrm::Resources::V4
+    attr_reader api: Amocrm::Resources::API
 
     private def auth_headers: -> ::Hash[String, String]
 

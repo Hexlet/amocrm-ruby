@@ -1,0 +1,54 @@
+module Amocrm
+  module Models
+    type api_entity_followers_remove_params =
+      {
+        entity_type: Amocrm::Models::APIEntityFollowersRemoveParams::entity_type,
+        body: ::Array[Amocrm::APIEntityFollowersRemoveParams::Body]
+      }
+      & Amocrm::Internal::Type::request_parameters
+
+    class APIEntityFollowersRemoveParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor entity_type: Amocrm::Models::APIEntityFollowersRemoveParams::entity_type
+
+      attr_accessor body: ::Array[Amocrm::APIEntityFollowersRemoveParams::Body]
+
+      def initialize: (
+        entity_type: Amocrm::Models::APIEntityFollowersRemoveParams::entity_type,
+        body: ::Array[Amocrm::APIEntityFollowersRemoveParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        entity_type: Amocrm::Models::APIEntityFollowersRemoveParams::entity_type,
+        body: ::Array[Amocrm::APIEntityFollowersRemoveParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type entity_type = :leads | :contacts | :companies | :customers
+
+      module EntityType
+        extend Amocrm::Internal::Type::Enum
+
+        LEADS: :leads
+        CONTACTS: :contacts
+        COMPANIES: :companies
+        CUSTOMERS: :customers
+
+        def self?.values: -> ::Array[Amocrm::Models::APIEntityFollowersRemoveParams::entity_type]
+      end
+
+      type body = { user_id: Integer }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor user_id: Integer
+
+        def initialize: (user_id: Integer) -> void
+
+        def to_hash: -> { user_id: Integer }
+      end
+    end
+  end
+end
