@@ -1,0 +1,226 @@
+module Amocrm
+  module Models
+    type v4_customer_segments_list_response =
+      Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse
+      | Amocrm::Models::V4CustomerSegmentsListResponse::Problem
+
+    module V4CustomerSegmentsListResponse
+      extend Amocrm::Internal::Type::Union
+
+      type customer_segment_list_response =
+        {
+          _embedded: Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded,
+          _links: top
+        }
+
+      class CustomerSegmentListResponse < Amocrm::Internal::Type::BaseModel
+        attr_reader _embedded: Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded?
+
+        def _embedded=: (
+          Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded
+        ) -> Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        def initialize: (
+          ?_embedded: Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded,
+          ?_links: top
+        ) -> void
+
+        def to_hash: -> {
+          _embedded: Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded,
+          _links: top
+        }
+
+        type embedded =
+          {
+            segments: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment]
+          }
+
+        class Embedded < Amocrm::Internal::Type::BaseModel
+          attr_reader segments: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment]?
+
+          def segments=: (
+            ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment]
+          ) -> ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment]
+
+          def initialize: (
+            ?segments: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment]
+          ) -> void
+
+          def to_hash: -> {
+            segments: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment]
+          }
+
+          type segment =
+            {
+              id: Integer,
+              color: String,
+              created_at: Integer,
+              custom_fields_values: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue]?,
+              customers_count: Integer,
+              name: String,
+              updated_at: Integer
+            }
+
+          class Segment < Amocrm::Internal::Type::BaseModel
+            attr_reader id: Integer?
+
+            def id=: (Integer) -> Integer
+
+            attr_reader color: String?
+
+            def color=: (String) -> String
+
+            attr_reader created_at: Integer?
+
+            def created_at=: (Integer) -> Integer
+
+            attr_accessor custom_fields_values: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue]?
+
+            attr_reader customers_count: Integer?
+
+            def customers_count=: (Integer) -> Integer
+
+            attr_reader name: String?
+
+            def name=: (String) -> String
+
+            attr_reader updated_at: Integer?
+
+            def updated_at=: (Integer) -> Integer
+
+            def initialize: (
+              ?id: Integer,
+              ?color: String,
+              ?created_at: Integer,
+              ?custom_fields_values: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue]?,
+              ?customers_count: Integer,
+              ?name: String,
+              ?updated_at: Integer
+            ) -> void
+
+            def to_hash: -> {
+              id: Integer,
+              color: String,
+              created_at: Integer,
+              custom_fields_values: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue]?,
+              customers_count: Integer,
+              name: String,
+              updated_at: Integer
+            }
+
+            type custom_fields_value =
+              {
+                values: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue::Value],
+                field_code: String,
+                field_id: Integer
+              }
+
+            class CustomFieldsValue < Amocrm::Internal::Type::BaseModel
+              attr_accessor values: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue::Value]
+
+              attr_reader field_code: String?
+
+              def field_code=: (String) -> String
+
+              attr_reader field_id: Integer?
+
+              def field_id=: (Integer) -> Integer
+
+              def initialize: (
+                values: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue::Value],
+                ?field_code: String,
+                ?field_id: Integer
+              ) -> void
+
+              def to_hash: -> {
+                values: ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue::Value],
+                field_code: String,
+                field_id: Integer
+              }
+
+              type value =
+                {
+                  value: Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue::Value::value,
+                  enum_code: String,
+                  enum_id: Integer
+                }
+
+              class Value < Amocrm::Internal::Type::BaseModel
+                attr_accessor value: Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue::Value::value
+
+                attr_reader enum_code: String?
+
+                def enum_code=: (String) -> String
+
+                attr_reader enum_id: Integer?
+
+                def enum_id=: (Integer) -> Integer
+
+                def initialize: (
+                  value: Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue::Value::value,
+                  ?enum_code: String,
+                  ?enum_id: Integer
+                ) -> void
+
+                def to_hash: -> {
+                  value: Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue::Value::value,
+                  enum_code: String,
+                  enum_id: Integer
+                }
+
+                type value = String | Integer | bool
+
+                module Value
+                  extend Amocrm::Internal::Type::Union
+
+                  def self?.variants: -> ::Array[Amocrm::Models::V4CustomerSegmentsListResponse::CustomerSegmentListResponse::Embedded::Segment::CustomFieldsValue::Value::value]
+                end
+              end
+            end
+          end
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::v4_customer_segments_list_response]
+    end
+  end
+end

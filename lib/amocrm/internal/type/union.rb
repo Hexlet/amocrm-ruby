@@ -6,14 +6,14 @@ module Amocrm
       # @api private
       #
       # @example
-      #   # `unsorted_accept_response` is a `Amocrm::Models::V4::Leads::UnsortedAcceptResponse`
-      #   case unsorted_accept_response
-      #   when Amocrm::Models::V4::Leads::UnsortedAcceptResponse::UnsortedAcceptResponse
-      #     puts(unsorted_accept_response._embedded)
-      #   when Amocrm::Models::V4::Leads::UnsortedAcceptResponse::Problem
-      #     puts(unsorted_accept_response.detail)
+      #   # `v2_salesbot_run_response` is a `Amocrm::Models::V2SalesbotRunResponse`
+      #   case v2_salesbot_run_response
+      #   when Amocrm::Models::V2SalesbotRunResponse::SalesbotRunResponse
+      #     puts(v2_salesbot_run_response._links)
+      #   when Amocrm::Models::V2SalesbotRunResponse::Problem
+      #     puts(v2_salesbot_run_response.detail)
       #   else
-      #     puts(unsorted_accept_response)
+      #     puts(v2_salesbot_run_response)
       #   end
       module Union
         include Amocrm::Internal::Type::Converter

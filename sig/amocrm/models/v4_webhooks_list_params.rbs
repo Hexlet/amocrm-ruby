@@ -1,0 +1,40 @@
+module Amocrm
+  module Models
+    type v4_webhooks_list_params =
+      { filter: Amocrm::V4WebhooksListParams::Filter }
+      & Amocrm::Internal::Type::request_parameters
+
+    class V4WebhooksListParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_reader filter: Amocrm::V4WebhooksListParams::Filter?
+
+      def filter=: (
+        Amocrm::V4WebhooksListParams::Filter
+      ) -> Amocrm::V4WebhooksListParams::Filter
+
+      def initialize: (
+        ?filter: Amocrm::V4WebhooksListParams::Filter,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        filter: Amocrm::V4WebhooksListParams::Filter,
+        request_options: Amocrm::RequestOptions
+      }
+
+      type filter = { destination: String }
+
+      class Filter < Amocrm::Internal::Type::BaseModel
+        attr_reader destination: String?
+
+        def destination=: (String) -> String
+
+        def initialize: (?destination: String) -> void
+
+        def to_hash: -> { destination: String }
+      end
+    end
+  end
+end

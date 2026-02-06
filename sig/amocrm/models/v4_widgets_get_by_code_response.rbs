@@ -1,0 +1,194 @@
+module Amocrm
+  module Models
+    type v4_widgets_get_by_code_response =
+      Amocrm::Models::V4WidgetsGetByCodeResponse::Widget
+      | Amocrm::Models::V4WidgetsGetByCodeResponse::Problem
+
+    module V4WidgetsGetByCodeResponse
+      extend Amocrm::Internal::Type::Union
+
+      type widget =
+        {
+          id: Integer,
+          _links: top,
+          client_uuid: String?,
+          code: String,
+          is_active_in_account: bool,
+          is_crm_template: bool,
+          is_lead_source: bool,
+          is_work_with_dp: bool,
+          pipeline_id: Integer?,
+          rating: Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::rating?,
+          settings: top?,
+          settings_template: ::Array[Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::SettingsTemplate],
+          version: Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::version?
+        }
+
+      class Widget < Amocrm::Internal::Type::BaseModel
+        attr_reader id: Integer?
+
+        def id=: (Integer) -> Integer
+
+        attr_reader _links: top?
+
+        def _links=: (top) -> top
+
+        attr_accessor client_uuid: String?
+
+        attr_reader code: String?
+
+        def code=: (String) -> String
+
+        attr_reader is_active_in_account: bool?
+
+        def is_active_in_account=: (bool) -> bool
+
+        attr_reader is_crm_template: bool?
+
+        def is_crm_template=: (bool) -> bool
+
+        attr_reader is_lead_source: bool?
+
+        def is_lead_source=: (bool) -> bool
+
+        attr_reader is_work_with_dp: bool?
+
+        def is_work_with_dp=: (bool) -> bool
+
+        attr_accessor pipeline_id: Integer?
+
+        attr_accessor rating: Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::rating?
+
+        attr_accessor settings: top?
+
+        attr_reader settings_template: ::Array[Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::SettingsTemplate]?
+
+        def settings_template=: (
+          ::Array[Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::SettingsTemplate]
+        ) -> ::Array[Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::SettingsTemplate]
+
+        attr_accessor version: Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::version?
+
+        def initialize: (
+          ?id: Integer,
+          ?_links: top,
+          ?client_uuid: String?,
+          ?code: String,
+          ?is_active_in_account: bool,
+          ?is_crm_template: bool,
+          ?is_lead_source: bool,
+          ?is_work_with_dp: bool,
+          ?pipeline_id: Integer?,
+          ?rating: Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::rating?,
+          ?settings: top?,
+          ?settings_template: ::Array[Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::SettingsTemplate],
+          ?version: Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::version?
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          _links: top,
+          client_uuid: String?,
+          code: String,
+          is_active_in_account: bool,
+          is_crm_template: bool,
+          is_lead_source: bool,
+          is_work_with_dp: bool,
+          pipeline_id: Integer?,
+          rating: Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::rating?,
+          settings: top?,
+          settings_template: ::Array[Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::SettingsTemplate],
+          version: Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::version?
+        }
+
+        type rating = String | Float
+
+        module Rating
+          extend Amocrm::Internal::Type::Union
+
+          def self?.variants: -> ::Array[Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::rating]
+        end
+
+        type settings_template =
+          { is_required: bool, key: String, name: String, type: String }
+
+        class SettingsTemplate < Amocrm::Internal::Type::BaseModel
+          attr_reader is_required: bool?
+
+          def is_required=: (bool) -> bool
+
+          attr_reader key: String?
+
+          def key=: (String) -> String
+
+          attr_reader name: String?
+
+          def name=: (String) -> String
+
+          attr_reader type: String?
+
+          def type=: (String) -> String
+
+          def initialize: (
+            ?is_required: bool,
+            ?key: String,
+            ?name: String,
+            ?type: String
+          ) -> void
+
+          def to_hash: -> {
+            is_required: bool,
+            key: String,
+            name: String,
+            type: String
+          }
+        end
+
+        type version = String | Integer
+
+        module Version
+          extend Amocrm::Internal::Type::Union
+
+          def self?.variants: -> ::Array[Amocrm::Models::V4WidgetsGetByCodeResponse::Widget::version]
+        end
+      end
+
+      type problem =
+        { detail: String, status: Integer, title: String, type: String }
+
+      class Problem < Amocrm::Internal::Type::BaseModel
+        attr_reader detail: String?
+
+        def detail=: (String) -> String
+
+        attr_reader status: Integer?
+
+        def status=: (Integer) -> Integer
+
+        attr_reader title: String?
+
+        def title=: (String) -> String
+
+        attr_reader type: String?
+
+        def type=: (String) -> String
+
+        def initialize: (
+          ?detail: String,
+          ?status: Integer,
+          ?title: String,
+          ?type: String
+        ) -> void
+
+        def to_hash: -> {
+          detail: String,
+          status: Integer,
+          title: String,
+          type: String
+        }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::v4_widgets_get_by_code_response]
+    end
+  end
+end

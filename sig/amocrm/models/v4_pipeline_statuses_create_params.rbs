@@ -1,0 +1,95 @@
+module Amocrm
+  module Models
+    type v4_pipeline_statuses_create_params =
+      { body: ::Array[Amocrm::V4PipelineStatusesCreateParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class V4PipelineStatusesCreateParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::V4PipelineStatusesCreateParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::V4PipelineStatusesCreateParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::V4PipelineStatusesCreateParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body =
+        {
+          name: String,
+          color: String,
+          descriptions: ::Array[Amocrm::V4PipelineStatusesCreateParams::Body::Description],
+          request_id: String,
+          sort: Integer
+        }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_reader color: String?
+
+        def color=: (String) -> String
+
+        attr_reader descriptions: ::Array[Amocrm::V4PipelineStatusesCreateParams::Body::Description]?
+
+        def descriptions=: (
+          ::Array[Amocrm::V4PipelineStatusesCreateParams::Body::Description]
+        ) -> ::Array[Amocrm::V4PipelineStatusesCreateParams::Body::Description]
+
+        attr_reader request_id: String?
+
+        def request_id=: (String) -> String
+
+        attr_reader sort: Integer?
+
+        def sort=: (Integer) -> Integer
+
+        def initialize: (
+          name: String,
+          ?color: String,
+          ?descriptions: ::Array[Amocrm::V4PipelineStatusesCreateParams::Body::Description],
+          ?request_id: String,
+          ?sort: Integer
+        ) -> void
+
+        def to_hash: -> {
+          name: String,
+          color: String,
+          descriptions: ::Array[Amocrm::V4PipelineStatusesCreateParams::Body::Description],
+          request_id: String,
+          sort: Integer
+        }
+
+        type description = { id: Integer, description: String, level: String }
+
+        class Description < Amocrm::Internal::Type::BaseModel
+          attr_reader id: Integer?
+
+          def id=: (Integer) -> Integer
+
+          attr_reader description: String?
+
+          def description=: (String) -> String
+
+          attr_reader level: String?
+
+          def level=: (String) -> String
+
+          def initialize: (
+            ?id: Integer,
+            ?description: String,
+            ?level: String
+          ) -> void
+
+          def to_hash: -> { id: Integer, description: String, level: String }
+        end
+      end
+    end
+  end
+end

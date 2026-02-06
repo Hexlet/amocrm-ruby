@@ -1,0 +1,34 @@
+module Amocrm
+  module Models
+    type v4_sources_delete_params =
+      { body: ::Array[Amocrm::V4SourcesDeleteParams::Body] }
+      & Amocrm::Internal::Type::request_parameters
+
+    class V4SourcesDeleteParams < Amocrm::Internal::Type::BaseModel
+      extend Amocrm::Internal::Type::RequestParameters::Converter
+      include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor body: ::Array[Amocrm::V4SourcesDeleteParams::Body]
+
+      def initialize: (
+        body: ::Array[Amocrm::V4SourcesDeleteParams::Body],
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        body: ::Array[Amocrm::V4SourcesDeleteParams::Body],
+        request_options: Amocrm::RequestOptions
+      }
+
+      type body = { id: Integer }
+
+      class Body < Amocrm::Internal::Type::BaseModel
+        attr_accessor id: Integer
+
+        def initialize: (id: Integer) -> void
+
+        def to_hash: -> { id: Integer }
+      end
+    end
+  end
+end
