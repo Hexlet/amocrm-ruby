@@ -37,7 +37,7 @@ class AmocrmTest < Minitest::Test
   def test_client_default_request_default_retry_attempts
     stub_request(:post, "http://localhost/api/v4/leads/unsorted/forms").to_return_json(status: 500, body: {})
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key")
+    amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -51,7 +51,13 @@ class AmocrmTest < Minitest::Test
   def test_client_given_request_default_retry_attempts
     stub_request(:post, "http://localhost/api/v4/leads/unsorted/forms").to_return_json(status: 500, body: {})
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key", max_retries: 3)
+    amocrm =
+      Amocrm::Client.new(
+        base_url: "http://localhost",
+        token: "My Token",
+        subdomain: "My-Subdomain",
+        max_retries: 3
+      )
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -65,7 +71,7 @@ class AmocrmTest < Minitest::Test
   def test_client_default_request_given_retry_attempts
     stub_request(:post, "http://localhost/api/v4/leads/unsorted/forms").to_return_json(status: 500, body: {})
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key")
+    amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -80,7 +86,13 @@ class AmocrmTest < Minitest::Test
   def test_client_given_request_given_retry_attempts
     stub_request(:post, "http://localhost/api/v4/leads/unsorted/forms").to_return_json(status: 500, body: {})
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key", max_retries: 3)
+    amocrm =
+      Amocrm::Client.new(
+        base_url: "http://localhost",
+        token: "My Token",
+        subdomain: "My-Subdomain",
+        max_retries: 3
+      )
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -99,7 +111,13 @@ class AmocrmTest < Minitest::Test
       body: {}
     )
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key", max_retries: 1)
+    amocrm =
+      Amocrm::Client.new(
+        base_url: "http://localhost",
+        token: "My Token",
+        subdomain: "My-Subdomain",
+        max_retries: 1
+      )
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -118,7 +136,13 @@ class AmocrmTest < Minitest::Test
       body: {}
     )
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key", max_retries: 1)
+    amocrm =
+      Amocrm::Client.new(
+        base_url: "http://localhost",
+        token: "My Token",
+        subdomain: "My-Subdomain",
+        max_retries: 1
+      )
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       Thread.current.thread_variable_set(:time_now, Time.now)
@@ -139,7 +163,13 @@ class AmocrmTest < Minitest::Test
       body: {}
     )
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key", max_retries: 1)
+    amocrm =
+      Amocrm::Client.new(
+        base_url: "http://localhost",
+        token: "My Token",
+        subdomain: "My-Subdomain",
+        max_retries: 1
+      )
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -154,7 +184,7 @@ class AmocrmTest < Minitest::Test
   def test_retry_count_header
     stub_request(:post, "http://localhost/api/v4/leads/unsorted/forms").to_return_json(status: 500, body: {})
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key")
+    amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -170,7 +200,7 @@ class AmocrmTest < Minitest::Test
   def test_omit_retry_count_header
     stub_request(:post, "http://localhost/api/v4/leads/unsorted/forms").to_return_json(status: 500, body: {})
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key")
+    amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -187,7 +217,7 @@ class AmocrmTest < Minitest::Test
   def test_overwrite_retry_count_header
     stub_request(:post, "http://localhost/api/v4/leads/unsorted/forms").to_return_json(status: 500, body: {})
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key")
+    amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::InternalServerError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -210,7 +240,7 @@ class AmocrmTest < Minitest::Test
       headers: {"location" => "/redirected"}
     )
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key")
+    amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::APIConnectionError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -242,7 +272,7 @@ class AmocrmTest < Minitest::Test
       headers: {"location" => "/redirected"}
     )
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key")
+    amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::APIConnectionError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -269,7 +299,7 @@ class AmocrmTest < Minitest::Test
       headers: {"location" => "/redirected"}
     )
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key")
+    amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::APIConnectionError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -299,7 +329,7 @@ class AmocrmTest < Minitest::Test
       headers: {"location" => "https://example.com/redirected"}
     )
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key")
+    amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     assert_raises(Amocrm::Errors::APIConnectionError) do
       amocrm.v4.leads.unsorted.create_forms(
@@ -317,7 +347,7 @@ class AmocrmTest < Minitest::Test
   def test_default_headers
     stub_request(:post, "http://localhost/api/v4/leads/unsorted/forms").to_return_json(status: 200, body: {})
 
-    amocrm = Amocrm::Client.new(base_url: "http://localhost", api_key: "My API Key")
+    amocrm = Amocrm::Client.new(base_url: "http://localhost", token: "My Token", subdomain: "My-Subdomain")
 
     amocrm.v4.leads.unsorted.create_forms(
       body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
