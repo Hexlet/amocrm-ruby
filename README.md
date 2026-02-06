@@ -26,7 +26,10 @@ gem "amocrm", "~> 0.2.0"
 require "bundler/setup"
 require "amocrm"
 
-amocrm = Amocrm::Client.new(token: "My Token", subdomain: "My-Subdomain")
+amocrm = Amocrm::Client.new(
+  token: ENV["AMOCRM_AUTH_TOKEN"], # This is the default and can be omitted
+  subdomain: "My-Subdomain"
+)
 
 response = amocrm.v4.leads.unsorted.create_forms(
   body: [{metadata: {}, source_name: "source_name", source_uid: "source_uid"}]
@@ -83,7 +86,6 @@ You can use the `max_retries` option to configure or disable this:
 # Configure the default for all requests:
 amocrm = Amocrm::Client.new(
   max_retries: 0, # default is 2
-  token: "My Token",
   subdomain: "My-Subdomain"
 )
 
@@ -102,7 +104,6 @@ By default, requests will time out after 60 seconds. You can use the timeout opt
 # Configure the default for all requests:
 amocrm = Amocrm::Client.new(
   timeout: nil, # default is 60
-  token: "My Token",
   subdomain: "My-Subdomain"
 )
 
