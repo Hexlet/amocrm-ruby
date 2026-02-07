@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.2 (2026-02-07)
+
+Full Changelog: [v0.5.1...v0.5.2](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.1...v0.5.2)
+
+### Bug Fixes
+
+* **client:** loosen json header parsing ([b2969f0](https://github.com/Hexlet/amocrm-ruby/commit/b2969f03cdd70e6690cb1b6767c8a7b453da4d49))
+
 ## 0.5.1 (2026-02-06)
 
 Full Changelog: [v0.5.0...v0.5.1](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.0...v0.5.1)
