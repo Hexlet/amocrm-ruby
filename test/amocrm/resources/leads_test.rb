@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::LeadsTest < Amocrm::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.leads.create(body: [{}])
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::LeadsTest < Amocrm::Test::ResourceTest
   end
 
   def test_update_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.leads.update(body: [{id: 0}])
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::LeadsTest < Amocrm::Test::ResourceTest
   end
 
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.leads.list
 
@@ -55,7 +55,7 @@ class Amocrm::Test::Resources::LeadsTest < Amocrm::Test::ResourceTest
   end
 
   def test_create_complex_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.leads.create_complex(body: [{}])
 
@@ -72,7 +72,7 @@ class Amocrm::Test::Resources::LeadsTest < Amocrm::Test::ResourceTest
   end
 
   def test_get_by_id
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.leads.get_by_id(0)
 
@@ -89,7 +89,7 @@ class Amocrm::Test::Resources::LeadsTest < Amocrm::Test::ResourceTest
   end
 
   def test_update_by_id
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.leads.update_by_id(0)
 

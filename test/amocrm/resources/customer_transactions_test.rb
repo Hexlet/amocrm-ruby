@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::CustomerTransactionsTest < Amocrm::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.customer_transactions.create(0, body: [{price: 0}])
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::CustomerTransactionsTest < Amocrm::Test::Resource
   end
 
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.customer_transactions.list
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::CustomerTransactionsTest < Amocrm::Test::Resource
   end
 
   def test_delete_by_id_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.customer_transactions.delete_by_id(0, customer_id: 0)
 
@@ -55,7 +55,7 @@ class Amocrm::Test::Resources::CustomerTransactionsTest < Amocrm::Test::Resource
   end
 
   def test_list_by_customer
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.customer_transactions.list_by_customer(0)
 

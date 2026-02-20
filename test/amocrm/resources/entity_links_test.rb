@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::EntityLinksTest < Amocrm::Test::ResourceTest
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_links.list(:leads)
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::EntityLinksTest < Amocrm::Test::ResourceTest
   end
 
   def test_link_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_links.link(:leads, body: [{}])
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::EntityLinksTest < Amocrm::Test::ResourceTest
   end
 
   def test_link_by_entity_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_links.link_by_entity(0, entity_type: :leads, body: [{}])
 
@@ -55,7 +55,7 @@ class Amocrm::Test::Resources::EntityLinksTest < Amocrm::Test::ResourceTest
   end
 
   def test_list_by_entity_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_links.list_by_entity(0, entity_type: :leads)
 
@@ -72,7 +72,7 @@ class Amocrm::Test::Resources::EntityLinksTest < Amocrm::Test::ResourceTest
   end
 
   def test_unlink_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_links.unlink(:leads, body: [{}])
 
@@ -89,7 +89,7 @@ class Amocrm::Test::Resources::EntityLinksTest < Amocrm::Test::ResourceTest
   end
 
   def test_unlink_by_entity_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_links.unlink_by_entity(0, entity_type: :leads, body: [{}])
 
