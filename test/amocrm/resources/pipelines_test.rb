@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::PipelinesTest < Amocrm::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.pipelines.create(body: [{name: "name"}])
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::PipelinesTest < Amocrm::Test::ResourceTest
   end
 
   def test_update_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.pipelines.update(body: [{id: 0}])
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::PipelinesTest < Amocrm::Test::ResourceTest
   end
 
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.pipelines.list
 
@@ -55,7 +55,7 @@ class Amocrm::Test::Resources::PipelinesTest < Amocrm::Test::ResourceTest
   end
 
   def test_delete_by_id
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.pipelines.delete_by_id(0)
 
@@ -72,7 +72,7 @@ class Amocrm::Test::Resources::PipelinesTest < Amocrm::Test::ResourceTest
   end
 
   def test_get_by_id
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.pipelines.get_by_id(0)
 
@@ -89,7 +89,7 @@ class Amocrm::Test::Resources::PipelinesTest < Amocrm::Test::ResourceTest
   end
 
   def test_update_by_id
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.pipelines.update_by_id(0)
 

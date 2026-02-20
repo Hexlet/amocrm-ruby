@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::CustomerBonusPointsTest < Amocrm::Test::ResourceTest
   def test_change_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.customer_bonus_points.change(0, earn: 0)
 

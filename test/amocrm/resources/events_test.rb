@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::EventsTest < Amocrm::Test::ResourceTest
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.events.list
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::EventsTest < Amocrm::Test::ResourceTest
   end
 
   def test_get_by_id
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.events.get_by_id(0)
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::EventsTest < Amocrm::Test::ResourceTest
   end
 
   def test_list_types
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.events.list_types
 

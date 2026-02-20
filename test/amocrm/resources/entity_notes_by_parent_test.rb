@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::EntityNotesByParentTest < Amocrm::Test::ResourceTest
   def test_create_by_parent_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @amocrm.entity_notes_by_parent.create_by_parent(
@@ -26,7 +26,7 @@ class Amocrm::Test::Resources::EntityNotesByParentTest < Amocrm::Test::ResourceT
   end
 
   def test_get_by_parent_id_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes_by_parent.get_by_parent_id(0, entity_type: :leads, entity_id: 0)
 
@@ -43,7 +43,7 @@ class Amocrm::Test::Resources::EntityNotesByParentTest < Amocrm::Test::ResourceT
   end
 
   def test_list_by_parent_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes_by_parent.list_by_parent(0, entity_type: :leads)
 
@@ -60,7 +60,7 @@ class Amocrm::Test::Resources::EntityNotesByParentTest < Amocrm::Test::ResourceT
   end
 
   def test_update_by_parent_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes_by_parent.update_by_parent(0, entity_type: :leads, body: [{id: 0}])
 
@@ -77,7 +77,7 @@ class Amocrm::Test::Resources::EntityNotesByParentTest < Amocrm::Test::ResourceT
   end
 
   def test_update_by_parent_id_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes_by_parent.update_by_parent_id(0, entity_type: :leads, path_entity_id: 0)
 

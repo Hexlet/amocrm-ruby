@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::WidgetsTest < Amocrm::Test::ResourceTest
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.widgets.list
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::WidgetsTest < Amocrm::Test::ResourceTest
   end
 
   def test_get_by_code
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.widgets.get_by_code("widget_code")
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::WidgetsTest < Amocrm::Test::ResourceTest
   end
 
   def test_install_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.widgets.install("widget_code", body: {})
 
@@ -55,7 +55,7 @@ class Amocrm::Test::Resources::WidgetsTest < Amocrm::Test::ResourceTest
   end
 
   def test_uninstall
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.widgets.uninstall("widget_code")
 

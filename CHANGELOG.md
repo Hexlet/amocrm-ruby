@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.3 (2026-02-20)
+
+Full Changelog: [v0.5.2...v0.5.3](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.2...v0.5.3)
+
+### Chores
+
+* **internal:** remove mock server code ([97b11dc](https://github.com/Hexlet/amocrm-ruby/commit/97b11dc026b0de710edaacc6a65526f9a6969ec7))
+* update mock server docs ([4393e5d](https://github.com/Hexlet/amocrm-ruby/commit/4393e5d94350640a132c8df0d330715e7ca369ff))
+
 ## 0.5.2 (2026-02-07)
 
 Full Changelog: [v0.5.1...v0.5.2](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.1...v0.5.2)

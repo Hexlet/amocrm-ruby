@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::EntityNotesTest < Amocrm::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes.create(:leads, body: [{note_type: "note_type"}])
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::EntityNotesTest < Amocrm::Test::ResourceTest
   end
 
   def test_update_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes.update(:leads, body: [{id: 0}])
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::EntityNotesTest < Amocrm::Test::ResourceTest
   end
 
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes.list(:leads)
 
@@ -55,7 +55,7 @@ class Amocrm::Test::Resources::EntityNotesTest < Amocrm::Test::ResourceTest
   end
 
   def test_get_by_id_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes.get_by_id(0, entity_type: :leads)
 
@@ -72,7 +72,7 @@ class Amocrm::Test::Resources::EntityNotesTest < Amocrm::Test::ResourceTest
   end
 
   def test_pin_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes.pin(0, entity_type: :leads)
 
@@ -89,7 +89,7 @@ class Amocrm::Test::Resources::EntityNotesTest < Amocrm::Test::ResourceTest
   end
 
   def test_unpin_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes.unpin(0, entity_type: :leads)
 
@@ -106,7 +106,7 @@ class Amocrm::Test::Resources::EntityNotesTest < Amocrm::Test::ResourceTest
   end
 
   def test_update_by_id_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_notes.update_by_id(0, entity_type: :leads)
 
