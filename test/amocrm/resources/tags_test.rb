@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::TagsTest < Amocrm::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.tags.create(:leads, body: [{name: "name"}])
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::TagsTest < Amocrm::Test::ResourceTest
   end
 
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.tags.list(:leads)
 

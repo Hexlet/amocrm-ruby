@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::EntityFollowersTest < Amocrm::Test::ResourceTest
   def test_list_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_followers.list(0, entity_type: :leads)
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::EntityFollowersTest < Amocrm::Test::ResourceTest
   end
 
   def test_add_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_followers.add(0, entity_type: :leads, body: [{user_id: 0}])
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::EntityFollowersTest < Amocrm::Test::ResourceTest
   end
 
   def test_remove_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.entity_followers.remove(0, entity_type: :leads, body: [{user_id: 0}])
 

@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::CustomersModeTest < Amocrm::Test::ResourceTest
   def test_set_mode_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.customers_mode.set_mode(is_enabled: true, mode: :segments)
 

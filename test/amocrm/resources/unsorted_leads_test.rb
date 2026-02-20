@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::UnsortedLeadsTest < Amocrm::Test::ResourceTest
   def test_accept
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.unsorted_leads.accept("uid")
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::UnsortedLeadsTest < Amocrm::Test::ResourceTest
   end
 
   def test_create_forms_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response =
       @amocrm.unsorted_leads.create_forms(
@@ -41,7 +41,7 @@ class Amocrm::Test::Resources::UnsortedLeadsTest < Amocrm::Test::ResourceTest
   end
 
   def test_decline
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.unsorted_leads.decline("uid")
 

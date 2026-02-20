@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::TalksTest < Amocrm::Test::ResourceTest
   def test_close
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.talks.close(0)
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::TalksTest < Amocrm::Test::ResourceTest
   end
 
   def test_get_by_id
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.talks.get_by_id(0)
 

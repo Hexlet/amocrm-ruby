@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::CatalogsTest < Amocrm::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.catalogs.create(body: [{name: "name"}])
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::CatalogsTest < Amocrm::Test::ResourceTest
   end
 
   def test_update_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.catalogs.update(body: [{id: 0}])
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::CatalogsTest < Amocrm::Test::ResourceTest
   end
 
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.catalogs.list
 
@@ -55,7 +55,7 @@ class Amocrm::Test::Resources::CatalogsTest < Amocrm::Test::ResourceTest
   end
 
   def test_get_by_id
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.catalogs.get_by_id(0)
 
@@ -72,7 +72,7 @@ class Amocrm::Test::Resources::CatalogsTest < Amocrm::Test::ResourceTest
   end
 
   def test_update_by_id
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.catalogs.update_by_id(0)
 
