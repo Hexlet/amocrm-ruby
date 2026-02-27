@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::WebhooksTest < Amocrm::Test::ResourceTest
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.webhooks.list
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::WebhooksTest < Amocrm::Test::ResourceTest
   end
 
   def test_subscribe_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.webhooks.subscribe(destination: "destination", settings: ["string"])
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::WebhooksTest < Amocrm::Test::ResourceTest
   end
 
   def test_unsubscribe_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.webhooks.unsubscribe(destination: "destination")
 

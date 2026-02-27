@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::ContactChatsTest < Amocrm::Test::ResourceTest
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.contact_chats.list
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::ContactChatsTest < Amocrm::Test::ResourceTest
   end
 
   def test_link_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.contact_chats.link(body: [{chat_id: "chat_id", contact_id: 0}])
 
