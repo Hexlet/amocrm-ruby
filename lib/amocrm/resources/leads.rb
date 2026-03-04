@@ -68,10 +68,11 @@ module Amocrm
       # @see Amocrm::Models::LeadListParams
       def list(params = {})
         parsed, options = Amocrm::LeadListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/v4/leads",
-          query: parsed,
+          query: query,
           model: Amocrm::Models::LeadListResponse,
           options: options
         )
@@ -113,10 +114,11 @@ module Amocrm
       # @see Amocrm::Models::LeadGetByIDParams
       def get_by_id(id, params = {})
         parsed, options = Amocrm::LeadGetByIDParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/leads/%1$s", id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::LeadGetByIDResponse,
           options: options
         )

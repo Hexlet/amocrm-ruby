@@ -63,10 +63,11 @@ module Amocrm
       # @see Amocrm::Models::CatalogElementListParams
       def list(catalog_id, params = {})
         parsed, options = Amocrm::CatalogElementListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/catalogs/%1$s/elements", catalog_id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::CatalogElementListResponse,
           options: options
         )
@@ -89,6 +90,7 @@ module Amocrm
       # @see Amocrm::Models::CatalogElementGetByIDParams
       def get_by_id(id, params)
         parsed, options = Amocrm::CatalogElementGetByIDParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         catalog_id =
           parsed.delete(:catalog_id) do
             raise ArgumentError.new("missing required path argument #{_1}")
@@ -96,7 +98,7 @@ module Amocrm
         @client.request(
           method: :get,
           path: ["api/v4/catalogs/%1$s/elements/%2$s", catalog_id, id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::CatalogElementGetByIDResponse,
           options: options
         )

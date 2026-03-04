@@ -58,10 +58,11 @@ module Amocrm
       # @see Amocrm::Models::CatalogListParams
       def list(params = {})
         parsed, options = Amocrm::CatalogListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/v4/catalogs",
-          query: parsed,
+          query: query,
           model: Amocrm::Models::CatalogListResponse,
           options: options
         )

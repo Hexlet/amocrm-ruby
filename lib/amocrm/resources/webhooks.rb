@@ -15,10 +15,11 @@ module Amocrm
       # @see Amocrm::Models::WebhookListParams
       def list(params = {})
         parsed, options = Amocrm::WebhookListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/v4/webhooks",
-          query: parsed,
+          query: query,
           model: Amocrm::Models::WebhookListResponse,
           options: options
         )
