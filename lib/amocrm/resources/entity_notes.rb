@@ -62,10 +62,11 @@ module Amocrm
       # @see Amocrm::Models::EntityNoteListParams
       def list(entity_type, params = {})
         parsed, options = Amocrm::EntityNoteListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/%1$s/notes", entity_type],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::EntityNoteListResponse,
           options: options
         )
@@ -88,6 +89,7 @@ module Amocrm
       # @see Amocrm::Models::EntityNoteGetByIDParams
       def get_by_id(id, params)
         parsed, options = Amocrm::EntityNoteGetByIDParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         entity_type =
           parsed.delete(:entity_type) do
             raise ArgumentError.new("missing required path argument #{_1}")
@@ -95,7 +97,7 @@ module Amocrm
         @client.request(
           method: :get,
           path: ["api/v4/%1$s/notes/%2$s", entity_type, id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::EntityNoteGetByIDResponse,
           options: options
         )

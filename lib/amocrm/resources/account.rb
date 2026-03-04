@@ -16,10 +16,11 @@ module Amocrm
       # @see Amocrm::Models::AccountGetParams
       def get(params = {})
         parsed, options = Amocrm::AccountGetParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/v4/account",
-          query: parsed,
+          query: query,
           model: Amocrm::Models::AccountGetResponse,
           options: options
         )

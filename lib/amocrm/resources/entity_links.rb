@@ -16,10 +16,11 @@ module Amocrm
       # @see Amocrm::Models::EntityLinkListParams
       def list(entity_type, params = {})
         parsed, options = Amocrm::EntityLinkListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/%1$s/links", entity_type],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::EntityLinkListResponse,
           options: options
         )

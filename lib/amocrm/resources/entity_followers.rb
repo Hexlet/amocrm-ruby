@@ -22,6 +22,7 @@ module Amocrm
       # @see Amocrm::Models::EntityFollowerListParams
       def list(entity_id, params)
         parsed, options = Amocrm::EntityFollowerListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         entity_type =
           parsed.delete(:entity_type) do
             raise ArgumentError.new("missing required path argument #{_1}")
@@ -29,7 +30,7 @@ module Amocrm
         @client.request(
           method: :get,
           path: ["api/v4/%1$s/%2$s/followers", entity_type, entity_id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::EntityFollowerListResponse,
           options: options
         )

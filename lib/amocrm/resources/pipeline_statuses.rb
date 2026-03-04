@@ -62,10 +62,11 @@ module Amocrm
       # @see Amocrm::Models::PipelineStatusListParams
       def list(pipeline_id, params = {})
         parsed, options = Amocrm::PipelineStatusListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/leads/pipelines/%1$s/statuses", pipeline_id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::PipelineStatusListResponse,
           options: options
         )
@@ -116,6 +117,7 @@ module Amocrm
       # @see Amocrm::Models::PipelineStatusGetByIDParams
       def get_by_id(id, params)
         parsed, options = Amocrm::PipelineStatusGetByIDParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         pipeline_id =
           parsed.delete(:pipeline_id) do
             raise ArgumentError.new("missing required path argument #{_1}")
@@ -123,7 +125,7 @@ module Amocrm
         @client.request(
           method: :get,
           path: ["api/v4/leads/pipelines/%1$s/statuses/%2$s", pipeline_id, id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::PipelineStatusGetByIDResponse,
           options: options
         )

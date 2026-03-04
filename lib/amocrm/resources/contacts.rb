@@ -68,10 +68,11 @@ module Amocrm
       # @see Amocrm::Models::ContactListParams
       def list(params = {})
         parsed, options = Amocrm::ContactListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/v4/contacts",
-          query: parsed,
+          query: query,
           model: Amocrm::Models::ContactListResponse,
           options: options
         )
@@ -92,10 +93,11 @@ module Amocrm
       # @see Amocrm::Models::ContactGetByIDParams
       def get_by_id(id, params = {})
         parsed, options = Amocrm::ContactGetByIDParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/contacts/%1$s", id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::ContactGetByIDResponse,
           options: options
         )

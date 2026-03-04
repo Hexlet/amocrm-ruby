@@ -62,10 +62,11 @@ module Amocrm
       # @see Amocrm::Models::WebsiteButtonListParams
       def list(params = {})
         parsed, options = Amocrm::WebsiteButtonListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/v4/website_buttons",
-          query: parsed,
+          query: query,
           model: Amocrm::Models::WebsiteButtonListResponse,
           options: options
         )
@@ -103,10 +104,11 @@ module Amocrm
       # @see Amocrm::Models::WebsiteButtonGetBySourceIDParams
       def get_by_source_id(source_id, params = {})
         parsed, options = Amocrm::WebsiteButtonGetBySourceIDParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/website_buttons/%1$s", source_id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::WebsiteButtonGetBySourceIDResponse,
           options: options
         )
