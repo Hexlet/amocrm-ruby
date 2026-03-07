@@ -1,7 +1,8 @@
 module Amocrm
   module Models
     type pipeline_status_delete_by_id_params =
-      { pipeline_id: Integer } & Amocrm::Internal::Type::request_parameters
+      { pipeline_id: Integer, id: Integer }
+      & Amocrm::Internal::Type::request_parameters
 
     class PipelineStatusDeleteByIDParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
@@ -9,13 +10,17 @@ module Amocrm
 
       attr_accessor pipeline_id: Integer
 
+      attr_accessor id: Integer
+
       def initialize: (
         pipeline_id: Integer,
+        id: Integer,
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
         pipeline_id: Integer,
+        id: Integer,
         request_options: Amocrm::RequestOptions
       }
     end

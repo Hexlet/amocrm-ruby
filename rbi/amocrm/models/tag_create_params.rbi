@@ -11,21 +11,26 @@ module Amocrm
           T.any(Amocrm::TagCreateParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Amocrm::TagCreateParams::EntityType::OrSymbol) }
+      attr_accessor :entity_type
+
       sig { returns(T::Array[Amocrm::TagCreateParams::Body]) }
       attr_accessor :body
 
       sig do
         params(
+          entity_type: Amocrm::TagCreateParams::EntityType::OrSymbol,
           body: T::Array[Amocrm::TagCreateParams::Body::OrHash],
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(body:, request_options: {})
+      def self.new(entity_type:, body:, request_options: {})
       end
 
       sig do
         override.returns(
           {
+            entity_type: Amocrm::TagCreateParams::EntityType::OrSymbol,
             body: T::Array[Amocrm::TagCreateParams::Body],
             request_options: Amocrm::RequestOptions
           }

@@ -17,18 +17,26 @@ module Amocrm
       sig { returns(Integer) }
       attr_accessor :pipeline_id
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig do
         params(
           pipeline_id: Integer,
+          id: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(pipeline_id:, request_options: {})
+      def self.new(pipeline_id:, id:, request_options: {})
       end
 
       sig do
         override.returns(
-          { pipeline_id: Integer, request_options: Amocrm::RequestOptions }
+          {
+            pipeline_id: Integer,
+            id: Integer,
+            request_options: Amocrm::RequestOptions
+          }
         )
       end
       def to_hash

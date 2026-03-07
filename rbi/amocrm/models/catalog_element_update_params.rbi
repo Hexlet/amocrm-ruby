@@ -11,21 +11,26 @@ module Amocrm
           T.any(Amocrm::CatalogElementUpdateParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :catalog_id
+
       sig { returns(T::Array[Amocrm::CatalogElementUpdateParams::Body]) }
       attr_accessor :body
 
       sig do
         params(
+          catalog_id: Integer,
           body: T::Array[Amocrm::CatalogElementUpdateParams::Body::OrHash],
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(body:, request_options: {})
+      def self.new(catalog_id:, body:, request_options: {})
       end
 
       sig do
         override.returns(
           {
+            catalog_id: Integer,
             body: T::Array[Amocrm::CatalogElementUpdateParams::Body],
             request_options: Amocrm::RequestOptions
           }

@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::RoleUpdateByIDParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(String)) }
       attr_reader :name
 
@@ -35,18 +38,26 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           name: String,
           request_id: String,
           rights: T.nilable(Amocrm::RoleUpdateByIDParams::Rights::OrHash),
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(name: nil, request_id: nil, rights: nil, request_options: {})
+      def self.new(
+        id:,
+        name: nil,
+        request_id: nil,
+        rights: nil,
+        request_options: {}
+      )
       end
 
       sig do
         override.returns(
           {
+            id: Integer,
             name: String,
             request_id: String,
             rights: T.nilable(Amocrm::RoleUpdateByIDParams::Rights),

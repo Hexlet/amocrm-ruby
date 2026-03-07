@@ -1,21 +1,28 @@
 module Amocrm
   module Models
     type custom_field_create_params =
-      { body: ::Array[Amocrm::CustomFieldCreateParams::Body] }
+      {
+        entity_type: String,
+        body: ::Array[Amocrm::CustomFieldCreateParams::Body]
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class CustomFieldCreateParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      attr_accessor entity_type: String
+
       attr_accessor body: ::Array[Amocrm::CustomFieldCreateParams::Body]
 
       def initialize: (
+        entity_type: String,
         body: ::Array[Amocrm::CustomFieldCreateParams::Body],
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        entity_type: String,
         body: ::Array[Amocrm::CustomFieldCreateParams::Body],
         request_options: Amocrm::RequestOptions
       }

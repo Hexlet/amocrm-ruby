@@ -1,12 +1,19 @@
 module Amocrm
   module Models
     type entity_note_list_params =
-      { filter: top, limit: Integer, page: Integer }
+      {
+        entity_type: Amocrm::Models::EntityNoteListParams::entity_type,
+        filter: top,
+        limit: Integer,
+        page: Integer
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class EntityNoteListParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor entity_type: Amocrm::Models::EntityNoteListParams::entity_type
 
       attr_reader filter: top?
 
@@ -21,6 +28,7 @@ module Amocrm
       def page=: (Integer) -> Integer
 
       def initialize: (
+        entity_type: Amocrm::Models::EntityNoteListParams::entity_type,
         ?filter: top,
         ?limit: Integer,
         ?page: Integer,
@@ -28,6 +36,7 @@ module Amocrm
       ) -> void
 
       def to_hash: -> {
+        entity_type: Amocrm::Models::EntityNoteListParams::entity_type,
         filter: top,
         limit: Integer,
         page: Integer,

@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute color
       #
       #   @return [String, nil]
@@ -23,7 +28,8 @@ module Amocrm
       #   @return [String, nil]
       optional :name, String
 
-      # @!method initialize(color: nil, custom_fields_values: nil, name: nil, request_options: {})
+      # @!method initialize(id:, color: nil, custom_fields_values: nil, name: nil, request_options: {})
+      #   @param id [Integer]
       #   @param color [String]
       #   @param custom_fields_values [Array<Amocrm::Models::CustomerSegmentUpdateByIDParams::CustomFieldsValue>]
       #   @param name [String]

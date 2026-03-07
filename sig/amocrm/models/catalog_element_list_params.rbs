@@ -2,6 +2,7 @@ module Amocrm
   module Models
     type catalog_element_list_params =
       {
+        catalog_id: Integer,
         filter: top,
         limit: Integer,
         page: Integer,
@@ -12,6 +13,8 @@ module Amocrm
     class CatalogElementListParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor catalog_id: Integer
 
       attr_reader filter: top?
 
@@ -32,6 +35,7 @@ module Amocrm
       ) -> Amocrm::Models::CatalogElementListParams::query
 
       def initialize: (
+        catalog_id: Integer,
         ?filter: top,
         ?limit: Integer,
         ?page: Integer,
@@ -40,6 +44,7 @@ module Amocrm
       ) -> void
 
       def to_hash: -> {
+        catalog_id: Integer,
         filter: top,
         limit: Integer,
         page: Integer,

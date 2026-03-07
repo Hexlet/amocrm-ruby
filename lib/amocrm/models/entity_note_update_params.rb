@@ -7,12 +7,18 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute entity_type
+      #
+      #   @return [Symbol, Amocrm::Models::EntityNoteUpdateParams::EntityType]
+      required :entity_type, enum: -> { Amocrm::EntityNoteUpdateParams::EntityType }
+
       # @!attribute body
       #
       #   @return [Array<Amocrm::Models::EntityNoteUpdateParams::Body>]
       required :body, -> { Amocrm::Internal::Type::ArrayOf[Amocrm::EntityNoteUpdateParams::Body] }
 
-      # @!method initialize(body:, request_options: {})
+      # @!method initialize(entity_type:, body:, request_options: {})
+      #   @param entity_type [Symbol, Amocrm::Models::EntityNoteUpdateParams::EntityType]
       #   @param body [Array<Amocrm::Models::EntityNoteUpdateParams::Body>]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

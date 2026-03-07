@@ -4,6 +4,7 @@ module Amocrm
       {
         entity_type: Amocrm::Models::EntityNotesByParentGetByParentIDParams::entity_type,
         entity_id: Integer,
+        note_id: Integer,
         with: String
       }
       & Amocrm::Internal::Type::request_parameters
@@ -16,6 +17,8 @@ module Amocrm
 
       attr_accessor entity_id: Integer
 
+      attr_accessor note_id: Integer
+
       attr_reader with: String?
 
       def with=: (String) -> String
@@ -23,6 +26,7 @@ module Amocrm
       def initialize: (
         entity_type: Amocrm::Models::EntityNotesByParentGetByParentIDParams::entity_type,
         entity_id: Integer,
+        note_id: Integer,
         ?with: String,
         ?request_options: Amocrm::request_opts
       ) -> void
@@ -30,6 +34,7 @@ module Amocrm
       def to_hash: -> {
         entity_type: Amocrm::Models::EntityNotesByParentGetByParentIDParams::entity_type,
         entity_id: Integer,
+        note_id: Integer,
         with: String,
         request_options: Amocrm::RequestOptions
       }

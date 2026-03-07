@@ -1,21 +1,28 @@
 module Amocrm
   module Models
     type website_button_update_params =
-      { trusted_websites: Amocrm::WebsiteButtonUpdateParams::TrustedWebsites }
+      {
+        source_id: Integer,
+        trusted_websites: Amocrm::WebsiteButtonUpdateParams::TrustedWebsites
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class WebsiteButtonUpdateParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      attr_accessor source_id: Integer
+
       attr_accessor trusted_websites: Amocrm::WebsiteButtonUpdateParams::TrustedWebsites
 
       def initialize: (
+        source_id: Integer,
         trusted_websites: Amocrm::WebsiteButtonUpdateParams::TrustedWebsites,
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        source_id: Integer,
         trusted_websites: Amocrm::WebsiteButtonUpdateParams::TrustedWebsites,
         request_options: Amocrm::RequestOptions
       }

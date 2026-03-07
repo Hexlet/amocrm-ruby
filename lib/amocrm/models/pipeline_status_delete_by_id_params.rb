@@ -12,8 +12,14 @@ module Amocrm
       #   @return [Integer]
       required :pipeline_id, Integer
 
-      # @!method initialize(pipeline_id:, request_options: {})
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
+      # @!method initialize(pipeline_id:, id:, request_options: {})
       #   @param pipeline_id [Integer]
+      #   @param id [Integer]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
     end
   end

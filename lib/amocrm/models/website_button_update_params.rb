@@ -7,12 +7,18 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute source_id
+      #
+      #   @return [Integer]
+      required :source_id, Integer
+
       # @!attribute trusted_websites
       #
       #   @return [Amocrm::Models::WebsiteButtonUpdateParams::TrustedWebsites]
       required :trusted_websites, -> { Amocrm::WebsiteButtonUpdateParams::TrustedWebsites }
 
-      # @!method initialize(trusted_websites:, request_options: {})
+      # @!method initialize(source_id:, trusted_websites:, request_options: {})
+      #   @param source_id [Integer]
       #   @param trusted_websites [Amocrm::Models::WebsiteButtonUpdateParams::TrustedWebsites]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

@@ -3,6 +3,7 @@ module Amocrm
     type pipeline_status_update_by_id_params =
       {
         pipeline_id: Integer,
+        id: Integer,
         color: String,
         descriptions: ::Array[Amocrm::PipelineStatusUpdateByIDParams::Description],
         name: String,
@@ -16,6 +17,8 @@ module Amocrm
       include Amocrm::Internal::Type::RequestParameters
 
       attr_accessor pipeline_id: Integer
+
+      attr_accessor id: Integer
 
       attr_reader color: String?
 
@@ -41,6 +44,7 @@ module Amocrm
 
       def initialize: (
         pipeline_id: Integer,
+        id: Integer,
         ?color: String,
         ?descriptions: ::Array[Amocrm::PipelineStatusUpdateByIDParams::Description],
         ?name: String,
@@ -51,6 +55,7 @@ module Amocrm
 
       def to_hash: -> {
         pipeline_id: Integer,
+        id: Integer,
         color: String,
         descriptions: ::Array[Amocrm::PipelineStatusUpdateByIDParams::Description],
         name: String,

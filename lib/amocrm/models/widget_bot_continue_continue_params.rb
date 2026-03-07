@@ -17,6 +17,11 @@ module Amocrm
       #   @return [Integer]
       required :bot_id, Integer
 
+      # @!attribute continue_id
+      #
+      #   @return [Integer]
+      required :continue_id, Integer
+
       # @!attribute data
       #
       #   @return [Object, nil]
@@ -28,9 +33,10 @@ module Amocrm
       optional :execute_handlers,
                -> { Amocrm::Internal::Type::ArrayOf[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler] }
 
-      # @!method initialize(bot_type:, bot_id:, data: nil, execute_handlers: nil, request_options: {})
+      # @!method initialize(bot_type:, bot_id:, continue_id:, data: nil, execute_handlers: nil, request_options: {})
       #   @param bot_type [Symbol, Amocrm::Models::WidgetBotContinueContinueParams::BotType]
       #   @param bot_id [Integer]
+      #   @param continue_id [Integer]
       #   @param data [Object]
       #   @param execute_handlers [Array<Amocrm::Models::WidgetBotContinueContinueParams::ExecuteHandler>]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]

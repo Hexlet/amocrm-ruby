@@ -3,6 +3,7 @@ module Amocrm
     type entity_link_link_by_entity_params =
       {
         entity_type: Amocrm::Models::EntityLinkLinkByEntityParams::entity_type,
+        entity_id: Integer,
         body: ::Array[Amocrm::EntityLinkLinkByEntityParams::Body]
       }
       & Amocrm::Internal::Type::request_parameters
@@ -13,16 +14,20 @@ module Amocrm
 
       attr_accessor entity_type: Amocrm::Models::EntityLinkLinkByEntityParams::entity_type
 
+      attr_accessor entity_id: Integer
+
       attr_accessor body: ::Array[Amocrm::EntityLinkLinkByEntityParams::Body]
 
       def initialize: (
         entity_type: Amocrm::Models::EntityLinkLinkByEntityParams::entity_type,
+        entity_id: Integer,
         body: ::Array[Amocrm::EntityLinkLinkByEntityParams::Body],
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
         entity_type: Amocrm::Models::EntityLinkLinkByEntityParams::entity_type,
+        entity_id: Integer,
         body: ::Array[Amocrm::EntityLinkLinkByEntityParams::Body],
         request_options: Amocrm::RequestOptions
       }

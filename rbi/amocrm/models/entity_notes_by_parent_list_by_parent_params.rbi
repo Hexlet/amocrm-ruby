@@ -21,6 +21,9 @@ module Amocrm
       end
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :entity_id
+
       sig { returns(T.nilable(T.anything)) }
       attr_reader :filter
 
@@ -43,6 +46,7 @@ module Amocrm
         params(
           entity_type:
             Amocrm::EntityNotesByParentListByParentParams::EntityType::OrSymbol,
+          entity_id: Integer,
           filter: T.anything,
           limit: Integer,
           page: Integer,
@@ -51,6 +55,7 @@ module Amocrm
       end
       def self.new(
         entity_type:,
+        entity_id:,
         filter: nil,
         limit: nil,
         page: nil,
@@ -63,6 +68,7 @@ module Amocrm
           {
             entity_type:
               Amocrm::EntityNotesByParentListByParentParams::EntityType::OrSymbol,
+            entity_id: Integer,
             filter: T.anything,
             limit: Integer,
             page: Integer,

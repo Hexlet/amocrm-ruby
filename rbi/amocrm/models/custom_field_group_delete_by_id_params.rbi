@@ -17,18 +17,26 @@ module Amocrm
       sig { returns(String) }
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig do
         params(
           entity_type: String,
+          id: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(entity_type:, request_options: {})
+      def self.new(entity_type:, id:, request_options: {})
       end
 
       sig do
         override.returns(
-          { entity_type: String, request_options: Amocrm::RequestOptions }
+          {
+            entity_type: String,
+            id: Integer,
+            request_options: Amocrm::RequestOptions
+          }
         )
       end
       def to_hash

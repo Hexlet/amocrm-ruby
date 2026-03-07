@@ -14,6 +14,9 @@ module Amocrm
           )
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(String)) }
       attr_reader :color
 
@@ -34,18 +37,20 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           color: String,
           name: String,
           sort: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(color: nil, name: nil, sort: nil, request_options: {})
+      def self.new(id:, color: nil, name: nil, sort: nil, request_options: {})
       end
 
       sig do
         override.returns(
           {
+            id: Integer,
             color: String,
             name: String,
             sort: Integer,

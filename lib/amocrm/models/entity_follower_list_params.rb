@@ -12,6 +12,11 @@ module Amocrm
       #   @return [Symbol, Amocrm::Models::EntityFollowerListParams::EntityType]
       required :entity_type, enum: -> { Amocrm::EntityFollowerListParams::EntityType }
 
+      # @!attribute entity_id
+      #
+      #   @return [Integer]
+      required :entity_id, Integer
+
       # @!attribute limit
       #
       #   @return [Integer, nil]
@@ -22,8 +27,9 @@ module Amocrm
       #   @return [Integer, nil]
       optional :page, Integer
 
-      # @!method initialize(entity_type:, limit: nil, page: nil, request_options: {})
+      # @!method initialize(entity_type:, entity_id:, limit: nil, page: nil, request_options: {})
       #   @param entity_type [Symbol, Amocrm::Models::EntityFollowerListParams::EntityType]
+      #   @param entity_id [Integer]
       #   @param limit [Integer]
       #   @param page [Integer]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]

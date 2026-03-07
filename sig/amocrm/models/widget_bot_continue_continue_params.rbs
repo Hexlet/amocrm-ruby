@@ -4,6 +4,7 @@ module Amocrm
       {
         bot_type: Amocrm::Models::WidgetBotContinueContinueParams::bot_type,
         bot_id: Integer,
+        continue_id: Integer,
         data: top,
         execute_handlers: ::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler]
       }
@@ -16,6 +17,8 @@ module Amocrm
       attr_accessor bot_type: Amocrm::Models::WidgetBotContinueContinueParams::bot_type
 
       attr_accessor bot_id: Integer
+
+      attr_accessor continue_id: Integer
 
       attr_reader data: top?
 
@@ -30,6 +33,7 @@ module Amocrm
       def initialize: (
         bot_type: Amocrm::Models::WidgetBotContinueContinueParams::bot_type,
         bot_id: Integer,
+        continue_id: Integer,
         ?data: top,
         ?execute_handlers: ::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler],
         ?request_options: Amocrm::request_opts
@@ -38,6 +42,7 @@ module Amocrm
       def to_hash: -> {
         bot_type: Amocrm::Models::WidgetBotContinueContinueParams::bot_type,
         bot_id: Integer,
+        continue_id: Integer,
         data: top,
         execute_handlers: ::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler],
         request_options: Amocrm::RequestOptions

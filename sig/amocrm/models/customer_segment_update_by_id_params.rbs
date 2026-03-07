@@ -2,6 +2,7 @@ module Amocrm
   module Models
     type customer_segment_update_by_id_params =
       {
+        id: Integer,
         color: String,
         custom_fields_values: ::Array[Amocrm::CustomerSegmentUpdateByIDParams::CustomFieldsValue],
         name: String
@@ -11,6 +12,8 @@ module Amocrm
     class CustomerSegmentUpdateByIDParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor id: Integer
 
       attr_reader color: String?
 
@@ -27,6 +30,7 @@ module Amocrm
       def name=: (String) -> String
 
       def initialize: (
+        id: Integer,
         ?color: String,
         ?custom_fields_values: ::Array[Amocrm::CustomerSegmentUpdateByIDParams::CustomFieldsValue],
         ?name: String,
@@ -34,6 +38,7 @@ module Amocrm
       ) -> void
 
       def to_hash: -> {
+        id: Integer,
         color: String,
         custom_fields_values: ::Array[Amocrm::CustomerSegmentUpdateByIDParams::CustomFieldsValue],
         name: String,

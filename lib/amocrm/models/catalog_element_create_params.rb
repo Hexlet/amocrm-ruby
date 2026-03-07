@@ -7,12 +7,18 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute catalog_id
+      #
+      #   @return [Integer]
+      required :catalog_id, Integer
+
       # @!attribute body
       #
       #   @return [Array<Amocrm::Models::CatalogElementCreateParams::Body>]
       required :body, -> { Amocrm::Internal::Type::ArrayOf[Amocrm::CatalogElementCreateParams::Body] }
 
-      # @!method initialize(body:, request_options: {})
+      # @!method initialize(catalog_id:, body:, request_options: {})
+      #   @param catalog_id [Integer]
       #   @param body [Array<Amocrm::Models::CatalogElementCreateParams::Body>]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

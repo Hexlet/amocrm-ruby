@@ -1,21 +1,28 @@
 module Amocrm
   module Models
     type catalog_element_create_params =
-      { body: ::Array[Amocrm::CatalogElementCreateParams::Body] }
+      {
+        catalog_id: Integer,
+        body: ::Array[Amocrm::CatalogElementCreateParams::Body]
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class CatalogElementCreateParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      attr_accessor catalog_id: Integer
+
       attr_accessor body: ::Array[Amocrm::CatalogElementCreateParams::Body]
 
       def initialize: (
+        catalog_id: Integer,
         body: ::Array[Amocrm::CatalogElementCreateParams::Body],
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        catalog_id: Integer,
         body: ::Array[Amocrm::CatalogElementCreateParams::Body],
         request_options: Amocrm::RequestOptions
       }

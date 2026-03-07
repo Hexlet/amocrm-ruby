@@ -1,7 +1,7 @@
 module Amocrm
   module Models
     type custom_field_group_update_by_id_params =
-      { entity_type: String, name: String, sort: Integer }
+      { entity_type: String, id: Integer, name: String, sort: Integer }
       & Amocrm::Internal::Type::request_parameters
 
     class CustomFieldGroupUpdateByIDParams < Amocrm::Internal::Type::BaseModel
@@ -9,6 +9,8 @@ module Amocrm
       include Amocrm::Internal::Type::RequestParameters
 
       attr_accessor entity_type: String
+
+      attr_accessor id: Integer
 
       attr_reader name: String?
 
@@ -20,6 +22,7 @@ module Amocrm
 
       def initialize: (
         entity_type: String,
+        id: Integer,
         ?name: String,
         ?sort: Integer,
         ?request_options: Amocrm::request_opts
@@ -27,6 +30,7 @@ module Amocrm
 
       def to_hash: -> {
         entity_type: String,
+        id: Integer,
         name: String,
         sort: Integer,
         request_options: Amocrm::RequestOptions

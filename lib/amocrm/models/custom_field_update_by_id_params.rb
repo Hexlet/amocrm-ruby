@@ -12,6 +12,11 @@ module Amocrm
       #   @return [String]
       required :entity_type, String
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute code
       #
       #   @return [String, nil]
@@ -67,8 +72,9 @@ module Amocrm
       #   @return [String, nil]
       optional :type, String
 
-      # @!method initialize(entity_type:, code: nil, enums: nil, group_id: nil, is_deletable: nil, is_multiple: nil, is_required: nil, is_visible: nil, name: nil, settings: nil, sort: nil, type: nil, request_options: {})
+      # @!method initialize(entity_type:, id:, code: nil, enums: nil, group_id: nil, is_deletable: nil, is_multiple: nil, is_required: nil, is_visible: nil, name: nil, settings: nil, sort: nil, type: nil, request_options: {})
       #   @param entity_type [String]
+      #   @param id [Integer]
       #   @param code [String]
       #   @param enums [Array<Object>]
       #   @param group_id [Integer]

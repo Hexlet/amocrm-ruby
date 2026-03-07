@@ -14,6 +14,9 @@ module Amocrm
       sig { returns(Integer) }
       attr_accessor :catalog_id
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       # Additional data to include (comma-separated).
       sig { returns(T.nilable(String)) }
       attr_reader :with
@@ -24,12 +27,14 @@ module Amocrm
       sig do
         params(
           catalog_id: Integer,
+          id: Integer,
           with: String,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
         catalog_id:,
+        id:,
         # Additional data to include (comma-separated).
         with: nil,
         request_options: {}
@@ -40,6 +45,7 @@ module Amocrm
         override.returns(
           {
             catalog_id: Integer,
+            id: Integer,
             with: String,
             request_options: Amocrm::RequestOptions
           }

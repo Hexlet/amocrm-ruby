@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute uid
+      #
+      #   @return [String]
+      required :uid, String
+
       # @!attribute status_id
       #   Status id for the created lead
       #
@@ -19,7 +24,9 @@ module Amocrm
       #   @return [Integer, nil]
       optional :user_id, Integer
 
-      # @!method initialize(status_id: nil, user_id: nil, request_options: {})
+      # @!method initialize(uid:, status_id: nil, user_id: nil, request_options: {})
+      #   @param uid [String]
+      #
       #   @param status_id [Integer] Status id for the created lead
       #
       #   @param user_id [Integer] User id on whose behalf the item is accepted

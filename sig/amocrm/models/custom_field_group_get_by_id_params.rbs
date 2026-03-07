@@ -1,7 +1,8 @@
 module Amocrm
   module Models
     type custom_field_group_get_by_id_params =
-      { entity_type: String } & Amocrm::Internal::Type::request_parameters
+      { entity_type: String, id: Integer }
+      & Amocrm::Internal::Type::request_parameters
 
     class CustomFieldGroupGetByIDParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
@@ -9,13 +10,17 @@ module Amocrm
 
       attr_accessor entity_type: String
 
+      attr_accessor id: Integer
+
       def initialize: (
         entity_type: String,
+        id: Integer,
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
         entity_type: String,
+        id: Integer,
         request_options: Amocrm::RequestOptions
       }
     end

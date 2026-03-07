@@ -7,13 +7,20 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute with
       #   Expand related entities; comma-separated values
       #
       #   @return [String, nil]
       optional :with, String
 
-      # @!method initialize(with: nil, request_options: {})
+      # @!method initialize(id:, with: nil, request_options: {})
+      #   @param id [Integer]
+      #
       #   @param with [String] Expand related entities; comma-separated values
       #
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]

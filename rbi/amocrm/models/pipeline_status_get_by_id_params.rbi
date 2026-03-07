@@ -14,6 +14,9 @@ module Amocrm
       sig { returns(Integer) }
       attr_accessor :pipeline_id
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       # Expand related entities; comma-separated values (e.g. descriptions).
       sig { returns(T.nilable(String)) }
       attr_reader :with
@@ -24,12 +27,14 @@ module Amocrm
       sig do
         params(
           pipeline_id: Integer,
+          id: Integer,
           with: String,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
         pipeline_id:,
+        id:,
         # Expand related entities; comma-separated values (e.g. descriptions).
         with: nil,
         request_options: {}
@@ -40,6 +45,7 @@ module Amocrm
         override.returns(
           {
             pipeline_id: Integer,
+            id: Integer,
             with: String,
             request_options: Amocrm::RequestOptions
           }

@@ -12,13 +12,19 @@ module Amocrm
       #   @return [Symbol, Amocrm::Models::EntityLinkLinkByEntityParams::EntityType]
       required :entity_type, enum: -> { Amocrm::EntityLinkLinkByEntityParams::EntityType }
 
+      # @!attribute entity_id
+      #
+      #   @return [Integer]
+      required :entity_id, Integer
+
       # @!attribute body
       #
       #   @return [Array<Amocrm::Models::EntityLinkLinkByEntityParams::Body>]
       required :body, -> { Amocrm::Internal::Type::ArrayOf[Amocrm::EntityLinkLinkByEntityParams::Body] }
 
-      # @!method initialize(entity_type:, body:, request_options: {})
+      # @!method initialize(entity_type:, entity_id:, body:, request_options: {})
       #   @param entity_type [Symbol, Amocrm::Models::EntityLinkLinkByEntityParams::EntityType]
+      #   @param entity_id [Integer]
       #   @param body [Array<Amocrm::Models::EntityLinkLinkByEntityParams::Body>]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

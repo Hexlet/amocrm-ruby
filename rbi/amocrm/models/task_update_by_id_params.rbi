@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::TaskUpdateByIDParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(Integer)) }
       attr_reader :complete_till
 
@@ -61,6 +64,7 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           complete_till: Integer,
           entity_id: Integer,
           entity_type: String,
@@ -73,6 +77,7 @@ module Amocrm
         ).returns(T.attached_class)
       end
       def self.new(
+        id:,
         complete_till: nil,
         entity_id: nil,
         entity_type: nil,
@@ -88,6 +93,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            id: Integer,
             complete_till: Integer,
             entity_id: Integer,
             entity_type: String,

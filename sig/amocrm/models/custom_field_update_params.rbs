@@ -1,21 +1,28 @@
 module Amocrm
   module Models
     type custom_field_update_params =
-      { body: ::Array[Amocrm::CustomFieldUpdateParams::Body] }
+      {
+        entity_type: String,
+        body: ::Array[Amocrm::CustomFieldUpdateParams::Body]
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class CustomFieldUpdateParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      attr_accessor entity_type: String
+
       attr_accessor body: ::Array[Amocrm::CustomFieldUpdateParams::Body]
 
       def initialize: (
+        entity_type: String,
         body: ::Array[Amocrm::CustomFieldUpdateParams::Body],
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        entity_type: String,
         body: ::Array[Amocrm::CustomFieldUpdateParams::Body],
         request_options: Amocrm::RequestOptions
       }

@@ -14,17 +14,21 @@ module Amocrm
       sig { returns(Amocrm::EntityFollowerRemoveParams::EntityType::OrSymbol) }
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :entity_id
+
       sig { returns(T::Array[Amocrm::EntityFollowerRemoveParams::Body]) }
       attr_accessor :body
 
       sig do
         params(
           entity_type: Amocrm::EntityFollowerRemoveParams::EntityType::OrSymbol,
+          entity_id: Integer,
           body: T::Array[Amocrm::EntityFollowerRemoveParams::Body::OrHash],
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(entity_type:, body:, request_options: {})
+      def self.new(entity_type:, entity_id:, body:, request_options: {})
       end
 
       sig do
@@ -32,6 +36,7 @@ module Amocrm
           {
             entity_type:
               Amocrm::EntityFollowerRemoveParams::EntityType::OrSymbol,
+            entity_id: Integer,
             body: T::Array[Amocrm::EntityFollowerRemoveParams::Body],
             request_options: Amocrm::RequestOptions
           }

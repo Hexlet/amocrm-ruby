@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute complete_till
       #
       #   @return [Integer, nil]
@@ -47,7 +52,8 @@ module Amocrm
       #   @return [String, nil]
       optional :text, String
 
-      # @!method initialize(complete_till: nil, entity_id: nil, entity_type: nil, is_completed: nil, responsible_user_id: nil, result: nil, task_type_id: nil, text: nil, request_options: {})
+      # @!method initialize(id:, complete_till: nil, entity_id: nil, entity_type: nil, is_completed: nil, responsible_user_id: nil, result: nil, task_type_id: nil, text: nil, request_options: {})
+      #   @param id [Integer]
       #   @param complete_till [Integer]
       #   @param entity_id [Integer]
       #   @param entity_type [String]

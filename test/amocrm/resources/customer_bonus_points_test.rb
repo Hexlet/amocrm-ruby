@@ -6,7 +6,7 @@ class Amocrm::Test::Resources::CustomerBonusPointsTest < Amocrm::Test::ResourceT
   def test_change_required_params
     skip("Mock server tests are disabled")
 
-    response = @amocrm.customer_bonus_points.change(0, earn: 0)
+    response = @amocrm.customer_bonus_points.change(0, body: {earn: 0})
 
     assert_pattern do
       response => Amocrm::Models::CustomerBonusPointChangeResponse

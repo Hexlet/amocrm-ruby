@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute customer_id
+      #
+      #   @return [Integer]
+      required :customer_id, Integer
+
       # @!attribute body
       #
       #   @return [Array<Amocrm::Models::CustomerTransactionCreateParams::Body>]
@@ -17,7 +22,8 @@ module Amocrm
       #   @return [Boolean, nil]
       optional :accrue_bonus, Amocrm::Internal::Type::Boolean
 
-      # @!method initialize(body:, accrue_bonus: nil, request_options: {})
+      # @!method initialize(customer_id:, body:, accrue_bonus: nil, request_options: {})
+      #   @param customer_id [Integer]
       #   @param body [Array<Amocrm::Models::CustomerTransactionCreateParams::Body>]
       #   @param accrue_bonus [Boolean]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]

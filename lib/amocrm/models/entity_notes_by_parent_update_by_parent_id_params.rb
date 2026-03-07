@@ -12,6 +12,16 @@ module Amocrm
       #   @return [Symbol, Amocrm::Models::EntityNotesByParentUpdateByParentIDParams::EntityType]
       required :entity_type, enum: -> { Amocrm::EntityNotesByParentUpdateByParentIDParams::EntityType }
 
+      # @!attribute path_entity_id
+      #
+      #   @return [Integer]
+      required :path_entity_id, Integer
+
+      # @!attribute note_id
+      #
+      #   @return [Integer]
+      required :note_id, Integer
+
       # @!attribute body_entity_id
       #
       #   @return [Integer, nil]
@@ -37,8 +47,10 @@ module Amocrm
       #   @return [Integer, nil]
       optional :updated_by, Integer
 
-      # @!method initialize(entity_type:, body_entity_id: nil, note_type: nil, params: nil, updated_at: nil, updated_by: nil, request_options: {})
+      # @!method initialize(entity_type:, path_entity_id:, note_id:, body_entity_id: nil, note_type: nil, params: nil, updated_at: nil, updated_by: nil, request_options: {})
       #   @param entity_type [Symbol, Amocrm::Models::EntityNotesByParentUpdateByParentIDParams::EntityType]
+      #   @param path_entity_id [Integer]
+      #   @param note_id [Integer]
       #   @param body_entity_id [Integer]
       #   @param note_type [String]
       #   @param params [Object]

@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::PipelineUpdateByIDParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :is_archive
 
@@ -49,6 +52,7 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           is_archive: T::Boolean,
           is_main: T::Boolean,
           is_unsorted_on: T::Boolean,
@@ -59,6 +63,7 @@ module Amocrm
         ).returns(T.attached_class)
       end
       def self.new(
+        id:,
         is_archive: nil,
         is_main: nil,
         is_unsorted_on: nil,
@@ -72,6 +77,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            id: Integer,
             is_archive: T::Boolean,
             is_main: T::Boolean,
             is_unsorted_on: T::Boolean,

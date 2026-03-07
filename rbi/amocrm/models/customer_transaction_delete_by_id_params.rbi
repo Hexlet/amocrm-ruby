@@ -17,18 +17,26 @@ module Amocrm
       sig { returns(Integer) }
       attr_accessor :customer_id
 
+      sig { returns(Integer) }
+      attr_accessor :transaction_id
+
       sig do
         params(
           customer_id: Integer,
+          transaction_id: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(customer_id:, request_options: {})
+      def self.new(customer_id:, transaction_id:, request_options: {})
       end
 
       sig do
         override.returns(
-          { customer_id: Integer, request_options: Amocrm::RequestOptions }
+          {
+            customer_id: Integer,
+            transaction_id: Integer,
+            request_options: Amocrm::RequestOptions
+          }
         )
       end
       def to_hash
