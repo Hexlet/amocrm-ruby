@@ -3,6 +3,8 @@ module Amocrm
     type entity_notes_by_parent_update_by_parent_id_params =
       {
         entity_type: Amocrm::Models::EntityNotesByParentUpdateByParentIDParams::entity_type,
+        path_entity_id: Integer,
+        note_id: Integer,
         body_entity_id: Integer,
         note_type: String,
         params: top,
@@ -16,6 +18,10 @@ module Amocrm
       include Amocrm::Internal::Type::RequestParameters
 
       attr_accessor entity_type: Amocrm::Models::EntityNotesByParentUpdateByParentIDParams::entity_type
+
+      attr_accessor path_entity_id: Integer
+
+      attr_accessor note_id: Integer
 
       attr_reader body_entity_id: Integer?
 
@@ -39,6 +45,8 @@ module Amocrm
 
       def initialize: (
         entity_type: Amocrm::Models::EntityNotesByParentUpdateByParentIDParams::entity_type,
+        path_entity_id: Integer,
+        note_id: Integer,
         ?body_entity_id: Integer,
         ?note_type: String,
         ?params: top,
@@ -49,6 +57,8 @@ module Amocrm
 
       def to_hash: -> {
         entity_type: Amocrm::Models::EntityNotesByParentUpdateByParentIDParams::entity_type,
+        path_entity_id: Integer,
+        note_id: Integer,
         body_entity_id: Integer,
         note_type: String,
         params: top,

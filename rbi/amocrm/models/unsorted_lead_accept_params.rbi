@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::UnsortedLeadAcceptParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(String) }
+      attr_accessor :uid
+
       # Status id for the created lead
       sig { returns(T.nilable(Integer)) }
       attr_reader :status_id
@@ -27,12 +30,14 @@ module Amocrm
 
       sig do
         params(
+          uid: String,
           status_id: Integer,
           user_id: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
+        uid:,
         # Status id for the created lead
         status_id: nil,
         # User id on whose behalf the item is accepted
@@ -44,6 +49,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            uid: String,
             status_id: Integer,
             user_id: Integer,
             request_options: Amocrm::RequestOptions

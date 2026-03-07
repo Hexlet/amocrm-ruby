@@ -12,14 +12,20 @@ module Amocrm
       #   @return [Symbol, Amocrm::Models::EntityNotesByParentUpdateByParentParams::EntityType]
       required :entity_type, enum: -> { Amocrm::EntityNotesByParentUpdateByParentParams::EntityType }
 
+      # @!attribute entity_id
+      #
+      #   @return [Integer]
+      required :entity_id, Integer
+
       # @!attribute body
       #
       #   @return [Array<Amocrm::Models::EntityNotesByParentUpdateByParentParams::Body>]
       required :body,
                -> { Amocrm::Internal::Type::ArrayOf[Amocrm::EntityNotesByParentUpdateByParentParams::Body] }
 
-      # @!method initialize(entity_type:, body:, request_options: {})
+      # @!method initialize(entity_type:, entity_id:, body:, request_options: {})
       #   @param entity_type [Symbol, Amocrm::Models::EntityNotesByParentUpdateByParentParams::EntityType]
+      #   @param entity_id [Integer]
       #   @param body [Array<Amocrm::Models::EntityNotesByParentUpdateByParentParams::Body>]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

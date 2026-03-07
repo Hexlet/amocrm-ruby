@@ -14,15 +14,23 @@ module Amocrm
           )
         end
 
+      sig { returns(Integer) }
+      attr_accessor :source_id
+
       sig do
-        params(request_options: Amocrm::RequestOptions::OrHash).returns(
-          T.attached_class
-        )
+        params(
+          source_id: Integer,
+          request_options: Amocrm::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
-      def self.new(request_options: {})
+      def self.new(source_id:, request_options: {})
       end
 
-      sig { override.returns({ request_options: Amocrm::RequestOptions }) }
+      sig do
+        override.returns(
+          { source_id: Integer, request_options: Amocrm::RequestOptions }
+        )
+      end
       def to_hash
       end
     end

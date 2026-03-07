@@ -1,21 +1,28 @@
 module Amocrm
   module Models
     type catalog_element_update_params =
-      { body: ::Array[Amocrm::CatalogElementUpdateParams::Body] }
+      {
+        catalog_id: Integer,
+        body: ::Array[Amocrm::CatalogElementUpdateParams::Body]
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class CatalogElementUpdateParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      attr_accessor catalog_id: Integer
+
       attr_accessor body: ::Array[Amocrm::CatalogElementUpdateParams::Body]
 
       def initialize: (
+        catalog_id: Integer,
         body: ::Array[Amocrm::CatalogElementUpdateParams::Body],
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        catalog_id: Integer,
         body: ::Array[Amocrm::CatalogElementUpdateParams::Body],
         request_options: Amocrm::RequestOptions
       }

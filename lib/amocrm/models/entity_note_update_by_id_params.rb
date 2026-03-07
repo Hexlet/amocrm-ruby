@@ -12,6 +12,11 @@ module Amocrm
       #   @return [Symbol, Amocrm::Models::EntityNoteUpdateByIDParams::EntityType]
       required :entity_type, enum: -> { Amocrm::EntityNoteUpdateByIDParams::EntityType }
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute entity_id
       #
       #   @return [Integer, nil]
@@ -37,8 +42,9 @@ module Amocrm
       #   @return [Integer, nil]
       optional :updated_by, Integer
 
-      # @!method initialize(entity_type:, entity_id: nil, note_type: nil, params: nil, updated_at: nil, updated_by: nil, request_options: {})
+      # @!method initialize(entity_type:, id:, entity_id: nil, note_type: nil, params: nil, updated_at: nil, updated_by: nil, request_options: {})
       #   @param entity_type [Symbol, Amocrm::Models::EntityNoteUpdateByIDParams::EntityType]
+      #   @param id [Integer]
       #   @param entity_id [Integer]
       #   @param note_type [String]
       #   @param params [Object]

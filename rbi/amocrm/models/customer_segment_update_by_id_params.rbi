@@ -14,6 +14,9 @@ module Amocrm
           )
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(String)) }
       attr_reader :color
 
@@ -47,6 +50,7 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           color: String,
           custom_fields_values:
             T::Array[
@@ -57,6 +61,7 @@ module Amocrm
         ).returns(T.attached_class)
       end
       def self.new(
+        id:,
         color: nil,
         custom_fields_values: nil,
         name: nil,
@@ -67,6 +72,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            id: Integer,
             color: String,
             custom_fields_values:
               T::Array[

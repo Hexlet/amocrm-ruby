@@ -3,6 +3,7 @@ module Amocrm
     type entity_follower_list_params =
       {
         entity_type: Amocrm::Models::EntityFollowerListParams::entity_type,
+        entity_id: Integer,
         limit: Integer,
         page: Integer
       }
@@ -14,6 +15,8 @@ module Amocrm
 
       attr_accessor entity_type: Amocrm::Models::EntityFollowerListParams::entity_type
 
+      attr_accessor entity_id: Integer
+
       attr_reader limit: Integer?
 
       def limit=: (Integer) -> Integer
@@ -24,6 +27,7 @@ module Amocrm
 
       def initialize: (
         entity_type: Amocrm::Models::EntityFollowerListParams::entity_type,
+        entity_id: Integer,
         ?limit: Integer,
         ?page: Integer,
         ?request_options: Amocrm::request_opts
@@ -31,6 +35,7 @@ module Amocrm
 
       def to_hash: -> {
         entity_type: Amocrm::Models::EntityFollowerListParams::entity_type,
+        entity_id: Integer,
         limit: Integer,
         page: Integer,
         request_options: Amocrm::RequestOptions

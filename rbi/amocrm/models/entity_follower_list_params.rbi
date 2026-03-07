@@ -14,6 +14,9 @@ module Amocrm
       sig { returns(Amocrm::EntityFollowerListParams::EntityType::OrSymbol) }
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :entity_id
+
       sig { returns(T.nilable(Integer)) }
       attr_reader :limit
 
@@ -29,18 +32,26 @@ module Amocrm
       sig do
         params(
           entity_type: Amocrm::EntityFollowerListParams::EntityType::OrSymbol,
+          entity_id: Integer,
           limit: Integer,
           page: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(entity_type:, limit: nil, page: nil, request_options: {})
+      def self.new(
+        entity_type:,
+        entity_id:,
+        limit: nil,
+        page: nil,
+        request_options: {}
+      )
       end
 
       sig do
         override.returns(
           {
             entity_type: Amocrm::EntityFollowerListParams::EntityType::OrSymbol,
+            entity_id: Integer,
             limit: Integer,
             page: Integer,
             request_options: Amocrm::RequestOptions

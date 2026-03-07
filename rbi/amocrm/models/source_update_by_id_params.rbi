@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::SourceUpdateByIDParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :default
 
@@ -55,6 +58,7 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           default: T::Boolean,
           external_id: String,
           name: String,
@@ -66,6 +70,7 @@ module Amocrm
         ).returns(T.attached_class)
       end
       def self.new(
+        id:,
         default: nil,
         external_id: nil,
         name: nil,
@@ -80,6 +85,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            id: Integer,
             default: T::Boolean,
             external_id: String,
             name: String,

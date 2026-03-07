@@ -11,21 +11,26 @@ module Amocrm
           T.any(Amocrm::PipelineStatusCreateParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :pipeline_id
+
       sig { returns(T::Array[Amocrm::PipelineStatusCreateParams::Body]) }
       attr_accessor :body
 
       sig do
         params(
+          pipeline_id: Integer,
           body: T::Array[Amocrm::PipelineStatusCreateParams::Body::OrHash],
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(body:, request_options: {})
+      def self.new(pipeline_id:, body:, request_options: {})
       end
 
       sig do
         override.returns(
           {
+            pipeline_id: Integer,
             body: T::Array[Amocrm::PipelineStatusCreateParams::Body],
             request_options: Amocrm::RequestOptions
           }

@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute color
       #
       #   @return [String, nil]
@@ -22,7 +27,8 @@ module Amocrm
       #   @return [Integer, nil]
       optional :sort, Integer
 
-      # @!method initialize(color: nil, name: nil, sort: nil, request_options: {})
+      # @!method initialize(id:, color: nil, name: nil, sort: nil, request_options: {})
+      #   @param id [Integer]
       #   @param color [String]
       #   @param name [String]
       #   @param sort [Integer]

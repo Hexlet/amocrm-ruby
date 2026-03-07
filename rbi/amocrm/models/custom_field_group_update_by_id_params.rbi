@@ -17,6 +17,9 @@ module Amocrm
       sig { returns(String) }
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(String)) }
       attr_reader :name
 
@@ -32,18 +35,20 @@ module Amocrm
       sig do
         params(
           entity_type: String,
+          id: Integer,
           name: String,
           sort: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(entity_type:, name: nil, sort: nil, request_options: {})
+      def self.new(entity_type:, id:, name: nil, sort: nil, request_options: {})
       end
 
       sig do
         override.returns(
           {
             entity_type: String,
+            id: Integer,
             name: String,
             sort: Integer,
             request_options: Amocrm::RequestOptions

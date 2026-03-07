@@ -12,8 +12,14 @@ module Amocrm
       #   @return [String]
       required :entity_type, String
 
-      # @!method initialize(entity_type:, request_options: {})
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
+      # @!method initialize(entity_type:, id:, request_options: {})
       #   @param entity_type [String]
+      #   @param id [Integer]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
     end
   end

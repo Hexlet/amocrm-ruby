@@ -16,14 +16,18 @@ module Amocrm
       end
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :entity_id
+
       sig do
         params(
           entity_type:
             Amocrm::EntityLinkListByEntityParams::EntityType::OrSymbol,
+          entity_id: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(entity_type:, request_options: {})
+      def self.new(entity_type:, entity_id:, request_options: {})
       end
 
       sig do
@@ -31,6 +35,7 @@ module Amocrm
           {
             entity_type:
               Amocrm::EntityLinkListByEntityParams::EntityType::OrSymbol,
+            entity_id: Integer,
             request_options: Amocrm::RequestOptions
           }
         )

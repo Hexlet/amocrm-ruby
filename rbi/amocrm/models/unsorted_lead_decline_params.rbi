@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::UnsortedLeadDeclineParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(String) }
+      attr_accessor :uid
+
       # User id on whose behalf the item is declined
       sig { returns(T.nilable(Integer)) }
       attr_reader :user_id
@@ -20,11 +23,13 @@ module Amocrm
 
       sig do
         params(
+          uid: String,
           user_id: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
+        uid:,
         # User id on whose behalf the item is declined
         user_id: nil,
         request_options: {}
@@ -33,7 +38,11 @@ module Amocrm
 
       sig do
         override.returns(
-          { user_id: Integer, request_options: Amocrm::RequestOptions }
+          {
+            uid: String,
+            user_id: Integer,
+            request_options: Amocrm::RequestOptions
+          }
         )
       end
       def to_hash

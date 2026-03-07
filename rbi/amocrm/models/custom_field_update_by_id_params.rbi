@@ -14,6 +14,9 @@ module Amocrm
       sig { returns(String) }
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(String)) }
       attr_reader :code
 
@@ -83,6 +86,7 @@ module Amocrm
       sig do
         params(
           entity_type: String,
+          id: Integer,
           code: String,
           enums: T::Array[T.anything],
           group_id: Integer,
@@ -99,6 +103,7 @@ module Amocrm
       end
       def self.new(
         entity_type:,
+        id:,
         code: nil,
         enums: nil,
         group_id: nil,
@@ -118,6 +123,7 @@ module Amocrm
         override.returns(
           {
             entity_type: String,
+            id: Integer,
             code: String,
             enums: T::Array[T.anything],
             group_id: Integer,

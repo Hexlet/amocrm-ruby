@@ -7,7 +7,13 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
-      # @!method initialize(request_options: {})
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
+      # @!method initialize(id:, request_options: {})
+      #   @param id [Integer]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
     end
   end

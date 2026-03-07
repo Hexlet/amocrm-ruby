@@ -12,6 +12,11 @@ module Amocrm
       #   @return [Integer]
       required :pipeline_id, Integer
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute color
       #
       #   @return [String, nil]
@@ -38,8 +43,9 @@ module Amocrm
       #   @return [Integer, nil]
       optional :sort, Integer
 
-      # @!method initialize(pipeline_id:, color: nil, descriptions: nil, name: nil, request_id: nil, sort: nil, request_options: {})
+      # @!method initialize(pipeline_id:, id:, color: nil, descriptions: nil, name: nil, request_id: nil, sort: nil, request_options: {})
       #   @param pipeline_id [Integer]
+      #   @param id [Integer]
       #   @param color [String]
       #   @param descriptions [Array<Amocrm::Models::PipelineStatusUpdateByIDParams::Description>]
       #   @param name [String]

@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute is_archive
       #
       #   @return [Boolean, nil]
@@ -37,7 +42,8 @@ module Amocrm
       #   @return [Integer, nil]
       optional :sort, Integer
 
-      # @!method initialize(is_archive: nil, is_main: nil, is_unsorted_on: nil, name: nil, request_id: nil, sort: nil, request_options: {})
+      # @!method initialize(id:, is_archive: nil, is_main: nil, is_unsorted_on: nil, name: nil, request_id: nil, sort: nil, request_options: {})
+      #   @param id [Integer]
       #   @param is_archive [Boolean]
       #   @param is_main [Boolean]
       #   @param is_unsorted_on [Boolean]

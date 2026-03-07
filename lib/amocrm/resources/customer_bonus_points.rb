@@ -5,11 +5,10 @@ module Amocrm
     class CustomerBonusPoints
       # Earn or redeem bonus points.
       #
-      # @overload change(customer_id, earn:, redeem:, request_options: {})
+      # @overload change(customer_id, body:, request_options: {})
       #
       # @param customer_id [Integer]
-      # @param earn [Integer]
-      # @param redeem [Integer]
+      # @param body [Amocrm::Models::CustomerBonusPointChangeParams::Body::CustomerBonusPointsEarn, Amocrm::Models::CustomerBonusPointChangeParams::Body::CustomerBonusPointsRedeem]
       # @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [Amocrm::Models::CustomerBonusPointChangeResponse::CustomerBonusPointsResponse, Amocrm::Models::CustomerBonusPointChangeResponse::Problem]
@@ -20,7 +19,7 @@ module Amocrm
         @client.request(
           method: :post,
           path: ["api/v4/customers/%1$s/bonus_points", customer_id],
-          body: parsed,
+          body: parsed[:body],
           model: Amocrm::Models::CustomerBonusPointChangeResponse,
           options: options
         )

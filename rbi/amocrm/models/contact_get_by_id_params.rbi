@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::ContactGetByIDParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       # Expand related entities; comma-separated values
       sig { returns(T.nilable(String)) }
       attr_reader :with
@@ -20,11 +23,13 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           with: String,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
+        id:,
         # Expand related entities; comma-separated values
         with: nil,
         request_options: {}
@@ -33,7 +38,7 @@ module Amocrm
 
       sig do
         override.returns(
-          { with: String, request_options: Amocrm::RequestOptions }
+          { id: Integer, with: String, request_options: Amocrm::RequestOptions }
         )
       end
       def to_hash

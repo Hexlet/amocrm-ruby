@@ -7,12 +7,18 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute widget_code
+      #
+      #   @return [String]
+      required :widget_code, String
+
       # @!attribute body
       #
       #   @return [Object]
       required :body, Amocrm::Internal::Type::Unknown
 
-      # @!method initialize(body:, request_options: {})
+      # @!method initialize(widget_code:, body:, request_options: {})
+      #   @param widget_code [String]
       #   @param body [Object]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
     end

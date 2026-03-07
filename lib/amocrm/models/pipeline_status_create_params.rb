@@ -7,12 +7,18 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute pipeline_id
+      #
+      #   @return [Integer]
+      required :pipeline_id, Integer
+
       # @!attribute body
       #
       #   @return [Array<Amocrm::Models::PipelineStatusCreateParams::Body>]
       required :body, -> { Amocrm::Internal::Type::ArrayOf[Amocrm::PipelineStatusCreateParams::Body] }
 
-      # @!method initialize(body:, request_options: {})
+      # @!method initialize(pipeline_id:, body:, request_options: {})
+      #   @param pipeline_id [Integer]
       #   @param body [Array<Amocrm::Models::PipelineStatusCreateParams::Body>]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

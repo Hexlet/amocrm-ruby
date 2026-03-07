@@ -12,13 +12,19 @@ module Amocrm
       #   @return [Symbol, Amocrm::Models::EntityFollowerAddParams::EntityType]
       required :entity_type, enum: -> { Amocrm::EntityFollowerAddParams::EntityType }
 
+      # @!attribute entity_id
+      #
+      #   @return [Integer]
+      required :entity_id, Integer
+
       # @!attribute body
       #
       #   @return [Array<Amocrm::Models::EntityFollowerAddParams::Body>]
       required :body, -> { Amocrm::Internal::Type::ArrayOf[Amocrm::EntityFollowerAddParams::Body] }
 
-      # @!method initialize(entity_type:, body:, request_options: {})
+      # @!method initialize(entity_type:, entity_id:, body:, request_options: {})
       #   @param entity_type [Symbol, Amocrm::Models::EntityFollowerAddParams::EntityType]
+      #   @param entity_id [Integer]
       #   @param body [Array<Amocrm::Models::EntityFollowerAddParams::Body>]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

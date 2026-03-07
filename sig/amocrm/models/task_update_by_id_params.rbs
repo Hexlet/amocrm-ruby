@@ -2,6 +2,7 @@ module Amocrm
   module Models
     type task_update_by_id_params =
       {
+        id: Integer,
         complete_till: Integer,
         entity_id: Integer,
         entity_type: String,
@@ -16,6 +17,8 @@ module Amocrm
     class TaskUpdateByIDParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor id: Integer
 
       attr_reader complete_till: Integer?
 
@@ -52,6 +55,7 @@ module Amocrm
       def text=: (String) -> String
 
       def initialize: (
+        id: Integer,
         ?complete_till: Integer,
         ?entity_id: Integer,
         ?entity_type: String,
@@ -64,6 +68,7 @@ module Amocrm
       ) -> void
 
       def to_hash: -> {
+        id: Integer,
         complete_till: Integer,
         entity_id: Integer,
         entity_type: String,

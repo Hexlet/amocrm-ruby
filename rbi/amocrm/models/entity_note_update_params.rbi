@@ -11,21 +11,26 @@ module Amocrm
           T.any(Amocrm::EntityNoteUpdateParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Amocrm::EntityNoteUpdateParams::EntityType::OrSymbol) }
+      attr_accessor :entity_type
+
       sig { returns(T::Array[Amocrm::EntityNoteUpdateParams::Body]) }
       attr_accessor :body
 
       sig do
         params(
+          entity_type: Amocrm::EntityNoteUpdateParams::EntityType::OrSymbol,
           body: T::Array[Amocrm::EntityNoteUpdateParams::Body::OrHash],
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(body:, request_options: {})
+      def self.new(entity_type:, body:, request_options: {})
       end
 
       sig do
         override.returns(
           {
+            entity_type: Amocrm::EntityNoteUpdateParams::EntityType::OrSymbol,
             body: T::Array[Amocrm::EntityNoteUpdateParams::Body],
             request_options: Amocrm::RequestOptions
           }

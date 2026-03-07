@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::LeadUpdateByIDParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(Amocrm::LeadUpdateByIDParams::Embedded)) }
       attr_reader :_embedded
 
@@ -118,6 +121,7 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           _embedded: Amocrm::LeadUpdateByIDParams::Embedded::OrHash,
           closed_at: Integer,
           custom_fields_values:
@@ -138,6 +142,7 @@ module Amocrm
         ).returns(T.attached_class)
       end
       def self.new(
+        id:,
         _embedded: nil,
         closed_at: nil,
         # Custom fields payload
@@ -161,6 +166,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            id: Integer,
             _embedded: Amocrm::LeadUpdateByIDParams::Embedded,
             closed_at: Integer,
             custom_fields_values:

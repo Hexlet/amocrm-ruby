@@ -1,7 +1,7 @@
 module Amocrm
   module Models
     type pipeline_status_get_by_id_params =
-      { pipeline_id: Integer, with: String }
+      { pipeline_id: Integer, id: Integer, with: String }
       & Amocrm::Internal::Type::request_parameters
 
     class PipelineStatusGetByIDParams < Amocrm::Internal::Type::BaseModel
@@ -10,18 +10,22 @@ module Amocrm
 
       attr_accessor pipeline_id: Integer
 
+      attr_accessor id: Integer
+
       attr_reader with: String?
 
       def with=: (String) -> String
 
       def initialize: (
         pipeline_id: Integer,
+        id: Integer,
         ?with: String,
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
         pipeline_id: Integer,
+        id: Integer,
         with: String,
         request_options: Amocrm::RequestOptions
       }

@@ -3,6 +3,7 @@ module Amocrm
     type entity_note_get_by_id_params =
       {
         entity_type: Amocrm::Models::EntityNoteGetByIDParams::entity_type,
+        id: Integer,
         with: String
       }
       & Amocrm::Internal::Type::request_parameters
@@ -13,18 +14,22 @@ module Amocrm
 
       attr_accessor entity_type: Amocrm::Models::EntityNoteGetByIDParams::entity_type
 
+      attr_accessor id: Integer
+
       attr_reader with: String?
 
       def with=: (String) -> String
 
       def initialize: (
         entity_type: Amocrm::Models::EntityNoteGetByIDParams::entity_type,
+        id: Integer,
         ?with: String,
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
         entity_type: Amocrm::Models::EntityNoteGetByIDParams::entity_type,
+        id: Integer,
         with: String,
         request_options: Amocrm::RequestOptions
       }

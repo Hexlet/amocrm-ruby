@@ -14,6 +14,9 @@ module Amocrm
       sig { returns(Amocrm::EntityNoteGetByIDParams::EntityType::OrSymbol) }
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(String)) }
       attr_reader :with
 
@@ -23,17 +26,19 @@ module Amocrm
       sig do
         params(
           entity_type: Amocrm::EntityNoteGetByIDParams::EntityType::OrSymbol,
+          id: Integer,
           with: String,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(entity_type:, with: nil, request_options: {})
+      def self.new(entity_type:, id:, with: nil, request_options: {})
       end
 
       sig do
         override.returns(
           {
             entity_type: Amocrm::EntityNoteGetByIDParams::EntityType::OrSymbol,
+            id: Integer,
             with: String,
             request_options: Amocrm::RequestOptions
           }

@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute entity_type
+      #
+      #   @return [String]
+      required :entity_type, String
+
       # @!attribute limit
       #
       #   @return [Integer, nil]
@@ -17,7 +22,8 @@ module Amocrm
       #   @return [Integer, nil]
       optional :page, Integer
 
-      # @!method initialize(limit: nil, page: nil, request_options: {})
+      # @!method initialize(entity_type:, limit: nil, page: nil, request_options: {})
+      #   @param entity_type [String]
       #   @param limit [Integer]
       #   @param page [Integer]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]

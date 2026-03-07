@@ -11,21 +11,26 @@ module Amocrm
           T.any(Amocrm::EntityLinkLinkParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Amocrm::EntityLinkLinkParams::EntityType::OrSymbol) }
+      attr_accessor :entity_type
+
       sig { returns(T::Array[Amocrm::EntityLinkLinkParams::Body]) }
       attr_accessor :body
 
       sig do
         params(
+          entity_type: Amocrm::EntityLinkLinkParams::EntityType::OrSymbol,
           body: T::Array[Amocrm::EntityLinkLinkParams::Body::OrHash],
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(body:, request_options: {})
+      def self.new(entity_type:, body:, request_options: {})
       end
 
       sig do
         override.returns(
           {
+            entity_type: Amocrm::EntityLinkLinkParams::EntityType::OrSymbol,
             body: T::Array[Amocrm::EntityLinkLinkParams::Body],
             request_options: Amocrm::RequestOptions
           }

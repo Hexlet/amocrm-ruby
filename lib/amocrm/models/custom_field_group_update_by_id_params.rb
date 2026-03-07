@@ -12,6 +12,11 @@ module Amocrm
       #   @return [String]
       required :entity_type, String
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute name
       #
       #   @return [String, nil]
@@ -22,8 +27,9 @@ module Amocrm
       #   @return [Integer, nil]
       optional :sort, Integer
 
-      # @!method initialize(entity_type:, name: nil, sort: nil, request_options: {})
+      # @!method initialize(entity_type:, id:, name: nil, sort: nil, request_options: {})
       #   @param entity_type [String]
+      #   @param id [Integer]
       #   @param name [String]
       #   @param sort [Integer]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]

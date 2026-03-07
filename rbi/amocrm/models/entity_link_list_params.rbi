@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::EntityLinkListParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Amocrm::EntityLinkListParams::EntityType::OrSymbol) }
+      attr_accessor :entity_type
+
       sig { returns(T.nilable(T.anything)) }
       attr_reader :filter
 
@@ -19,16 +22,21 @@ module Amocrm
 
       sig do
         params(
+          entity_type: Amocrm::EntityLinkListParams::EntityType::OrSymbol,
           filter: T.anything,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(filter: nil, request_options: {})
+      def self.new(entity_type:, filter: nil, request_options: {})
       end
 
       sig do
         override.returns(
-          { filter: T.anything, request_options: Amocrm::RequestOptions }
+          {
+            entity_type: Amocrm::EntityLinkListParams::EntityType::OrSymbol,
+            filter: T.anything,
+            request_options: Amocrm::RequestOptions
+          }
         )
       end
       def to_hash

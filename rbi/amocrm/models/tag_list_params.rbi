@@ -9,6 +9,9 @@ module Amocrm
       OrHash =
         T.type_alias { T.any(Amocrm::TagListParams, Amocrm::Internal::AnyHash) }
 
+      sig { returns(Amocrm::TagListParams::EntityType::OrSymbol) }
+      attr_accessor :entity_type
+
       sig { returns(T.nilable(T.anything)) }
       attr_reader :filter
 
@@ -35,6 +38,7 @@ module Amocrm
 
       sig do
         params(
+          entity_type: Amocrm::TagListParams::EntityType::OrSymbol,
           filter: T.anything,
           limit: Integer,
           page: Integer,
@@ -43,6 +47,7 @@ module Amocrm
         ).returns(T.attached_class)
       end
       def self.new(
+        entity_type:,
         filter: nil,
         limit: nil,
         page: nil,
@@ -54,6 +59,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            entity_type: Amocrm::TagListParams::EntityType::OrSymbol,
             filter: T.anything,
             limit: Integer,
             page: Integer,

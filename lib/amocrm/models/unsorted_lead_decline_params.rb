@@ -7,13 +7,20 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute uid
+      #
+      #   @return [String]
+      required :uid, String
+
       # @!attribute user_id
       #   User id on whose behalf the item is declined
       #
       #   @return [Integer, nil]
       optional :user_id, Integer
 
-      # @!method initialize(user_id: nil, request_options: {})
+      # @!method initialize(uid:, user_id: nil, request_options: {})
+      #   @param uid [String]
+      #
       #   @param user_id [Integer] User id on whose behalf the item is declined
       #
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]

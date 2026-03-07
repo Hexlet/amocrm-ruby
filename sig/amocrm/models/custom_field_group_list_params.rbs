@@ -1,12 +1,14 @@
 module Amocrm
   module Models
     type custom_field_group_list_params =
-      { limit: Integer, page: Integer }
+      { entity_type: String, limit: Integer, page: Integer }
       & Amocrm::Internal::Type::request_parameters
 
     class CustomFieldGroupListParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor entity_type: String
 
       attr_reader limit: Integer?
 
@@ -17,12 +19,14 @@ module Amocrm
       def page=: (Integer) -> Integer
 
       def initialize: (
+        entity_type: String,
         ?limit: Integer,
         ?page: Integer,
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        entity_type: String,
         limit: Integer,
         page: Integer,
         request_options: Amocrm::RequestOptions

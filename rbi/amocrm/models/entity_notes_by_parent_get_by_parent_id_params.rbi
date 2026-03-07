@@ -24,6 +24,9 @@ module Amocrm
       sig { returns(Integer) }
       attr_accessor :entity_id
 
+      sig { returns(Integer) }
+      attr_accessor :note_id
+
       sig { returns(T.nilable(String)) }
       attr_reader :with
 
@@ -35,11 +38,18 @@ module Amocrm
           entity_type:
             Amocrm::EntityNotesByParentGetByParentIDParams::EntityType::OrSymbol,
           entity_id: Integer,
+          note_id: Integer,
           with: String,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(entity_type:, entity_id:, with: nil, request_options: {})
+      def self.new(
+        entity_type:,
+        entity_id:,
+        note_id:,
+        with: nil,
+        request_options: {}
+      )
       end
 
       sig do
@@ -48,6 +58,7 @@ module Amocrm
             entity_type:
               Amocrm::EntityNotesByParentGetByParentIDParams::EntityType::OrSymbol,
             entity_id: Integer,
+            note_id: Integer,
             with: String,
             request_options: Amocrm::RequestOptions
           }

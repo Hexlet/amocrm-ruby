@@ -1,7 +1,10 @@
 module Amocrm
   module Models
     type entity_note_unpin_params =
-      { entity_type: Amocrm::Models::EntityNoteUnpinParams::entity_type }
+      {
+        entity_type: Amocrm::Models::EntityNoteUnpinParams::entity_type,
+        id: Integer
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class EntityNoteUnpinParams < Amocrm::Internal::Type::BaseModel
@@ -10,13 +13,17 @@ module Amocrm
 
       attr_accessor entity_type: Amocrm::Models::EntityNoteUnpinParams::entity_type
 
+      attr_accessor id: Integer
+
       def initialize: (
         entity_type: Amocrm::Models::EntityNoteUnpinParams::entity_type,
+        id: Integer,
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
         entity_type: Amocrm::Models::EntityNoteUnpinParams::entity_type,
+        id: Integer,
         request_options: Amocrm::RequestOptions
       }
 

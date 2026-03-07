@@ -7,12 +7,18 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute entity_type
+      #
+      #   @return [Symbol, Amocrm::Models::EntityLinkLinkParams::EntityType]
+      required :entity_type, enum: -> { Amocrm::EntityLinkLinkParams::EntityType }
+
       # @!attribute body
       #
       #   @return [Array<Amocrm::Models::EntityLinkLinkParams::Body>]
       required :body, -> { Amocrm::Internal::Type::ArrayOf[Amocrm::EntityLinkLinkParams::Body] }
 
-      # @!method initialize(body:, request_options: {})
+      # @!method initialize(entity_type:, body:, request_options: {})
+      #   @param entity_type [Symbol, Amocrm::Models::EntityLinkLinkParams::EntityType]
       #   @param body [Array<Amocrm::Models::EntityLinkLinkParams::Body>]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

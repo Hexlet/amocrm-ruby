@@ -1,28 +1,61 @@
 module Amocrm
   module Models
     type customer_bonus_point_change_params =
-      { earn: Integer, redeem: Integer }
+      {
+        customer_id: Integer,
+        body: Amocrm::Models::CustomerBonusPointChangeParams::body
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class CustomerBonusPointChangeParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
-      attr_accessor earn: Integer
+      attr_accessor customer_id: Integer
 
-      attr_accessor redeem: Integer
+      attr_accessor body: Amocrm::Models::CustomerBonusPointChangeParams::body
 
       def initialize: (
-        earn: Integer,
-        redeem: Integer,
+        customer_id: Integer,
+        body: Amocrm::Models::CustomerBonusPointChangeParams::body,
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
-        earn: Integer,
-        redeem: Integer,
+        customer_id: Integer,
+        body: Amocrm::Models::CustomerBonusPointChangeParams::body,
         request_options: Amocrm::RequestOptions
       }
+
+      type body =
+        Amocrm::CustomerBonusPointChangeParams::Body::CustomerBonusPointsEarn
+        | Amocrm::CustomerBonusPointChangeParams::Body::CustomerBonusPointsRedeem
+
+      module Body
+        extend Amocrm::Internal::Type::Union
+
+        type customer_bonus_points_earn = { earn: Integer }
+
+        class CustomerBonusPointsEarn < Amocrm::Internal::Type::BaseModel
+          attr_accessor earn: Integer
+
+          def initialize: (earn: Integer) -> void
+
+          def to_hash: -> { earn: Integer }
+        end
+
+        type customer_bonus_points_redeem = { redeem: Integer }
+
+        class CustomerBonusPointsRedeem < Amocrm::Internal::Type::BaseModel
+          attr_accessor redeem: Integer
+
+          def initialize: (redeem: Integer) -> void
+
+          def to_hash: -> { redeem: Integer }
+        end
+
+        def self?.variants: -> ::Array[Amocrm::Models::CustomerBonusPointChangeParams::body]
+      end
     end
   end
 end

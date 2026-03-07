@@ -14,6 +14,9 @@ module Amocrm
           )
         end
 
+      sig { returns(Integer) }
+      attr_accessor :customer_id
+
       sig { returns(T.nilable(T.anything)) }
       attr_reader :filter
 
@@ -34,18 +37,26 @@ module Amocrm
 
       sig do
         params(
+          customer_id: Integer,
           filter: T.anything,
           limit: Integer,
           page: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(filter: nil, limit: nil, page: nil, request_options: {})
+      def self.new(
+        customer_id:,
+        filter: nil,
+        limit: nil,
+        page: nil,
+        request_options: {}
+      )
       end
 
       sig do
         override.returns(
           {
+            customer_id: Integer,
             filter: T.anything,
             limit: Integer,
             page: Integer,

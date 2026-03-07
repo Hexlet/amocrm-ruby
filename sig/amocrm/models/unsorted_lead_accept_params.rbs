@@ -1,12 +1,14 @@
 module Amocrm
   module Models
     type unsorted_lead_accept_params =
-      { status_id: Integer, user_id: Integer }
+      { uid: String, status_id: Integer, user_id: Integer }
       & Amocrm::Internal::Type::request_parameters
 
     class UnsortedLeadAcceptParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor uid: String
 
       attr_reader status_id: Integer?
 
@@ -17,12 +19,14 @@ module Amocrm
       def user_id=: (Integer) -> Integer
 
       def initialize: (
+        uid: String,
         ?status_id: Integer,
         ?user_id: Integer,
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        uid: String,
         status_id: Integer,
         user_id: Integer,
         request_options: Amocrm::RequestOptions

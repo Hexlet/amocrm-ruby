@@ -3,6 +3,7 @@ module Amocrm
     type custom_field_update_by_id_params =
       {
         entity_type: String,
+        id: Integer,
         code: String,
         enums: ::Array[top],
         group_id: Integer,
@@ -22,6 +23,8 @@ module Amocrm
       include Amocrm::Internal::Type::RequestParameters
 
       attr_accessor entity_type: String
+
+      attr_accessor id: Integer
 
       attr_reader code: String?
 
@@ -69,6 +72,7 @@ module Amocrm
 
       def initialize: (
         entity_type: String,
+        id: Integer,
         ?code: String,
         ?enums: ::Array[top],
         ?group_id: Integer,
@@ -85,6 +89,7 @@ module Amocrm
 
       def to_hash: -> {
         entity_type: String,
+        id: Integer,
         code: String,
         enums: ::Array[top],
         group_id: Integer,
