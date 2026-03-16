@@ -12,8 +12,14 @@ module Amocrm
       #   @return [Integer]
       required :customer_id, Integer
 
-      # @!method initialize(customer_id:, request_options: {})
+      # @!attribute transaction_id
+      #
+      #   @return [Integer]
+      required :transaction_id, Integer
+
+      # @!method initialize(customer_id:, transaction_id:, request_options: {})
       #   @param customer_id [Integer]
+      #   @param transaction_id [Integer]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
     end
   end

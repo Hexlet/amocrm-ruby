@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::CustomFieldGroupListParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(String) }
+      attr_accessor :entity_type
+
       sig { returns(T.nilable(Integer)) }
       attr_reader :limit
 
@@ -25,17 +28,19 @@ module Amocrm
 
       sig do
         params(
+          entity_type: String,
           limit: Integer,
           page: Integer,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(limit: nil, page: nil, request_options: {})
+      def self.new(entity_type:, limit: nil, page: nil, request_options: {})
       end
 
       sig do
         override.returns(
           {
+            entity_type: String,
             limit: Integer,
             page: Integer,
             request_options: Amocrm::RequestOptions

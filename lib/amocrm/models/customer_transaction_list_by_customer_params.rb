@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute customer_id
+      #
+      #   @return [Integer]
+      required :customer_id, Integer
+
       # @!attribute filter
       #
       #   @return [Object, nil]
@@ -22,7 +27,8 @@ module Amocrm
       #   @return [Integer, nil]
       optional :page, Integer
 
-      # @!method initialize(filter: nil, limit: nil, page: nil, request_options: {})
+      # @!method initialize(customer_id:, filter: nil, limit: nil, page: nil, request_options: {})
+      #   @param customer_id [Integer]
       #   @param filter [Object]
       #   @param limit [Integer]
       #   @param page [Integer]

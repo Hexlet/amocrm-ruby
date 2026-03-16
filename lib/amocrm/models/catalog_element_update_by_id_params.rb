@@ -12,6 +12,11 @@ module Amocrm
       #   @return [Integer]
       required :catalog_id, Integer
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute custom_fields_values
       #
       #   @return [Array<Amocrm::Models::CatalogElementUpdateByIDParams::CustomFieldsValue>, nil]
@@ -28,8 +33,9 @@ module Amocrm
       #   @return [String, nil]
       optional :request_id, String
 
-      # @!method initialize(catalog_id:, custom_fields_values: nil, name: nil, request_id: nil, request_options: {})
+      # @!method initialize(catalog_id:, id:, custom_fields_values: nil, name: nil, request_id: nil, request_options: {})
       #   @param catalog_id [Integer]
+      #   @param id [Integer]
       #   @param custom_fields_values [Array<Amocrm::Models::CatalogElementUpdateByIDParams::CustomFieldsValue>]
       #   @param name [String]
       #   @param request_id [String]

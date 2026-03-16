@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute can_add_elements
       #
       #   @return [Boolean, nil]
@@ -32,7 +37,8 @@ module Amocrm
       #   @return [Integer, nil]
       optional :sort, Integer
 
-      # @!method initialize(can_add_elements: nil, can_link_multiple: nil, name: nil, request_id: nil, sort: nil, request_options: {})
+      # @!method initialize(id:, can_add_elements: nil, can_link_multiple: nil, name: nil, request_id: nil, sort: nil, request_options: {})
+      #   @param id [Integer]
       #   @param can_add_elements [Boolean]
       #   @param can_link_multiple [Boolean]
       #   @param name [String]

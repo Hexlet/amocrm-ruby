@@ -3,8 +3,7 @@ module Amocrm
     class CustomerBonusPoints
       def change: (
         Integer customer_id,
-        earn: Integer,
-        redeem: Integer,
+        body: Amocrm::Models::CustomerBonusPointChangeParams::body,
         ?request_options: Amocrm::request_opts
       ) -> Amocrm::Models::customer_bonus_point_change_response
 

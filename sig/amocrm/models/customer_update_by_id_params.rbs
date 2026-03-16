@@ -2,6 +2,7 @@ module Amocrm
   module Models
     type customer_update_by_id_params =
       {
+        id: Integer,
         _embedded: Amocrm::CustomerUpdateByIDParams::Embedded,
         custom_fields_values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue],
         main_user_id: Integer,
@@ -21,6 +22,8 @@ module Amocrm
     class CustomerUpdateByIDParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor id: Integer
 
       attr_reader _embedded: Amocrm::CustomerUpdateByIDParams::Embedded?
 
@@ -83,6 +86,7 @@ module Amocrm
       def updated_by=: (Integer) -> Integer
 
       def initialize: (
+        id: Integer,
         ?_embedded: Amocrm::CustomerUpdateByIDParams::Embedded,
         ?custom_fields_values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue],
         ?main_user_id: Integer,
@@ -100,6 +104,7 @@ module Amocrm
       ) -> void
 
       def to_hash: -> {
+        id: Integer,
         _embedded: Amocrm::CustomerUpdateByIDParams::Embedded,
         custom_fields_values: ::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue],
         main_user_id: Integer,

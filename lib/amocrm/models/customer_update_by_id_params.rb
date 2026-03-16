@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute _embedded
       #
       #   @return [Amocrm::Models::CustomerUpdateByIDParams::Embedded, nil]
@@ -74,7 +79,8 @@ module Amocrm
       #   @return [Integer, nil]
       optional :updated_by, Integer
 
-      # @!method initialize(_embedded: nil, custom_fields_values: nil, main_user_id: nil, name: nil, next_date: nil, next_price: nil, periodicity: nil, responsible_user_id: nil, status_id: nil, tags_to_add: nil, tags_to_delete: nil, updated_at: nil, updated_by: nil, request_options: {})
+      # @!method initialize(id:, _embedded: nil, custom_fields_values: nil, main_user_id: nil, name: nil, next_date: nil, next_price: nil, periodicity: nil, responsible_user_id: nil, status_id: nil, tags_to_add: nil, tags_to_delete: nil, updated_at: nil, updated_by: nil, request_options: {})
+      #   @param id [Integer]
       #   @param _embedded [Amocrm::Models::CustomerUpdateByIDParams::Embedded]
       #   @param custom_fields_values [Array<Amocrm::Models::CustomerUpdateByIDParams::CustomFieldsValue>]
       #   @param main_user_id [Integer]

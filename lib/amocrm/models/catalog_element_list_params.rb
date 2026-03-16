@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute catalog_id
+      #
+      #   @return [Integer]
+      required :catalog_id, Integer
+
       # @!attribute filter
       #
       #   @return [Object, nil]
@@ -27,7 +32,8 @@ module Amocrm
       #   @return [String, Integer, nil]
       optional :query, union: -> { Amocrm::CatalogElementListParams::Query }
 
-      # @!method initialize(filter: nil, limit: nil, page: nil, query: nil, request_options: {})
+      # @!method initialize(catalog_id:, filter: nil, limit: nil, page: nil, query: nil, request_options: {})
+      #   @param catalog_id [Integer]
       #   @param filter [Object]
       #   @param limit [Integer]
       #   @param page [Integer]

@@ -7,12 +7,18 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute entity_type
+      #
+      #   @return [Symbol, Amocrm::Models::EntityLinkListParams::EntityType]
+      required :entity_type, enum: -> { Amocrm::EntityLinkListParams::EntityType }
+
       # @!attribute filter
       #
       #   @return [Object, nil]
       optional :filter, Amocrm::Internal::Type::Unknown
 
-      # @!method initialize(filter: nil, request_options: {})
+      # @!method initialize(entity_type:, filter: nil, request_options: {})
+      #   @param entity_type [Symbol, Amocrm::Models::EntityLinkListParams::EntityType]
       #   @param filter [Object]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

@@ -17,6 +17,9 @@ module Amocrm
       sig { returns(Integer) }
       attr_accessor :catalog_id
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig do
         returns(
           T.nilable(
@@ -51,6 +54,7 @@ module Amocrm
       sig do
         params(
           catalog_id: Integer,
+          id: Integer,
           custom_fields_values:
             T::Array[
               Amocrm::CatalogElementUpdateByIDParams::CustomFieldsValue::OrHash
@@ -62,6 +66,7 @@ module Amocrm
       end
       def self.new(
         catalog_id:,
+        id:,
         custom_fields_values: nil,
         name: nil,
         request_id: nil,
@@ -73,6 +78,7 @@ module Amocrm
         override.returns(
           {
             catalog_id: Integer,
+            id: Integer,
             custom_fields_values:
               T::Array[
                 Amocrm::CatalogElementUpdateByIDParams::CustomFieldsValue

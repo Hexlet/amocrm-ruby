@@ -7,12 +7,18 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute entity_type
+      #
+      #   @return [String]
+      required :entity_type, String
+
       # @!attribute body
       #
       #   @return [Array<Amocrm::Models::CustomFieldUpdateParams::Body>]
       required :body, -> { Amocrm::Internal::Type::ArrayOf[Amocrm::CustomFieldUpdateParams::Body] }
 
-      # @!method initialize(body:, request_options: {})
+      # @!method initialize(entity_type:, body:, request_options: {})
+      #   @param entity_type [String]
       #   @param body [Array<Amocrm::Models::CustomFieldUpdateParams::Body>]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

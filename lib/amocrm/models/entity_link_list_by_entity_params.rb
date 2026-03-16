@@ -12,8 +12,14 @@ module Amocrm
       #   @return [Symbol, Amocrm::Models::EntityLinkListByEntityParams::EntityType]
       required :entity_type, enum: -> { Amocrm::EntityLinkListByEntityParams::EntityType }
 
-      # @!method initialize(entity_type:, request_options: {})
+      # @!attribute entity_id
+      #
+      #   @return [Integer]
+      required :entity_id, Integer
+
+      # @!method initialize(entity_type:, entity_id:, request_options: {})
       #   @param entity_type [Symbol, Amocrm::Models::EntityLinkListByEntityParams::EntityType]
+      #   @param entity_id [Integer]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 
       module EntityType

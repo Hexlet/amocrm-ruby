@@ -12,6 +12,11 @@ module Amocrm
       #   @return [Symbol, Amocrm::Models::EntityNotesByParentListByParentParams::EntityType]
       required :entity_type, enum: -> { Amocrm::EntityNotesByParentListByParentParams::EntityType }
 
+      # @!attribute entity_id
+      #
+      #   @return [Integer]
+      required :entity_id, Integer
+
       # @!attribute filter
       #
       #   @return [Object, nil]
@@ -27,8 +32,9 @@ module Amocrm
       #   @return [Integer, nil]
       optional :page, Integer
 
-      # @!method initialize(entity_type:, filter: nil, limit: nil, page: nil, request_options: {})
+      # @!method initialize(entity_type:, entity_id:, filter: nil, limit: nil, page: nil, request_options: {})
       #   @param entity_type [Symbol, Amocrm::Models::EntityNotesByParentListByParentParams::EntityType]
+      #   @param entity_id [Integer]
       #   @param filter [Object]
       #   @param limit [Integer]
       #   @param page [Integer]

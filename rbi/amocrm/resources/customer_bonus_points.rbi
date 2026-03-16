@@ -7,12 +7,15 @@ module Amocrm
       sig do
         params(
           customer_id: Integer,
-          earn: Integer,
-          redeem: Integer,
+          body:
+            T.any(
+              Amocrm::CustomerBonusPointChangeParams::Body::CustomerBonusPointsEarn::OrHash,
+              Amocrm::CustomerBonusPointChangeParams::Body::CustomerBonusPointsRedeem::OrHash
+            ),
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(Amocrm::Models::CustomerBonusPointChangeResponse::Variants)
       end
-      def change(customer_id, earn:, redeem:, request_options: {})
+      def change(customer_id, body:, request_options: {})
       end
 
       # @api private

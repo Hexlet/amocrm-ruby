@@ -14,6 +14,9 @@ module Amocrm
           )
         end
 
+      sig { returns(Integer) }
+      attr_accessor :customer_id
+
       sig { returns(T::Array[Amocrm::CustomerTransactionCreateParams::Body]) }
       attr_accessor :body
 
@@ -25,17 +28,19 @@ module Amocrm
 
       sig do
         params(
+          customer_id: Integer,
           body: T::Array[Amocrm::CustomerTransactionCreateParams::Body::OrHash],
           accrue_bonus: T::Boolean,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(body:, accrue_bonus: nil, request_options: {})
+      def self.new(customer_id:, body:, accrue_bonus: nil, request_options: {})
       end
 
       sig do
         override.returns(
           {
+            customer_id: Integer,
             body: T::Array[Amocrm::CustomerTransactionCreateParams::Body],
             accrue_bonus: T::Boolean,
             request_options: Amocrm::RequestOptions

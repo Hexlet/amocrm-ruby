@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::ContactUpdateByIDParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(Amocrm::ContactUpdateByIDParams::Embedded)) }
       attr_reader :_embedded
 
@@ -119,6 +122,7 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           _embedded: Amocrm::ContactUpdateByIDParams::Embedded::OrHash,
           created_at: Integer,
           created_by: Integer,
@@ -140,6 +144,7 @@ module Amocrm
         ).returns(T.attached_class)
       end
       def self.new(
+        id:,
         _embedded: nil,
         created_at: nil,
         created_by: nil,
@@ -162,6 +167,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            id: Integer,
             _embedded: Amocrm::ContactUpdateByIDParams::Embedded,
             created_at: Integer,
             created_by: Integer,

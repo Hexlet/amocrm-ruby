@@ -1,21 +1,28 @@
 module Amocrm
   module Models
     type entity_link_unlink_params =
-      { body: ::Array[Amocrm::EntityLinkUnlinkParams::Body] }
+      {
+        entity_type: Amocrm::Models::EntityLinkUnlinkParams::entity_type,
+        body: ::Array[Amocrm::EntityLinkUnlinkParams::Body]
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class EntityLinkUnlinkParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      attr_accessor entity_type: Amocrm::Models::EntityLinkUnlinkParams::entity_type
+
       attr_accessor body: ::Array[Amocrm::EntityLinkUnlinkParams::Body]
 
       def initialize: (
+        entity_type: Amocrm::Models::EntityLinkUnlinkParams::entity_type,
         body: ::Array[Amocrm::EntityLinkUnlinkParams::Body],
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        entity_type: Amocrm::Models::EntityLinkUnlinkParams::entity_type,
         body: ::Array[Amocrm::EntityLinkUnlinkParams::Body],
         request_options: Amocrm::RequestOptions
       }

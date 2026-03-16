@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute name
       #
       #   @return [String, nil]
@@ -22,7 +27,8 @@ module Amocrm
       #   @return [Amocrm::Models::RoleUpdateByIDParams::Rights, nil]
       optional :rights, -> { Amocrm::RoleUpdateByIDParams::Rights }, nil?: true
 
-      # @!method initialize(name: nil, request_id: nil, rights: nil, request_options: {})
+      # @!method initialize(id:, name: nil, request_id: nil, rights: nil, request_options: {})
+      #   @param id [Integer]
       #   @param name [String]
       #   @param request_id [String]
       #   @param rights [Amocrm::Models::RoleUpdateByIDParams::Rights, nil]

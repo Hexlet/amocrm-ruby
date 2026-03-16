@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::CustomerUpdateByIDParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(Amocrm::CustomerUpdateByIDParams::Embedded)) }
       attr_reader :_embedded
 
@@ -126,6 +129,7 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           _embedded: Amocrm::CustomerUpdateByIDParams::Embedded::OrHash,
           custom_fields_values:
             T::Array[
@@ -148,6 +152,7 @@ module Amocrm
         ).returns(T.attached_class)
       end
       def self.new(
+        id:,
         _embedded: nil,
         custom_fields_values: nil,
         main_user_id: nil,
@@ -168,6 +173,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            id: Integer,
             _embedded: Amocrm::CustomerUpdateByIDParams::Embedded,
             custom_fields_values:
               T::Array[Amocrm::CustomerUpdateByIDParams::CustomFieldsValue],

@@ -1,21 +1,28 @@
 module Amocrm
   module Models
     type pipeline_status_update_params =
-      { body: ::Array[Amocrm::PipelineStatusUpdateParams::Body] }
+      {
+        pipeline_id: Integer,
+        body: ::Array[Amocrm::PipelineStatusUpdateParams::Body]
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class PipelineStatusUpdateParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      attr_accessor pipeline_id: Integer
+
       attr_accessor body: ::Array[Amocrm::PipelineStatusUpdateParams::Body]
 
       def initialize: (
+        pipeline_id: Integer,
         body: ::Array[Amocrm::PipelineStatusUpdateParams::Body],
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        pipeline_id: Integer,
         body: ::Array[Amocrm::PipelineStatusUpdateParams::Body],
         request_options: Amocrm::RequestOptions
       }

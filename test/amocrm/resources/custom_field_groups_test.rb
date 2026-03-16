@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::CustomFieldGroupsTest < Amocrm::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.custom_field_groups.create("entity_type", body: [{name: "name"}])
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::CustomFieldGroupsTest < Amocrm::Test::ResourceTes
   end
 
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.custom_field_groups.list("entity_type")
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::CustomFieldGroupsTest < Amocrm::Test::ResourceTes
   end
 
   def test_delete_by_id_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.custom_field_groups.delete_by_id(0, entity_type: "entity_type")
 
@@ -55,7 +55,7 @@ class Amocrm::Test::Resources::CustomFieldGroupsTest < Amocrm::Test::ResourceTes
   end
 
   def test_get_by_id_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.custom_field_groups.get_by_id(0, entity_type: "entity_type")
 
@@ -72,7 +72,7 @@ class Amocrm::Test::Resources::CustomFieldGroupsTest < Amocrm::Test::ResourceTes
   end
 
   def test_update_by_id_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.custom_field_groups.update_by_id(0, entity_type: "entity_type")
 

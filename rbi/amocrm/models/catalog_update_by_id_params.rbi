@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::CatalogUpdateByIDParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(T::Boolean)) }
       attr_reader :can_add_elements
 
@@ -43,6 +46,7 @@ module Amocrm
 
       sig do
         params(
+          id: Integer,
           can_add_elements: T::Boolean,
           can_link_multiple: T::Boolean,
           name: String,
@@ -52,6 +56,7 @@ module Amocrm
         ).returns(T.attached_class)
       end
       def self.new(
+        id:,
         can_add_elements: nil,
         can_link_multiple: nil,
         name: nil,
@@ -64,6 +69,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            id: Integer,
             can_add_elements: T::Boolean,
             can_link_multiple: T::Boolean,
             name: String,

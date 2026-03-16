@@ -17,14 +17,20 @@ module Amocrm
       #   @return [Integer]
       required :entity_id, Integer
 
+      # @!attribute note_id
+      #
+      #   @return [Integer]
+      required :note_id, Integer
+
       # @!attribute with
       #
       #   @return [String, nil]
       optional :with, String
 
-      # @!method initialize(entity_type:, entity_id:, with: nil, request_options: {})
+      # @!method initialize(entity_type:, entity_id:, note_id:, with: nil, request_options: {})
       #   @param entity_type [Symbol, Amocrm::Models::EntityNotesByParentGetByParentIDParams::EntityType]
       #   @param entity_id [Integer]
+      #   @param note_id [Integer]
       #   @param with [String]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

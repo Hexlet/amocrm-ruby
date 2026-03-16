@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::CatalogElementListParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :catalog_id
+
       sig { returns(T.nilable(T.anything)) }
       attr_reader :filter
 
@@ -41,6 +44,7 @@ module Amocrm
 
       sig do
         params(
+          catalog_id: Integer,
           filter: T.anything,
           limit: Integer,
           page: Integer,
@@ -49,6 +53,7 @@ module Amocrm
         ).returns(T.attached_class)
       end
       def self.new(
+        catalog_id:,
         filter: nil,
         limit: nil,
         page: nil,
@@ -60,6 +65,7 @@ module Amocrm
       sig do
         override.returns(
           {
+            catalog_id: Integer,
             filter: T.anything,
             limit: Integer,
             page: Integer,

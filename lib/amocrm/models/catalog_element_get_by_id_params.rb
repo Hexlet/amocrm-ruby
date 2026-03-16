@@ -12,14 +12,21 @@ module Amocrm
       #   @return [Integer]
       required :catalog_id, Integer
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute with
       #   Additional data to include (comma-separated).
       #
       #   @return [String, nil]
       optional :with, String
 
-      # @!method initialize(catalog_id:, with: nil, request_options: {})
+      # @!method initialize(catalog_id:, id:, with: nil, request_options: {})
       #   @param catalog_id [Integer]
+      #
+      #   @param id [Integer]
       #
       #   @param with [String] Additional data to include (comma-separated).
       #

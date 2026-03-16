@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.5.3 (2026-03-08)
+
+Full Changelog: [v0.5.2...v0.5.3](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.2...v0.5.3)
+
+### Bug Fixes
+
+* properly mock time in ruby ci tests ([2c02d7c](https://github.com/Hexlet/amocrm-ruby/commit/2c02d7cdad78f91fc96b3572830b69c1e1781e69))
+
+
+### Chores
+
+* **ci:** add build step ([0111d8b](https://github.com/Hexlet/amocrm-ruby/commit/0111d8b871937e6422e3b348630971ae5a882d94))
+* **ci:** skip uploading artifacts on stainless-internal branches ([59ed3cd](https://github.com/Hexlet/amocrm-ruby/commit/59ed3cd3a6282f58f826bde41e572836b42436d9))
+* **internal:** codegen related update ([70ecc90](https://github.com/Hexlet/amocrm-ruby/commit/70ecc90ab1f89bff2aafa6ee7fc29934a9d9329d))
+* **internal:** codegen related update ([906bc89](https://github.com/Hexlet/amocrm-ruby/commit/906bc8924e5c7ae9b50d3f194629ff7e8981d80a))
+* **internal:** remove mock server code ([97b11dc](https://github.com/Hexlet/amocrm-ruby/commit/97b11dc026b0de710edaacc6a65526f9a6969ec7))
+* update mock server docs ([4393e5d](https://github.com/Hexlet/amocrm-ruby/commit/4393e5d94350640a132c8df0d330715e7ca369ff))
+
 ## 0.5.2 (2026-02-07)
 
 Full Changelog: [v0.5.1...v0.5.2](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.1...v0.5.2)

@@ -20,10 +20,11 @@ module Amocrm
       # @see Amocrm::Models::CustomerTransactionCreateParams
       def create(customer_id, params)
         parsed, options = Amocrm::CustomerTransactionCreateParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed.except(:body))
         @client.request(
           method: :post,
           path: ["api/v4/customers/%1$s/transactions", customer_id],
-          query: parsed.except(:body),
+          query: query,
           body: parsed[:body],
           model: Amocrm::Models::CustomerTransactionCreateResponse,
           options: options
@@ -44,10 +45,11 @@ module Amocrm
       # @see Amocrm::Models::CustomerTransactionListParams
       def list(params = {})
         parsed, options = Amocrm::CustomerTransactionListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/v4/customers/transactions",
-          query: parsed,
+          query: query,
           model: Amocrm::Models::CustomerTransactionListResponse,
           options: options
         )
@@ -93,10 +95,11 @@ module Amocrm
       # @see Amocrm::Models::CustomerTransactionListByCustomerParams
       def list_by_customer(customer_id, params = {})
         parsed, options = Amocrm::CustomerTransactionListByCustomerParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/customers/%1$s/transactions", customer_id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::CustomerTransactionListByCustomerResponse,
           options: options
         )

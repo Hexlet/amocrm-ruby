@@ -16,6 +16,9 @@ module Amocrm
       end
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :entity_id
+
       sig { returns(T::Array[Amocrm::EntityLinkLinkByEntityParams::Body]) }
       attr_accessor :body
 
@@ -23,11 +26,12 @@ module Amocrm
         params(
           entity_type:
             Amocrm::EntityLinkLinkByEntityParams::EntityType::OrSymbol,
+          entity_id: Integer,
           body: T::Array[Amocrm::EntityLinkLinkByEntityParams::Body::OrHash],
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(entity_type:, body:, request_options: {})
+      def self.new(entity_type:, entity_id:, body:, request_options: {})
       end
 
       sig do
@@ -35,6 +39,7 @@ module Amocrm
           {
             entity_type:
               Amocrm::EntityLinkLinkByEntityParams::EntityType::OrSymbol,
+            entity_id: Integer,
             body: T::Array[Amocrm::EntityLinkLinkByEntityParams::Body],
             request_options: Amocrm::RequestOptions
           }

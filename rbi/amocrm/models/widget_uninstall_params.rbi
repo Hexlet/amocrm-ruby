@@ -11,15 +11,23 @@ module Amocrm
           T.any(Amocrm::WidgetUninstallParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(String) }
+      attr_accessor :widget_code
+
       sig do
-        params(request_options: Amocrm::RequestOptions::OrHash).returns(
-          T.attached_class
-        )
+        params(
+          widget_code: String,
+          request_options: Amocrm::RequestOptions::OrHash
+        ).returns(T.attached_class)
       end
-      def self.new(request_options: {})
+      def self.new(widget_code:, request_options: {})
       end
 
-      sig { override.returns({ request_options: Amocrm::RequestOptions }) }
+      sig do
+        override.returns(
+          { widget_code: String, request_options: Amocrm::RequestOptions }
+        )
+      end
       def to_hash
       end
     end

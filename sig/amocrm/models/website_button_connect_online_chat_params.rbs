@@ -1,15 +1,23 @@
 module Amocrm
   module Models
     type website_button_connect_online_chat_params =
-      {  } & Amocrm::Internal::Type::request_parameters
+      { source_id: Integer } & Amocrm::Internal::Type::request_parameters
 
     class WebsiteButtonConnectOnlineChatParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
-      def initialize: (?request_options: Amocrm::request_opts) -> void
+      attr_accessor source_id: Integer
 
-      def to_hash: -> { request_options: Amocrm::RequestOptions }
+      def initialize: (
+        source_id: Integer,
+        ?request_options: Amocrm::request_opts
+      ) -> void
+
+      def to_hash: -> {
+        source_id: Integer,
+        request_options: Amocrm::RequestOptions
+      }
     end
   end
 end

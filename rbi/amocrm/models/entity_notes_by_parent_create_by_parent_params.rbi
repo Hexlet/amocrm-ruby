@@ -21,6 +21,9 @@ module Amocrm
       end
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :entity_id
+
       sig do
         returns(T::Array[Amocrm::EntityNotesByParentCreateByParentParams::Body])
       end
@@ -30,6 +33,7 @@ module Amocrm
         params(
           entity_type:
             Amocrm::EntityNotesByParentCreateByParentParams::EntityType::OrSymbol,
+          entity_id: Integer,
           body:
             T::Array[
               Amocrm::EntityNotesByParentCreateByParentParams::Body::OrHash
@@ -37,7 +41,7 @@ module Amocrm
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(entity_type:, body:, request_options: {})
+      def self.new(entity_type:, entity_id:, body:, request_options: {})
       end
 
       sig do
@@ -45,6 +49,7 @@ module Amocrm
           {
             entity_type:
               Amocrm::EntityNotesByParentCreateByParentParams::EntityType::OrSymbol,
+            entity_id: Integer,
             body:
               T::Array[Amocrm::EntityNotesByParentCreateByParentParams::Body],
             request_options: Amocrm::RequestOptions

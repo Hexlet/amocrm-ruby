@@ -21,6 +21,12 @@ module Amocrm
       end
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :path_entity_id
+
+      sig { returns(Integer) }
+      attr_accessor :note_id
+
       sig { returns(T.nilable(Integer)) }
       attr_reader :body_entity_id
 
@@ -55,6 +61,8 @@ module Amocrm
         params(
           entity_type:
             Amocrm::EntityNotesByParentUpdateByParentIDParams::EntityType::OrSymbol,
+          path_entity_id: Integer,
+          note_id: Integer,
           body_entity_id: Integer,
           note_type: String,
           params: T.anything,
@@ -65,6 +73,8 @@ module Amocrm
       end
       def self.new(
         entity_type:,
+        path_entity_id:,
+        note_id:,
         body_entity_id: nil,
         note_type: nil,
         params: nil,
@@ -79,6 +89,8 @@ module Amocrm
           {
             entity_type:
               Amocrm::EntityNotesByParentUpdateByParentIDParams::EntityType::OrSymbol,
+            path_entity_id: Integer,
+            note_id: Integer,
             body_entity_id: Integer,
             note_type: String,
             params: T.anything,

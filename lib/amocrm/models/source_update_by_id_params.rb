@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute default
       #
       #   @return [Boolean, nil]
@@ -42,7 +47,8 @@ module Amocrm
       #   @return [Array<Object>, Array<String>, nil]
       optional :services, union: -> { Amocrm::SourceUpdateByIDParams::Services }
 
-      # @!method initialize(default: nil, external_id: nil, name: nil, origin_code: nil, pipeline_id: nil, request_id: nil, services: nil, request_options: {})
+      # @!method initialize(id:, default: nil, external_id: nil, name: nil, origin_code: nil, pipeline_id: nil, request_id: nil, services: nil, request_options: {})
+      #   @param id [Integer]
       #   @param default [Boolean]
       #   @param external_id [String]
       #   @param name [String]

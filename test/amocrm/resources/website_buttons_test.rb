@@ -4,7 +4,7 @@ require_relative "../test_helper"
 
 class Amocrm::Test::Resources::WebsiteButtonsTest < Amocrm::Test::ResourceTest
   def test_create_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.website_buttons.create(pipeline_id: 0)
 
@@ -21,7 +21,7 @@ class Amocrm::Test::Resources::WebsiteButtonsTest < Amocrm::Test::ResourceTest
   end
 
   def test_update_required_params
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.website_buttons.update(0, trusted_websites: {add: ["string"]})
 
@@ -38,7 +38,7 @@ class Amocrm::Test::Resources::WebsiteButtonsTest < Amocrm::Test::ResourceTest
   end
 
   def test_list
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.website_buttons.list
 
@@ -55,7 +55,7 @@ class Amocrm::Test::Resources::WebsiteButtonsTest < Amocrm::Test::ResourceTest
   end
 
   def test_connect_online_chat
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.website_buttons.connect_online_chat(0)
 
@@ -72,7 +72,7 @@ class Amocrm::Test::Resources::WebsiteButtonsTest < Amocrm::Test::ResourceTest
   end
 
   def test_get_by_source_id
-    skip("Prism tests are disabled")
+    skip("Mock server tests are disabled")
 
     response = @amocrm.website_buttons.get_by_source_id(0)
 

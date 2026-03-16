@@ -1,21 +1,28 @@
 module Amocrm
   module Models
     type tag_create_params =
-      { body: ::Array[Amocrm::TagCreateParams::Body] }
+      {
+        entity_type: Amocrm::Models::TagCreateParams::entity_type,
+        body: ::Array[Amocrm::TagCreateParams::Body]
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class TagCreateParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      attr_accessor entity_type: Amocrm::Models::TagCreateParams::entity_type
+
       attr_accessor body: ::Array[Amocrm::TagCreateParams::Body]
 
       def initialize: (
+        entity_type: Amocrm::Models::TagCreateParams::entity_type,
         body: ::Array[Amocrm::TagCreateParams::Body],
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        entity_type: Amocrm::Models::TagCreateParams::entity_type,
         body: ::Array[Amocrm::TagCreateParams::Body],
         request_options: Amocrm::RequestOptions
       }

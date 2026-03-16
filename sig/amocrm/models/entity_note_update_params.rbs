@@ -1,21 +1,28 @@
 module Amocrm
   module Models
     type entity_note_update_params =
-      { body: ::Array[Amocrm::EntityNoteUpdateParams::Body] }
+      {
+        entity_type: Amocrm::Models::EntityNoteUpdateParams::entity_type,
+        body: ::Array[Amocrm::EntityNoteUpdateParams::Body]
+      }
       & Amocrm::Internal::Type::request_parameters
 
     class EntityNoteUpdateParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      attr_accessor entity_type: Amocrm::Models::EntityNoteUpdateParams::entity_type
+
       attr_accessor body: ::Array[Amocrm::EntityNoteUpdateParams::Body]
 
       def initialize: (
+        entity_type: Amocrm::Models::EntityNoteUpdateParams::entity_type,
         body: ::Array[Amocrm::EntityNoteUpdateParams::Body],
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        entity_type: Amocrm::Models::EntityNoteUpdateParams::entity_type,
         body: ::Array[Amocrm::EntityNoteUpdateParams::Body],
         request_options: Amocrm::RequestOptions
       }

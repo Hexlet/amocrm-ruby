@@ -17,6 +17,9 @@ module Amocrm
       sig { returns(Integer) }
       attr_accessor :pipeline_id
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(String)) }
       attr_reader :color
 
@@ -63,6 +66,7 @@ module Amocrm
       sig do
         params(
           pipeline_id: Integer,
+          id: Integer,
           color: String,
           descriptions:
             T::Array[
@@ -76,6 +80,7 @@ module Amocrm
       end
       def self.new(
         pipeline_id:,
+        id:,
         color: nil,
         descriptions: nil,
         name: nil,
@@ -89,6 +94,7 @@ module Amocrm
         override.returns(
           {
             pipeline_id: Integer,
+            id: Integer,
             color: String,
             descriptions:
               T::Array[Amocrm::PipelineStatusUpdateByIDParams::Description],

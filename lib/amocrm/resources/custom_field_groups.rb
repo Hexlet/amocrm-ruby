@@ -39,10 +39,11 @@ module Amocrm
       # @see Amocrm::Models::CustomFieldGroupListParams
       def list(entity_type, params = {})
         parsed, options = Amocrm::CustomFieldGroupListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/%1$s/custom_fields/groups", entity_type],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::CustomFieldGroupListResponse,
           options: options
         )

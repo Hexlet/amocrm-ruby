@@ -68,10 +68,11 @@ module Amocrm
       # @see Amocrm::Models::CustomerListParams
       def list(params = {})
         parsed, options = Amocrm::CustomerListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/v4/customers",
-          query: parsed,
+          query: query,
           model: Amocrm::Models::CustomerListResponse,
           options: options
         )
@@ -92,10 +93,11 @@ module Amocrm
       # @see Amocrm::Models::CustomerGetByIDParams
       def get_by_id(id, params = {})
         parsed, options = Amocrm::CustomerGetByIDParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/customers/%1$s", id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::CustomerGetByIDResponse,
           options: options
         )

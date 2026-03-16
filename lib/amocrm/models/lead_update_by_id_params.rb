@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute _embedded
       #
       #   @return [Amocrm::Models::LeadUpdateByIDParams::Embedded, nil]
@@ -77,7 +82,9 @@ module Amocrm
       #   @return [Integer, nil]
       optional :updated_at, Integer
 
-      # @!method initialize(_embedded: nil, closed_at: nil, custom_fields_values: nil, group_id: nil, loss_reason_id: nil, name: nil, pipeline_id: nil, price: nil, responsible_user_id: nil, status_id: nil, tags_to_add: nil, tags_to_delete: nil, updated_at: nil, request_options: {})
+      # @!method initialize(id:, _embedded: nil, closed_at: nil, custom_fields_values: nil, group_id: nil, loss_reason_id: nil, name: nil, pipeline_id: nil, price: nil, responsible_user_id: nil, status_id: nil, tags_to_add: nil, tags_to_delete: nil, updated_at: nil, request_options: {})
+      #   @param id [Integer]
+      #
       #   @param _embedded [Amocrm::Models::LeadUpdateByIDParams::Embedded]
       #
       #   @param closed_at [Integer]

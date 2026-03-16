@@ -22,6 +22,9 @@ module Amocrm
       sig { returns(Integer) }
       attr_accessor :bot_id
 
+      sig { returns(Integer) }
+      attr_accessor :continue_id
+
       sig { returns(T.nilable(T.anything)) }
       attr_reader :data
 
@@ -51,6 +54,7 @@ module Amocrm
         params(
           bot_type: Amocrm::WidgetBotContinueContinueParams::BotType::OrSymbol,
           bot_id: Integer,
+          continue_id: Integer,
           data: T.anything,
           execute_handlers:
             T::Array[
@@ -62,6 +66,7 @@ module Amocrm
       def self.new(
         bot_type:,
         bot_id:,
+        continue_id:,
         data: nil,
         execute_handlers: nil,
         request_options: {}
@@ -74,6 +79,7 @@ module Amocrm
             bot_type:
               Amocrm::WidgetBotContinueContinueParams::BotType::OrSymbol,
             bot_id: Integer,
+            continue_id: Integer,
             data: T.anything,
             execute_handlers:
               T::Array[Amocrm::WidgetBotContinueContinueParams::ExecuteHandler],

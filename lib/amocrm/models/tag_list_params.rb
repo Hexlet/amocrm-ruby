@@ -7,6 +7,11 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute entity_type
+      #
+      #   @return [Symbol, Amocrm::Models::TagListParams::EntityType]
+      required :entity_type, enum: -> { Amocrm::TagListParams::EntityType }
+
       # @!attribute filter
       #
       #   @return [Object, nil]
@@ -27,7 +32,8 @@ module Amocrm
       #   @return [String, nil]
       optional :query, String
 
-      # @!method initialize(filter: nil, limit: nil, page: nil, query: nil, request_options: {})
+      # @!method initialize(entity_type:, filter: nil, limit: nil, page: nil, query: nil, request_options: {})
+      #   @param entity_type [Symbol, Amocrm::Models::TagListParams::EntityType]
       #   @param filter [Object]
       #   @param limit [Integer]
       #   @param page [Integer]

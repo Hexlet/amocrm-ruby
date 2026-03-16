@@ -1,22 +1,27 @@
 module Amocrm
   module Models
     type unsorted_lead_decline_params =
-      { user_id: Integer } & Amocrm::Internal::Type::request_parameters
+      { uid: String, user_id: Integer }
+      & Amocrm::Internal::Type::request_parameters
 
     class UnsortedLeadDeclineParams < Amocrm::Internal::Type::BaseModel
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
+
+      attr_accessor uid: String
 
       attr_reader user_id: Integer?
 
       def user_id=: (Integer) -> Integer
 
       def initialize: (
+        uid: String,
         ?user_id: Integer,
         ?request_options: Amocrm::request_opts
       ) -> void
 
       def to_hash: -> {
+        uid: String,
         user_id: Integer,
         request_options: Amocrm::RequestOptions
       }

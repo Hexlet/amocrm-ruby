@@ -7,12 +7,18 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
+      # @!attribute entity_type
+      #
+      #   @return [Symbol, Amocrm::Models::TagCreateParams::EntityType]
+      required :entity_type, enum: -> { Amocrm::TagCreateParams::EntityType }
+
       # @!attribute body
       #
       #   @return [Array<Amocrm::Models::TagCreateParams::Body>]
       required :body, -> { Amocrm::Internal::Type::ArrayOf[Amocrm::TagCreateParams::Body] }
 
-      # @!method initialize(body:, request_options: {})
+      # @!method initialize(entity_type:, body:, request_options: {})
+      #   @param entity_type [Symbol, Amocrm::Models::TagCreateParams::EntityType]
       #   @param body [Array<Amocrm::Models::TagCreateParams::Body>]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

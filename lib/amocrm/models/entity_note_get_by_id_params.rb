@@ -12,13 +12,19 @@ module Amocrm
       #   @return [Symbol, Amocrm::Models::EntityNoteGetByIDParams::EntityType]
       required :entity_type, enum: -> { Amocrm::EntityNoteGetByIDParams::EntityType }
 
+      # @!attribute id
+      #
+      #   @return [Integer]
+      required :id, Integer
+
       # @!attribute with
       #
       #   @return [String, nil]
       optional :with, String
 
-      # @!method initialize(entity_type:, with: nil, request_options: {})
+      # @!method initialize(entity_type:, id:, with: nil, request_options: {})
       #   @param entity_type [Symbol, Amocrm::Models::EntityNoteGetByIDParams::EntityType]
+      #   @param id [Integer]
       #   @param with [String]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
 

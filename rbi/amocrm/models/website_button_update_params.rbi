@@ -11,6 +11,9 @@ module Amocrm
           T.any(Amocrm::WebsiteButtonUpdateParams, Amocrm::Internal::AnyHash)
         end
 
+      sig { returns(Integer) }
+      attr_accessor :source_id
+
       sig { returns(Amocrm::WebsiteButtonUpdateParams::TrustedWebsites) }
       attr_reader :trusted_websites
 
@@ -24,17 +27,19 @@ module Amocrm
 
       sig do
         params(
+          source_id: Integer,
           trusted_websites:
             Amocrm::WebsiteButtonUpdateParams::TrustedWebsites::OrHash,
           request_options: Amocrm::RequestOptions::OrHash
         ).returns(T.attached_class)
       end
-      def self.new(trusted_websites:, request_options: {})
+      def self.new(source_id:, trusted_websites:, request_options: {})
       end
 
       sig do
         override.returns(
           {
+            source_id: Integer,
             trusted_websites:
               Amocrm::WebsiteButtonUpdateParams::TrustedWebsites,
             request_options: Amocrm::RequestOptions

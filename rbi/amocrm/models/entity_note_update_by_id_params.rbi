@@ -14,6 +14,9 @@ module Amocrm
       sig { returns(Amocrm::EntityNoteUpdateByIDParams::EntityType::OrSymbol) }
       attr_accessor :entity_type
 
+      sig { returns(Integer) }
+      attr_accessor :id
+
       sig { returns(T.nilable(Integer)) }
       attr_reader :entity_id
 
@@ -47,6 +50,7 @@ module Amocrm
       sig do
         params(
           entity_type: Amocrm::EntityNoteUpdateByIDParams::EntityType::OrSymbol,
+          id: Integer,
           entity_id: Integer,
           note_type: String,
           params: T.anything,
@@ -57,6 +61,7 @@ module Amocrm
       end
       def self.new(
         entity_type:,
+        id:,
         entity_id: nil,
         note_type: nil,
         params: nil,
@@ -71,6 +76,7 @@ module Amocrm
           {
             entity_type:
               Amocrm::EntityNoteUpdateByIDParams::EntityType::OrSymbol,
+            id: Integer,
             entity_id: Integer,
             note_type: String,
             params: T.anything,

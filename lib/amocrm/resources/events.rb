@@ -18,10 +18,11 @@ module Amocrm
       # @see Amocrm::Models::EventListParams
       def list(params = {})
         parsed, options = Amocrm::EventListParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/v4/events",
-          query: parsed,
+          query: query,
           model: Amocrm::Models::EventListResponse,
           options: options
         )
@@ -40,10 +41,11 @@ module Amocrm
       # @see Amocrm::Models::EventGetByIDParams
       def get_by_id(id, params = {})
         parsed, options = Amocrm::EventGetByIDParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: ["api/v4/events/%1$s", id],
-          query: parsed,
+          query: query,
           model: Amocrm::Models::EventGetByIDResponse,
           options: options
         )
@@ -61,10 +63,11 @@ module Amocrm
       # @see Amocrm::Models::EventListTypesParams
       def list_types(params = {})
         parsed, options = Amocrm::EventListTypesParams.dump_request(params)
+        query = Amocrm::Internal::Util.encode_query_params(parsed)
         @client.request(
           method: :get,
           path: "api/v4/events/types",
-          query: parsed,
+          query: query,
           model: Amocrm::Models::EventListTypesResponse,
           options: options
         )

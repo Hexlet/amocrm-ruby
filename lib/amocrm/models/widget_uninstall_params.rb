@@ -7,7 +7,13 @@ module Amocrm
       extend Amocrm::Internal::Type::RequestParameters::Converter
       include Amocrm::Internal::Type::RequestParameters
 
-      # @!method initialize(request_options: {})
+      # @!attribute widget_code
+      #
+      #   @return [String]
+      required :widget_code, String
+
+      # @!method initialize(widget_code:, request_options: {})
+      #   @param widget_code [String]
       #   @param request_options [Amocrm::RequestOptions, Hash{Symbol=>Object}]
     end
   end
