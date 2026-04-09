@@ -612,6 +612,7 @@ module Amocrm
         #
         # @return [Array(String, Enumerable<String>)]
         private def encode_multipart_streaming(body)
+          # rubocop:disable Style/CaseEquality
           # RFC 1521 Section 7.2.1 says we should have 70 char maximum for boundary length
           boundary = SecureRandom.urlsafe_base64(46)
 
@@ -621,7 +622,7 @@ module Amocrm
             in Hash
               body.each do |key, val|
                 case val
-                in Array if val.all? { primitive?(_1) }
+                in Array if val.all? { primitive?(_1) || Amocrm::Internal::Type::FileInput === _1 }
                   val.each do |v|
                     write_multipart_chunk(y, boundary: boundary, key: key, val: v, closing: closing)
                   end
@@ -637,6 +638,7 @@ module Amocrm
 
           fused_io = fused_enum(strio) { closing.each(&:call) }
           [boundary, fused_io]
+          # rubocop:enable Style/CaseEquality
         end
 
         # @api private
