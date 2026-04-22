@@ -15,7 +15,7 @@ To use this gem, install via Bundler by adding the following to your application
 <!-- x-release-please-start-version -->
 
 ```ruby
-gem "amocrm", "~> 0.5.3"
+gem "amocrm", "~> 0.5.4"
 ```
 
 <!-- x-release-please-end -->

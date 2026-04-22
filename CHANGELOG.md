@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.5.4 (2026-04-09)
+
+Full Changelog: [v0.5.3...v0.5.4](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.3...v0.5.4)
+
+### Bug Fixes
+
+* align path encoding with RFC 3986 section 3.3 ([e553b8e](https://github.com/Hexlet/amocrm-ruby/commit/e553b8e0b21dfb819d67c93a63a71009b0f728a8))
+* **internal:** correct multipart form field name encoding ([4975893](https://github.com/Hexlet/amocrm-ruby/commit/4975893b8eb2d4f427e7d40c07a3b7c1413168fb))
+* multipart encoding for file arrays ([6e86c5d](https://github.com/Hexlet/amocrm-ruby/commit/6e86c5d69289bc86c02b5a8f0d441fa5c7bb2ffc))
+* variable name typo ([e8f5466](https://github.com/Hexlet/amocrm-ruby/commit/e8f546639d827bb38a89df2e42465f9c6d019ea4))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([dad96e5](https://github.com/Hexlet/amocrm-ruby/commit/dad96e5408642a9781334f2bb4dbc32cd73872d9))
+* **ci:** support opting out of skipping builds on metadata-only commits ([34c8c04](https://github.com/Hexlet/amocrm-ruby/commit/34c8c04b937d0249fe49073193997e9311228d8f))
+* **internal:** tweak CI branches ([9a3e737](https://github.com/Hexlet/amocrm-ruby/commit/9a3e7375b6cca91433c8732e6fa060ecea85519c))
+* **internal:** update gitignore ([9fb96c7](https://github.com/Hexlet/amocrm-ruby/commit/9fb96c78308d30c29ead727cc05a101cdd1b97d1))
+
 ## 0.5.3 (2026-03-08)
 
 Full Changelog: [v0.5.2...v0.5.3](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.2...v0.5.3)
