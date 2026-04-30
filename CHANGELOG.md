@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.6.0 (2026-04-30)
+
+Full Changelog: [v0.5.4...v0.6.0](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.4...v0.6.0)
+
+### Features
+
+* support setting headers via env ([9d3e5cc](https://github.com/Hexlet/amocrm-ruby/commit/9d3e5ccbfb69032008b65d94ea95429ad28e67ae))
+
+
+### Chores
+
+* **internal:** more robust bootstrap script ([8159023](https://github.com/Hexlet/amocrm-ruby/commit/8159023a5aae2e0345da38e58737a8e8c3ab5c9e))
+
 ## 0.5.4 (2026-04-09)
 
 Full Changelog: [v0.5.3...v0.5.4](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.3...v0.5.4)
