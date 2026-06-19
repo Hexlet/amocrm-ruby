@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.1 (2026-06-17)
+
+Full Changelog: [v0.6.0...v0.6.1](https://github.com/Hexlet/amocrm-ruby/compare/v0.6.0...v0.6.1)
+
+### Bug Fixes
+
+* **client:** elide content type header on requests without body ([c5d17f3](https://github.com/Hexlet/amocrm-ruby/commit/c5d17f30eca70a68ca3df7dd38bd38137d59ec0a))
+* **client:** send content-type header for requests with an omitted optional body ([496a14f](https://github.com/Hexlet/amocrm-ruby/commit/496a14f1acec3e6d3f150ec83ebab8141acf670a))
+
 ## 0.6.0 (2026-04-30)
 
 Full Changelog: [v0.5.4...v0.6.0](https://github.com/Hexlet/amocrm-ruby/compare/v0.5.4...v0.6.0)
