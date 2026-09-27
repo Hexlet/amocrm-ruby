@@ -1,0 +1,188 @@
+module Amocrm
+  module Models
+    type note_params =
+      Amocrm::NoteParams::Call
+      | Amocrm::NoteParams::Geolocation
+      | Amocrm::NoteParams::Attachment
+      | Amocrm::NoteParams::MessageCashier
+      | Amocrm::NoteParams::ServiceMessage
+      | Amocrm::NoteParams::Sms
+      | Amocrm::NoteParams::Common
+
+    module NoteParams
+      extend Amocrm::Internal::Type::Union
+
+      type call =
+        {
+          uniq: String,
+          duration: Integer,
+          source: String,
+          link: String,
+          phone: String,
+          call_responsible: Amocrm::Models::NoteParams::Call::call_responsible
+        }
+
+      class Call < Amocrm::Internal::Type::BaseModel
+        attr_accessor uniq: String
+
+        attr_accessor duration: Integer
+
+        attr_accessor source: String
+
+        attr_accessor link: String
+
+        attr_accessor phone: String
+
+        attr_accessor call_responsible: Amocrm::Models::NoteParams::Call::call_responsible
+
+        def initialize: (
+          uniq: String,
+          duration: Integer,
+          source: String,
+          link: String,
+          phone: String,
+          call_responsible: Amocrm::Models::NoteParams::Call::call_responsible
+        ) -> void
+
+        def to_hash: -> {
+          uniq: String,
+          duration: Integer,
+          source: String,
+          link: String,
+          phone: String,
+          call_responsible: Amocrm::Models::NoteParams::Call::call_responsible
+        }
+
+        type call_responsible = String | Integer
+
+        module CallResponsible
+          extend Amocrm::Internal::Type::Union
+
+          def self?.variants: -> ::Array[Amocrm::Models::NoteParams::Call::call_responsible]
+        end
+      end
+
+      type geolocation =
+        { text: String, address: String, longitude: String, latitude: String }
+
+      class Geolocation < Amocrm::Internal::Type::BaseModel
+        attr_accessor text: String
+
+        attr_accessor address: String
+
+        attr_accessor longitude: String
+
+        attr_accessor latitude: String
+
+        def initialize: (
+          text: String,
+          address: String,
+          longitude: String,
+          latitude: String
+        ) -> void
+
+        def to_hash: -> {
+          text: String,
+          address: String,
+          longitude: String,
+          latitude: String
+        }
+      end
+
+      type attachment =
+        { file_uuid: String, file_name: String, version_uuid: String }
+
+      class Attachment < Amocrm::Internal::Type::BaseModel
+        attr_accessor file_uuid: String
+
+        attr_accessor file_name: String
+
+        attr_reader version_uuid: String?
+
+        def version_uuid=: (String) -> String
+
+        def initialize: (
+          file_uuid: String,
+          file_name: String,
+          ?version_uuid: String
+        ) -> void
+
+        def to_hash: -> {
+          file_uuid: String,
+          file_name: String,
+          version_uuid: String
+        }
+      end
+
+      type message_cashier =
+        {
+          status: Amocrm::Models::NoteParams::MessageCashier::status,
+          text: String
+        }
+
+      class MessageCashier < Amocrm::Internal::Type::BaseModel
+        attr_accessor status: Amocrm::Models::NoteParams::MessageCashier::status
+
+        attr_accessor text: String
+
+        def initialize: (
+          status: Amocrm::Models::NoteParams::MessageCashier::status,
+          text: String
+        ) -> void
+
+        def to_hash: -> {
+          status: Amocrm::Models::NoteParams::MessageCashier::status,
+          text: String
+        }
+
+        type status = :created | :shown | :canceled
+
+        module Status
+          extend Amocrm::Internal::Type::Enum
+
+          CREATED: :created
+          SHOWN: :shown
+          CANCELED: :canceled
+
+          def self?.values: -> ::Array[Amocrm::Models::NoteParams::MessageCashier::status]
+        end
+      end
+
+      type service_message = { service: String, text: String }
+
+      class ServiceMessage < Amocrm::Internal::Type::BaseModel
+        attr_accessor service: String
+
+        attr_accessor text: String
+
+        def initialize: (service: String, text: String) -> void
+
+        def to_hash: -> { service: String, text: String }
+      end
+
+      type sms = { text: String, phone: String }
+
+      class Sms < Amocrm::Internal::Type::BaseModel
+        attr_accessor text: String
+
+        attr_accessor phone: String
+
+        def initialize: (text: String, phone: String) -> void
+
+        def to_hash: -> { text: String, phone: String }
+      end
+
+      type common = { text: String }
+
+      class Common < Amocrm::Internal::Type::BaseModel
+        attr_accessor text: String
+
+        def initialize: (text: String) -> void
+
+        def to_hash: -> { text: String }
+      end
+
+      def self?.variants: -> ::Array[Amocrm::Models::note_params]
+    end
+  end
+end

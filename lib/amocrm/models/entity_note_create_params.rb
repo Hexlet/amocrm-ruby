@@ -37,8 +37,8 @@ module Amocrm
       class Body < Amocrm::Internal::Type::BaseModel
         # @!attribute note_type
         #
-        #   @return [String]
-        required :note_type, String
+        #   @return [Symbol, Amocrm::Models::NoteType]
+        required :note_type, enum: -> { Amocrm::NoteType }
 
         # @!attribute created_at
         #
@@ -62,8 +62,8 @@ module Amocrm
 
         # @!attribute params
         #
-        #   @return [Object, nil]
-        optional :params, Amocrm::Internal::Type::Unknown
+        #   @return [Amocrm::Models::NoteParams::Common, Amocrm::Models::NoteParams::Call, Amocrm::Models::NoteParams::ServiceMessage, Amocrm::Models::NoteParams::MessageCashier, Amocrm::Models::NoteParams::Geolocation, Amocrm::Models::NoteParams::Sms, Amocrm::Models::NoteParams::Attachment, nil]
+        optional :params, union: -> { Amocrm::NoteParams }
 
         # @!attribute request_id
         #   Client-side request id
@@ -82,7 +82,7 @@ module Amocrm
         optional :updated_by, Integer
 
         # @!method initialize(note_type:, created_at: nil, created_by: nil, entity_id: nil, is_need_to_trigger_digital_pipeline: nil, params: nil, request_id: nil, responsible_user_id: nil, updated_by: nil)
-        #   @param note_type [String]
+        #   @param note_type [Symbol, Amocrm::Models::NoteType]
         #
         #   @param created_at [Integer]
         #
@@ -92,7 +92,7 @@ module Amocrm
         #
         #   @param is_need_to_trigger_digital_pipeline [Boolean]
         #
-        #   @param params [Object]
+        #   @param params [Amocrm::Models::NoteParams::Common, Amocrm::Models::NoteParams::Call, Amocrm::Models::NoteParams::ServiceMessage, Amocrm::Models::NoteParams::MessageCashier, Amocrm::Models::NoteParams::Geolocation, Amocrm::Models::NoteParams::Sms, Amocrm::Models::NoteParams::Attachment]
         #
         #   @param request_id [String] Client-side request id
         #

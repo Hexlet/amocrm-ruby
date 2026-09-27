@@ -112,7 +112,7 @@ module Amocrm
             )
           end
 
-        sig { returns(String) }
+        sig { returns(Amocrm::NoteType::OrSymbol) }
         attr_accessor :note_type
 
         sig { returns(T.nilable(Integer)) }
@@ -139,10 +139,23 @@ module Amocrm
         sig { params(is_need_to_trigger_digital_pipeline: T::Boolean).void }
         attr_writer :is_need_to_trigger_digital_pipeline
 
-        sig { returns(T.nilable(T.anything)) }
+        sig { returns(T.nilable(Amocrm::NoteParams::Variants)) }
         attr_reader :params
 
-        sig { params(params: T.anything).void }
+        sig do
+          params(
+            params:
+              T.any(
+                Amocrm::NoteParams::Common::OrHash,
+                Amocrm::NoteParams::Call::OrHash,
+                Amocrm::NoteParams::ServiceMessage::OrHash,
+                Amocrm::NoteParams::MessageCashier::OrHash,
+                Amocrm::NoteParams::Geolocation::OrHash,
+                Amocrm::NoteParams::Sms::OrHash,
+                Amocrm::NoteParams::Attachment::OrHash
+              )
+          ).void
+        end
         attr_writer :params
 
         # Client-side request id
@@ -166,12 +179,21 @@ module Amocrm
 
         sig do
           params(
-            note_type: String,
+            note_type: Amocrm::NoteType::OrSymbol,
             created_at: Integer,
             created_by: Integer,
             entity_id: Integer,
             is_need_to_trigger_digital_pipeline: T::Boolean,
-            params: T.anything,
+            params:
+              T.any(
+                Amocrm::NoteParams::Common::OrHash,
+                Amocrm::NoteParams::Call::OrHash,
+                Amocrm::NoteParams::ServiceMessage::OrHash,
+                Amocrm::NoteParams::MessageCashier::OrHash,
+                Amocrm::NoteParams::Geolocation::OrHash,
+                Amocrm::NoteParams::Sms::OrHash,
+                Amocrm::NoteParams::Attachment::OrHash
+              ),
             request_id: String,
             responsible_user_id: Integer,
             updated_by: Integer
@@ -194,12 +216,21 @@ module Amocrm
         sig do
           override.returns(
             {
-              note_type: String,
+              note_type: Amocrm::NoteType::OrSymbol,
               created_at: Integer,
               created_by: Integer,
               entity_id: Integer,
               is_need_to_trigger_digital_pipeline: T::Boolean,
-              params: T.anything,
+              params:
+                T.any(
+                  Amocrm::NoteParams::Common::OrHash,
+                  Amocrm::NoteParams::Call::OrHash,
+                  Amocrm::NoteParams::ServiceMessage::OrHash,
+                  Amocrm::NoteParams::MessageCashier::OrHash,
+                  Amocrm::NoteParams::Geolocation::OrHash,
+                  Amocrm::NoteParams::Sms::OrHash,
+                  Amocrm::NoteParams::Attachment::OrHash
+                ),
               request_id: String,
               responsible_user_id: Integer,
               updated_by: Integer

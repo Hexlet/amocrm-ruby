@@ -186,16 +186,29 @@ module Amocrm
             sig { params(is_pinned: T::Boolean).void }
             attr_writer :is_pinned
 
-            sig { returns(T.nilable(String)) }
+            sig { returns(T.nilable(Amocrm::NoteType::TaggedSymbol)) }
             attr_reader :note_type
 
-            sig { params(note_type: String).void }
+            sig { params(note_type: Amocrm::NoteType::OrSymbol).void }
             attr_writer :note_type
 
-            sig { returns(T.nilable(T.anything)) }
+            sig { returns(T.nilable(Amocrm::NoteParams::Variants)) }
             attr_reader :params
 
-            sig { params(params: T.anything).void }
+            sig do
+              params(
+                params:
+                  T.any(
+                    Amocrm::NoteParams::Common::OrHash,
+                    Amocrm::NoteParams::Call::OrHash,
+                    Amocrm::NoteParams::ServiceMessage::OrHash,
+                    Amocrm::NoteParams::MessageCashier::OrHash,
+                    Amocrm::NoteParams::Geolocation::OrHash,
+                    Amocrm::NoteParams::Sms::OrHash,
+                    Amocrm::NoteParams::Attachment::OrHash
+                  )
+              ).void
+            end
             attr_writer :params
 
             sig { returns(T.nilable(Integer)) }
@@ -226,8 +239,17 @@ module Amocrm
                 entity_id: Integer,
                 group_id: Integer,
                 is_pinned: T::Boolean,
-                note_type: String,
-                params: T.anything,
+                note_type: Amocrm::NoteType::OrSymbol,
+                params:
+                  T.any(
+                    Amocrm::NoteParams::Common::OrHash,
+                    Amocrm::NoteParams::Call::OrHash,
+                    Amocrm::NoteParams::ServiceMessage::OrHash,
+                    Amocrm::NoteParams::MessageCashier::OrHash,
+                    Amocrm::NoteParams::Geolocation::OrHash,
+                    Amocrm::NoteParams::Sms::OrHash,
+                    Amocrm::NoteParams::Attachment::OrHash
+                  ),
                 responsible_user_id: Integer,
                 updated_at: Integer,
                 updated_by: Integer
@@ -261,8 +283,17 @@ module Amocrm
                   entity_id: Integer,
                   group_id: Integer,
                   is_pinned: T::Boolean,
-                  note_type: String,
-                  params: T.anything,
+                  note_type: Amocrm::NoteType::OrSymbol,
+                  params:
+                    T.any(
+                      Amocrm::NoteParams::Common::OrHash,
+                      Amocrm::NoteParams::Call::OrHash,
+                      Amocrm::NoteParams::ServiceMessage::OrHash,
+                      Amocrm::NoteParams::MessageCashier::OrHash,
+                      Amocrm::NoteParams::Geolocation::OrHash,
+                      Amocrm::NoteParams::Sms::OrHash,
+                      Amocrm::NoteParams::Attachment::OrHash
+                    ),
                   responsible_user_id: Integer,
                   updated_at: Integer,
                   updated_by: Integer
