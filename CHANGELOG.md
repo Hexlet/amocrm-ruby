@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/Hexlet/amocrm-ruby/compare/v0.6.1...v0.6.2) (2026-09-27)
+
+
+### Bug Fixes
+
+* type note_type and note params ([#20](https://github.com/Hexlet/amocrm-ruby/issues/20)) ([0a0796f](https://github.com/Hexlet/amocrm-ruby/commit/0a0796f19edac1dd2f7c4cc3ba71b9974922ce0e))
+
 ## 0.6.1 (2026-06-17)
 
 Full Changelog: [v0.6.0...v0.6.1](https://github.com/Hexlet/amocrm-ruby/compare/v0.6.0...v0.6.1)
