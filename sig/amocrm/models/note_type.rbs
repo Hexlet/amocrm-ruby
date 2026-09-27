@@ -1,0 +1,32 @@
+module Amocrm
+  module Models
+    type note_type =
+      :common
+      | :call_in
+      | :call_out
+      | :service_message
+      | :message_cashier
+      | :geolocation
+      | :sms_in
+      | :sms_out
+      | :extended_service_message
+      | :attachment
+
+    module NoteType
+      extend Amocrm::Internal::Type::Enum
+
+      COMMON: :common
+      CALL_IN: :call_in
+      CALL_OUT: :call_out
+      SERVICE_MESSAGE: :service_message
+      MESSAGE_CASHIER: :message_cashier
+      GEOLOCATION: :geolocation
+      SMS_IN: :sms_in
+      SMS_OUT: :sms_out
+      EXTENDED_SERVICE_MESSAGE: :extended_service_message
+      ATTACHMENT: :attachment
+
+      def self?.values: -> ::Array[Amocrm::Models::note_type]
+    end
+  end
+end

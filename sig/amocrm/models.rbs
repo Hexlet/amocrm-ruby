@@ -171,6 +171,10 @@ module Amocrm
 
   class LeadUpdateParams = Amocrm::Models::LeadUpdateParams
 
+  module NoteParams = Amocrm::Models::NoteParams
+
+  module NoteType = Amocrm::Models::NoteType
+
   class PipelineCreateParams = Amocrm::Models::PipelineCreateParams
 
   class PipelineDeleteByIDParams = Amocrm::Models::PipelineDeleteByIDParams

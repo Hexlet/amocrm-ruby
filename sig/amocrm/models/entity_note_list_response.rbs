@@ -71,8 +71,8 @@ module Amocrm
               entity_id: Integer,
               group_id: Integer,
               is_pinned: bool,
-              note_type: String,
-              params: top,
+              note_type: Amocrm::Models::note_type,
+              params: Amocrm::Models::note_params,
               responsible_user_id: Integer,
               updated_at: Integer,
               updated_by: Integer
@@ -111,13 +111,17 @@ module Amocrm
 
             def is_pinned=: (bool) -> bool
 
-            attr_reader note_type: String?
+            attr_reader note_type: Amocrm::Models::note_type?
 
-            def note_type=: (String) -> String
+            def note_type=: (
+              Amocrm::Models::note_type
+            ) -> Amocrm::Models::note_type
 
-            attr_reader params: top?
+            attr_reader params: Amocrm::Models::note_params?
 
-            def params=: (top) -> top
+            def params=: (
+              Amocrm::Models::note_params
+            ) -> Amocrm::Models::note_params
 
             attr_reader responsible_user_id: Integer?
 
@@ -140,8 +144,8 @@ module Amocrm
               ?entity_id: Integer,
               ?group_id: Integer,
               ?is_pinned: bool,
-              ?note_type: String,
-              ?params: top,
+              ?note_type: Amocrm::Models::note_type,
+              ?params: Amocrm::Models::note_params,
               ?responsible_user_id: Integer,
               ?updated_at: Integer,
               ?updated_by: Integer
@@ -156,8 +160,8 @@ module Amocrm
               entity_id: Integer,
               group_id: Integer,
               is_pinned: bool,
-              note_type: String,
-              params: top,
+              note_type: Amocrm::Models::note_type,
+              params: Amocrm::Models::note_params,
               responsible_user_id: Integer,
               updated_at: Integer,
               updated_by: Integer

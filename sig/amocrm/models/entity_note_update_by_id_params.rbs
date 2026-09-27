@@ -5,8 +5,8 @@ module Amocrm
         entity_type: Amocrm::Models::EntityNoteUpdateByIDParams::entity_type,
         id: Integer,
         entity_id: Integer,
-        note_type: String,
-        params: top,
+        note_type: Amocrm::Models::note_type,
+        params: Amocrm::Models::note_params,
         updated_at: Integer,
         updated_by: Integer
       }
@@ -24,13 +24,13 @@ module Amocrm
 
       def entity_id=: (Integer) -> Integer
 
-      attr_reader note_type: String?
+      attr_reader note_type: Amocrm::Models::note_type?
 
-      def note_type=: (String) -> String
+      def note_type=: (Amocrm::Models::note_type) -> Amocrm::Models::note_type
 
-      attr_reader params: top?
+      attr_reader params: Amocrm::Models::note_params?
 
-      def params=: (top) -> top
+      def params=: (Amocrm::Models::note_params) -> Amocrm::Models::note_params
 
       attr_reader updated_at: Integer?
 
@@ -44,8 +44,8 @@ module Amocrm
         entity_type: Amocrm::Models::EntityNoteUpdateByIDParams::entity_type,
         id: Integer,
         ?entity_id: Integer,
-        ?note_type: String,
-        ?params: top,
+        ?note_type: Amocrm::Models::note_type,
+        ?params: Amocrm::Models::note_params,
         ?updated_at: Integer,
         ?updated_by: Integer,
         ?request_options: Amocrm::request_opts
@@ -55,8 +55,8 @@ module Amocrm
         entity_type: Amocrm::Models::EntityNoteUpdateByIDParams::entity_type,
         id: Integer,
         entity_id: Integer,
-        note_type: String,
-        params: top,
+        note_type: Amocrm::Models::note_type,
+        params: Amocrm::Models::note_params,
         updated_at: Integer,
         updated_by: Integer,
         request_options: Amocrm::RequestOptions

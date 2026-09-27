@@ -47,19 +47,19 @@ module Amocrm
 
       type body =
         {
-          note_type: String,
+          note_type: Amocrm::Models::note_type,
           created_at: Integer,
           created_by: Integer,
           entity_id: Integer,
           is_need_to_trigger_digital_pipeline: bool,
-          params: top,
+          params: Amocrm::Models::note_params,
           request_id: String,
           responsible_user_id: Integer,
           updated_by: Integer
         }
 
       class Body < Amocrm::Internal::Type::BaseModel
-        attr_accessor note_type: String
+        attr_accessor note_type: Amocrm::Models::note_type
 
         attr_reader created_at: Integer?
 
@@ -77,9 +77,11 @@ module Amocrm
 
         def is_need_to_trigger_digital_pipeline=: (bool) -> bool
 
-        attr_reader params: top?
+        attr_reader params: Amocrm::Models::note_params?
 
-        def params=: (top) -> top
+        def params=: (
+          Amocrm::Models::note_params
+        ) -> Amocrm::Models::note_params
 
         attr_reader request_id: String?
 
@@ -94,24 +96,24 @@ module Amocrm
         def updated_by=: (Integer) -> Integer
 
         def initialize: (
-          note_type: String,
+          note_type: Amocrm::Models::note_type,
           ?created_at: Integer,
           ?created_by: Integer,
           ?entity_id: Integer,
           ?is_need_to_trigger_digital_pipeline: bool,
-          ?params: top,
+          ?params: Amocrm::Models::note_params,
           ?request_id: String,
           ?responsible_user_id: Integer,
           ?updated_by: Integer
         ) -> void
 
         def to_hash: -> {
-          note_type: String,
+          note_type: Amocrm::Models::note_type,
           created_at: Integer,
           created_by: Integer,
           entity_id: Integer,
           is_need_to_trigger_digital_pipeline: bool,
-          params: top,
+          params: Amocrm::Models::note_params,
           request_id: String,
           responsible_user_id: Integer,
           updated_by: Integer

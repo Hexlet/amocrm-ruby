@@ -53,13 +53,13 @@ module Amocrm
 
         # @!attribute note_type
         #
-        #   @return [String, nil]
-        optional :note_type, String
+        #   @return [Symbol, Amocrm::Models::NoteType, nil]
+        optional :note_type, enum: -> { Amocrm::NoteType }
 
         # @!attribute params
         #
-        #   @return [Object, nil]
-        optional :params, Amocrm::Internal::Type::Unknown
+        #   @return [Amocrm::Models::NoteParams::Common, Amocrm::Models::NoteParams::Call, Amocrm::Models::NoteParams::ServiceMessage, Amocrm::Models::NoteParams::MessageCashier, Amocrm::Models::NoteParams::Geolocation, Amocrm::Models::NoteParams::Sms, Amocrm::Models::NoteParams::Attachment, nil]
+        optional :params, union: -> { Amocrm::NoteParams }
 
         # @!attribute responsible_user_id
         #
@@ -85,8 +85,8 @@ module Amocrm
         #   @param entity_id [Integer]
         #   @param group_id [Integer]
         #   @param is_pinned [Boolean]
-        #   @param note_type [String]
-        #   @param params [Object]
+        #   @param note_type [Symbol, Amocrm::Models::NoteType]
+        #   @param params [Amocrm::Models::NoteParams::Common, Amocrm::Models::NoteParams::Call, Amocrm::Models::NoteParams::ServiceMessage, Amocrm::Models::NoteParams::MessageCashier, Amocrm::Models::NoteParams::Geolocation, Amocrm::Models::NoteParams::Sms, Amocrm::Models::NoteParams::Attachment]
         #   @param responsible_user_id [Integer]
         #   @param updated_at [Integer]
         #   @param updated_by [Integer]

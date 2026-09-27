@@ -44,8 +44,8 @@ module Amocrm
         Integer id,
         entity_type: Amocrm::Models::EntityNoteUpdateByIDParams::entity_type,
         ?entity_id: Integer,
-        ?note_type: String,
-        ?params: top,
+        ?note_type: Amocrm::Models::note_type,
+        ?params: Amocrm::Models::note_params,
         ?updated_at: Integer,
         ?updated_by: Integer,
         ?request_options: Amocrm::request_opts

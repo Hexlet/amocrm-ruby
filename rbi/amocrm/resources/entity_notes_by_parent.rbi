@@ -117,8 +117,17 @@ module Amocrm
           entity_type:
             Amocrm::EntityNotesByParentUpdateByParentIDParams::EntityType::OrSymbol,
           body_entity_id: Integer,
-          note_type: String,
-          params: T.anything,
+          note_type: Amocrm::NoteType::OrSymbol,
+          params:
+            T.any(
+              Amocrm::NoteParams::Common::OrHash,
+              Amocrm::NoteParams::Call::OrHash,
+              Amocrm::NoteParams::ServiceMessage::OrHash,
+              Amocrm::NoteParams::MessageCashier::OrHash,
+              Amocrm::NoteParams::Geolocation::OrHash,
+              Amocrm::NoteParams::Sms::OrHash,
+              Amocrm::NoteParams::Attachment::OrHash
+            ),
           updated_at: Integer,
           updated_by: Integer,
           request_options: Amocrm::RequestOptions::OrHash

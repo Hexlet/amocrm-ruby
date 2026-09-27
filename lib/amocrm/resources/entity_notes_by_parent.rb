@@ -145,9 +145,9 @@ module Amocrm
       #
       # @param body_entity_id [Integer] Body param
       #
-      # @param note_type [String] Body param
+      # @param note_type [Symbol, Amocrm::Models::NoteType] Body param
       #
-      # @param params [Object] Body param
+      # @param params [Amocrm::Models::NoteParams::Common, Amocrm::Models::NoteParams::Call, Amocrm::Models::NoteParams::ServiceMessage, Amocrm::Models::NoteParams::MessageCashier, Amocrm::Models::NoteParams::Geolocation, Amocrm::Models::NoteParams::Sms, Amocrm::Models::NoteParams::Attachment] Body param
       #
       # @param updated_at [Integer] Body param
       #

@@ -122,16 +122,29 @@ module Amocrm
         sig { params(entity_id: Integer).void }
         attr_writer :entity_id
 
-        sig { returns(T.nilable(String)) }
+        sig { returns(T.nilable(Amocrm::NoteType::OrSymbol)) }
         attr_reader :note_type
 
-        sig { params(note_type: String).void }
+        sig { params(note_type: Amocrm::NoteType::OrSymbol).void }
         attr_writer :note_type
 
-        sig { returns(T.nilable(T.anything)) }
+        sig { returns(T.nilable(Amocrm::NoteParams::Variants)) }
         attr_reader :params
 
-        sig { params(params: T.anything).void }
+        sig do
+          params(
+            params:
+              T.any(
+                Amocrm::NoteParams::Common::OrHash,
+                Amocrm::NoteParams::Call::OrHash,
+                Amocrm::NoteParams::ServiceMessage::OrHash,
+                Amocrm::NoteParams::MessageCashier::OrHash,
+                Amocrm::NoteParams::Geolocation::OrHash,
+                Amocrm::NoteParams::Sms::OrHash,
+                Amocrm::NoteParams::Attachment::OrHash
+              )
+          ).void
+        end
         attr_writer :params
 
         sig { returns(T.nilable(Integer)) }
@@ -150,8 +163,17 @@ module Amocrm
           params(
             id: Integer,
             entity_id: Integer,
-            note_type: String,
-            params: T.anything,
+            note_type: Amocrm::NoteType::OrSymbol,
+            params:
+              T.any(
+                Amocrm::NoteParams::Common::OrHash,
+                Amocrm::NoteParams::Call::OrHash,
+                Amocrm::NoteParams::ServiceMessage::OrHash,
+                Amocrm::NoteParams::MessageCashier::OrHash,
+                Amocrm::NoteParams::Geolocation::OrHash,
+                Amocrm::NoteParams::Sms::OrHash,
+                Amocrm::NoteParams::Attachment::OrHash
+              ),
             updated_at: Integer,
             updated_by: Integer
           ).returns(T.attached_class)
@@ -172,8 +194,17 @@ module Amocrm
             {
               id: Integer,
               entity_id: Integer,
-              note_type: String,
-              params: T.anything,
+              note_type: Amocrm::NoteType::OrSymbol,
+              params:
+                T.any(
+                  Amocrm::NoteParams::Common::OrHash,
+                  Amocrm::NoteParams::Call::OrHash,
+                  Amocrm::NoteParams::ServiceMessage::OrHash,
+                  Amocrm::NoteParams::MessageCashier::OrHash,
+                  Amocrm::NoteParams::Geolocation::OrHash,
+                  Amocrm::NoteParams::Sms::OrHash,
+                  Amocrm::NoteParams::Attachment::OrHash
+                ),
               updated_at: Integer,
               updated_by: Integer
             }
