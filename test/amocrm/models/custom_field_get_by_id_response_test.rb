@@ -28,8 +28,15 @@ class Amocrm::Test::CustomFieldGetByIDResponseModelTest < Minitest::Test
       .to_return_json(
         status: 200,
         body: {
-          id: 921_871, name: "stack", type: "select", code: nil, group_id: nil,
-          currency: nil, tracking_callback: nil, remind: nil, chained_lists: nil,
+          id: 921_871,
+          name: "stack",
+          type: "select",
+          code: nil,
+          group_id: nil,
+          currency: nil,
+          tracking_callback: nil,
+          remind: nil,
+          chained_lists: nil,
           enums: [{id: 1, value: "ruby"}]
         }
       )
