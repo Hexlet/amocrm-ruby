@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.2](https://github.com/Hexlet/amocrm-ruby/compare/v0.6.1...v0.6.2) (2026-10-06)
+
+
+### Bug Fixes
+
+* accept null code and group_id in the custom field response ([#22](https://github.com/Hexlet/amocrm-ruby/issues/22)) ([87c1991](https://github.com/Hexlet/amocrm-ruby/commit/87c1991a33f61daece10f58022ab079dda166dd9))
+* type note_type and note params ([#20](https://github.com/Hexlet/amocrm-ruby/issues/20)) ([0a0796f](https://github.com/Hexlet/amocrm-ruby/commit/0a0796f19edac1dd2f7c4cc3ba71b9974922ce0e))
+
 ## 0.6.1 (2026-06-17)
 
 Full Changelog: [v0.6.0...v0.6.1](https://github.com/Hexlet/amocrm-ruby/compare/v0.6.0...v0.6.1)
