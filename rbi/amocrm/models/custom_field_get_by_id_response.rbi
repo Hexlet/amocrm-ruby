@@ -31,7 +31,7 @@ module Amocrm
         sig { returns(T.nilable(String)) }
         attr_reader :code
 
-        sig { params(code: String).void }
+        sig { params(code: T.nilable(String)).void }
         attr_writer :code
 
         sig { returns(T.nilable(String)) }
@@ -49,7 +49,7 @@ module Amocrm
         sig { returns(T.nilable(Integer)) }
         attr_reader :group_id
 
-        sig { params(group_id: Integer).void }
+        sig { params(group_id: T.nilable(Integer)).void }
         attr_writer :group_id
 
         sig { returns(T.nilable(T::Boolean)) }
@@ -103,10 +103,10 @@ module Amocrm
         sig do
           params(
             id: Integer,
-            code: String,
+            code: T.nilable(String),
             entity_type: String,
             enums: T::Array[T.anything],
-            group_id: Integer,
+            group_id: T.nilable(Integer),
             is_deletable: T::Boolean,
             is_multiple: T::Boolean,
             is_required: T::Boolean,
@@ -138,10 +138,10 @@ module Amocrm
           override.returns(
             {
               id: Integer,
-              code: String,
+              code: T.nilable(String),
               entity_type: String,
               enums: T::Array[T.anything],
-              group_id: Integer,
+              group_id: T.nilable(Integer),
               is_deletable: T::Boolean,
               is_multiple: T::Boolean,
               is_required: T::Boolean,

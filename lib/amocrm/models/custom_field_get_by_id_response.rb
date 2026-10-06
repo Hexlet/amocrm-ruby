@@ -19,7 +19,7 @@ module Amocrm
         # @!attribute code
         #
         #   @return [String, nil]
-        optional :code, String
+        optional :code, String, nil?: true
 
         # @!attribute entity_type
         #
@@ -34,7 +34,7 @@ module Amocrm
         # @!attribute group_id
         #
         #   @return [Integer, nil]
-        optional :group_id, Integer
+        optional :group_id, Integer, nil?: true
 
         # @!attribute is_deletable
         #
@@ -78,10 +78,10 @@ module Amocrm
 
         # @!method initialize(id: nil, code: nil, entity_type: nil, enums: nil, group_id: nil, is_deletable: nil, is_multiple: nil, is_required: nil, is_visible: nil, name: nil, settings: nil, sort: nil, type: nil)
         #   @param id [Integer]
-        #   @param code [String]
+        #   @param code [String, nil]
         #   @param entity_type [String]
         #   @param enums [Array<Object>]
-        #   @param group_id [Integer]
+        #   @param group_id [Integer, nil]
         #   @param is_deletable [Boolean]
         #   @param is_multiple [Boolean]
         #   @param is_required [Boolean]

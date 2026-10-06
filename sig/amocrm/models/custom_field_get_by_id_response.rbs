@@ -10,10 +10,10 @@ module Amocrm
       type custom_field =
         {
           id: Integer,
-          code: String,
+          code: String?,
           entity_type: String,
           enums: ::Array[top],
-          group_id: Integer,
+          group_id: Integer?,
           is_deletable: bool,
           is_multiple: bool,
           is_required: bool,
@@ -31,7 +31,7 @@ module Amocrm
 
         attr_reader code: String?
 
-        def code=: (String) -> String
+        def code=: (String?) -> String?
 
         attr_reader entity_type: String?
 
@@ -43,7 +43,7 @@ module Amocrm
 
         attr_reader group_id: Integer?
 
-        def group_id=: (Integer) -> Integer
+        def group_id=: (Integer?) -> Integer?
 
         attr_reader is_deletable: bool?
 
@@ -79,10 +79,10 @@ module Amocrm
 
         def initialize: (
           ?id: Integer,
-          ?code: String,
+          ?code: String?,
           ?entity_type: String,
           ?enums: ::Array[top],
-          ?group_id: Integer,
+          ?group_id: Integer?,
           ?is_deletable: bool,
           ?is_multiple: bool,
           ?is_required: bool,
@@ -95,10 +95,10 @@ module Amocrm
 
         def to_hash: -> {
           id: Integer,
-          code: String,
+          code: String?,
           entity_type: String,
           enums: ::Array[top],
-          group_id: Integer,
+          group_id: Integer?,
           is_deletable: bool,
           is_multiple: bool,
           is_required: bool,
